@@ -9,9 +9,11 @@ apache2
 atftpd
 bluez
 bluez-hcidump
+
 #if ARCHITECTURES armel armhf
-cgpt
+# cgpt
 #endif
+
 clang
 cowsay
 desktop-base
@@ -20,11 +22,13 @@ expect
 gdb
 git
 gparted
+
 #if ARCHITECTURES i386 amd64
-guymager
-firmware-b43legacy-installer 
-firmware-b43-installer
+# guymager
+# firmware-b43legacy-installer 
+# firmware-b43-installer
 #endif
+
 iw
 mysql-server
 ncurses-hexedit
@@ -56,9 +60,10 @@ leafpad
 vim-gtk
 xtightvncviewer
 zenmap
+
 #if ARCHITECTURES armel armhf
-vboot-utils
-vboot-kernel-utils
+# vboot-utils
+# vboot-kernel-utils
 #endif
 
 # Graphical desktops depending on the architecture
@@ -70,16 +75,16 @@ vboot-kernel-utils
 
 #if ARCHITECTURES i386 amd64
 # *** GNOME DESKTOP ***
-gnome-core
-gnome-brave-icon-theme
-gnome-shell-extensions
+# gnome-core
+# gnome-brave-icon-theme
+# gnome-shell-extensions
 #endif
 
 #if ARCHITECTURES armel armhf
 # *** XFCE DESKTOP ***
-xfce4
-network-manager-gnome
-network-manager
+# xfce4
+# network-manager-gnome
+# network-manager
 #endif
 
 # *** KDE DESKTOP ***
@@ -87,7 +92,7 @@ network-manager
 # kdm
 
 # *** LXDE DESKTOP ***
-# lxde
+lxde
 
 # *** Enlightenment DR17 DESKTOP ***
 # e17
@@ -100,3 +105,231 @@ network-manager
 # mate-archive-keyring
 # mate-core
 # mate-desktop-environment
+
+################################################################################
+# Begin custom packages
+
+# Linux
+linux-base
+linux-image-686-pae
+lsb
+lsb-base
+lsb-core
+lsb-cxx
+lsb-desktop
+lsb-graphics
+lsb-multimedia
+lsb-printing
+lsb-release
+lsb-security
+
+# Kali
+kali-defaults
+kali-linux
+kali-linux-full
+kali-menu
+kali-root-login
+kali-archive-keyring
+kali-debtags
+
+# Command Line
+coreutils
+w3m
+vim
+mc
+netcat
+ssh
+wget
+rsync
+screen
+byobu
+tmux
+buffer
+util-linux
+grep
+gawk
+sed
+busybox
+diffutils
+patch
+patchutils
+findutils
+
+# Gui
+lxde
+arandr
+gnome-commander
+nautilus
+nautilus-actions
+nautilus-compare
+nautilus-dropbox
+nautilus-gtkhash
+nautilus-open-terminal
+nautilus-share
+terminator
+file-roller
+xcompmgr
+
+# Package Management
+deborphan
+debfoster
+aptitude
+apt-build
+apt-file
+apt-rdepends
+apt-utils
+apt-xapian-index
+synaptic
+
+# Development
+kernel-package
+linux-headers-686-pae
+linux-source
+live-build
+cdebootstrap
+debootstrap
+build-essential
+gdb
+ddd
+valgrind
+nasm
+mingw32
+checkinstall
+strace
+cgdb
+binutils
+
+# System
+rungetty
+gnome-system-monitor
+gnome-bluetooth
+aufs-tools
+squashfs-tools
+cpufrequtils
+galternatives
+sysv-rc-conf
+tasksel
+debian-installer
+
+# Wine
+wine
+
+# Encryption
+hashalot
+system-config-lvm
+lvm2
+
+# Security
+gufw
+tor
+vidalia
+polipo
+clamav
+prey
+
+# Cleanup
+logrotate
+localepurge
+fslint
+bleachbit
+baobab
+cruft
+
+# Speedup
+preload
+insserv
+
+# Hardware
+gparted
+
+# Utilities
+buffer
+qalculate
+truecrypt
+keepass2
+grsync
+
+# Virtual
+virtualbox
+virtualbox-guest-additions-iso
+virtualbox-guest-utils
+virtualbox-guest-x11
+
+# Java
+default-jdk
+default-jre
+gcj-jdk
+
+# Internet
+transmission
+chromium
+
+# Networking
+network-manager-gnome
+minicom
+samba
+wireshark
+sslstrip
+tcpdump
+nmap
+zenmap
+ngrep
+
+# Pentesting
+
+# Programming
+git
+eclipse
+qtcreator
+meld
+
+# Python
+python-matplotlib
+python-numpy
+python-sympy
+python-scipy
+python-apsw
+python-yaml
+python-wxgtk2.8
+
+# Ruby
+jruby
+ruby
+ruby1.8-full
+ruby1.9.1-full
+rubygems
+
+# Note Taking
+zim
+cherrytree
+keepnote
+gedit
+gedit-plugins
+xournal
+shutter
+
+# Documents
+cups-pdf
+simple-scan
+evince
+system-config-printer
+
+# Communication
+icedove
+iceowl-extension
+pidgin
+pidgin-skype
+pidgin-encryption
+
+# Media
+vlc
+audacity
+brasero
+
+# Graphics
+flashplugin-nonfree
+
+# Audio
+alsa-utils
+pulseaudio-utils
+pulseaudio-module-bluetooth
