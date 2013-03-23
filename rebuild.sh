@@ -1,0 +1,2 @@
+lb clean
+lb build
