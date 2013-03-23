@@ -1,0 +1,220 @@
+#!/bin/bash
+
+################################################################################
+# SETTING UP ERROR HANDLING
+################################################################################
+
+# Exit the script if there are any errors
+set -e
+
+# Declare a stack of commands to run when exiting
+declare -a on_exit_items
+
+pause()
+{
+   read -p "Press [Enter] to continue..."
+}
+
+# Runs a command and logs it
+run()
+{
+   local cmd="$*"
+   echo \# $cmd
+   
+   # Uncomment this line to step through the commands
+   # pause
+   
+   # Comment out this line to test the script
+   eval $cmd
+}
+
+# This function will execute the commands in the stack
+function on_exit()
+{
+   # Iterate down the stack
+   for (( idx=${#on_exit_items[@]}-1; idx>=0; idx-- ))
+   do
+      run "${on_exit_items[idx]}"
+   done
+}
+
+# This function adds a command to the stack
+function add_on_exit()
+{
+    local n=${#on_exit_items[*]}
+    on_exit_items[$n]="$*"
+    if [[ $n -eq 0 ]]; then
+        trap on_exit EXIT
+    fi
+}
+
+################################################################################
+# CHECKING ARGUMENTS
+################################################################################
+
+# Tell the user how to run the script
+argument_error()
+{
+   echo Must supply an existing iso file as an argument:
+   echo $0 \/path\/to\/file.iso
+   exit 1
+}
+
+# Check to make sure an argument was passed in
+if [ -z $1 ]; then argument_error; fi
+
+# Check to make sure the argument was an iso file
+case ${1: -4:4} in
+        *.iso);;
+        *) argument_error;;
+esac
+
+# Check to make sure the iso file exists
+if [ ! -e $1 ]; then argument_error; fi
+
+# Argument is valid
+isofile="$1"
+
+# Check to make sure we are running as root
+if [[ $EUID -ne 0 ]]; then
+   echo "This script must be run as root"
+   exit 1
+fi
+
+################################################################################
+# HELPER FUNCTIONS
+################################################################################
+
+# Makes a directory if it doesn't exist
+# Cleans up on exit if the directory is empty
+md()
+{
+   local d="$1"
+   if [ ! -d $d ]
+   then
+      run mkdir -p $d
+      add_on_exit rmdir --ignore-fail-on-non-empty -v $d
+   fi
+}
+
+# Mounts the filesystem
+# Unmounts on exit
+mnt()
+{
+   local mountoptions="$1"
+   local mountsource="$2"
+   local mountpoint="$3"
+   run mount -v $mountoptions $mountsource $mountpoint
+   add_on_exit umount -v $mountpoint \|\| umount -v -lf $mountpoint
+}
+
+################################################################################
+# MOUNTING THE FILESYSTEM
+################################################################################
+
+# Create the mount points if needed
+md /mnt/iso
+md /mnt/sfs
+md /mnt/iso_ro
+md /mnt/iso_rw
+md /mnt/sfs_ro
+md /mnt/sfs_rw
+
+# Mount the iso file as ro
+mnt "-t iso9660 -o loop,ro" $isofile /mnt/iso_ro
+
+# Mount a rw layer on top of the ro layer
+mnt "-t aufs -o dirs=/mnt/iso_rw=rw:/mnt/iso_ro=ro" aufs /mnt/iso 
+
+# Now we have access to the squashfs filesystem
+filesystem=/mnt/iso/casper/filesystem.squashfs
+new_filesystem=$filesystem.new
+
+# Mount the filesystem as ro
+mnt "-t squashfs -o loop,ro" $filesystem /mnt/sfs_ro
+
+# Mount a rw later on top of the ro layer
+mnt "-t aufs -o dirs=/mnt/sfs_rw=rw:/mnt/sfs_ro=ro" aufs /mnt/sfs
+
+# Now we have the root of the target filesystem
+root=/mnt/sfs
+
+# Enable internet access
+run cp /etc/resolv.conf $root/etc/resolv.conf
+
+# Mount the devices
+mnt "--bind" /dev $root/dev
+mnt "-t proc" none $root/proc
+mnt "-t sysfs" none $root/sys
+mnt "-t devpts" none $root/dev/pts
+
+# Chroot in and startx
+run chroot $root startx || startlxde -- :1
+
+# Execution will not continue until the user exits the chroot
+
+# Unmount the devices
+run umount $root/dev/pts \|\| umount -lf $root/dev/pts
+run umount $root/sys \|\| umount -lf $root/sys
+run umount $root/proc \|\| umount -lf $root/proc
+run umount $root/dev \|\| umount -lf $root/dev
+
+# Cleanup
+run rm -fv $root/etc/resolv.conf
+run rm -fv $root/root/.bash_history
+run rm -fv $root/root/.ssh/known_hosts
+run rm -fv $root/var/cache/apt/archives/*.deb
+run rm -fv $root/var/cache/apt/*.bin
+run rm -fv $root/var/core/*
+run rm -fv $root/var/lib/apt/list/*
+run rm -fv $root/var/lib/apt/list/partial/*
+run rm -fv $root/var/log/*.gz
+run rm -rfv $root/root/.local/share/gvfs-metadata
+run rm -rfv $root/tmp/*
+run rm -rfv $root/usr/share/doc/*
+run rm -rfv $root/usr/share/info/*
+run rm -rfv $root/usr/share/man/*
+run rm -rfv $root/var/cache/apt/archives/partial/*
+run rm -rfv $root/var/tmp/*
+run sync
+
+################################################################################
+# REBUILDING THE ISO
+################################################################################
+
+# Rebuild the manifest
+manifest=/mnt/iso/casper/filesystem.manifest
+run touch $manifest
+run chmod +w $manifest
+run chroot $root dpkg-query -W --showformat=\'\${\$Package} \${Version}\\n\' \> $manifest
+run cp $manifest $manifest-desktop
+run sed -i \'/ubiquity/d\' $manifest-desktop
+run sed -i \'/casper/d\' $manifest-desktop
+
+# Rebuild the squashfs
+run mksquashfs $root $new_filesystem -noappend -b 1048576 -e $root/boot
+
+# Calculate the filesystem size
+size=/mnt/iso/casper/filesystem.size
+run touch $size
+run chmod +w $size
+run printf \$\(du -sx --block-size=1 $root \| cut -f1\) \> $size
+
+# Unmount the filesystem
+run umount -v $root \|\| umount -v -lf $root
+run umount -v /mnt/sfs_ro \|\| umount -v -lf /mnt/sfs_ro
+
+# Move the new filesystem ontop of the old one
+run mv $new_filesystem $filesystem
+
+# Change to the ISO directory
+run cd /mnt/iso
+
+# Calculate md5sums
+run rm md5sum.txt
+run find -type f -print0 \| xargs -0 md5sum \| grep -v isolinux/boot.cat \| tee md5sum.txt
+
+# Build the iso
+run mkdir -p ~/Downloads
+rebuiltisofile=~/Downloads/`date +%m%d%y%H%M`.iso
+run mkisofs -D -r -V \"\$IMAGE_NAME\" -cache-inodes -J -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -o $rebuiltisofile .

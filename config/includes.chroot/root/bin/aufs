@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Tell the user how to run the script
+argument_error()
+{
+   echo Must supply two existing directorys as arguments:
+   echo $0 \/path\/to\/source \/path\/to\/destination
+   exit 1
+}
+
+# Check to make sure the source argument was passed in
+if [ -z $1 ]; then argument_error; fi
+
+# Check to make sure the destination argument was passed in
+if [ -z $2 ]; then argument_error; fi
+
+# Check to make sure the path exists
+if [ ! -e $1 ]; then argument_error; fi
+if [ ! -e $2 ]; then argument_error; fi
+
+# Arguments are valid
+source="$1"
+destination="$2"
+
+# Check to make sure we are running as root
+if [[ $EUID -ne 0 ]]; then
+   echo "This script must be run as root"
+   exit 1
+fi
+
+################################################################################
+
+mount -t aufs -o dirs=$destination=rw:$source=ro aufs $source
+

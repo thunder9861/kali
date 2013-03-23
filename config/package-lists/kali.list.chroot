@@ -169,6 +169,7 @@ nautilus-share
 terminator
 file-roller
 xcompmgr
+xserver-xephyr
 
 # Package Management
 deborphan
@@ -333,3 +334,11 @@ flashplugin-nonfree
 alsa-utils
 pulseaudio-utils
 pulseaudio-module-bluetooth
+
+################################################################################
+# Begin program specific packages
+
+# Aarddict
+python-pyicu
+
+

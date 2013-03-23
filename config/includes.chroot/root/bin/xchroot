@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# Tell the user how to run the script
+argument_error()
+{
+   echo Must supply an existing directory as an argument:
+   echo $0 \/path\/to\/root
+   exit 1
+}
+
+# Check to make sure an argument was passed in
+if [ -z $1 ]; then argument_error; fi
+
+# Check to make sure the path exists
+if [ ! -e $1 ]; then argument_error; fi
+
+# Argument is valid
+root="$1"
+
+# Check to make sure we are running as root
+if [[ $EUID -ne 0 ]]; then
+   echo "This script must be run as root"
+   exit 1
+fi
+
+################################################################################
+
+# Mount the necessary filesystems in the chroot
+mount -v --bind /dev $root/dev
+mount -v -t proc none $root/proc
+mount -v -t sysfs none $root/sys
+mount -v -t devpts none $root/dev/pts
+
+# Copy /etc/resolv.conf for internet connectivity
+cp /etc/resolv.conf $root/etc/resolv.conf
+
+# Start the nested X server
+Xephyr -screen 1024x768 -name KaliChroot -title KaliChroot :1 &
+
+# Chroot in and startx
+chroot $root env DISPLAY=localhost:1 startlxde
+
+# Stop the nested X server
+
+# Remove /etc/resolv.conf
+rm -fv $root/etc/resolv.conf
+touch $root/etc/resolv.conf
+
+# Unmount the filesystems from the chroot
+umount -v $root/dev/pts || umount -v -lf $root/dev/pts
+umount -v $root/sys || umount -v -lf $root/sys
+umount -v $root/proc || umount -v -lf $root/proc
+umount -v $root/dev || umount -v -lf $root/dev
+
