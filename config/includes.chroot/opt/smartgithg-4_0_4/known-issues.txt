@@ -1,0 +1,23 @@
+Known Issues with SmartGit
+==========================
+All Platforms:
+--------------
+* Some accelerators like Del or Backspace should not be used because they prevent
+  the same shortcuts in text fields:
+  https://bugs.eclipse.org/bugs/show_bug.cgi?id=368767
+
+Mac OS X
+--------
+* SmartGit does not react on dock icon clicks because SWT does not support it:
+  https://bugs.eclipse.org/bugs/show_bug.cgi?id=358376
+* When the toolbar is hidden and the full-screen option is toggled, it can
+  become visible again, but remains empty:
+  https://bugs.eclipse.org/bugs/show_bug.cgi?id=392803
+
+Linux
+-----
+* Adding buttons with certain texts (especially Save Stash, Drop Stash, Check Out, 
+  Cherry-Pick) to the toolbar makes the latter very wide:
+  https://bugs.eclipse.org/bugs/show_bug.cgi?id=395296
+  The work-around is to either not include these items or to unselect the
+  "Show text below icon" checkbox in Edit|Customize.

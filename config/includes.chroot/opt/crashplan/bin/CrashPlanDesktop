@@ -1,0 +1,12 @@
+#!/bin/bash 
+
+SCRIPT=$(ls -l $0 | awk '{ print $NF }')
+SCRIPTDIR=$(dirname $SCRIPT)
+TARGETDIR="$SCRIPTDIR/.."
+
+. ${TARGETDIR}/install.vars
+. ${TARGETDIR}/bin/run.conf
+
+cd ${TARGETDIR}
+
+${JAVACOMMON} ${GUI_JAVA_OPTS} -classpath "./lib/com.backup42.desktop.jar:./lang:./skin" com.backup42.desktop.CPDesktop > ${TARGETDIR}/log/ui_output.log 2> ${TARGETDIR}/log/ui_error.log &

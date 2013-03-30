@@ -1,0 +1,290 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="NeoOffice 2.2  (Unix)">
+	<META NAME="CREATED" CONTENT="20080128;10020800">
+	<META NAME="CHANGEDBY" CONTENT="Tony Lindquist">
+	<META NAME="CHANGED" CONTENT="20080128;13271800">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { size: 8.5in 11in; margin-left: 1in; margin-right: 1in; margin-top: 0.5in; margin-bottom: 0.5in }
+		P { margin-bottom: 0.08in }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=5><B>CrashPlan
+Linux release 2008</B></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=5><B>readme</B></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>Thank
+you for trying CrashPlan!  Please send all support questions related
+to our linux release to support@crashplan.com.  This document is
+intended for folks comfortable with the linux command line.  You
+don't have to be an expert, but if the idea of typing green text into
+a black window scares you, close this window now!</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=5><B>System
+Requirements:</B></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>32 or
+64 bit Java 1.5.07+ for service</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>32
+bit Java 1.5.07+ or greater must be installed (for desktop)</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>You
+can verify java is installed correctly and meets our version
+requirements by typing:</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT COLOR="#053166"><FONT COLOR="#000000">
+</FONT><FONT FACE="Courier"><FONT SIZE=4><B>java -version</B></FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>You
+should see something like:</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT COLOR="#053166"> <FONT FACE="Courier"><FONT SIZE=4>Java(TM)
+2 Runtime Environment, Standard Edition (build 1.5.0_12-b04)</FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT COLOR="#053166"> <FONT FACE="Courier"><FONT SIZE=4>Java
+HotSpot(TM) 64-Bit Server VM (build 1.5.0_12-b04, mixed mode)</FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=5><B>Installation:</B></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>Unzip
+our installer in the location of your choosing.  This is the
+installer only.  Where you choose to install the actual application
+will be decided by you when you run the installer.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT COLOR="#053166"> <FONT FACE="Courier"><FONT SIZE=4><B>cd
+/mypreferred/installer/location</B></FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT COLOR="#053166"> <FONT FACE="Courier"><FONT SIZE=4><B>tar
+-zxf CrashPlan_2008-mm-dd.tgz</B></FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>Wondering
+where your preferred install location should be?  If you're only
+intending on backing up your data in your home folder, go ahead and
+install it in your home folder.  Backing up the entire system? 
+Install it where your other optional software goes.  This is
+typically in <B>/opt/ </B>or <B>/usr/local/</B>.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=5><B>What
+is this stuff I just unzipped?</B></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>There
+are two parts to CrashPlan:</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT COLOR="#053166"><FONT FACE="Courier"><FONT SIZE=4><B>CrashPlanEngine</B></FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT COLOR="#053166"><FONT FACE="Courier"><FONT SIZE=4><B>CrashPlanDesktop</B></FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>The
+Engine is the service that does the actual work of backing up.  If
+it's not running, you're not being backed up.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>The
+Desktop is a GUI that allows you to easily configure the engine,
+display status, and conduct restores.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=5><B>Install!</B></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>It is
+very important to install CrashPlanEngine using an account that has
+read permissions for (or access to) the files you want to back up. 
+Are you only intending to backup your own directory?  Then installing
+the software with your permissions is fine.  Want to back up someone
+else's directory or system files?  Make sure to install the engine as
+root.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>First,
+go to the directory where you untarred the installer:</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT COLOR="#053166"><FONT FACE="Courier"><FONT SIZE=4><B>cd
+/mypreferred/installer/location</B></FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>Then,
+install the software with the permissions you prefer:</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>Installing
+engine with your permissions:</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT COLOR="#053166">  <FONT FACE="Courier"><FONT SIZE=4><B>./install.sh
+</B></FONT></FONT></FONT>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4><FONT FACE="Courier"><FONT SIZE=4>Installing</FONT></FONT>
+engine with root permissions:</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT COLOR="#053166">  <FONT FACE="Courier"><FONT SIZE=4><B>sudo
+./install.sh</B></FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>You
+will be asked a series of questions about where to install the base
+software and the GUI executable.  If you like the default
+suggestions, just hit Enter to accept them.  If you prefer other
+choices, type in your own.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>Once
+the installation is complete, the engine should automatically be
+running in the background, and you should be good to go.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=5><B>Your
+first backup:</B></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>The
+gui client is always run with your permissions so go ahead and start
+it up after the engine is started:</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT COLOR="#053166"> 
+<FONT FACE="Courier"><FONT SIZE=4><B>/usr/local/bin/CrashPlanDesktop</B></FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>That's
+it!  Create an account in CrashPlan, configure backup file selection,
+and push start.  You're all set.  Please note you can quit the UI at
+any time.  It's not actually doing the backup, it's only doing the
+configuration.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=5><B>Captain's
+Log:</B></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>All
+kinds of useful information is in the crashplan/log folder.  Files
+ending in .0 are newest, .1 oldest.  Entriest older than .0 or .1 are
+thrown away.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT COLOR="#053166">  <FONT FACE="Courier"><FONT SIZE=4><B>history.log		</B>
+ Summary log of what CrashPlanEngine has been up to</FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT COLOR="#053166">  <FONT FACE="Courier"><FONT SIZE=4><B>service.log		</B>
+ A very detailed log of CrashPlanEngine's activities</FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT COLOR="#053166"> 
+<FONT FACE="Courier"><FONT SIZE=4><B>backup_files.log</B>  A list of
+files that were backed up when they're backed up</FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT COLOR="#053166"> 
+<FONT FACE="Courier"><FONT SIZE=4><B>restore_files.log</B> A list of
+files that were restored and any problems encountered</FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=5><B>Remote
+GUI Config of CrashPlan on a shell account:</B></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>What
+if you have a remote shell account on a box that has SSH access, but
+no X windows interface or GUI?  We're going to show you how to attach
+your local desktop CrashPlan UI to the remote CrashPlanEngine on a
+remote box.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>We'll
+do this by using SSH to forward local traffic to the GUI control port
+of the service on the remote machine.  </FONT></FONT>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>Step
+1.  Install &amp; start engine on host 1.2.3.4 (this is the far away
+text only server)</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>Step
+2.  Install CrashPlan on your local desktop.  (Mac, Windows, Linux,
+doesn't matter)</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>Step
+3.  In the CrashPlan folder of your local install, there is a folder
+called &quot;conf&quot;, edit the file called my.ui.properties.  Add
+this as a new line at the bottom of the file and save it.  <FONT FACE="Courier"><FONT SIZE=4>Shut
+down the GUI, and add this as a new line at the bottom of the file
+and save it. (If you are running a CrashPlanPROe blue client,
+substitute </FONT></FONT><FONT COLOR="#053166"><FONT FACE="Courier"><FONT SIZE=4><B>4283</B></FONT></FONT></FONT><FONT FACE="Courier"><FONT SIZE=4>
+for </FONT></FONT><FONT COLOR="#053166"><FONT FACE="Courier"><FONT SIZE=4><B>4200</B></FONT></FONT></FONT><FONT FACE="Courier"><FONT SIZE=4>
+in the commands below.)</FONT></FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT COLOR="#053166"><FONT FACE="Courier"><FONT SIZE=4><B>		servicePort=4200</B></FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>Step
+4.  We need to forward port 4200 locally to our remote server using
+SSH.  Type this in terminal:</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT COLOR="#053166"><FONT FACE="Courier"><FONT SIZE=4><FONT COLOR="#000000">	</FONT><FONT COLOR="#000000"><B>	</B></FONT><B>ssh
+-L 4200:localhost:4243 </B><A HREF="mailto:yourusername@1.2.3.4"></A><A HREF="mailto:yourusername@1.2.3.4"></A><A HREF="mailto:yourusername@1.2.3.4"><SPAN STYLE="text-decoration: none"><B>yourusername@1.2.3.4</B></SPAN></A><A HREF="mailto:yourusername@1.2.3.4"></A><A HREF="mailto:yourusername@1.2.3.4"></A></FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>Step
+5.  Run your CrashPlan UI.  You're now connected to remote
+CrashPlanEngine and can configure it at will.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in">  
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>Step
+6.  (optional) Pointing your UI back to local crashplan.  Edit the
+&quot;my.ui.properties&quot; and comment out the servicePort change
+by putting a &quot;#&quot; in front and saving it.  That's it!  Next
+time you use UI it will connect to your local CrashPlan again.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT COLOR="#053166"><FONT FACE="Courier"><FONT SIZE=4><FONT COLOR="#000000">		</FONT><B>#servicePort=4200</B></FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=5><B>FAQ:</B></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4><B>What
+if I don't want to use the UI?</B></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>Most
+settings can be changed by editing the conf/my.service.xml.  Make
+sure you restart the engine after making changes for them to take
+affect.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4><B>Can
+I restore without the UI?</B></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>No,
+not yet.  It's on our to do list.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4><B>Is
+it a bad idea to run the CrashPlanEngine as root?</B></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>There
+are basic risks associated with it.  These are the same as any
+service running as root.  Because the engine is written in java, it
+is immune to buffer overflows, a common exploit for poorly written C
+code.  You should be aware that any desktop client connecting has
+&quot;permission&quot; to select any file and back it up.  Therefore, you
+should &quot;require&quot; authentication each time the UI is run. 
+This is in the &quot;settings/security&quot; part of CrashPlan UI.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4><B>What
+ports does CrashPlan use?</B></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>OUTBOUND
+TCP 443 outbound to talk to our servers.  (Account creation, dynamic
+dns, etc.)</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>LISTENING
+TCP 4242 when talking to another CrashPlan instance for backup</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>LISTENING
+TCP 4243 on localhost only.  This is what the CrashPlanDesktop uses
+to talk to the CrashPlanBackupEngine. <FONT FACE="Courier"><FONT SIZE=4>(4283
+for CrashPlanPROe blue clients)</FONT></FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4><B>What
+if I don't want to depend on your server?</B></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>Run
+our CrashPlan PROe Server product.  It's free and available at
+http://www.crashplan.com/business/download.vtl</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4><B>Why
+doesn't it do XYZ?</B></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>Because
+you haven't sent an e-mail to support@crashplan.com requesting
+feature XYZ</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4><B>What
+about my other questions?</B></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Courier"><FONT SIZE=4>Send
+us an e-mail at support@crashplan.com</FONT></FONT></P>
+</BODY>
+</HTML>

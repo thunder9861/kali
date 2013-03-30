@@ -1,0 +1,6 @@
+-Xms128m
+-Xmx800m
+-XX:MaxPermSize=350m
+-XX:ReservedCodeCacheSize=64m
+-XX:+UseCodeCacheFlushing
+-ea

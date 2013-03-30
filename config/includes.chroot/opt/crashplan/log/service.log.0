@@ -1,0 +1,433 @@
+[03.30.13 04:05:33.365 INFO    main                 com.backup42.service.CPService          ] *************************************************************
+[03.30.13 04:05:33.365 INFO    main                 com.backup42.service.CPService          ] *************************************************************
+[03.30.13 04:05:33.365 INFO    main                 com.backup42.service.CPService          ] STARTED CrashPlanService - 127.0.0.1:4243
+[03.30.13 04:05:33.365 INFO    main                 com.backup42.service.CPService          ] CPVERSION = 3.5.2 - 1360908000352 (2013-02-15T06:00:00:352+0000)
+[03.30.13 04:05:33.367 INFO    main                 com.backup42.service.ComputerUniqueId   ] BEGIN GUID assignment
+[03.30.13 04:05:33.368 INFO    main                 com.backup42.service.ComputerUniqueId   ]   No GUID identity file, /root/.crashplan/.identity
+[03.30.13 04:05:33.368 INFO    main                 com.backup42.service.ComputerUniqueId   ]   No GUID identity file, /var/lib/crashplan/.identity
+[03.30.13 04:05:33.373 INFO    main                 com.backup42.service.ComputerUniqueId   ]   GUID created! guid=576916001312523799
+[03.30.13 04:05:33.471 INFO    main                 com.backup42.service.ComputerUniqueId   ] END GUID assignment
+[03.30.13 04:05:33.481 INFO    main                 com.backup42.service.CPService          ] CPGUID = 576916001312523799 from NEW
+[03.30.13 04:05:33.481 INFO    main                 com.code42.utils.SystemProperties       ] OS=Linux (3.7-trunk-686-pae, i386)
+[03.30.13 04:05:33.481 INFO    main                 com.code42.utils.SystemProperties       ] JVM=OpenJDK Runtime Environment (1.6.0_24-b24, 32-bit)
+[03.30.13 04:05:33.481 INFO    main                 com.backup42.service.CPService          ] Locale = English
+[03.30.13 04:05:33.481 INFO    main                 com.backup42.service.CPService          ] OrgType = CONSUMER
+[03.30.13 04:05:33.504 INFO    main                 com.backup42.service.CPService          ] JavaOptions = [-Dfile.encoding=UTF-8, -Dapp=CrashPlanService, -DappBaseName=CrashPlan, -Xms20m, -Xmx512m, -Djava.net.preferIPv4Stack=true, -Dsun.net.inetaddr.ttl=300, -Dnetworkaddress.cache.ttl=300, -Dsun.net.inetaddr.negative.ttl=0, -Dnetworkaddress.cache.negative.ttl=0, -Dc42.native.md5.enabled=false]
+[03.30.13 04:05:33.504 INFO    main                 com.backup42.service.CPService          ] ARGS = [  ]
+[03.30.13 04:05:33.504 INFO    main                 com.backup42.service.CPService          ] AuthorityLocation@5612344[ location=central.crashplan.com:443, hideAddress=false ]
+[03.30.13 04:05:33.504 INFO    main                 com.backup42.service.CPService          ] 
+Custom Native Library Paths:
+  * .
+  * lib
+  java.library.path=/usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/server:/usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386:/usr/lib/jvm/java-6-openjdk-i386/jre/../lib/i386:/usr/java/packages/lib/i386:/usr/lib/i386-linux-gnu/jni:/lib/i386-linux-gnu:/usr/lib/i386-linux-gnu:/usr/lib/jni:/lib:/usr/lib:/opt/crashplan/.:/opt/crashplan/lib  jna.library.path=/opt/crashplan/.:/opt/crashplan/lib
+[03.30.13 04:05:33.505 INFO    main                 com.code42.lang.ClassPathHacker         ] SystemClassLoader URLs: [file:/opt/crashplan/lib/com.backup42.desktop.jar, file:/opt/crashplan/lang/]
+[03.30.13 04:05:33.583 INFO    main                 com.code42.logging.AppLogWriter         ] WRITE app.log in 76ms
+[03.30.13 04:05:33.583 INFO    main                 com.backup42.service.CPService          ] *** PROGRAM ARGUMENT PROPERTIES ***
+[03.30.13 04:05:33.583 INFO    main                 com.backup42.service.CPService          ] **** START: SYSTEM PROPERTIES ****
+[03.30.13 04:05:33.584 INFO    main                 com.backup42.service.CPService          ] app=CrashPlanService
+[03.30.13 04:05:33.584 INFO    main                 com.backup42.service.CPService          ] appBaseName=CrashPlan
+[03.30.13 04:05:33.584 INFO    main                 com.backup42.service.CPService          ] c42.native.md5.enabled=false
+[03.30.13 04:05:33.584 INFO    main                 com.backup42.service.CPService          ] file.encoding=UTF-8
+[03.30.13 04:05:33.584 INFO    main                 com.backup42.service.CPService          ] file.encoding.pkg=sun.io
+[03.30.13 04:05:33.584 INFO    main                 com.backup42.service.CPService          ] file.separator=/
+[03.30.13 04:05:33.584 INFO    main                 com.backup42.service.CPService          ] java.awt.graphicsenv=sun.awt.X11GraphicsEnvironment
+[03.30.13 04:05:33.584 INFO    main                 com.backup42.service.CPService          ] java.awt.printerjob=sun.print.PSPrinterJob
+[03.30.13 04:05:33.584 INFO    main                 com.backup42.service.CPService          ] java.class.path=/opt/crashplan/lib/com.backup42.desktop.jar:/opt/crashplan/lang
+[03.30.13 04:05:33.584 INFO    main                 com.backup42.service.CPService          ] java.class.version=50.0
+[03.30.13 04:05:33.584 INFO    main                 com.backup42.service.CPService          ] java.endorsed.dirs=/usr/lib/jvm/java-6-openjdk-i386/jre/lib/endorsed
+[03.30.13 04:05:33.585 INFO    main                 com.backup42.service.CPService          ] java.ext.dirs=/usr/lib/jvm/java-6-openjdk-i386/jre/lib/ext:/usr/java/packages/lib/ext
+[03.30.13 04:05:33.585 INFO    main                 com.backup42.service.CPService          ] java.home=/usr/lib/jvm/java-6-openjdk-i386/jre
+[03.30.13 04:05:33.585 INFO    main                 com.backup42.service.CPService          ] java.io.tmpdir=/tmp
+[03.30.13 04:05:33.587 INFO    main                 com.backup42.service.CPService          ] java.library.path=/usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/server:/usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386:/usr/lib/jvm/java-6-openjdk-i386/jre/../lib/i386:/usr/java/packages/lib/i386:/usr/lib/i386-linux-gnu/jni:/lib/i386-linux-gnu:/usr/lib/i386-linux-gnu:/usr/lib/jni:/lib:/usr/lib:/opt/crashplan/.:/opt/crashplan/lib
+[03.30.13 04:05:33.587 INFO    main                 com.backup42.service.CPService          ] java.net.preferIPv4Stack=true
+[03.30.13 04:05:33.587 INFO    main                 com.backup42.service.CPService          ] java.runtime.name=OpenJDK Runtime Environment
+[03.30.13 04:05:33.587 INFO    main                 com.backup42.service.CPService          ] java.runtime.version=1.6.0_24-b24
+[03.30.13 04:05:33.587 INFO    main                 com.backup42.service.CPService          ] java.specification.name=Java Platform API Specification
+[03.30.13 04:05:33.587 INFO    main                 com.backup42.service.CPService          ] java.specification.vendor=Sun Microsystems Inc.
+[03.30.13 04:05:33.587 INFO    main                 com.backup42.service.CPService          ] java.specification.version=1.6
+[03.30.13 04:05:33.587 INFO    main                 com.backup42.service.CPService          ] java.vendor=Sun Microsystems Inc.
+[03.30.13 04:05:33.588 INFO    main                 com.backup42.service.CPService          ] java.vendor.url=http://java.sun.com/
+[03.30.13 04:05:33.588 INFO    main                 com.backup42.service.CPService          ] java.vendor.url.bug=http://java.sun.com/cgi-bin/bugreport.cgi
+[03.30.13 04:05:33.588 INFO    main                 com.backup42.service.CPService          ] java.version=1.6.0_24
+[03.30.13 04:05:33.588 INFO    main                 com.backup42.service.CPService          ] java.vm.info=mixed mode
+[03.30.13 04:05:33.588 INFO    main                 com.backup42.service.CPService          ] java.vm.name=OpenJDK Server VM
+[03.30.13 04:05:33.588 INFO    main                 com.backup42.service.CPService          ] java.vm.specification.name=Java Virtual Machine Specification
+[03.30.13 04:05:33.588 INFO    main                 com.backup42.service.CPService          ] java.vm.specification.vendor=Sun Microsystems Inc.
+[03.30.13 04:05:33.588 INFO    main                 com.backup42.service.CPService          ] java.vm.specification.version=1.0
+[03.30.13 04:05:33.588 INFO    main                 com.backup42.service.CPService          ] java.vm.vendor=Sun Microsystems Inc.
+[03.30.13 04:05:33.588 INFO    main                 com.backup42.service.CPService          ] java.vm.version=20.0-b12
+[03.30.13 04:05:33.588 INFO    main                 com.backup42.service.CPService          ] javax.xml.parsers.DocumentBuilderFactory=com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl
+[03.30.13 04:05:33.588 INFO    main                 com.backup42.service.CPService          ] jna.library.path=/opt/crashplan/.:/opt/crashplan/lib
+[03.30.13 04:05:33.588 INFO    main                 com.backup42.service.CPService          ] line.separator=
+
+[03.30.13 04:05:33.588 INFO    main                 com.backup42.service.CPService          ] networkaddress.cache.negative.ttl=0
+[03.30.13 04:05:33.588 INFO    main                 com.backup42.service.CPService          ] networkaddress.cache.ttl=300
+[03.30.13 04:05:33.589 INFO    main                 com.backup42.service.CPService          ] os.arch=i386
+[03.30.13 04:05:33.589 INFO    main                 com.backup42.service.CPService          ] os.name=Linux
+[03.30.13 04:05:33.589 INFO    main                 com.backup42.service.CPService          ] os.version=3.7-trunk-686-pae
+[03.30.13 04:05:33.589 INFO    main                 com.backup42.service.CPService          ] path.separator=:
+[03.30.13 04:05:33.589 INFO    main                 com.backup42.service.CPService          ] sun.arch.data.model=32
+[03.30.13 04:05:33.589 INFO    main                 com.backup42.service.CPService          ] sun.boot.class.path=/usr/lib/jvm/java-6-openjdk-i386/jre/lib/resources.jar:/usr/lib/jvm/java-6-openjdk-i386/jre/lib/rt.jar:/usr/lib/jvm/java-6-openjdk-i386/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-6-openjdk-i386/jre/lib/jsse.jar:/usr/lib/jvm/java-6-openjdk-i386/jre/lib/jce.jar:/usr/lib/jvm/java-6-openjdk-i386/jre/lib/charsets.jar:/usr/lib/jvm/java-6-openjdk-i386/jre/lib/netx.jar:/usr/lib/jvm/java-6-openjdk-i386/jre/lib/plugin.jar:/usr/lib/jvm/java-6-openjdk-i386/jre/lib/rhino.jar:/usr/lib/jvm/java-6-openjdk-i386/jre/lib/modules/jdk.boot.jar:/usr/lib/jvm/java-6-openjdk-i386/jre/classes
+[03.30.13 04:05:33.589 INFO    main                 com.backup42.service.CPService          ] sun.boot.library.path=/usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386
+[03.30.13 04:05:33.589 INFO    main                 com.backup42.service.CPService          ] sun.cpu.endian=little
+[03.30.13 04:05:33.589 INFO    main                 com.backup42.service.CPService          ] sun.cpu.isalist=
+[03.30.13 04:05:33.589 INFO    main                 com.backup42.service.CPService          ] sun.io.unicode.encoding=UnicodeLittle
+[03.30.13 04:05:33.589 INFO    main                 com.backup42.service.CPService          ] sun.java.command=com.backup42.service.CPService
+[03.30.13 04:05:33.589 INFO    main                 com.backup42.service.CPService          ] sun.java.launcher=SUN_STANDARD
+[03.30.13 04:05:33.589 INFO    main                 com.backup42.service.CPService          ] sun.jnu.encoding=UTF-8
+[03.30.13 04:05:33.589 INFO    main                 com.backup42.service.CPService          ] sun.management.compiler=HotSpot Tiered Compilers
+[03.30.13 04:05:33.589 INFO    main                 com.backup42.service.CPService          ] sun.net.inetaddr.negative.ttl=0
+[03.30.13 04:05:33.590 INFO    main                 com.backup42.service.CPService          ] sun.net.inetaddr.ttl=300
+[03.30.13 04:05:33.590 INFO    main                 com.backup42.service.CPService          ] sun.os.patch.level=unknown
+[03.30.13 04:05:33.590 INFO    main                 com.backup42.service.CPService          ] user.country=US
+[03.30.13 04:05:33.590 INFO    main                 com.backup42.service.CPService          ] user.dir=/opt/crashplan
+[03.30.13 04:05:33.590 INFO    main                 com.backup42.service.CPService          ] user.home=/root
+[03.30.13 04:05:33.590 INFO    main                 com.backup42.service.CPService          ] user.language=en
+[03.30.13 04:05:33.590 INFO    main                 com.backup42.service.CPService          ] user.name=root
+[03.30.13 04:05:33.590 INFO    main                 com.backup42.service.CPService          ] user.timezone=Etc/UTC
+[03.30.13 04:05:33.590 INFO    main                 com.backup42.service.CPService          ] Locale.getDefault()=en
+[03.30.13 04:05:33.590 INFO    main                 com.backup42.service.CPService          ] Charset.defaultCharset()=UTF-8
+[03.30.13 04:05:33.590 INFO    main                 com.backup42.service.CPService          ] **** END: SYSTEM PROPERTIES ****
+[03.30.13 04:05:33.590 INFO    main                 com.code42.xml.XmlTool                  ] XmlTool.factory=com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl@b754b2
+[03.30.13 04:05:33.590 INFO    main                 com.backup42.service.CPService          ] **** LOAD MODEL ****
+[03.30.13 04:05:33.632 INFO    main                 com.backup42.service.CPService          ] Model valid for GUID 576916001312523799
+[03.30.13 04:05:33.633 INFO    main                 com.backup42.service.CPService          ] Completing deferred config upgrade.
+[03.30.13 04:05:34.066 INFO    main                 com.backup42.service.CPService          ] GUID is 576916001312523799
+[03.30.13 04:05:34.066 INFO    main                 com.backup42.service.CPService          ] NOT AUTHORIZED 
+[03.30.13 04:05:34.067 INFO    main                 com.backup42.service.ComputerUniqueId   ] ComputerUniqueId.guid=576916001312523799
+[03.30.13 04:05:34.067 INFO    main                 com.backup42.service.ComputerUniqueId   ] ComputerUniqueId.authDate=null
+[03.30.13 04:05:34.067 INFO    main                 com.backup42.service.ComputerUniqueId   ] ComputerUniqueId.username=null
+[03.30.13 04:05:34.067 INFO    main                 com.backup42.service.ComputerUniqueId   ] ComputerUniqueId.securityKeyType=AccountPassword
+[03.30.13 04:05:34.067 INFO    main                 com.backup42.service.ComputerUniqueId   ] ComputerUniqueId.orgName=null
+[03.30.13 04:05:34.067 INFO    main                 com.backup42.service.ComputerUniqueId   ] ComputerUniqueId.orgType=CONSUMER
+[03.30.13 04:05:34.067 INFO    main                 com.backup42.service.ComputerUniqueId   ] ComputerUniqueId.origin=NEW
+[03.30.13 04:05:34.068 INFO    main                 com.backup42.service.model.ServiceModel ] ServiceModel.authenticated=false
+[03.30.13 04:05:34.068 INFO    main                 com.backup42.service.model.ServiceModel ] ServiceModel.authorized=false
+[03.30.13 04:05:34.068 INFO    main                 com.backup42.service.model.ServiceModel ] ServiceModel.license=null
+[03.30.13 04:05:34.068 INFO    main                 com.backup42.service.model.ServiceModel ] ServiceModel.password=null
+[03.30.13 04:05:34.068 INFO    main                 com.backup42.service.model.ServiceModel ] ServiceModel.modelFilename=conf/service.model
+[03.30.13 04:05:34.068 INFO    main                 com.backup42.service.model.ServiceModel ] ServiceModel.loginKeyPrimaryFilename=conf/service.login
+[03.30.13 04:05:34.068 INFO    main                 com.backup42.service.model.ServiceModel ] ServiceModel.loginKey=null
+[03.30.13 04:05:34.068 INFO    main                 com.backup42.service.model.ServiceModel ] ServiceModel.historyLocale=null
+[03.30.13 04:05:34.068 INFO    main                 com.backup42.service.model.ServiceModel ] ServiceModel.loginDeferred=false
+[03.30.13 04:05:34.068 INFO    main                 com.backup42.service.model.ServiceModel ] ServiceModel.senderEmail=null
+[03.30.13 04:05:34.068 INFO    main                 com.backup42.service.model.ServiceModel ] ServiceModel.authRules=null
+[03.30.13 04:05:34.068 INFO    main                 com.backup42.service.model.ServiceModel ] ServiceModel.authorityVersion=null
+[03.30.13 04:05:34.068 INFO    main                 com.backup42.service.model.ServiceModel ] ServiceModel.patchesExist=false
+[03.30.13 04:05:34.069 INFO    main                 ackup42.service.model.SocialNetworkModel] SocialNetworkModel.computer(ME)=Computer@327293100[guid=576916001312523799, name=kali, fullAddress=0.0.0.0:4242, publicAddress=null, userId=0, self, own, connected ]
+[03.30.13 04:05:34.069 INFO    main                 ackup42.service.model.SocialNetworkModel] SocialNetworkModel.computer(CPC)=Computer@-721527617[guid=42, PLACEHOLDER, name=CrashPlan Central, authorityGuid=4200, fullAddress=central.crashplan.com:443, publicAddress=null, userId=1, cpc, host, availableTarget, disconnected ]
+[03.30.13 04:05:34.069 INFO    main                 ackup42.service.model.SocialNetworkModel] SocialNetworkModel.user=User@-816010487[ userId=0, name=null, username=null ]
+[03.30.13 04:05:34.069 INFO    main                 ackup42.service.model.SocialNetworkModel] SocialNetworkModel.user=User@2030453136[ userId=1, name=CrashPlan Central, username=support@crashplan.com ]
+[03.30.13 04:05:34.069 INFO    main                 com.backup42.service.model.AppState     ] AppState.reauthorizeInterval=86400000
+[03.30.13 04:05:34.069 INFO    main                 com.backup42.service.model.AppState     ] AppState.sleepMinutes=0
+[03.30.13 04:05:34.069 INFO    main                 com.backup42.service.model.AppState     ] AppState.firstRun=true
+[03.30.13 04:05:34.069 INFO    main                 com.backup42.service.model.AlertModel   ] AlertModel.newAlert=false
+[03.30.13 04:05:34.069 INFO    main                 com.backup42.service.model.AlertModel   ] AlertModel.newDesktopAlert=false
+[03.30.13 04:05:34.070 INFO    main                 m.backup42.service.model.RestoreJobQueue] RestoreJobQueue=EMPTY
+[03.30.13 04:05:34.095 INFO    main                 m.backup42.service.history.HistoryLogger] HISTORY:: CrashPlan started
+[03.30.13 04:05:34.133 INFO    main                 com.code42.config.AConfig               ] CONFIG XML:
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<config id="service" modified="2013-03-30T04:05:34:096+0000" version="3">
+  <configDateMs nil="true"/>
+  <installVersion>1360908000352</installVersion>
+  <logPropertiesFile>conf/my.log.properties</logPropertiesFile>
+  <serviceLog>
+    <fileHandler append="true" count="2" level="ALL" limit="26214400" pattern="log/service.log"/>
+  </serviceLog>
+  <serviceErrorInterval>3600000</serviceErrorInterval>
+  <historyLog>
+    <fileHandler append="true" count="10" level="ALL" limit="512000" pattern="/opt/crashplan/log/history.log"/>
+  </historyLog>
+  <userIdleDelay>900000</userIdleDelay>
+  <orgType>CONSUMER</orgType>
+  <systrayOnStartup>true</systrayOnStartup>
+  <location>0.0.0.0:4242</location>
+  <helpNovice>STILL_RUNNING</helpNovice>
+  <userHome nil="true"/>
+  <windowsPriorityClass>NORMAL</windowsPriorityClass>
+  <windowsPriorityBoost>false</windowsPriorityBoost>
+  <macIOPriority>IOPOL_THROTTLE</macIOPriority>
+  <javaMemoryHeapMax>512m</javaMemoryHeapMax>
+  <serviceUIConfig>
+    <serviceHost>127.0.0.1</serviceHost>
+    <servicePort>4243</servicePort>
+    <connectCheck>0</connectCheck>
+    <showFullFilePath>false</showFullFilePath>
+    <autoLoginPasswordHash nil="true"/>
+    <autoLogin>true</autoLogin>
+    <locale nil="true"/>
+  </serviceUIConfig>
+  <servicePeerConfig>
+    <authority address="central.crashplan.com:443" hideAddress="false"/>
+    <lastKnownVersion nil="true"/>
+    <upgradeVersion nil="true"/>
+    <upgradePath>upgrade</upgradePath>
+    <upgradeDelay>15000</upgradeDelay>
+    <inboundWorkers>4</inboundWorkers>
+    <securityProviderWorkers>1</securityProviderWorkers>
+    <securityProviderCipherId>0</securityProviderCipherId>
+    <socketSendBufferSize>65536</socketSendBufferSize>
+    <socketReceiveBufferSize>65536</socketReceiveBufferSize>
+    <inboundMessageBufferSize>2097152</inboundMessageBufferSize>
+    <outboundMessageBufferSize>1310720</outboundMessageBufferSize>
+    <siteLocalInboundMessageBufferSize>2097152</siteLocalInboundMessageBufferSize>
+    <siteLocalOutboundMessageBufferSize>2621440</siteLocalOutboundMessageBufferSize>
+    <maxMessageSize>20971520</maxMessageSize>
+    <listenForBackup>true</listenForBackup>
+    <maxConnectAttempts>2</maxConnectAttempts>
+    <portMappingEnabled>true</portMappingEnabled>
+    <useProxy>false</useProxy>
+    <remotePACFileUrl nil="true"/>
+    <centralConfig>
+      <websiteHost nil="true"/>
+      <hideDestinationUsageSetting>false</hideDestinationUsageSetting>
+    </centralConfig>
+  </servicePeerConfig>
+  <serviceBackupConfig>
+    <backupFilesLog>
+      <fileHandler append="true" count="2" level="ALL" limit="26214400" pattern="log/backup_files.log"/>
+    </backupFilesLog>
+    <restoreFilesLog>
+      <fileHandler append="false" count="1" level="ALL" limit="1073741824" pattern="log/restore_files.log"/>
+    </restoreFilesLog>
+    <highBandwidthRate>37.5</highBandwidthRate>
+    <lowBandwidthRate>25.0</lowBandwidthRate>
+    <lanHighBandwidthRate>0.0</lanHighBandwidthRate>
+    <lanLowBandwidthRate>0.0</lanLowBandwidthRate>
+    <wanTcpTrafficClass>2</wanTcpTrafficClass>
+    <lanTcpTrafficClass>0</lanTcpTrafficClass>
+    <tcpNoDelay>true</tcpNoDelay>
+    <notifyDeliveryTime>ANY</notifyDeliveryTime>
+    <warningEmailEnabled>false</warningEmailEnabled>
+    <minutesUntilWarning>4320</minutesUntilWarning>
+    <severeEmailEnabled>false</severeEmailEnabled>
+    <minutesUntilSevere>7200</minutesUntilSevere>
+    <backupStatusEmailEnabled>false</backupStatusEmailEnabled>
+    <backupStatusEmailFreqInMinutes>10080</backupStatusEmailFreqInMinutes>
+    <warningTwitterEnabled>false</warningTwitterEnabled>
+    <warningTwitterAfterMinutes>4320</warningTwitterAfterMinutes>
+    <severeTwitterEnabled>false</severeTwitterEnabled>
+    <severeTwitterAfterMinutes>7200</severeTwitterAfterMinutes>
+    <backupStatusTwitterEnabled>false</backupStatusTwitterEnabled>
+    <backupStatusTwitterFreqInMinutes>1440</backupStatusTwitterFreqInMinutes>
+    <twitterStatusUpdateOptIn>false</twitterStatusUpdateOptIn>
+    <twitterFollowersOptIn>false</twitterFollowersOptIn>
+    <inboundRunWindow>
+      <runWindow always="true" days="SMTWHFS" endTimeOfDay="06:00" startTimeOfDay="01:00"/>
+    </inboundRunWindow>
+    <hiddenFiles>
+      <patternList>
+        <windows/>
+        <macintosh/>
+        <linux/>
+        <solaris/>
+      </patternList>
+    </hiddenFiles>
+    <backupStatus>SAFE</backupStatus>
+    <disableDataPassword>false</disableDataPassword>
+    <networkInterfacesExcluded>
+      <patternList>
+        <windows/>
+        <macintosh/>
+        <linux/>
+        <solaris/>
+      </patternList>
+    </networkInterfacesExcluded>
+    <wirelessNetworksExcluded>
+      <patternList>
+        <windows/>
+        <macintosh/>
+        <linux/>
+        <solaris/>
+      </patternList>
+    </wirelessNetworksExcluded>
+    <minimumBatteryPercent>20</minimumBatteryPercent>
+    <backupConfig>
+      <backupSets>
+        <backupSet id="1">
+          <name>Default</name>
+          <priority>1</priority>
+          <backupPaths>
+            <lastModified>1364616333057</lastModified>
+            <pathset>
+              <paths os="Linux"/>
+            </pathset>
+            <excludeUser>
+              <patternList>
+                <windows/>
+                <macintosh/>
+                <linux/>
+                <solaris/>
+              </patternList>
+            </excludeUser>
+          </backupPaths>
+          <destinations/>
+          <backupRunWindow>
+            <runWindow always="true" days="SMTWHFS" endTimeOfDay="06:00" startTimeOfDay="01:00"/>
+          </backupRunWindow>
+          <backupOpenFiles>true</backupOpenFiles>
+          <compression>ON</compression>
+          <dataDeDupAutoMaxFileSize>1000000000</dataDeDupAutoMaxFileSize>
+          <dataDeDupAutoMaxFileSizeForWan>1000000000</dataDeDupAutoMaxFileSizeForWan>
+          <dataDeDuplication>AUTOMATIC</dataDeDuplication>
+          <encryptionEnabled>true</encryptionEnabled>
+          <scanInterval>86400000</scanInterval>
+          <scanTime>03:00</scanTime>
+          <watchFiles>true</watchFiles>
+          <retentionPolicy>
+            <backupFrequency>900000</backupFrequency>
+            <keepDeleted>true</keepDeleted>
+            <keepDeletedMinutes>10080</keepDeletedMinutes>
+            <lastModified>1364616332871</lastModified>
+            <versionLastNinetyDaysInterval>1440</versionLastNinetyDaysInterval>
+            <versionLastWeekInterval>15</versionLastWeekInterval>
+            <versionLastYearInterval>10080</versionLastYearInterval>
+            <versionPrevYearsInterval>43200</versionPrevYearsInterval>
+          </retentionPolicy>
+        </backupSet>
+      </backupSets>
+      <cachePath>/opt/crashplan/cache</cachePath>
+      <manifestPath>/backup/</manifestPath>
+      <softDeleteOfFiles>false</softDeleteOfFiles>
+      <smallBlockSize>4096</smallBlockSize>
+      <blockSize>32768</blockSize>
+      <largeBlockSize>131072</largeBlockSize>
+      <veryLargeBlockSize>524288</veryLargeBlockSize>
+      <noCompressBlockSize>524288</noCompressBlockSize>
+      <largeFileBytes>10000000</largeFileBytes>
+      <veryLargeFileBytes>1000000000</veryLargeFileBytes>
+      <maintenanceInterval>604800000</maintenanceInterval>
+      <maintenanceLoadWorkerDelay>300000</maintenanceLoadWorkerDelay>
+      <maintenanceLoadWorkerStartupDelay>60000</maintenanceLoadWorkerStartupDelay>
+      <numMaintenanceWorkers>1</numMaintenanceWorkers>
+      <verifyBlocksEnabled>true</verifyBlocksEnabled>
+      <verifyBlocksInterval>2419200000</verifyBlocksInterval>
+      <checksumBlocksEnabled>true</checksumBlocksEnabled>
+      <verifyRestoreEnabled>false</verifyRestoreEnabled>
+      <reduceEnabled>true</reduceEnabled>
+      <scrapPercentAllowed>10</scrapPercentAllowed>
+      <fileChangeCheckInterval>30000</fileChangeCheckInterval>
+      <manualFileChangeCheckInterval>30000</manualFileChangeCheckInterval>
+      <numBackupWorkers>4</numBackupWorkers>
+      <numReplaceWorkers>2</numReplaceWorkers>
+      <numCloseWorkers>10</numCloseWorkers>
+      <idleThrottleRate>80</idleThrottleRate>
+      <activeThrottleRate>20</activeThrottleRate>
+      <checksumIncomingBackupData>true</checksumIncomingBackupData>
+      <checksumIncomingRestoreData>true</checksumIncomingRestoreData>
+      <blockArchiveDataFileSize>4242538496</blockArchiveDataFileSize>
+      <weakBlockCacheLoadFactor>0.8</weakBlockCacheLoadFactor>
+      <strongBlockCacheLoadFactor>0.8</strongBlockCacheLoadFactor>
+      <strongBlockCacheMaxSize>30000</strongBlockCacheMaxSize>
+      <verifyBlocksLoadFactor>0.8</verifyBlocksLoadFactor>
+      <forceFileChannelDuringClose>false</forceFileChannelDuringClose>
+      <noCompressionPatterns>
+        <patternList>
+          <windows/>
+          <macintosh/>
+          <linux/>
+          <solaris/>
+        </patternList>
+      </noCompressionPatterns>
+      <excludeSystem>
+        <patternList>
+          <windows/>
+          <macintosh/>
+          <linux/>
+          <solaris/>
+        </patternList>
+      </excludeSystem>
+      <hostSystemExcludes>
+        <patternList>
+          <windows/>
+          <macintosh/>
+          <linux/>
+          <solaris/>
+        </patternList>
+      </hostSystemExcludes>
+      <manualFileWatchPatterns>
+        <patternList>
+          <windows/>
+          <macintosh/>
+          <linux/>
+          <solaris/>
+        </patternList>
+      </manualFileWatchPatterns>
+    </backupConfig>
+  </serviceBackupConfig>
+  <socialNetworkConfig>
+    <computerConfigs/>
+    <userConfigs/>
+  </socialNetworkConfig>
+</config>
+
+[03.30.13 04:05:34.134 INFO    main                 com.backup42.service.CPService          ] Config: ServiceConfig@20357537[ version=3, configDateMs=null, logPropertiesFile=conf/my.log.properties, serviceLog=FileHandlerParams[pattern = log/service.log, limit = 26214400, count = 2, append = true, level = ALL], historyLog=FileHandlerParams[pattern = /opt/crashplan/log/history.log, limit = 512000, count = 10, append = true, level = ALL], userIdleDelay=900000, orgType=CONSUMER, systrayOnStartup=true, location=0.0.0.0:4242, helpNovice=STILL_RUNNING, licenseFile=null, serviceUI=ServiceUIConfig@28142411[ serviceHost=127.0.0.1, servicePort=4243, connectCheck=0, showFullFilePath=false, autoLogin=true, autoLoginPasswordHash=null, locale=en_US ], servicePeer=ServicePeerConfig@6237616[ authority=AuthorityLocation@5612344[ location=central.crashplan.com:443, hideAddress=false ], lastKnownVer=null, upgradeVersion=null, upgradePath=upgrade, upgradeDelay=15000, inboundWorkers=4, inboundMessageBufferSize=2097152, outboundMessageBufferSize=1310720, siteLocalInboundMessageBufferSize=2097152, siteLocalOutboundMessageBufferSize=2621440, identity=null, listenForBackup=true, maxConnectAttempts=2, portMappingEnabled=true, centralConfig=CentralConfig[websiteHost=null]], serviceBackup=ServiceBackupConfig[backupFilesLog=FileHandlerParams[pattern = log/backup_files.log, limit = 26214400, count = 2, append = true, level = ALL], restoreFilesLog=FileHandlerParams[pattern = log/restore_files.log, limit = 1073741824, count = 1, append = false, level = ALL], highBandwidthRate=37.5, lowBandwidthRate=25.0, lanHighBandwidthRate=0.0, lanLowBandwidthRate=0.0, siteLocalTcpTrafficClass=NORMAL, tcpTrafficClass=NORMAL, tcpNoDelay=true, notifyDeliveryTime=ANY, warningEmailEnabled=false, minutesUntilWarning=4320, severeEmailEnabled=false, minutesUntilSevere=7200, backupStatusEmailEnabled=false, backupStatusEmailFreqInMinutes=10080, warningTwitterEnabled=false, warningTwitterAfterMinutes=4320, severeTwitterEnabled=false, severeTwitterAfterMinutes=7200, backupStatusTwitterEnabled=false, backupStatusTwitterFreqInMinutes=1440, twitterStatusUpdateOptIn=false, twitterFollowersOptIn=false, inboundRunWindow=RunWindow[alwaysRun=true], hiddenFiles=[]; {}, backupStatus=SAFE, disableDataPassword=false, backup=BackupConfig@11576309[activeThrottleRate=20, blockArchiveDataFileSize=4242538496, blockSize=32768, cachePath=/opt/crashplan/cache, checksumBlocksEnabled=true, checksumIncomingBackupData=true, fileChangeCheckInterval=30000, forceFileChannelDuringClose=false, idleThrottleRate=80, largeBlockSize=131072, veryLargeBlockSize=524288, largeFileBytes=10000000, veryLargeFileBytes=1000000000, maintenanceInterval=604800000, maintenanceLoadWorkerDelay=300000, maintenanceLoadWorkerStartupDelay=60000, manifestPath=/backup/, manualFileChangeCheckInterval=30000, noCompressBlockSize=524288, numBackupWorkers=4, numReplaceWorkers=2, reduceEnabled=true, scrapPercentAllowed=10, smallBlockSize=4096, softDeleteOfFiles=false, verifyBlocksEnabled=true, verifyBlocksInterval=2419200000, verifyRestoreEnabled=false]], socialNetwork=SocialNetworkConfig[computers={}, users={}, computerConfigs=ComputerConfigSet@14434757[ map = {}], userConfigs=UserConfigSet@5076660[ map = {}]]]
+[03.30.13 04:05:34.134 INFO    main                 com.backup42.service.CPService          ] *************************************************************
+[03.30.13 04:05:34.139 INFO    main                 com.code42.utils.SystemProperties       ] == MEMORY ; maxMemory=455.10MB, totalMemory=19.20MB, freeMemory=16.10MB, usedMemory=3.10MB
+[03.30.13 04:05:34.140 INFO    main                 com.backup42.service.CPService          ] uid: 0
+[03.30.13 04:05:34.140 INFO    main                 com.backup42.service.CPService          ] gid: 0
+[03.30.13 04:05:34.140 INFO    main                 com.backup42.service.CPService          ] pid: 5009
+[03.30.13 04:05:34.140 INFO    main                 com.backup42.service.CPService          ] open files: cur=4096, max=4096
+[03.30.13 04:05:34.151 INFO    main                 com.code42.crypto.SecureRandomUtil      ] SecureRandom instance CREATED.
+[03.30.13 04:05:34.163 INFO    main                 com.code42.queue.BackgroundWorkQueue    ] BWQ-FileTransfer:: Initialized - numWorkers=1
+[03.30.13 04:05:34.163 INFO    main                 .common.filetransfer.FileTransferService] FT:: initialized - numWorkers=1, growthMaxWorkers=2
+[03.30.13 04:05:34.164 INFO    main                 .common.filetransfer.FileTransferService] FT:: Added module. client-logs -> log
+[03.30.13 04:05:34.172 INFO    main                 com.backup42.service.CPService          ] Generating new transport RSA key pair
+[03.30.13 04:05:35.753 INFO    main                 com.backup42.service.ComputerUniqueId   ] Storing transport key pair - publicKeyChecksum=5312ba5715dc1f322b8461105275db77
+[03.30.13 04:05:35.825 INFO    main                 com.backup42.service.CPService          ] Creating MessageProvider with options=MessageProviderOptions[name = Peer, numWorkers = 4, socketSendBufferSize = 65536, socketReceiveBufferSize = 65536, securityEnabled = true, securityProviderPK = true, numSecurityProviderWorkers = 1, symmetricAlgorithm = AES, siteLocalTrafficClass = 0, trafficClass = 2, tcpNoDelay = true, watchNetworkInterfaces = true, discardMessages = false, inboundMessageBufferSize = 2097152, outboundMessageBufferSize = 1310720, siteLocalInboundMessageBufferSize = 2097152, siteLocalOutboundMessageBufferSize = 2621440, outboundMessageBufferPriorityOverflow = 0, maxMessageSize = 20971520, useProxy = false, localPACFile = conf/service.pac]
+[03.30.13 04:05:35.829 INFO    main                 com.code42.messaging.nio.MessageProvider] MessageProvider(): options=MessageProviderOptions[name = Peer, numWorkers = 4, socketSendBufferSize = 65536, socketReceiveBufferSize = 65536, securityEnabled = true, securityProviderPK = true, numSecurityProviderWorkers = 1, symmetricAlgorithm = AES, siteLocalTrafficClass = 0, trafficClass = 2, tcpNoDelay = true, watchNetworkInterfaces = true, discardMessages = false, inboundMessageBufferSize = 2097152, outboundMessageBufferSize = 1310720, siteLocalInboundMessageBufferSize = 2097152, siteLocalOutboundMessageBufferSize = 2621440, outboundMessageBufferPriorityOverflow = 0, maxMessageSize = 20971520, useProxy = false, localPACFile = conf/service.pac]
+[03.30.13 04:05:35.998 INFO    main                 42.messaging.security.DHBlowfishProvider] DH: Initialized. Done generating algorithm parameters - time(ms)=135
+[03.30.13 04:05:36.007 INFO    main                 com.code42.queue.BackgroundWorkQueue    ] BWQ-Security:: Initialized - numWorkers=1
+[03.30.13 04:05:36.007 INFO    main                 de42.messaging.security.SecurityProvider] SP:: SecurityProvider initialized. protocolVersion=1, symmetricAlgorithm=AES, numWorkers=1
+[03.30.13 04:05:36.007 INFO    main                 com.code42.messaging.nio.MessageProvider] Security provider-Peer: primary=PK, secondary=DH
+[03.30.13 04:05:36.008 INFO    main                 com.code42.messaging.nio.MessageProvider] MessageProvider(): Default Socket settings:
+-------------------------------------------------------
+Socket Details    : Socket[unconnected]
+-------------------------------------------------------
+localPort         : -1
+port              : 0
+receiveBufferSize : 43690
+sendBufferSize    : 8192
+soLinger          : -1
+soTimout          : 0
+trafficClass      : 0
+inetAddress       : null
+keepAlive         : true
+localAddress      : 0.0.0.0/0.0.0.0
+localSocketAddress: null
+OOBInline         : false
+remotSocketAddress: null
+reuseAddress      : true
+TcpNoDelay        : true
+[03.30.13 04:05:36.066 INFO    main                 backup.watcher.ScheduledFileQueueManager] SFQM: Setting manualFileChangeCheckInterval=30000; ScheduledFileQueueManager[, watchPaths = [], delayCheck = false, queues = []]
+[03.30.13 04:05:36.097 INFO    main                 com.code42.messaging.nio.MessageProvider] MessageProvider(): options=MessageProviderOptions[name = UI, numWorkers = 2, socketSendBufferSize = -1, socketReceiveBufferSize = -1, securityEnabled = false, securityProviderPK = true, numSecurityProviderWorkers = 1, symmetricAlgorithm = AES, siteLocalTrafficClass = 0, trafficClass = 0, tcpNoDelay = false, watchNetworkInterfaces = false, discardMessages = false, inboundMessageBufferSize = 0, outboundMessageBufferSize = 0, siteLocalInboundMessageBufferSize = 0, siteLocalOutboundMessageBufferSize = 0, outboundMessageBufferPriorityOverflow = 0, maxMessageSize = 20971520, useProxy = false, localPACFile = null]
+[03.30.13 04:05:36.110 INFO    main                 com.backup42.service.ui.UIController    ] Interface LISTENING on 127.0.0.1:4243
+[03.30.13 04:05:36.112 INFO    main                 p42.service.proxy.ProxyAutoConfigService] PROXY:: STARTED proxy PAC service; file=conf/service.pac, refreshInterval=3600000.
+[03.30.13 04:05:36.114 INFO    main                 .service.upgrade.UpgradeM29CloudExcludes] UpgradeM29CloudExcludes will be applied
+[03.30.13 04:05:36.114 INFO    main                 .service.upgrade.UpgradeM29CloudExcludes] Applying UpgradeM29CloudExcludes
+[03.30.13 04:05:36.200 INFO    main                 .service.upgrade.UpgradeM29CloudExcludes] DONE Applying UpgradeM29CloudExcludes
+[03.30.13 04:05:36.248 INFO    main                 om.backup42.service.upgrade.PatchManager] SKIP applying client upgrades, server didn't give us patches
+[03.30.13 04:05:36.248 INFO    main                 com.backup42.service.CPService          ] Not authorized, skip setting up backup layer.
+[03.30.13 04:05:36.267 INFO    main                 com.code42.queue.BackgroundWorkQueue    ] BWQ-DefaultGroup:: Initialized - numWorkers=1
+[03.30.13 04:05:36.267 INFO    main                 com.code42.queue.BackgroundWorkQueue    ] BWQ-DefaultGroup:: maxWorkers=2
+[03.30.13 04:05:36.271 INFO    main                 com.code42.peer.PeerGroup               ] PG::DefaultGroup listen() location=[576916001312523799@0.0.0.0:4242]
+[03.30.13 04:05:36.271 INFO    main                 com.backup42.service.peer.PeerController] Backup LISTENING on [576916001312523799@0.0.0.0:4242]
+[03.30.13 04:05:36.272 INFO    main                 com.code42.peer.PeerGroup               ] PG::DefaultGroup maxAttempts=2
+[03.30.13 04:05:36.272 INFO    main                 com.backup42.service.peer.PeerController] SocialNetworkModel has changed, updating peers.
+[03.30.13 04:05:36.276 INFO    RPConnWrk-DefaultGro com.code42.peer.RemotePeer              ] RP:: New minRetry=28707, RemotePeer-[guid=42, server=true, state=NEW, mode=HOST, location=central.crashplan.com:443, public=na, transportPbK=null, transportPbKRequestable=true, connecting=0, connected=0, attempts=0, connectActivity=2013-03-30T04:05:36:274, keepAliveSent=0, minRetry=28707, retryDelay=0, reflector=na, #nat=0, session=null]
+[03.30.13 04:05:36.376 INFO    main                 com.backup42.service.peer.PeerController] Attempting to connect to CPC. delay=50
+[03.30.13 04:05:36.476 INFO    main                 com.backup42.service.peer.PeerController]   Failed to connect to CPC after 100ms - RemotePeer-[guid=42, server=true, state=NEW, mode=HOST, location=central.crashplan.com:443, public=na, transportPbK=null, transportPbKRequestable=true, connecting=2013-03-30T04:05:36:276, connected=0, disconnected=2013-03-30T04:05:36:276, attempts=0, connectActivity=2013-03-30T04:05:36:376, keepAliveSent=0, minRetry=28707, retryDelay=0, reflector=na, #nat=0, session=null]
+[03.30.13 04:05:36.477 INFO    main                 ckup42.service.peer.CPCAutoRegisterRetry] Create AutoRegister retry system check...
+[03.30.13 04:05:36.477 INFO    main                 com.backup42.service.CPService          ] Missing vars file; bin/vars.sh
+[03.30.13 04:05:36.478 INFO    main                 com.backup42.service.CPService          ] Written vars file; bin/vars.sh
+[03.30.13 04:05:36.478 INFO    main                 com.backup42.service.CPService          ] CrashPlanService started.
+[03.30.13 04:05:36.478 INFO    main                 com.backup42.service.CPService          ] *************************************************************
+[03.30.13 04:05:36.502 INFO    MQ-Peer-0            com.code42.messaging.Session            ] Session:576916006446351895 setUsingProtoMoverHeaders = true
+[03.30.13 04:05:36.635 WARN    main                 com.code42.net.Network                  ] Unable to get computer's host address!
+[03.30.13 04:05:36.726 INFO    main                 com.code42.logging.AppLogWriter         ] WRITE app.log in 248ms
+[03.30.13 04:05:36.729 INFO    MQ-Peer-1            com.code42.messaging.Session            ] Session:576916006446351895 setUsingProtoMoverHeaders = true
+[03.30.13 04:05:37.235 INFO    MQ-Peer-0            de42.messaging.security.SecurityProvider] SP:: Session secured in 505ms. Session[id=576916006446351895, closed=false, isLocal=false, lat=2013-03-30T04:05:37:235, lrt=2013-03-30T04:05:37:235, lwt=2013-03-30T04:05:37:149, #pending=0, enqueued=true, local=192.168.1.6:60166, remote=50.93.246.53:443, usingProtoHeaders=true, usingEncryptedHeaders=true]
+[03.30.13 04:05:37.531 INFO    MQ-Peer-1            com.code42.peer.IdentifierAgent         ] IdentifierAgent: JOINED to RemotePeer-[guid=42, server=true, state=CONNECTED, mode=HOST, location=central.crashplan.com:443, public=na, transportPbK=null, transportPbKRequestable=true, connecting=2013-03-30T04:05:36:276, connected=2013-03-30T04:05:37:530, attempts=0, connectActivity=2013-03-30T04:05:37:530, keepAliveSent=0, minRetry=0, retryDelay=0, reflector=reflector.crashplan.com:443, #nat=0, session=Session[id=576916006446351895, closed=false, isLocal=false, lat=2013-03-30T04:05:37:530, lrt=2013-03-30T04:05:37:530, lwt=2013-03-30T04:05:37:264, #pending=0, enqueued=true, local=192.168.1.6:60166, remote=50.93.246.53:443, usingProtoHeaders=true, usingEncryptedHeaders=true]]
+[03.30.13 04:05:37.725 INFO    MQ-Peer-2            backup42.common.peer.PeerAgentController] WE have an old version, localVersion=1360908000352 (2013-02-15T06:00:00:352+0000), remoteVersion=1364274000353 (2013-03-26T05:00:00:353+0000), remoteGuid=-5795313247234236037
+[03.30.13 04:06:03.665 WARN    Thread-3             com.code42.net.Network                  ] Unable to get computer's host address!
+[03.30.13 04:06:03.786 INFO    Thread-3             com.code42.logging.AppLogWriter         ] WRITE app.log in 278ms

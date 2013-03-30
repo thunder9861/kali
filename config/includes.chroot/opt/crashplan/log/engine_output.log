@@ -1,0 +1,26 @@
+[03.30.13 04:05:32.440 INFO    main                 root                                    ] Locale changed to English
+[03.30.13 04:05:32.444 INFO    main                 root                                    ] *************************************************************
+[03.30.13 04:05:32.444 INFO    main                 root                                    ] *************************************************************
+[03.30.13 04:05:32.444 INFO    main                 root                                    ] STARTED CrashPlanService
+[03.30.13 04:05:32.458 INFO    main                 root                                    ] CPVERSION = 3.5.2 - 1360908000352 (2013-02-15T06:00:00:352+0000)
+[03.30.13 04:05:32.458 INFO    main                 root                                    ] LOCALE = English
+[03.30.13 04:05:32.459 INFO    main                 root                                    ] ARGS = [  ]
+[03.30.13 04:05:32.459 INFO    main                 root                                    ] *************************************************************
+[03.30.13 04:05:32.607 INFO    main                 root                                    ] Adding shutdown hook.
+[03.30.13 04:05:32.622 INFO    main                 root                                    ] BEGIN Loading Configuration
+[03.30.13 04:05:32.823 WARN    main                 com.code42.utils.UniqueId               ] critical error converting IP address into int
+[03.30.13 04:05:32.874 INFO    main                 root                                    ] BEGIN Copy Custom
+[03.30.13 04:05:32.874 INFO    main                 root                                    ]   Directories: [.Custom, custom, /opt/crashplan/conf/.Custom, /opt/crashplan/conf/custom]
+[03.30.13 04:05:32.874 INFO    main                 root                                    ]   NOT waiting for custom skin to appear
+[03.30.13 04:05:32.874 INFO    main                 root                                    ]   NO customizations found.
+[03.30.13 04:05:32.875 INFO    main                 root                                    ] END Copy Custom
+[03.30.13 04:05:32.875 INFO    main                 root                                    ] CpsFoldersMigrate is not necessary. /opt/crashplan/conf/my.service.xml file does not exists.
+[03.30.13 04:05:32.878 INFO    main                 root                                    ]   Loading from default: /opt/crashplan/conf/default.service.xml
+[03.30.13 04:05:33.055 INFO    main                 root                                    ]   Loading ServiceConfig, newInstall=true, version=3, configDateMs=null, installVersion=1360908000352
+[03.30.13 04:05:33.056 INFO    main                 root                                    ]   OS = Linux
+[03.30.13 04:05:33.057 INFO    main                 root                                    ]   Initializing backup paths last modified to now. lastModified=1
+[03.30.13 04:05:33.282 INFO    main                 root                                    ]   AuthorityLocation@5612344[ location=central.crashplan.com:443, hideAddress=false ]
+[03.30.13 04:05:33.284 INFO    main                 root                                    ]   Checking Java memory heap max.
+[03.30.13 04:05:33.287 INFO    main                 root                                    ]     Save Java memory heap max as 512m
+[03.30.13 04:05:33.357 INFO    main                 root                                    ] END Loading Configuration
+jtux Loaded.

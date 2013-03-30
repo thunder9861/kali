@@ -1,0 +1,331 @@
+{\rtf1\mac\ansicpg10000\cocoartf824\cocoasubrtf480
+{\fonttbl\f0\fmodern\fcharset77 Courier-Bold;\f1\froman\fcharset77 Times-Roman;\f2\fmodern\fcharset77 Courier;
+\f3\froman\fcharset77 Times-Bold;\f4\froman\fcharset77 TimesNewRomanPSMT;}
+{\colortbl;\red255\green255\blue255;\red5\green49\blue102;\red0\green0\blue128;}
+{\info
+{\author Tony Lindquist}}\margl1440\margr1440\margb720\margt720\vieww14700\viewh13100\viewkind0
+\deftab720
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\qc
+
+\f0\b\fs36 \cf0 CrashPlan Linux release 2008\
+\pard\pardeftab720
+\cf0 readme
+\f1\b0\fs24 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f2\fs28 \cf0 \
+\pard\pardeftab720
+\cf0 Thank you for trying CrashPlan!  Please send all support questions related to our linux release to support@crashplan.com.  This document is intended for folks comfortable with the linux command line.  You don't have to be an expert, but if the idea of typing green text into a black window scares you, close this window now!
+\f1\fs24 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f0\b\fs36 \cf0 System Requirements:\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f2\b0\fs28 \cf0 32 or 64 bit Java 1.5.07+ for service\
+\pard\pardeftab720
+\cf0 32 bit Java 1.5.07+ or greater must be installed (for desktop)
+\f1\fs24 \
+\
+
+\f2\fs28 You can verify java is installed correctly and meets our version requirements by typing:
+\f1\fs24 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f2\fs28 \cf2  
+\f0\b java -version
+\f2\b0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+\cf0 \
+\pard\pardeftab720
+\cf0 You should see something like:
+\f1\fs24 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f2\fs28 \cf2  Java(TM) 2 Runtime Environment, Standard Edition (build 1.5.0_12-b04)\
+\pard\pardeftab720
+
+\f1\fs24 \cf0  
+\f2\fs28 Java HotSpot(TM) 64-Bit Server VM (build 1.5.0_12-b04, mixed mode)
+\f1\fs24 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f2\fs28 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f0\b\fs36 \cf0 Installation:\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f2\b0\fs28 \cf0 Unzip our installer in the location of your choosing.  This is the installer only.  Where you choose to install the actual application will be decided by you when you run the installer.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f0\b \cf2  cd /mypreferred/installer/location\
+\pard\pardeftab720
+
+\f1\b0\fs24 \cf0  
+\f0\b\fs28 tar -zxf CrashPlan_2008-mm-dd.tgz
+\f1\b0\fs24 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f2\fs28 \cf0 \
+\pard\pardeftab720
+\cf0 Wondering where your preferred install location should be?  If you're only intending on backing up your data in your home folder, go ahead and install it in your home folder.  Backing up the entire system?  Install it where your other optional software goes.  This is typically in 
+\f0\b /opt/ 
+\f2\b0 or 
+\f0\b /usr/local/
+\f2\b0 .
+\f1\fs24 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f0\b\fs36 \cf0 What is this stuff I just unzipped?\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f2\b0\fs28 \cf0 There are two parts to CrashPlan:\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+\cf2 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f0\b \cf2 CrashPlanEngine\
+\pard\pardeftab720
+\cf0 CrashPlanDesktop
+\f1\b0\fs24 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f2\fs28 \cf0 \
+\pard\pardeftab720
+\cf0 The Engine is the service that does the actual work of backing up.  If it's not running, you're not being backed up.
+\f1\fs24 \
+\
+
+\f2\fs28 The Desktop is a GUI that allows you to easily configure the engine, display status, and conduct restores.
+\f1\fs24 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f0\b\fs36 \cf0 Install!\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f2\b0\fs28 \cf0 It is very important to install CrashPlanEngine using an account that has read permissions for (or access to) the files you want to back up.  Are you only intending to backup your own directory?  Then installing the software with your permissions is fine.  Want to back up someone else's directory or system files?  Make sure to install the engine as root.\
+\pard\pardeftab720
+
+\f1\fs24 \cf0 \
+\pard\pardeftab720
+
+\f2\fs28 \cf0 First, go to the directory where you untarred the installer:
+\f1\fs24 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f0\b\fs28 \cf2 cd /mypreferred/installer/location\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f2\b0 \cf0 \
+\pard\pardeftab720
+\cf0 Then, install the software with the permissions you prefer:
+\f1\fs24 \
+\
+
+\f2\fs28 Installing engine with your permissions:
+\f1\fs24 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f0\b\fs28 \cf2   ./install.sh \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f2\b0 \cf0 \
+\pard\pardeftab720
+\cf0 Installing engine with root permissions:
+\f1\fs24 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f0\b\fs28 \cf2   sudo ./install.sh\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f2\b0 \cf0 \
+\pard\pardeftab720
+\cf0 You will be asked a series of questions about where to install the base software and the GUI executable.  If you like the default suggestions, just hit Enter to accept them.  If you prefer other choices, type in your own.
+\f1\fs24 \
+\
+
+\f2\fs28 Once the installation is complete, the engine should automatically be running in the background, and you should be good to go.
+\f1\fs24 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f0\b\fs36 \cf0 Your first backup:\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f2\b0\fs28 \cf0 The gui client is always run with your permissions so go ahead and start it up after the engine is started:\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f0\b \cf2   /usr/local/bin/CrashPlanDesktop\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f2\b0 \cf0 \
+\pard\pardeftab720
+\cf0 That's it!  Create an account in CrashPlan, configure backup file selection, and push start.  You're all set.  Please note you can quit the UI at any time.  It's not actually doing the backup, it's only doing the configuration.
+\f1\fs24 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f0\b\fs36 \cf0 Captain's Log:\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f2\b0\fs28 \cf0 All kinds of useful information is in the crashplan/log folder.  Files ending in .0 are newest, .1 oldest.  Entriest older than .0 or .1 are thrown away.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+\cf2   
+\f0\b history.log		
+\f2\b0   Summary log of what CrashPlanEngine has been up to\
+\pard\pardeftab720
+
+\f1\fs24 \cf0   
+\f2\fs28 service.log		  A very detailed log of CrashPlanEngine's activities
+\f1\fs24 \
+  
+\f0\b\fs28 backup_files.log
+\f2\b0   A list of files that were backed up when they're backed up
+\f1\fs24 \
+  
+\f2\fs28 restore_files.log A list of files that were restored and any problems encountered
+\f1\fs24 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f2\fs28 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f0\b\fs36 \cf0 Remote GUI Config of CrashPlan on a shell account:\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f2\b0\fs28 \cf0 What if you have a remote shell account on a box that has SSH access, but no X windows interface or GUI?  We're going to show you how to attach your local desktop CrashPlan UI to the remote CrashPlanEngine on a remote box.\
+\pard\pardeftab720
+
+\f1\fs24 \cf0 \
+\pard\pardeftab720
+
+\f2\fs28 \cf0 We'll do this by using SSH to forward local traffic to the GUI control port of the service on the remote machine.  
+\f1\fs24 \
+\
+
+\f2\fs28 Step 1.  Install & start engine on host 1.2.3.4 (this is the far away text only server)
+\f1\fs24 \
+
+\f2\fs28 Step 2.  Install CrashPlan on your local desktop.  (Mac, Windows, Linux, doesn't matter)
+\f1\fs24 \
+
+\f2\fs28 Step 3.  In the CrashPlan folder of your local install, there is a folder called "conf", edit the file called my.ui.properties.  Add this as a new line at the bottom of the file and save it.  Shut down the GUI, and add this as a new line at the bottom of the file and save it. (If you are running a CrashPlanPRO blue client, substitute 
+\f0\b \cf2 4283
+\f2\b0 \cf0  for 
+\f0\b \cf2 4200
+\f2\b0 \cf0  in the commands below.)
+\f1\fs24 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f0\b\fs28 \cf2 		servicePort=4200\
+\pard\pardeftab720
+
+\f1\b0\fs24 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f2\fs28 \cf0 Step 4.  We need to forward port 4200 locally to our remote server using SSH.  Type this in terminal:\
+\pard\pardeftab720
+
+\f1\fs24 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f2\fs28 \cf2  	
+\f0\b 	ssh -L 4200:localhost:4243 {\field{\*\fldinst{HYPERLINK "mailto:yourusername@1.2.3.4"}}{\fldrslt 
+\f3\fs24 \cf3 \ul \ulc0 yourusername@1.2.3.4}}
+\f2\b0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f0\b \cf2 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f2\b0 \cf0 Step 5.  Run your CrashPlan UI.  You're now connected to remote CrashPlanEngine and can configure it at will.\
+\pard\pardeftab720
+
+\f1\fs24 \cf0   \
+\pard\pardeftab720
+
+\f2\fs28 \cf0 Step 6.  (optional) Pointing your UI back to local crashplan.  Edit the "my.ui.properties" and comment out the servicePort change by putting a "#" in front and saving it.  That's it!  Next time you use UI it will connect to your local CrashPlan again.
+\f4\fs24 \
+\pard\pardeftab720
+
+\f1 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f2\fs28 \cf2  		
+\f0\b #servicePort=4200
+\f2\b0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+\cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f0\b\fs36 \cf0 FAQ:\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\fs28 \cf0 What if I don't want to use the UI?\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f2\b0 \cf0 Most settings can be changed by editing the conf/my.service.xml.  Make sure you restart the engine after making changes for them to take affect.\
+\pard\pardeftab720
+
+\f1\fs24 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f0\b\fs28 \cf0 Can I restore without the UI?\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f2\b0 \cf0 No, not yet.  It's on our to do list.\
+\pard\pardeftab720
+
+\f1\fs24 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f0\b\fs28 \cf0 Is it a bad idea to run the CrashPlanEngine as root?\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f2\b0 \cf0 There are basic risks associated with it.  These are the same as any service running as root.  Because the engine is written in java, it is immune to buffer overflows, a common exploit for poorly written C code.  You should be aware that any desktop client connecting has "permission" to select any file and back it up.  Therefore, you should "require" authentication each time the UI is run.  This is in the "settings/security" part of CrashPlan UI.\
+\pard\pardeftab720
+
+\f1\fs24 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f0\b\fs28 \cf0 What ports does CrashPlan use?\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f2\b0 \cf0 OUTBOUND TCP 443 outbound to talk to our servers.  (Account creation, dynamic dns, etc.)\
+\pard\pardeftab720
+\cf0 LISTENING TCP 4242 when talking to another CrashPlan instance for backup
+\f1\fs24 \
+
+\f2\fs28 LISTENING TCP 4243 on localhost only.  This is what the CrashPlanDesktop uses to talk to the CrashPlanBackupEngine. (4283 for CrashPlanPRO blue clients)
+\f1\fs24 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f0\b\fs28 \cf0 What if I don't want to depend on your server?\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f2\b0 \cf0 Run our CrashPlan PROe Server product.  It's free and available at http://www.crashplan.com/business/download.vtl\
+\pard\pardeftab720
+
+\f1\fs24 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f0\b\fs28 \cf0 Why doesn't it do XYZ?\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f2\b0 \cf0 Because you haven't sent an e-mail to support@crashplan.com requesting feature XYZ\
+\pard\pardeftab720
+
+\f1\fs24 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f0\b\fs28 \cf0 What about my other questions?\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720
+
+\f2\b0 \cf0 Send us an e-mail at support@crashplan.com\
+}

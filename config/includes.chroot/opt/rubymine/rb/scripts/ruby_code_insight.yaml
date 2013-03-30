@@ -1,0 +1,8 @@
+class_types:
+  # classes with dynamic type, e.g. builder
+  OpenStruct: :empty
+method_types:
+  Object:
+    tap: :same_as_receiver
+block_variable_types:
+  Object.tap: :same_as_call

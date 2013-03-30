@@ -1,0 +1,175 @@
+#!/bin/bash
+
+#############################################################
+# Init script for CrashPlanEngine
+#############################################################
+
+# Common functions used for startup operations
+standard_startup() {
+
+	echo "Using standard startup"
+	
+	cd $TARGETDIR
+		
+	nice -n 19 $JAVACOMMON $SRV_JAVA_OPTS -classpath $FULL_CP com.backup42.service.CPService > $TARGETDIR/log/engine_output.log 2> $TARGETDIR/log/engine_error.log & 
+	
+	if [[ $! -gt 0 ]]; then
+		echo $! > $PIDFILE
+		echo "OK"
+	else
+		echo "FAIL" 
+		exit 1
+	fi
+}
+
+ubuntu904_startup() {
+
+	echo "Using Ubuntu 9.04 startup"
+	
+	start-stop-daemon -v --pidfile $PIDFILE --make-pidfile --background --chdir $TARGETDIR --start --nicelevel 19 --exec $JAVACOMMON -- $SRV_JAVA_OPTS -classpath $FULL_CP com.backup42.service.CPService > $TARGETDIR/log/engine_output.log 2> $TARGETDIR/log/engine_error.log
+	
+	# This test isn't as useful as one might like; start-stop-daemon can't accurately report the state of child processes when --background is used.
+	# We use this mainly to report the specific error value returned by start-stop-daemon if something goes wrong, but be aware that a return value
+	# of zero may not necessarily indicate successful startup.
+	RV=$?
+	if [[ $RV -eq 0 ]]; then
+		echo "OK"
+	else
+		echo "FAIL, return value: $RV" 
+		exit 1
+	fi
+}
+
+# Ubuntu 9 is not correctly handling the conventional use case for UNIX startup (i.e. invoking our Java app in the background).  Functioning init scripts
+# for Ubuntu 9 seem to rely on start-stop-daemon to correctly execute jobs in the background so we'll do the same if we're dealing with that specific
+# distro and version.
+do_startup() {
+
+	echo -n "Starting $DESC ... "
+
+	# We'll use the LSB utilities to determine what distro and version we're dealing with.  Ubuntu 9 is known
+	# to offer fairly good LSB support so we can say with some degree of certainty that missing LSB binaries
+	# indicates a platform other than Ubuntu 9 or better.		
+    LSB_BIN=`which lsb_release 2> /dev/null`
+
+    # Note that if we don't find lsb_release binary we fail through to the default "false" case (since 
+    # we're definitely not dealing Ubuntu 9 or above)
+    if [[ $? != 0 ]]; then
+		standard_startup
+	else
+	
+    	# Fortunately params for lsb_release are standarized by... well, LSB.
+    	RELEASE_VERSION=`lsb_release -r -s`
+    	RELEASE_VENDOR=`lsb_release -i -s`
+
+		# Don't bother with anything special unless we're dealing with an Ubuntu release    
+    	if [[ $RELEASE_VENDOR != "Ubuntu" ]]; then
+			standard_startup
+		else
+		
+    		# Extract the major and minor version
+    		MAJOR_RELEASE_VERSION=${RELEASE_VERSION%.*}
+    		MINOR_RELEASE_VERSION=${RELEASE_VERSION#*.} 
+    		if [[ $MAJOR_RELEASE_VERSION -eq 9 && $MINOR_RELEASE_VERSION -eq 4 ]]; then
+				ubuntu904_startup
+    		else
+				standard_startup
+    		fi
+    	fi
+    fi
+}
+
+_findpid() {
+	/bin/ps -eo 'pid,cmd'| grep 'app=CrashPlanService' | grep -v grep | awk '{ print $1 }'
+}
+
+SCRIPT=$(ls -l $0 | awk '{ print $NF }')
+SCRIPTDIR=$(dirname $SCRIPT)
+TARGETDIR="$SCRIPTDIR/.."
+
+# Remaining Defaults
+DESC="CrashPlan Engine"
+NAME=CrashPlanEngine
+DAEMON=$TARGETDIR/lib/com.backup42.desktop.jar
+PIDFILE="$TARGETDIR/${NAME}.pid"
+
+if [[ -f $TARGETDIR/install.vars ]]; then
+	. $TARGETDIR/install.vars
+else
+	echo "Did not find $TARGETDIR/install.vars file."
+	exit 1
+fi
+
+if [[ ! -f $DAEMON ]]; then
+	echo "Could not find JAR file $DAEMON"
+	exit 0
+fi
+
+if [[ ${LC_ALL} ]]; then
+	LOCALE=`sed 's/\..*//g' <<< ${LC_ALL}`
+	export LC_ALL="${LOCALE}.UTF-8"
+elif [[ ${LC_CTYPE} ]]; then
+	LOCALE=`sed 's/\..*//g' <<< ${LC_CTYPE}`
+	export LC_CTYPE="${LOCALE}.UTF-8"
+elif [[ ${LANG} ]]; then
+	LOCALE=`sed 's/\..*//g' <<< ${LANG}`
+	export LANG="${LOCALE}.UTF-8"
+else
+	export LANG="en_US.UTF-8"
+fi
+
+if [[ -f $TARGETDIR/bin/run.conf ]]; then
+	. $TARGETDIR/bin/run.conf
+else
+	echo "Did not find $TARGETDIR/bin/run.conf file."
+fi
+
+case $1 in
+	start)
+	
+		FULL_CP="$TARGETDIR/lib/com.backup42.desktop.jar:$TARGETDIR/lang"
+                
+		PID=`_findpid`
+		if [[ -n "$PID" ]]; then
+			echo CrashPlan is already running with pid $PID
+			exit 1;
+		fi
+				
+		do_startup
+		
+		;;
+	stop)
+		echo -n "Stopping $DESC ... "
+		if [[ -f $PIDFILE ]] ; then
+			kill `cat $PIDFILE`
+			sleep 10
+		fi
+		PID=`_findpid`
+		if [[ -n "$PID" ]]; then
+			echo "Still running, killing PID=$PID ... "
+			kill -9 $PID
+		fi
+		rm -f $PIDFILE
+		echo "OK"
+		;;
+	restart|force-reload)
+		echo -n "Restarting $DESC ... "
+		$0 stop
+		sleep 5
+		$0 start
+  		;;
+	status)
+		PID=`_findpid`
+		if [[ -n "$PID" ]]; then
+			echo "$DESC (pid $PID) is running."
+		else
+			echo "$DESC is stopped."
+		fi
+		;;
+	*) 	
+		echo "Usage: $0 <start|stop|restart|force-reload|status>" >&2
+		exit 3
+		;;
+esac
+
+exit 0

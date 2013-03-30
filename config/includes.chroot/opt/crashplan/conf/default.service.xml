@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config id="service" version="3">
+	<orgType>CONSUMER</orgType>
+	<helpNovice>STILL_RUNNING</helpNovice>
+	<servicePeerConfig>
+		<authority address="central.crashplan.com:443"/>
+		<listenForBackup>true</listenForBackup>
+	</servicePeerConfig>
+	<serviceBackupConfig>
+		<highBandwidthRate>37.5</highBandwidthRate>
+		<lowBandwidthRate>25</lowBandwidthRate>
+		<wanTcpTrafficClass>2</wanTcpTrafficClass>
+		<notifyDeliveryTime>ANY</notifyDeliveryTime>
+		<!-- Uncomment to disable the private data password feature. <disableDataPassword>true</disableDataPassword> -->
+		<hiddenFiles/>
+		<backupConfig>
+			<manifestPath>/backup</manifestPath>
+			<excludeSystem/>
+			<noCompressionPatterns/>
+			<manualFileWatchPatterns/>
+			<backupSets>
+				<backupSet id="1">
+					<backupPaths>
+					</backupPaths>
+				</backupSet>
+			</backupSets>
+		</backupConfig>
+	</serviceBackupConfig>
+</config>
