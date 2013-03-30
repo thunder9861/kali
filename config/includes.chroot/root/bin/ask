@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Ask a question
+# $1 = string question
+# Returns the result
+# - 0 = "y" OR "Y"
+# - 1 = anything else
+
+echo -n "$@" '[y/n] '
+read ans
+case "$ans" in
+   y*|Y*) exit 0;;
+   *) exit 1;;
+esac
+

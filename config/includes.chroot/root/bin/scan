@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Scans the network with nmap
+# $1 = string ip address or subnet
+
+nmap -F -PR -sS -O --osscan-guess -sV --version-light $1
+

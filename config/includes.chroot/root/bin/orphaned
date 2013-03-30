@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Returns all orphaned packages
+# No arguments required
+
+deborphan --guess-all
+

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Prints the current internal ip address
+# No arguments needed
+
+ifconfig | grep Bcast | awk '{print $2}' | awk -F":" '{print $2}'
+

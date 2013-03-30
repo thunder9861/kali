@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Returns a list of versions for a package
+# $1 = string package
+
+apt-cache show $1 | grep Version | awk '{print $2}'
+

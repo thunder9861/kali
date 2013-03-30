@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Backs up a file by copying it to this format:
+# filename_timestamp~
+# $1 = filename
+
+cp $1 $1_`date +%y%m%d%H%M%S`~
+

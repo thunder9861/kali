@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Prints a timestamp
+# No arguments required
+
+date +[%m.%d.%y\ %H:%M:%S]
+

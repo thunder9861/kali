@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# Custom ls
+
+ls -BFXoh --group-directories-first --color=auto $1
+

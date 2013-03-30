@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Receives a file
+# $1 = string filename
+
+nc -l -p 65521 -q 0 > $1
+

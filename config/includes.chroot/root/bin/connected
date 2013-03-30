@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Returns 0 if connected to the internet
+ping -c1 www.google.com > /dev/null 2>&1
+

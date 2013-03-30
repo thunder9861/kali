@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Returns the package that provides a command
+# $1 = string command
+
+dpkg --search $(which $1) | cut -d':' -f1
+

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Prints the current mac address of the specified network interface
+# $1 = string interface
+
+ifconfig -a | grep $1 | awk '{print $5}'
+

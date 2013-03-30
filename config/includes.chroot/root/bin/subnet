@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Prints the current subnet range
+# No arguments needed
+
+ip=`ifconfig | grep Bcast | awk '{print $2}' | awk -F":" '{print $2}'`
+echo ${ip%.*}.1-255
+

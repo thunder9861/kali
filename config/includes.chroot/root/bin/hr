@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Prints a horizontal rule
+# $1 = Character to use (defaults to '#')
+
+printf "\\${1:-#}%.0s" {1..80} | tr -d '\\'; echo
+

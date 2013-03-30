@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Starts an ssh session with screen
+# $1 = string user@host
+
+ssh $1 -t -X "screen -dRR -t $1"
+

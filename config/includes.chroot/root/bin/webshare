@@ -1,0 +1,8 @@
+#!/usr/bin/python
+
+# Shares the current directory over the web
+# No arguments required
+
+import SimpleHTTPServer
+SimpleHTTPServer.test()
+

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Returns the requested column
+# $1 = int column
+# This command is intended to be used when piping
+
+perl -ne '@cols = split; print "$cols['$1']\n"'
+

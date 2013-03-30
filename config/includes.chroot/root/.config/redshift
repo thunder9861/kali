@@ -1,0 +1,9 @@
+[redshift]
+temp-day=6500
+temp-night=4300
+location-provider=geoclue
+
+[geoclue]
+name=org.freedesktop.Geoclue.Providers.Hostip
+path=/org/freedesktop/Geoclue/Providers/Hostip
+

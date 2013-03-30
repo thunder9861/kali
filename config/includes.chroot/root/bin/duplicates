@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Shows only duplicate lines in a file
+# $1 = string filename
+# Can also pipe data in
+
+sort $1 | uniq -d
+

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Sort a file by line occurrances
+# $1 = string filename
+# Also works in pipes
+
+cat $1 | sort | uniq -c | sort -n -r | awk '{print $2}'
+

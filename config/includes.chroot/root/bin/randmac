@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Randomizes the mac addresses of all the interfaces
+# No arguments needed
+
+NICS=`ifconfig -a | grep HWaddr | awk '{print $1}'`
+
+for n in $NICS
+do
+   ifconfig $n down
+   macchanger -r $n
+   ifconfig $n up
+
+   # Need to wait a little bit, otherwise the 
+   # random mac's end up being the same.
+   sleep 1
+done
+

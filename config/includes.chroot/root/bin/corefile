@@ -7,7 +7,7 @@
 # %e %p %u %g %h %s
 # See the declaration of the script call here:
 # /etc/sysctl.conf
-# kernel.core_pattern=|/pentest/scripts/core_helper.rb %e %p %u %g %h %s
+# kernel.core_pattern=|/root/bin/corefile %e %p %u %g %h %s
 
 require 'etc'
 require 'digest/md5'

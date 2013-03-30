@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Sorts a file by length
+# $1 = string filename
+# Also works in pipes
+
+awk '{print length, $0}' $1 | sort -n | awk '{print $2}' | uniq
+

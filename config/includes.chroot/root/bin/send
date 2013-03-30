@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Sends a file
+# $1 = string filename
+# $2 = string ip address
+
+nc $2 65521 -q 0 < $1
+

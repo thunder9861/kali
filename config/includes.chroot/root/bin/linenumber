@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Outputs the text with linenumbers
+# $1 = string filename
+# Can also be used in pipes
+
+perl -pe 's/^/$. /' "$@"
+

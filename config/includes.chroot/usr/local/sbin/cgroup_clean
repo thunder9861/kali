@@ -1,0 +1,4 @@
+#!/bin/sh
+if [ "$*" != "/user" ]; then
+   rmdir /dev/cgroup/cpu/$*
+fi

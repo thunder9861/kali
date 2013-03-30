@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Downloads a goo.gl shortened link
+# $1 == string Goo.gl shortened link hash
+# $2 == string filename
+
+wget http://goo.gl/$1 -O $2
+

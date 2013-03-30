@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Lists only subdirectories
+# $1 = string directories
+
+ls -p1 $1 | grep \/ | tr -d '/'
+

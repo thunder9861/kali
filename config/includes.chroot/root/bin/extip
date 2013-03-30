@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Prints the external ip address
+# No arguments required
+
+wget http://checkip.dyndns.org/ -O - -o /dev/null | tr '<' ' ' | awk '{print $11}'
+

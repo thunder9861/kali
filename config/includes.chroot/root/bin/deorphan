@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Removes all orphaned packages
+# No arguments required
+
+deborphan --guess-all | xargs aptitude -y purge
+

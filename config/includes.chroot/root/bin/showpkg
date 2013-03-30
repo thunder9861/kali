@@ -1,0 +1,4 @@
+#!/bin/sh
+
+apt-cache show $1 | less -XFNRMe
+

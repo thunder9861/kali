@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Installs a package
+# $1 = string package
+
+aptitude install $1
+result=$?
+if [[ result -eq 0 ]]; then
+   deborphan -A ${1%%=*}
+fi
+
