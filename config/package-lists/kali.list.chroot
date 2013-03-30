@@ -277,6 +277,8 @@ tcpdump
 nmap
 zenmap
 ngrep
+bridge-utils
+firestarter
 
 # Pentesting
 

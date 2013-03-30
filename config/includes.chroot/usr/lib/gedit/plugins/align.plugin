@@ -1,4 +1,4 @@
-[Gedit Plugin]
+[Plugin]
 Loader=python
 Module=align
 IAge=2
