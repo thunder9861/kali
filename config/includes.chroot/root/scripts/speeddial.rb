@@ -1,299 +1,449 @@
 #!/usr/bin/ruby
 
-require 'rubygems'
-require 'open-uri'
-require 'json'
-require 'ipaddr'
-require 'resolv'
-require 'trollop'
-require 'yaml'
-require 'uri'
+# SpeedDial generator
+# This script takes a yaml file with the format shown below and converts it
+# into the json format required by the Chrome SpeedDial 2 extension.
+# Works best with ruby 1.9.x series, because dictionaries are ordered.
 
+# ---
+# Group:
+#    Dial:
+#       - Url
+#       - Thumbnail Url
+# ...
+
+require 'singleton'
+require 'ostruct'
+require 'yaml'
+require 'optparse'
+require 'json'
+
+# Bidirectional hash from here:
+# http://stackoverflow.com/questions/6926270/bidirectional-hash-table-in-ruby
+class BiHash
+
+   def initialize
+      @forward = Hash.new { |h, k| h[k] = [ ] }
+      @reverse = Hash.new { |h, k| h[k] = [ ] }
+   end
+
+   def insert(k, v)
+      @forward[k].push(v)
+      @reverse[v].push(k)
+      v
+   end
+
+   def fetch(k)
+      fetch_from(@forward, k)
+   end
+
+   def rfetch(v)
+      fetch_from(@reverse, v)
+   end
+
+   protected
+
+   def fetch_from(h, k)
+      return nil if(!h.has_key?(k))
+      v = h[k]
+      v.length == 1 ? v.first : v.dup
+   end
+end
+
+# Defines an Id Manager
+class IdManager
+   include Singleton
+
+   def initialize
+
+      # Counters for the ids
+      @group_id = 0
+      @dial_id = 1
+
+      # Mappings between the ids and the titles
+      @group_map = BiHash.new
+      @dial_map = BiHash.new
+
+   end
+
+   # Given a title, returns the associated group id
+   def get_group_id(title)
+
+      # Try to get an existing id
+      id = @group_map.fetch(title)
+
+      # If not available, make a new id associated with the title
+      if id == nil
+         id = @group_id
+         @group_id += 1
+         @group_map.insert(title, id)
+      end
+
+      return id
+
+   end
+
+   # Given a title, returns the associated dial id
+   def get_dial_id(title)
+
+      # Try to get an existing id
+      id = @dial_map.fetch(title)
+
+      # If not available, make a new id associated with the title
+      if id == nil
+         id = @dial_id
+         @dial_id += 1
+         @dial_map.insert(title, id)
+      end
+
+      return id
+
+   end
+
+   # Given an id, returns the associated group title, or nil if not found
+   def get_group_title(id)
+
+      # Try to get an existing title
+      title = @group_map.rfetch(id)
+
+      return title
+
+   end
+
+   # Given an id, returns the associated dial title, or nil if not found
+   def get_dial_title(id)
+
+      # Try to get an existing title
+      title = @dial_map.rfetch(id)
+
+      return title
+
+   end
+
+end
+
+# Defines a group
+class Group
+
+   def initialize(title)
+      @title = title
+      @id = IdManager.instance.get_group_id(title)
+      @dials = []
+   end
+
+   def id
+      return @id
+   end
+
+   def add_dial(dial)
+      dial.set_group_id(@id)
+      @dials << dial
+   end
+
+   def get_dials
+      return @dials
+   end
+
+   def to_json
+
+      json = {}
+
+      # Dynamic
+      json['id'] = @id
+      json['title'] = @title
+
+      # Static
+      json['color'] = 'FFFFFF'
+      json['position'] = 99
+
+      return json
+
+   end
+
+   def to_s
+      return @title
+   end
+
+end
+
+# Defines a dial
+class Dial
+
+   def initialize(title, url, thumbnail = '')
+      @title = title
+      @url = url
+      @thumbnail = thumbnail || ''
+      @id = IdManager.instance.get_dial_id(title)
+   end
+
+   def set_group_id(id)
+      @group_id = id
+   end
+
+   def to_json
+
+      json = {}
+
+      # Dynamic
+      json['id'] = @id
+      json['title'] = @title
+      json['url'] = @url
+      json['thumbnail'] = @thumbnail
+      json['idgroup'] = @group_id
+      json['ts_created'] = Time.now.to_i
+
+      # Static
+      json['visits'] = 0
+      json['visits_morning'] = 0
+      json['visits_afternoon'] = 0
+      json['visits_evening'] = 0
+      json['visits_night'] = 0
+      json['position'] = 999
+
+      return json
+
+   end
+
+   def to_s
+      return "%s: %s" % [@title, @url]
+   end
+
+end
+
+# Default settings
+class Settings
+
+   def initialize
+      @default_group_title = IdManager.instance.get_group_title(0)
+   end
+
+   def to_json
+
+      json = {}
+
+      # Dynamic
+      json['options.defaultGroupName'] = @default_group_title
+
+      # Static
+      json['firstTime'] = 'false'
+      json['options.alwaysNewTab'] = '0'
+      json['options.apps.align'] = 'center'
+      json['options.apps.iconsize'] = 'medium'
+      json['options.apps.position'] = 'bottom'
+      json['options.apps.show'] = '0'
+      json['options.apps.theme'] = 'dark'
+      json['options.background'] = 'http://farm6.static.flickr.com/5134/5565626330_a8ef933e18_o.jpg'
+      json['options.backgroundPattern'] = 'http://farm6.static.flickr.com/5137/5565048757_357eda6018_o.jpg'
+      json['options.backgroundPosition'] = 'center top'
+      json['options.centerThumbnailsVertically'] = '1'
+      json['options.centerVertically'] = '1'
+      json['options.colors.bg'] = 'undefined'
+      json['options.colors.border'] = 'CCCCCC'
+      json['options.colors.borderover'] = '999999'
+      json['options.colors.dialbg'] = 'FFFFFF'
+      json['options.colors.dialbginner'] = 'FFFFFF'
+      json['options.colors.dialbginnerover'] = 'FFFFFF'
+      json['options.colors.dialbgover'] = 'FFFFFF'
+      json['options.colors.title'] = '8C7E7E'
+      json['options.colors.titleover'] = '333333'
+      json['options.columns'] = '4'
+      json['options.dialSpace'] = '95'
+      json['options.dialspacing'] = '24'
+      json['options.dialstyle.corners'] = '4'
+      json['options.dialstyle.shadow'] = 'glow'
+      json['options.dialstyle.titleposition'] = 'bottom'
+      json['options.fontface'] = 'Helvetica,\"Helvetica Nueue\";arial,sans-serif'
+      json['options.fontsize'] = '11'
+      json['options.fontstyle'] = 'font-weight:normal;font-style:normal;'
+      json['options.highlight'] = '0'
+      json['options.order'] = 'position'
+      json['options.padding'] = '4'
+      json['options.refreshThumbnails'] = '0'
+      json['options.repeatbackground'] = 'no-repeat'
+      json['options.scrollLayout'] = '1'
+      json['options.showAddButton'] = '0'
+      json['options.showContextMenu'] = '0'
+      json['options.showOptionsButton'] = '0'
+      json['options.showTitle'] = '1'
+      json['options.showVisits'] = '0'
+      json['options.sidebar'] = '0'
+      json['options.sidebaractivation'] = 'position'
+      json['options.sidebar.showApps'] = '0'
+      json['options.sidebar.showBookmarks'] = '0'
+      json['options.sidebar.showBookmarksURL'] = '0'
+      json['options.sidebar.showDelicious'] = '0'
+      json['options.sidebar.showPinboard'] = '0'
+      json['options.sidebar.showGooglebookmarks'] = '0'
+      json['options.sidebar.showHistory'] = '0'
+      json['options.thumbnailQuality'] = 'medium'
+      json['options.titleAlign'] = 'center'
+      json['options.useDeliciousShortcut'] = '0'
+      json['refresh_create'] = 'false'
+      json['refresh_id'] = ''
+      json['refreshThumbnail'] = ''
+      json['refresh_url'] = ''
+      json['requestThumbnail'] = ''
+#      json['sys.cellspacing'] = '24'
+#      json['sys.cols'] = '4'
+#      json['sys.containerwidth'] = '1512px'
+#      json['sys.dialheight'] = '225.6'
+#      json['sys.dialwidth'] = '360'
+#      json['sys.rows'] = '2'
+#      json['sys.rowspacing'] = '24'
+      json['v1590'] = 'false'
+
+      return json
+
+   end
+
+end
+
+# Manages groups and dials
 class SpeedDial
 
    def initialize
-   
-      @group_id = 0
-      @dial_id = 0
-      @group_to_id = {}
-      @first_group = nil
-      
-      # Actual output data
-      @group_hash = {}
-      @dial_hash = {}
+      @groups = []
+   end
+
+   def load_yaml(filename)
+
+      # Load the yaml file
+      y = YAML.load_file(filename)
+
+      # For each group
+      y.each do |group_title, dials|
+
+         # Create a group object
+         group = Group.new(group_title)
+
+         # For each dial
+         dials.each do |d|
+
+            # Create a dial object
+            dial_title = d.keys[0]
+            url = d.values[0][0]
+            thumbnail = d.values[0][1]
+
+            dial = Dial.new(dial_title, url, thumbnail)
+
+            # Add the dial to the group
+            group.add_dial(dial)
+
+         end
+
+         # Add the group to the list
+         @groups << group
+
+      end
 
    end
 
-   def parse(yaml_object)
-   
-      yaml_object.each do |group, entries|
-         begin
-            entries.each do |h|
-            
-               title = h.keys[0]
-               url = h.values[0]
-               add_dial(group, title, url)
-            
-            end
-         rescue Exception => e
-            puts e
-         end
+   def save_json(filename)
+
+      # Set up the json dictionary
+      json = {}
+      json['groups'] = {}
+      json['dials'] = {}
+         
+      # Get the default settings
+      json['settings'] = Settings.new().to_json()
+         
+      count = 0
       
+      # For each group
+      groups.each do |g|
+         
+         # Do not add the default group to this list
+         if g.id != 0
+            
+            # Add the group to the json output 
+            json['groups'][count] = g.to_json
+            count += 1
+            
+         end
+         
+      end
+
+      count = 0
+      
+      # For each dial
+      dials.each do |d|
+         
+         # Add the dial to the json output
+         json['dials'][count] = d.to_json
+         count += 1
+         
       end
       
+      # Generate the json
+      s = JSON.pretty_generate(json)
+      
+      # Write the json fole
+      File.open(filename, 'w'){|f| f.write(s)}
+         
+      return s
+
    end
-   
+
    def groups
-      
-      return @group_hash
-      
+      return @groups
    end
-   
+
    def dials
-      
-      return @dial_hash
-      
-   end
 
-   def add_group(title)
-   
-      if @first_group == nil
-         @first_group = title
-         @group_to_id[title] = 0
-         return nil
+      dials = []
+         
+      # For each group
+      @groups.each do |g|
+         
+         # Add the group's dials to the list
+         dials += g.get_dials
+         
       end
-   
-      group = {}
-      
-      # Dynamic
-      group['id'] = @group_id += 1
-      #group['position'] = @group_id
-      group['title'] = title
-      
-      # Static
-      group['color'] = 'FFFFFF'
-      group['position'] = 99
-   
-      @group_hash[@group_id - 1] = group
-      @group_to_id[title] = @group_id
-   
-      return group
-   
-   end
-   
-   def add_dial(group, title, url)
-   
-      if !@group_to_id.key?(group)
-         add_group(group)
-      end
-   
-      dial = {}
-      
-      # Dynamic
-      dial['id'] = @dial_id += 1
-      dial['title'] = title
-      dial['url'] = url
-      dial['thumbnail'] = get_thumbnail(title, url)
-      dial['idgroup'] = @group_to_id[group]
-      dial['ts_created'] = Time.now.to_i
-      
-      # Static
-      dial['visits'] = 0
-      dial['visits_morning'] = 0
-      dial['visits_afternoon'] = 0
-      dial['visits_evening'] = 0
-      dial['visits_night'] = 0
-      dial['position'] = 999
-      
-      @dial_hash[@dial_id - 1] = dial
-      
-      return dial
-      
-   end
-   
-   def get_random_ip
-   
-      valid = false
-      while !valid
-      
-         begin
-            ip = IPAddr.new(rand(2**32),Socket::AF_INET).to_s
-            host = Resolv.new.getname(ip) 
-            puts "#{c} #{real_ip.length} #{ip} #{host}" 
-         rescue Exception => e
-         end
-      
-         valid = true
-      
-      end
-      
-      return ip
-   
-   end
-   
-   def get_thumbnail(title, url)
-      
-      puts title + " : " + url
-      
-      ip = get_random_ip
-      uri = URI.parse(url)
-      base = uri.host
-      
-      # Need to remove any TLD
-      base = base.gsub('.com', '')
-      base = base.gsub('.net', '')
-      base = base.gsub('.org', '')
-      base = base.gsub('.gov', '')
-      
-      base = base.gsub('.or.jp', '')
-      base = base.gsub('.jp', '')
-      base = base.gsub('.co.uk', '')
-      base = base.gsub('.se', '')
-      base = base.gsub('.de', '')
-      base = base.gsub('.be', '')
-      base = base.gsub('.in', '')
-      
-      # Split on period.
-      # If first result is www, use second.
-      base = base.split('.')[-1]
 
-      # Begin the api query
-      query = 'https://ajax.googleapis.com/ajax/services/search/images?v=1.0'
-      
-      # Add a random valid IP address
-      query += '&userip=' + ip
-      
-      # Add the base and logo keyword
-      query += '&q=' + base + '%20logo'
-      
-      # Safe
-      query += '&safe=active'
+      return dials
 
-      # Medium size
-      # query += '&imgsz=medium'
-      
-      # Full color
-      # query += '&imgc=color'
-      
-      # Wide aspect ratio
-      # Unknown
-      
-      f = open(query)
-      j = JSON.parse(f.read)
-      begin
-         if j['responseData']['results'].length > 0
-            return j['responseData']['results'][0]['url']
-         else
-            return ''
-         end
-      rescue Exception => e
-         return ''
-      end
-   end
-
-   def dump
-   
-      output = {}
-      output['groups'] = groups
-      output['dials'] = dials
-      output['settings'] = settings
-      return JSON.pretty_generate(output)
-   
-   end
-
-   def settings
-   
-      output = {}
-      
-      # Dynamic
-      output['options.defaultGroupName'] = @first_group
-      
-      # Static
-      output['firstTime'] = 'false'
-      output['options.alwaysNewTab'] = '0'
-      output['options.apps.align'] = 'center'
-      output['options.apps.iconsize'] = 'medium'
-      output['options.apps.position'] = 'bottom'     
-      output['options.apps.show'] = '0'
-      output['options.apps.theme'] = 'dark'
-      output['options.background'] = 'http://farm6.static.flickr.com/5134/5565626330_a8ef933e18_o.jpg'
-      output['options.backgroundPattern'] = 'http://farm6.static.flickr.com/5137/5565048757_357eda6018_o.jpg'
-      output['options.backgroundPosition'] = 'center top'
-      output['options.centerThumbnailsVertically'] = '1'
-      output['options.centerVertically'] = '1'
-      output['options.colors.bg'] = 'undefined'
-      output['options.colors.border'] = 'CCCCCC'
-      output['options.colors.borderover'] = '999999'
-      output['options.colors.dialbg'] = 'FFFFFF'
-      output['options.colors.dialbginner'] = 'FFFFFF'
-      output['options.colors.dialbginnerover'] = 'FFFFFF'
-      output['options.colors.dialbgover'] = 'FFFFFF'
-      output['options.colors.title'] = '8C7E7E'
-      output['options.colors.titleover'] = '333333'
-      output['options.columns'] = '4'
-      output['options.dialSpace'] = '90'
-      output['options.dialspacing'] = '24'
-      output['options.dialstyle.corners'] = '4'
-      output['options.dialstyle.shadow'] = 'glow'
-      output['options.dialstyle.titleposition'] = 'bottom'
-      output['options.fontface'] = 'Helvetica,\"Helvetica Nueue\";arial,sans-serif'
-      output['options.fontsize'] = '11'
-      output['options.fontstyle'] = 'font-weight:normal;font-style:normal;'
-      output['options.highlight'] = '0'
-      output['options.order'] = 'position'
-      output['options.padding'] = '4'
-      output['options.refreshThumbnails'] = '0'
-      output['options.repeatbackground'] = 'no-repeat'
-      output['options.scrollLayout'] = '1'
-      output['options.showAddButton'] = '1'
-      output['options.showContextMenu'] = '0'
-      output['options.showOptionsButton'] = '0'
-      output['options.showTitle'] = '1'
-      output['options.showVisits'] = '0'
-      output['options.sidebar'] = '0'
-      output['options.sidebaractivation'] = 'position' 
-      output['options.sidebar.showApps'] = '0'
-      output['options.sidebar.showBookmarks'] = '1'
-      output['options.sidebar.showBookmarksURL'] = '0'
-      output['options.sidebar.showDelicious'] = '0'
-      output['options.sidebar.showHistory'] = '0'
-      output['options.thumbnailQuality'] = 'medium'
-      output['options.titleAlign'] = 'center'
-      output['options.useDeliciousShortcut'] = '0'
-      output['refresh_create'] = 'false'
-      output['refresh_id'] = ''
-      output['refreshThumbnail'] = ''
-      output['refresh_url'] = ''
-      output['requestThumbnail'] = ''
-      output['sys.cellspacing'] = '24'
-      output['sys.cols'] = '4'
-      output['sys.containerwidth'] = '1512px'
-      output['sys.dialheight'] = '225.6'
-      output['sys.dialwidth'] = '360'
-      output['sys.rows'] = '2'
-      output['sys.rowspacing'] = '24'
-      output['v1590'] = 'false'
-      
-      return output
-      
    end
 
 end
 
-opts = Trollop::options do
-   
-   opt :input, "Input yaml file", :type => :string
-   opt :output, "Output json file", :type => :string
-   
+# Parse the command line options
+options = OpenStruct.new
+options.input = nil
+options.output = nil
+
+parser = OptionParser.new do |opts|
+
+   opts.banner = "Usage: speeddial.rb --input <yaml> --output <json>"
+
+   opts.on("-i", "--input YAML", "Input yaml file") do |i|
+      options.input = i
+   end
+
+   opts.on("-o", "--output JSON", "Output json file") do |o|
+      options.output = o
+   end
+
+   opts.on("-h", "--help", "Display usage information") do |h|
+      puts opts
+      exit
+   end
+
+end
+parser.parse!
+
+# Input file must exist
+if options.input == nil or !File.exist?(options.input)
+   puts "Must specify an existing input yaml file."
+   exit
 end
 
-Trollop::die :input, "Must specify input yaml file" unless opts[:input]
-Trollop::die :output, "Must specify output json file" unless opts[:output]
-Trollop::die :input, "Must specify input yaml file" unless File.exist?(opts[:input])
+# Output file must be specified
+if options.output == nil
+   puts "Must specify an output json file."
+   exit
+end
 
-s = SpeedDial.new
-y = YAML.load_file(opts[:input])
-s.parse(y)
-j = s.dump
-File.open(opts[:output], 'w'){|f| f.write(j)}
-
+sd = SpeedDial.new
+sd.load_yaml(options.input)
+sd.save_json(options.output)
