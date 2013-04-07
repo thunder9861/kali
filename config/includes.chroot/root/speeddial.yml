@@ -1,4 +1,4 @@
- ---
+---
 Google:
 
  - Google: 
@@ -71,9 +71,17 @@ Google:
 
 Banking:
 
+ - Annual Credit Report:
+   - https://www.annualcreditreport.com/cra/index.jsp
+   - http://www.lowcards.com/wp-content/uploads/2013/02/bigstock-Stethoscope-And-Credit-Report-29517311-e1361385156150.jpg
+
  - Bitcoin: 
    - http://bitcoin.org/
    - http://upload.wikimedia.org/wikipedia/commons/5/50/Bitcoin.png
+
+ - Bitinstant:
+   - https://www.bitinstant.com/
+   - https://www.bitinstant.com/static/images/topleft_logo.png
 
  - Chase: 
    - https://www.chase.com/
@@ -82,6 +90,10 @@ Banking:
  - Citibank: 
    - http://www.citibank.com
    - http://www.fresnostate.edu/academics/titlev/images/Citi%20Logo%20-%20JPEG.jpg
+
+ - Coinbase:
+   - https://coinbase.com/
+   - https://lh6.ggpht.com/VNJ98_xOZxznlrm0ZuMNHTxISOaMI64WG-C6iW2jSYXyFVJBfTsmPKNfK9jH2O9KVIQ=w705
 
  - Dwolla: 
    - http://www.dwolla.com/
@@ -95,13 +107,25 @@ Banking:
    - http://www.libertyreserve.com/
    - http://selectsignals.com/wp-content/uploads/2012/05/liberty-reserve1.jpg
 
+ - Moneygram: 
+   - https://www.moneygram.com
+   - http://blogs.tennessean.com/business/files/2013/02/MoneyGram-logo.jpg
+
  - Morningstar: 
    - http://www.morningstar.com/
    - http://www.davemanuel.com/images/morningstar_logo.jpg
 
+ - Mt Gox:
+   - https://mtgox.com/
+   - https://twimg0-a.akamaihd.net/profile_images/1411068213/mtgox.png
+
  - Paypal: 
    - https://www.paypal.com/
    - http://www.logostage.com/logos/paypal.jpg
+
+ - Quizzle:
+   - https://www.quizzle.com/
+   - http://www.benzinga.com/files/quizzle.jpg
 
  - Square: 
    - https://squareup.com/
@@ -119,6 +143,10 @@ Banking:
    - https://www.wellsfargo.com/
    - http://nyocommercialobserver.files.wordpress.com/2012/04/wells-fargo-logo.gif
 
+ - WesternUnion:
+   - http://www.westernunion.com/
+   - http://www.fpfinc.com/assets/logos/Western_Union_logo.png
+
 Blogs:
 
  - Backtrack: 
@@ -127,21 +155,43 @@ Blogs:
 
  - CarnalOwnage: 
    - http://carnal0wnage.attackresearch.com/
+   - http://3.bp.blogspot.com/-SdydNa9kRh0/TdsEwO8leJI/AAAAAAAAAlw/7_Pvat0avDM/s1600/c0arlogoblogger2.jpg
 
  - Corelan: 
    - https://www.corelan.be/
+   - http://m.geekplan.com/files/locations/images/corelan_gcv_small.jpg
 
  - Darknet: 
    - http://www.darknet.org.uk/
+   - http://www.darknet.org.uk/images/new_title.png
 
  - Darkoperator: 
    - http://www.darkoperator.com/
+   - http://sindro.me/assets/sindro.me/2011/7/7/neo-tux.png
 
  - Digininja: 
    - http://www.digininja.org/blog.php
+   - https://secure.gravatar.com/avatar/05bd4fd102050121a79a5ec0b561ec3a?s=420&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png
+
+ - Every Day Carry:
+   - http://everyday-carry.com/
+   - http://static.tumblr.com/iryttvm/dNpky62wn/led300.png
+
+ - Hackaday:
+   - http://hackaday.com/
+   - http://www.freewarepocketpc.net/wp7/img/hackaday-rss-reader.png
 
  - Irongeek: 
    - http://www.irongeek.com/
+   - http://img.printfection.com/1/1148/1429558/LUWGU.jpg
+
+ - ITS Tactical:
+   - http://www.itstactical.com/
+   - http://media-cache-ec2.pinterest.com/avatars/itstactical_1337467360_600.jpg
+
+ - Kali:
+   - http://www.kali.org/blog/
+   - http://www.kali.org/wp-content/uploads/2013/03/kali-site-logo2.png
 
  - Lifehacker: 
    - http://blog.lifehacker.com/
@@ -149,21 +199,31 @@ Blogs:
 
  - Metasploit: 
    - https://community.rapid7.com/community/metasploit/blog
+   - http://cdn-static.zdnet.com/i/story/60/80/001731/metasploit_hax_small.jpg
 
  - Pauldotcom: 
    - http://www.pauldotcom.com
+   - http://2.i.blip.tv/g?src=Pauldotom-header_graphic335.jpg&w=980&h=400&fmt=jpg
 
  - Room 362: 
    - http://www.room362.com/
+   - http://www.room362.com/storage/post-images/01_sf_room362.jpg?__SQUARESPACE_CACHEVERSION=1322748971868
 
  - Sensepost: 
    - http://www.sensepost.com/blog/
+   - http://www.sensepost.com/images/logo.png
 
  - Social Engineering: 
    - http://www.social-engineer.org/blog/
+   - http://livingbehindthegates.files.wordpress.com/2012/02/social-engineering.jpg?w=490&h=578
+
+ - Stormdrane:
+   - http://stormdrane.blogspot.com/
+   - http://images4.wikia.nocookie.net/__cb20100403201430/gijoe/images/f/fe/Cobra_logo.jpg
 
  - TrustedSec: 
    - https://www.trustedsec.com/news-and-events/
+   - https://www.trustedsec.com/wp-content/themes/TrustedSec/logo-final.png
 
 Cloud Storage:
 
@@ -199,33 +259,43 @@ Databases:
 
  - Command Line Fu: 
    - http://www.commandlinefu.com/commands/browse
+   - http://www.commandlinefu.com/images/header-logo.jpg
 
  - CVE Details: 
    - http://www.cvedetails.com/
+   - http://www.cvedetails.com/img/logo2.png
 
  - Exploit Database: 
    - http://www.exploit-db.com/
+   - http://www.hack4fun.eu/wp-content/uploads/2010/08/exploit-database-logo.png
 
  - Google Hacking Database: 
    - http://www.hackersforcharity.org/ghdb/
+   - http://4.bp.blogspot.com/_P4KmVMnbtiU/TOJFlgjZE9I/AAAAAAAAA1U/kCA38h5emI0/s1600/1.PNG
 
  - GoogleDorks: 
    - http://www.exploit-db.com/google-dorks/
+   - http://2.bp.blogspot.com/-4jK_7_6YmRw/Tr56KE1WpFI/AAAAAAAAAAo/SHsUmVHZNUA/s1600/Google.jpg
 
  - Pentesting Scripts: 
    - http://www.pentesterscripting.com/
+   - http://www.pentesterscripting.com/images/MOD_pts_01.png
 
  - RegexLib: 
    - http://regexlib.com/
+   - http://regexlib.com/images/regexlib.com.gif
 
  - Shellcode Database: 
    - http://www.shell-storm.org/shellcode/
+   - https://secure.gravatar.com/avatar/28d5c6bcbd5eafff1941f3301577fac4?s=420&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-org-420.png
 
  - Shell Fu: 
    - http://www.shell-fu.org/
+   - http://hackosis.chiefcrash.com/wp-content/uploads/2008/04/shell-fu.png
 
  - Vulnerability Database: 
    - http://osvdb.org/
+   - http://blog.rootshell.be/wp-content/uploads/2012/05/osvdb-lens.png
 
 Footprinting:
 
@@ -239,6 +309,7 @@ Footprinting:
 
  - Built With: 
    - http://builtwith.com/
+   - http://cf.builtwith.com/bw/img/2012/builtwithLogoX2.png
 
  - Bulk IP Address Location: 
    - http://www.ipligence.com/iplocation
@@ -302,6 +373,7 @@ Footprinting:
 
  - You Get Signal: 
    - http://www.yougetsignal.com/
+   - http://www.yougetsignal.com/img/site_logo.gif
 
 Forums:
 
@@ -317,16 +389,25 @@ Forums:
    - http://www.binrev.com/forums/
    - http://www.starnewsonline.com/assets/jpg/WM2545687.JPG
 
+ - Every Day Carry:
+   - http://www.edcforums.com/forum/
+   - http://www.edcforums.com/styles/edc/xenique/logo2.png
+
  - Government Security: 
    - http://www.governmentsecurity.org/forum/
    - http://gov.tattersallinc.com/wp-content/uploads/2012/01/department-of-homeland-security-logo.jpg
 
  - HackThisSite: 
    - http://www.hackthissite.org/forums/index.php
+   - http://www3.data.htscdn.org/themes/Dark/images/header.jpg
 
  - Hak5: 
    - http://forums.hak5.org/
    - http://hak5.org/images/logo/Hak5--727x346.png
+
+ - Kali:
+   - http://forums.kali.org/forum.php
+   - http://www.kali.org/wp-content/uploads/2013/03/kali-site-logo2.png
 
  - Reddit: 
    - http://www.reddit.com/
@@ -334,6 +415,7 @@ Forums:
 
  - SecurityOverride: 
    - http://securityoverride.org/forum/index.php
+   - http://securityoverride.org/themes/SO%20Mil%20Spec/images/header12.jpg
 
  - Stack Overflow: 
    - http://stackoverflow.com/
@@ -345,27 +427,15 @@ Forums:
 
  - Urban Exploration: 
    - http://www.uer.ca/
+   - http://www.uer.ca/f1.gif
 
  - Ycombinator: 
    - http://news.ycombinator.com
    - http://upload.wikimedia.org/wikipedia/commons/d/d5/Y_Combinator_Logo_400.gif
 
-Pentesting:
-
- - Bookmarks: 
-   - https://code.google.com/p/pentest-bookmarks/wiki/BookmarksList
-   - http://cdn1.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/actions/bookmark.png
-
- - Pentest Standard: 
-   - http://www.pentest-standard.org/index.php/Main_Page
-   - http://www.pentest-standard.org/images/5/59/PTES-TG_Logo.png?width=80
-
- - Vulnerability Assessment: 
-   - http://www.vulnerabilityassessment.co.uk/Penetration%20Test.html
-
- - Wifi Pineapple: 
-   - http://cloud.wifipineapple.com/
-   - http://www.pamsclipart.com/clipart_images/pineapple_logo_element_0515-0910-2901-3429_SMU.jpg
+ - Zombie Squad:
+   - http://www.zombiehunters.org/forum/
+   - http://a4.ec-images.myspacecdn.com/images02/143/d9d66124da5248c695ce584fe5b1f1f9/l.jpg
 
 Maps:
 
@@ -427,6 +497,10 @@ Media:
    - https://secure.flickr.com/
    - http://nomadbrush.com/wordpress/wp-content/uploads/2012/11/flickr-logo1.png
 
+ - Keepvid:
+   - http://keepvid.com/
+   - http://4.bp.blogspot.com/-a_tb0NuCD_I/UFp4qObo5bI/AAAAAAAAAAs/m-WR0RJy5vo/s1600/keepvid.png
+
  - Picgeni: 
    - http://www.picgeni.com/
    - http://www.picgeni.com/image/logo.png
@@ -477,16 +551,49 @@ News:
    - http://www3.nhk.or.jp/nhkworld/
    - http://www.lietaer.com/design/wp-content/uploads/2010/08/nhk_logo.gif
 
+ - Weatherbug:
+   - http://weather.weatherbug.com/
+   - https://twimg0-a.akamaihd.net/profile_images/3226473705/6bcd4b64f125dd8ddab94f11b6ef0cd7.png
+
 Password Cracking:
 
  - Collision: 
    - http://www.c0llision.net/webcrack.php
+   - http://www.c0llision.net/images/logo.png
 
  - Crackstation: 
    - http://crackstation.net/
+   - http://ihackers.in/wp-content/uploads/2011/07/lock.jpg
 
  - Md5Crack: 
    - http://www.md5crack.com/
+   - http://www.md5crack.com/md5crack.jpg
+
+Pentesting:
+
+ - Bookmarks: 
+   - https://code.google.com/p/pentest-bookmarks/wiki/BookmarksList
+   - http://cdn1.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/actions/bookmark.png
+
+ - Pentest Standard: 
+   - http://www.pentest-standard.org/index.php/Main_Page
+   - http://www.pentest-standard.org/images/5/59/PTES-TG_Logo.png?width=80
+
+ - Nessus:
+   - http://www.tenable.com/products/nessus
+   - http://static.tenable.com/oldsite/blog/img/6a00d8345495f669e20133f445cc65970b
+
+ - Rapid7:
+   - http://www.rapid7.com/
+   - http://www.cogitosolutions.com/hk/sites/default/files/images/Rapid7Logo.gif
+
+ - Vulnerability Assessment: 
+   - http://www.vulnerabilityassessment.co.uk/Penetration%20Test.html
+   - http://www.icsinc.com/Portals/0/icsimages/ICS-vulnerability-assessment.jpg
+
+ - Wifi Pineapple: 
+   - http://cloud.wifipineapple.com/
+   - http://www.pamsclipart.com/clipart_images/pineapple_logo_element_0515-0910-2901-3429_SMU.jpg
 
 People Search:
 
@@ -504,6 +611,7 @@ People Search:
 
  - NewUltimates: 
    - http://www.newultimates.com/
+   - http://cdn-static.zdnet.com/i/story/61/81/002026/doc-072711-art-7.jpg
 
  - Peekyou: 
    - http://www.peekyou.com/
@@ -527,6 +635,7 @@ People Search:
 
  - Searchbug: 
    - http://www.searchbug.com/
+   - http://www.searchbug.com/images/searchbug-bps.gif
 
  - Skipease: 
    - http://skipease.com/
@@ -560,6 +669,7 @@ Programming Reference:
 
  - Cheatsheets: 
    - http://www.cheat-sheets.org/
+   - http://www.webapplog.com/wp-content/uploads/mac_cheatsheet_icon.jpg
 
  - C++: 
    - http://www.cplusplus.com/reference/
@@ -571,6 +681,7 @@ Programming Reference:
 
  - Language Comparisons: 
    - http://hyperpolyglot.org/
+   - http://www.resumewritingservice.biz/wp-content/uploads/2011/09/Resume-Writing-Service-Suggests-Including-Languages-Into-Your-Resume.png
 
  - Matplotlib: 
    - http://matplotlib.org/contents.html
@@ -674,6 +785,10 @@ Services:
 
 Shopping:
 
+ - 511 Tactical:
+   - http://www.511tactical.com/
+   - http://www.apbweb.com/images/stories/511_logo.jpg
+
  - Amazon: 
    - http://www.amazon.com/
    - http://fontmeme.com/images/Amazon-Logo.jpg
@@ -690,6 +805,10 @@ Shopping:
    - http://www.ebay.com/
    - http://www.brandingmagazine.com/wp-content/uploads/2012/09/ebay-logo-redesign-2.jpg
 
+ - Minimus:
+   - http://www.minimus.biz/
+   - http://tippytoediet.com/wp-content/uploads/2011/02/minimusbizlogo.jpg
+
  - Newegg: 
    - http://www.newegg.com/
    - http://cloudconversion.com/wp/wp-content/uploads/2012/09/NeweggLogo_fullColor.png
@@ -702,6 +821,7 @@ Social Engineering:
 
  - Business Card Generator: 
    - http://namegenerator.in/
+   - http://www.printfellas.com/templates/business-card-design.jpg
 
  - Credit Card Generator: 
    - http://www.getcreditcardnumbers.com/
@@ -793,9 +913,17 @@ Tools:
    - http://ideone.com/
    - http://static1.ideone.com/gfx/ideone/logo2.png
 
+ - Json Parser:
+   - http://json.parser.online.fr/
+   - http://www.json.org/img/json160.gif
+
  - Regexpal: 
    - http://regexpal.com/
-   - http://mindprod.com/image/icon128/regex.png
+   - http://media.quantumquinn.com/img/jpg/apps/quregexmm_icon_reflection1.jpg
+
+ - Repl.it:
+   - http://repl.it/
+   - http://repl.it/images/logo-small.png
 
  - Restructured Text: 
    - http://rst.ninjs.org/
@@ -829,6 +957,7 @@ Travel:
 
  - Fly or Drive Calculator: 
    - http://www.befrugal.com/tools/fly-or-drive-calculator/
+   - https://si0.twimg.com/profile_images/1766550028/twitter_avatar__3_.png
 
  - Hipmunk: 
    - http://www.hipmunk.com/
@@ -891,5 +1020,55 @@ User Search:
  - YoName: 
    - http://www.yoname.com/
    - http://cdn.appappeal.com/pictures/3404/logo.png
+
+Webcams:
+
+ - Biglook:
+   - http://www.webcambiglook.com/index.htm
+   - http://vipdictionary.com/img/binoculars.jpg
+
+ - Earthcam:
+   - http://www.earthcam.com/mapsearch/
+   - http://static.earthcamcdn.com/images/ec_logo.gif
+
+ - Heycam:
+   - http://www.heycam.com/
+   - http://www.heycam.com/img/heycamhome.gif
+
+ - Opentopia:
+   - http://www.opentopia.com/map.php
+   - http://www.opentopia.com/images/opentopia_logo.png
+
+ - TrafficLand:
+   - http://trafficland.com/mapnav.jsp
+   - http://trafficland.com/images/trafficlnd_logo.gif
+
+ - WeatherUnderground:
+   - http://www.wunderground.com/webcams/
+   - http://icons-ak.wxug.com/i/wu/wuLogoUrl.png
+
+ - WeatherUsa:
+   - http://www.weatherusa.net/skycamnet/
+   - http://www.weatherusa.net/assets/images/logo_438px.png
+
+ - WebcamLocator.com:
+   - http://www.webcamlocator.com/
+   - http://www.webcamlocator.com/images/logo/650x90-wcl-logo.gif
+
+ - WebcamLocator.net:
+   - http://webcamlocator.net/find-webcams-using-google/
+   - http://webcamlocator.net/wp-content/uploads/2013/02/logo-trans2.png
+
+ - Webcampedia:
+   - http://www.webcampedia.com/locations.php
+   - http://4.bp.blogspot.com/-rhL3H6PczZQ/UVB7-3u_fAI/AAAAAAAAAQk/H49WjlHYcqc/s1600/webcam.png
+
+ - WebcamsTravel:
+   - http://www.webcams.travel/map/
+   - http://www.marineometeo.it/images/webcams-travel.gif
+
+ - WXnation:
+   - http://www.wxnation.com/webcams.html
+   - http://mysite.verizon.net/vze7m5ka/sitebuildercontent/sitebuilderpictures/wxnation.gif
 
 ...
