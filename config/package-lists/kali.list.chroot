@@ -204,7 +204,6 @@ binutils
 # System
 rungetty
 gnome-system-monitor
-gnome-bluetooth
 aufs-tools
 squashfs-tools
 cpufrequtils
@@ -216,6 +215,7 @@ debian-installer
 # Wine
 wine
 winetricks
+playonlinux
 
 # Encryption
 hashalot
@@ -249,6 +249,7 @@ gparted
 buffer
 qalculate
 truecrypt
+keepassx
 keepass2
 grsync
 unshield
@@ -263,6 +264,10 @@ virtualbox-guest-x11
 default-jdk
 default-jre
 gcj-jdk
+icedtea-plugin
+
+# Mono
+mono-complete
 
 # Internet
 transmission
@@ -297,6 +302,8 @@ python-scipy
 python-apsw
 python-yaml
 python-wxgtk2.8
+python-gpgme
+python-pyicu
 
 # Ruby
 jruby
@@ -340,11 +347,7 @@ flashplugin-nonfree
 alsa-utils
 pulseaudio-utils
 pulseaudio-module-bluetooth
-
-################################################################################
-# Begin program specific packages
-
-# Aarddict
-python-pyicu
-
+bluetooth
+gnome-bluetooth
+blueman
 
