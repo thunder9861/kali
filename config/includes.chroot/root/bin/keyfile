@@ -3,5 +3,5 @@
 # Calculates the password from a keyfile
 # $1 = Keyfile
 
-md5sum $1 | cut -c1-12
+sha512sum $1 | cut -c1-12
 
