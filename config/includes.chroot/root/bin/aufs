@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Creates an aufs layer over a folder to redirect writes to a different folder
+# $1 = Source directory
+# $2 = Destination directory
+
 # Tell the user how to run the script
 argument_error()
 {
@@ -15,8 +19,8 @@ if [ -z $1 ]; then argument_error; fi
 if [ -z $2 ]; then argument_error; fi
 
 # Check to make sure the path exists
-if [ ! -e $1 ]; then argument_error; fi
-if [ ! -e $2 ]; then argument_error; fi
+if [ ! -d $1 ]; then argument_error; fi
+if [ ! -d $2 ]; then argument_error; fi
 
 # Arguments are valid
 source="$1"

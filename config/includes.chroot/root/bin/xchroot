@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Chroots into a folder and starts an X session
+# $1 = Directory
+
 # Tell the user how to run the script
 argument_error()
 {

@@ -1,0 +1,53 @@
+#!/bin/bash
+
+# Creates a squashed truecrypt archive (star)
+
+# $1 = Directory to star
+# $2 = Password to use
+
+# Make sure enough arguments were specified
+if [ -z $1 ] || [ -z $2 ]; then
+   echo 'Usage: $0 <directory> <password>'
+   exit 1
+fi
+
+# Make sure the first argument is an existing directory
+if [ ! -d $1 ]; then
+   echo Directory does not exist: $1
+fi
+
+# Save some variables
+directory=$1
+password=$2
+sfs=$directory.sfs
+star=$directory.star
+
+# Squash the directory
+mksquashfs $directory $sfs -noappend -b 1048576
+
+# Get the size of the squashfs, add 512 blocks of size 512
+sfssize=`stat --printf="%s" $sfs`
+starsize=`expr $sfssize + 262144`
+
+# Get the password hash
+hash=`echo -n $password | sha512sum | cut -c1-12`
+
+# Make a truecrypt volume
+truecrypt -t --non-interactive -c $star --size=$starsize --filesystem=none --encryption=AES --hash=SHA-512 --password=$hash
+
+# Mount the truecrypt volume
+truecrypt -t --non-interactive --filesystem=none --password=$hash $star
+
+# Get the truecrypt device name
+starloc=`readlink -f $star`
+devname=`truecrypt -t --non-interactive -l | grep $starloc | awk '{print $3}'`
+
+# Copy the squashfs into the truecrypt volume
+dd if=$sfs of=$devname bs=1
+
+# Dismount the truecrypt volume
+truecrypt -t --non-interactive -d $starloc
+
+# Cleanup
+rm -f $sfs
+

@@ -1,7 +1,0 @@
-#!/bin/sh
-
-# Calculates the password from a keyphrase
-# $1 = Phrase
-
-echo -n $@ | sha512sum | cut -c1-12
-

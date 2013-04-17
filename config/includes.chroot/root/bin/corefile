@@ -44,7 +44,7 @@ directory = "/var/core"
 Dir.mkdir(directory) unless Dir.exists? directory
 
 # Create core filename
-executable = File.join(directory, "#{filename}-#{time}.exe")
+executable = File.join(directory, "#{filename}-#{time}.bin")
 corefile   = File.join(directory, "#{filename}-#{time}.core")
 metadata   = File.join(directory, "#{filename}-#{time}.metadata")
 
