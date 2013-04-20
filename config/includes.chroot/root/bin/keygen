@@ -1,0 +1,70 @@
+#!/bin/bash
+
+# Generates a GPG keypair
+# $1 = Passphrase
+
+# Make sure an argument was passed in
+if [ -z $1 ]; then
+   echo "Usage: $0 <passphrase>"
+   exit 1
+fi
+
+# Get a random id
+id=`uuidgen -r | sha512sum | cut -c1-12`
+
+# Define variables
+passphrase=$1
+pwd=`pwd`
+key=key
+dir=$pwd/$id
+public=$dir/$key.pub.asc
+private=$dir/$key.sec.asc
+revoke=$dir/$key.rev.asc
+paperkey=$dir/$key.sec.pkt
+pubqr=$dir/$key.pub.asc.png
+secqr=$dir/$key.sec.pkt.c64.png
+keyring=$dir/keyring.tmp
+tarball=$pwd/$id.tgz
+
+# Create the key directory
+mkdir -p $dir
+
+# Generate a keypair
+cat <<EOF | gpg --gen-key --batch --armor
+%pubring $public
+%secring $private
+Key-Type: RSA
+Key-Length: 1024
+Key-Usage: encrypt,sign,auth
+Passphrase: $passphrase
+Name-Real: $id
+Preferences: AES SHA256 BZIP2
+%commit
+EOF
+
+# Create a temporary keyring
+gpg --no-default-keyring --keyring $keyring --import $private
+
+# Create a revocation certificate
+rm -f $revoke
+cat <<EOF | gpg --status-fd 2 --command-fd 0 --no-default-keyring --keyring $keyring --gen-revoke --armor --output $revoke $id
+y
+0
+
+y
+$passphrase
+EOF
+
+# Remove the temporary keyring
+rm -f $keyring $keyring~ 
+
+# Create paperkey
+gpg --dearmor < $private | paperkey --output-width 65 | grep -v \# > $paperkey
+
+# Create qr codes
+qrencode -o $pubqr < $public
+bzip2 -9 < $paperkey | base64 | qrencode -o $secqr
+
+# Tar together all the output files
+tar czvf $tarball $id
+

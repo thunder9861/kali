@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Extracts a compressed file in base64 format
+# $1 = c64 file (optional)
+# $2 = Output file (optional)
+# Also works with pipes
+
+# If no arguments are available, use pipes
+if [ -z $1 ]; then
+   # Treat stdin as input
+   exec 3<&0
+   # Treat stdout as output
+   exec 4>&1
+# If second argument is available
+elif [ ! -z $2 ]; then
+   # Make sure first argument file exists
+   if [ ! -e $1 ]; then
+      echo "Usage: $0 [*.c64] [output]"
+      exit 1
+   fi
+   # Treat first argument as input file
+   exec 3<$1
+   # Treat second argument as output file
+   exec 4>$2
+else
+   # Treat standard in as input
+   exec 3<&0
+   # Treat first argument as output file
+   exec 4>$1
+fi
+
+base64 -d <&3 | bzip2 -d >&4
+

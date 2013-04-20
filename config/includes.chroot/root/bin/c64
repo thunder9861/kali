@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Creates a compressed file in base64 format
+# $1 = File (optional)
+# Also works with pipes
+
+if [ ! -z $1 ]; then
+   if [ ! -e $1 ]; then
+      echo "Usage: $0 [file]"
+      exit 1
+   fi
+   exec 3<$1
+else
+   exec 3<&0
+fi
+
+bzip2 -9 <&3 | base64
+
