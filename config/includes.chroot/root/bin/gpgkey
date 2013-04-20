@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Wrapper for gpg to use keys without a keyring
+# $1 = Key
+# $2 = Command
+
+# First argument must be the key
+if [ -z $1 ]; then
+   echo "Usage: $0 <key> <command>"
+   exit 1
+fi
+
+# Load the key
+key=$1
+
+# The rest of the arguments become the command to pass through
+shift
+command=$@
+
+# Define the temporary keyring
+pwd=`pwd`
+pubring=$pwd/pubring.tmp
+secring=$pwd/secring.tmp
+
+# Import the key into a temporary keyring
+gpg --no-default-keyring --keyring $pubring --secret-keyring $secring --import $key
+
+# Perform the requested action
+gpg --no-default-keyring --keyring $pubring --secret-keyring $secring $command
+
+# Remove the temporary keyring
+rm -f $pubring $pubring~ $secring $secring~
+

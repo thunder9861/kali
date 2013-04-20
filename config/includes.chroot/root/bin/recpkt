@@ -1,0 +1,58 @@
+#!/bin/bash
+
+# Reconstructs a secret key from a paper key
+# $1 = Paperkey 
+# $2 = Public key
+# $3 = Output private key
+
+# First argument must be the key
+if [ -z $1 ] || [ -z $2 ] || [ -z $3 ]; then
+   echo "Usage: $0 <*.pkt> <key.pub.asc> <output>"
+   exit 1
+fi
+
+# Load the keys
+pkt=$1
+pubasc=$2
+secasc=$3
+
+tmp=$pkt.tmp
+pubgpg=$pubasc.gpg
+secgpg=$secasc.gpg
+
+# Define the temporary keyring
+pwd=`pwd`
+pubring=$pwd/pubring.tmp
+secring=$pwd/secring.tmp
+
+# Import the public key into a temporary keyring
+gpg --no-default-keyring --keyring $pubring --secret-keyring $secring --import $pubasc
+
+# Dearmor the public key
+gpg --no-default-keyring --keyring $pubring --secret-keyring $secring --dearmor --output $pubgpg < $pubasc
+
+# Reconstruct the paperkey
+paperkey --file-format | perl -pe 's/^/# /' > $tmp
+cat $pkt >> $tmp
+
+# Reconstruct the secret key
+paperkey --pubring $pubgpg --secrets $tmp --output $secgpg
+
+# Import the secret key
+gpg --no-default-keyring --keyring $pubring --secret-keyring $secring --import $secgpg
+
+# Armor the secret key
+gpg --no-default-keyring --keyring $pubring --secret-keyring $secring --armor --export-secret-key > $secasc
+
+# Remove the temporary keyring
+rm -f $pubring $pubring~ $secring $secring~
+
+# Remove the dearmored public key
+rm -f $pubgpg
+
+# Remove the reconstructed paperkey
+rm -f $tmp
+
+# Remove the dearmored secret key
+rm -f $secgpg
+

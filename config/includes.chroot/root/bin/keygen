@@ -23,7 +23,8 @@ revoke=$dir/$key.rev.asc
 paperkey=$dir/$key.sec.pkt
 pubqr=$dir/$key.pub.asc.png
 secqr=$dir/$key.sec.pkt.c64.png
-keyring=$dir/keyring.tmp
+pubring=$dir/pubring.tmp
+secring=$dir/secring.tmp
 tarball=$pwd/$id.tgz
 
 # Create the key directory
@@ -43,11 +44,11 @@ Preferences: AES SHA256 BZIP2
 EOF
 
 # Create a temporary keyring
-gpg --no-default-keyring --keyring $keyring --import $private
+gpg --no-default-keyring --keyring $pubring --secret-keyring $secring --import $private
 
 # Create a revocation certificate
 rm -f $revoke
-cat <<EOF | gpg --status-fd 2 --command-fd 0 --no-default-keyring --keyring $keyring --gen-revoke --armor --output $revoke $id
+cat <<EOF | gpg --status-fd 2 --command-fd 0 --no-default-keyring --keyring $pubring --secret-keyring $secring --gen-revoke --armor --output $revoke $id
 y
 0
 
@@ -55,16 +56,16 @@ y
 $passphrase
 EOF
 
-# Remove the temporary keyring
-rm -f $keyring $keyring~ 
-
 # Create paperkey
-gpg --dearmor < $private | paperkey --output-width 65 | grep -v \# > $paperkey
+gpg --no-default-keyring --keyring $pubring --secret-keyring $secring --dearmor < $private | paperkey --output-width 72 | grep -v \# > $paperkey
 
 # Create qr codes
 qrencode -o $pubqr < $public
-bzip2 -9 < $paperkey | base64 | qrencode -o $secqr
+bzip2 -9 < $paperkey | base64 -w 72 | qrencode -o $secqr
 
 # Tar together all the output files
 tar czvf $tarball $id
+
+# Remove the temporary keyring
+rm -f $pubring $pubring~ $secring $secring~
 
