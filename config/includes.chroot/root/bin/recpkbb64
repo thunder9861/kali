@@ -1,22 +1,22 @@
 #!/bin/bash
 
 # Reconstructs a secret key from a paper key
-# $1 = Paperkey (*.pkt)
+# $1 = Paperkey (*.pkb.b64)
 # $2 = Public key
 # $3 = Output private key
 
 # Check arguments
 if [ -z $1 ] || [ -z $2 ] || [ -z $3 ]; then
-   echo "Usage: $0 <*.pkt> <key.pub.asc> <output>"
+   echo "Usage: $0 <*.pkb.b64> <key.pub.asc> <output>"
    exit 1
 fi
 
 # Load the keys
-pkt=$1
+pkbb64=$1
 pubasc=$2
 secasc=$3
 
-tmp=$pkt.tmp
+tmp=$pkb.tmp
 pubgpg=$pubasc.gpg
 secgpg=$secasc.gpg
 
@@ -35,8 +35,7 @@ $gpgbase --import $pubasc
 $gpgbase --dearmor --output $pubgpg < $pubasc
 
 # Reconstruct the paperkey
-paperkey --file-format | perl -pe 's/^/# /' > $tmp
-cat $pkt >> $tmp
+base64 -d $pkbb64 > $tmp
 
 # Reconstruct the secret key
 paperkey --pubring $pubgpg --secrets $tmp --output $secgpg
