@@ -222,6 +222,7 @@ evince
 system-config-printer
 wkhtmltopdf
 sane
+pdfgrep
 
 # Office
 libreoffice
@@ -235,9 +236,10 @@ pidgin-skype
 pidgin-encryption
 
 # Media
-vlc
+smplayer
 audacity
 brasero
+recordmydesktop
 
 # Graphics
 flashplugin-nonfree
