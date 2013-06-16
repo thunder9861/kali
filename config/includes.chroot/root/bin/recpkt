@@ -21,7 +21,7 @@ pubgpg=$pubasc.gpg
 secgpg=$secasc.gpg
 
 # Define the base gpg call
-gpgbase="gpg2 --no-default-keyring --keyring $pubring --secret-keyring $secring -z 9 --textmode"
+gpgbase="gpg2 --no-default-keyring --keyring $pubring --secret-keyring $secring -z 9"
 
 # Define the temporary keyring
 pwd=`pwd`

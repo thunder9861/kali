@@ -35,7 +35,7 @@ tarball=$pwd/$id.tgz
 mkdir -p $dir
 
 # Define the base gpg call
-gpgbase="gpg2 --no-default-keyring --keyring $pubring --secret-keyring $secring -z 9 --textmode"
+gpgbase="gpg2 --no-default-keyring --keyring $pubring --secret-keyring $secring -z 9"
 
 # Generate a keypair (use gpg for this)
 cat <<EOF | gpg --no-default-keyring --keyring $pubring --secret-keyring $secring -z 9 --gen-key --batch
@@ -55,7 +55,7 @@ $gpgbase --import $secgpg $pubgpg
 
 # Create a revocation certificate (use gpg for this)
 rm -f $revgpg
-cat <<EOF | gpg --status-fd 2 --command-fd 0 --no-default-keyring --keyring $pubring --secret-keyring $secring -z 9 --textmode --gen-revoke --armor --output $revasc $id
+cat <<EOF | gpg --status-fd 2 --command-fd 0 --no-default-keyring --keyring $pubring --secret-keyring $secring -z 9 --gen-revoke --armor --output $revasc $id
 y
 0
 

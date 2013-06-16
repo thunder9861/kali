@@ -5,7 +5,7 @@
 # $2 = Command
 
 # First argument must be the key
-if [ -z $1 ]; then
+if [ -z $1 ] || [ -z $2 ]; then
    echo "Usage: $0 <key> <command>"
    exit 1
 fi
@@ -23,7 +23,7 @@ pubring=$pwd/pubring.tmp
 secring=$pwd/secring.tmp
 
 # Define the base gpg call
-gpgbase="gpg2 --no-default-keyring --keyring $pubring --secret-keyring $secring -z 9 --textmode"
+gpgbase="gpg2 --no-default-keyring --keyring $pubring --secret-keyring $secring -z 9 -q"
 
 # Import the key into a temporary keyring
 $gpgbase --import $key
