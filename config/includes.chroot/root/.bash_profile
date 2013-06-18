@@ -1,5 +1,3 @@
-# Path appends
-export PATH=$PATH:/root/bin
 
 # Solarized Colors
 if [ "$TERM" = "linux" ]; then

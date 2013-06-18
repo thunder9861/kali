@@ -170,6 +170,7 @@ mono-complete
 # Internet
 transmission
 chromium
+tickr
 
 # Networking
 network-manager-gnome

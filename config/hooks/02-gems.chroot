@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Install gems
+gem install --no-ri --no-rdoc interactive_editor
+gem install --no-ri --no-rdoc wirble
+gem install --no-ri --no-rdoc awesome_print
+gem install --no-ri --no-rdoc what_methods
+

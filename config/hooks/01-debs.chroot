@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Install packages
+dpkg -i /root/deb/*.deb
