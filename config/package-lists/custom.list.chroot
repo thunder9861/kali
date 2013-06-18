@@ -74,6 +74,7 @@ apt-rdepends
 apt-utils
 apt-xapian-index
 synaptic
+apt-cacher-ng
 
 # Development
 kernel-package
@@ -103,6 +104,9 @@ galternatives
 sysv-rc-conf
 tasksel
 debian-installer
+unetbootin
+mbr
+debian-installer-launcher
 
 # Wine
 wine
@@ -227,6 +231,7 @@ pdfgrep
 # Office
 libreoffice
 lyx
+jabref
 
 # Communication
 icedove
