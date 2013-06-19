@@ -7,10 +7,10 @@ Global {
     margin=0
     widthtype=percent
     width=100
-    height=21
+    height=26
     transparent=1
     tintcolor=#000000
-    alpha=255
+    alpha=0
     autohide=0
     heightwhenhidden=2
     setdocktype=1
@@ -21,13 +21,13 @@ Global {
     usefontsize=0
     background=0
     backgroundfile=/usr/share/lxpanel/images/background.png
-    iconsize=21
+    iconsize=24
 }
 
 Plugin {
     type = menu
     Config {
-        image=/usr/share/icons/hicolor/48x48/apps/kali-menu.png
+        image=/usr/share/lxde/images/lxde-icon.png
         system {
         }
         separator {
@@ -90,7 +90,7 @@ Plugin {
         TooltipFmt=%A %B %d %Y
         BoldFont=0
         IconOnly=0
-        CenterText=0
+        CenterText=1
     }
 }
 
