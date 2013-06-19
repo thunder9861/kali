@@ -6,3 +6,4 @@ gem install --no-ri --no-rdoc wirble
 gem install --no-ri --no-rdoc awesome_print
 gem install --no-ri --no-rdoc what_methods
 
+/root/scripts/update_gems.sh

@@ -1,0 +1,191 @@
+filter "Search Filter" {
+  section {
+    inclusive false;
+    sections {
+    };
+  };
+  status {
+    flags 0xffffffff;
+  };
+  pattern {
+    andMode 8;
+    patterns {
+    };
+  };
+  priority {
+  };
+  reducedview {
+    enabled false;
+  };
+};
+filter "Broken" {
+  section {
+    inclusive false;
+    sections {
+    };
+  };
+  status {
+    flags 0x4;
+  };
+  pattern {
+    andMode 0;
+    patterns {
+    };
+  };
+  priority {
+  };
+  reducedview {
+    enabled false;
+  };
+};
+filter "Marked Changes" {
+  section {
+    inclusive false;
+    sections {
+    };
+  };
+  status {
+    flags 0x34;
+  };
+  pattern {
+    andMode 20;
+    patterns {
+    };
+  };
+  priority {
+  };
+  reducedview {
+    enabled false;
+  };
+};
+filter "Package with Debconf" {
+  section {
+    inclusive false;
+    sections {
+    };
+  };
+  status {
+    flags 0xffffffff;
+  };
+  pattern {
+    andMode 0;
+    patterns {
+      Depends; "^debconf"; false;
+    };
+  };
+  priority {
+  };
+  reducedview {
+    enabled false;
+  };
+};
+filter "Upgradable (upstream)" {
+  section {
+    inclusive false;
+    sections {
+    };
+  };
+  status {
+    flags 0x1000;
+  };
+  pattern {
+    andMode 1;
+    patterns {
+    };
+  };
+  priority {
+  };
+  reducedview {
+    enabled false;
+  };
+};
+filter "Community Maintained (installed)" {
+  section {
+    inclusive false;
+    sections {
+    };
+  };
+  status {
+    flags 0x1;
+  };
+  pattern {
+    andMode 40;
+    patterns {
+      Component; "main"; true;
+      Component; "restricted"; true;
+      Origin; "Ubuntu"; false;
+    };
+  };
+  priority {
+  };
+  reducedview {
+    enabled false;
+  };
+};
+filter "Missing Recommends" {
+  section {
+    inclusive false;
+    sections {
+    };
+  };
+  status {
+    flags 0x8000;
+  };
+  pattern {
+    andMode 32;
+    patterns {
+    };
+  };
+  priority {
+  };
+  reducedview {
+    enabled false;
+  };
+};
+filter "Orphaned" {
+  section {
+    inclusive false;
+    sections {
+    };
+  };
+  status {
+    flags 0x4600;
+  };
+  pattern {
+    andMode 24;
+    patterns {
+    };
+  };
+  priority {
+  };
+  reducedview {
+    enabled false;
+  };
+};
+filter "Bloat" {
+  section {
+    inclusive false;
+    sections {
+    };
+  };
+  status {
+    flags 0x1;
+  };
+  pattern {
+    andMode 0;
+    patterns {
+      Name; "-doc"; false;
+      Name; "-ttf"; false;
+      Name; "-otf"; false;
+      Name; "font"; false;
+      Description; "example"; false;
+      Description; "demo"; false;
+      Description; "game"; false;
+    };
+  };
+  priority {
+  };
+  reducedview {
+    enabled false;
+  };
+};
