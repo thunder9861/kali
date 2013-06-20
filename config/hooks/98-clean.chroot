@@ -1,3 +1,19 @@
 #!/bin/bash
 
-
+rm -fv /etc/resolv.conf
+rm -fv /root/.bash_history
+rm -fv /root/.ssh/known_hosts
+rm -fv /var/cache/apt/archives/*.deb
+rm -fv /var/cache/apt/*.bin
+rm -fv /var/core/*
+rm -fv /var/lib/apt/list/*
+rm -fv /var/lib/apt/list/partial/*
+rm -fv /var/log/*.gz
+rm -rfv /root/.local/share/gvfs-metadata
+rm -rfv /tmp/*
+rm -rfv /usr/share/doc/*
+rm -rfv /usr/share/info/*
+rm -rfv /usr/share/man/*
+rm -rfv /var/cache/apt/archives/partial/*
+rm -rfv /var/tmp/*
+sync
