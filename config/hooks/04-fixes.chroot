@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Create the tor folder with the correct permissions
+mkdir -p /var/run/tor
+chmod 700 /var/run/tor
