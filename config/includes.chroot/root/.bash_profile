@@ -1,3 +1,5 @@
+# Add ~/bin to the path
+export PATH=$PATH:/root/bin
 
 # Solarized Colors
 if [ "$TERM" = "linux" ]; then
@@ -20,6 +22,5 @@ if [ "$TERM" = "linux" ]; then
     clear
 fi
 
-# Autostart Byobu on tty2
-# [[ `tty` == '/dev/tty2' ]] && `echo $- | grep -qs i` && byobu-launcher && exit 0
-
+# Source .bashrc
+. ~/.bashrc
