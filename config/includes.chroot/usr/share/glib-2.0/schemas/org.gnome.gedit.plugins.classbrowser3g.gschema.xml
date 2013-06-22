@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.gedit.plugins.classbrowser3g" path="/org/gnome/gedit/plugins/classbrowser3g/">
+    <key type="b" name="autocollapse">
+      <default>true</default>
+      <summary>Auto-collapse symbol tree</summary>
+    </key>
+    <key type="b" name="jump-on-middle-click">
+      <default>false</default>
+      <summary>Jump to tag on middle click</summary>
+    </key>
+    <key type="s" name="color-class">
+      <default>'#9E880D'</default>
+      <summary>Class Color</summary>
+    </key>
+    <key type="s" name="color-define">
+      <default>'#679915'</default>
+      <summary>Define Color</summary>
+    </key>
+    <key type="s" name="color-enumerator">
+      <default>'#197424'</default>
+      <summary>Enumerator Color</summary>
+    </key>
+    <key type="s" name="color-error">
+      <default>'#DB0000'</default>
+      <summary>Error Color</summary>
+    </key>
+    <key type="s" name="color-field">
+      <default>'#164975'</default>
+      <summary>Field Color</summary>
+    </key>
+    <key type="s" name="color-function">
+      <default>'#7D20B0'</default>
+      <summary>Function Color</summary>
+    </key>
+    <key type="s" name="color-namespace">
+      <default>'#C25E11'</default>
+      <summary>Namespace Color</summary>
+    </key>
+    <key type="a{ss}" name="used-parsers">
+      <default>{'': 'CTagsParser', 'diff': 'DiffParser', 'docbook': 'XMLParserExpat', 'html': 'HTMLParser', 'mallard': 'XMLParserExpat', 'python': 'PythonParserAst', 'ruby': 'RubyParser', 'xml': 'XMLParserExpat', 'xslt': 'XMLParserExpat', 'markdown': 'MarkdownParser'}</default>
+      <summary>Used Parsers</summary>
+    </key>
+  </schema>
+</schemalist>
+

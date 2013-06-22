@@ -1,0 +1,11 @@
+[Plugin]
+Loader=python
+Module=imitation
+IAge=3
+Name=Imitation
+Description=Edit multiple places in a document at once
+Authors=Jonathan Walsh
+Copyright=Copyright 2011-2012 Jonathan Walsh
+Website=http://codetree.com.au/projects/imitation/
+Version=1.1
+

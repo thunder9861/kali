@@ -1,12 +1,12 @@
 # -*- encoding:utf-8 -*-
 
 
-# config_manager.py
+# config_manager.py is part of smart-highlighting-gedit.
 #
 #
-# Copyright 2010 swatch
+# Copyright 2010-2012 swatch
 #
-# This program is free software; you can redistribute it and/or modify
+# smart-highlighting-gedit is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
@@ -57,6 +57,13 @@ class ConfigManager:
 		f = open(filename, 'w+')
 		f.write(self.dom.toprettyxml('', '', 'utf-8'))
 		f.close
+		
+	def boolean(self, string):
+		return string.lower() in ['true', 'yes', 't', 'y', 'ok', '1']
+		
+	def to_bool(self, dic):
+		for key in dic.keys():
+			dic[key] = self.boolean(dic[key])
 
 	
 if __name__ == '__main__':

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+    <schema id="org.gnome.gedit.plugins.imitation"
+            path="/org/gnome/gedit/plugins/imitation/">
+        
+        <key type="s" name="mark-toggle">
+            <default>"&lt;Control&gt;e"</default>
+            <summary>Toggle mark</summary>
+            <description>
+                Toggle mark at cursor (and enable "sticky mode").
+                Format as accepted by gtk_accelerator_parse.
+            </description>
+        </key>
+        
+        <key type="s" name="mark-up">
+            <default>"&lt;Control&gt;Page_Up"</default>
+            <summary>Mark upwards</summary>
+            <description>
+                Mark the next line (upwards) that has the same line offset
+                as the cursor (column if selection).
+                Format as accepted by gtk_accelerator_parse.
+            </description>
+        </key>
+        
+        <key type="s" name="mark-down">
+            <default>"&lt;Control&gt;Page_Down"</default>
+            <summary>Mark downwards</summary>
+            <description>
+                Mark the next line (downwards) that has the same line offset
+                as the cursor (column if selection).
+                Format as accepted by gtk_accelerator_parse.
+            </description>
+        </key>
+        
+        <key type="s" name="mark-alt-up">
+            <default>"&lt;Control&gt;&lt;Shift&gt;Page_Up"</default>
+            <summary>Mark upwards (alternative)</summary>
+            <description>
+                Mark the next line (upwards) that has the same 'word' offset
+                as the cursor. If selection: mark the next match to the current
+                selection.
+                Format as accepted by gtk_accelerator_parse.
+            </description>
+        </key>
+        
+        <key type="s" name="mark-alt-down">
+            <default>"&lt;Control&gt;&lt;Shift&gt;Page_Down"</default>
+            <summary>Mark downwards (alternative)</summary>
+            <description>
+                Mark the next line (downwards) that has the same 'word' offset
+                as the cursor. If selection: mark the next match to the current
+                selection.
+                Format as accepted by gtk_accelerator_parse.
+            </description>
+        </key>
+
+        <key type="s" name="incr-num">
+            <default>"&lt;Control&gt;0"</default>
+            <summary>Insert incrementing integers from zero</summary>
+            <description>
+                Insert integers incrementing from zero at each mark.
+                Start at first mark placed, end at last.
+                Format as accepted by gtk_accelerator_parse.
+            </description>
+        </key>
+        
+        <key type="s" name="incr-num1">
+            <default>"&lt;Control&gt;1"</default>
+            <summary>Insert incrementing integers from one</summary>
+            <description>
+                Insert integers incrementing from one at each mark.
+                Start at first mark placed, end at last.
+                Format as accepted by gtk_accelerator_parse.
+            </description>
+        </key>
+
+        <key type="s" name="incr-lower">
+            <default>"&lt;Control&gt;a"</default>
+            <summary>Insert incrementing ASCII lowercase chars</summary>
+            <description>
+                Insert chars incrementing from a-z at each mark.
+                Start at first mark placed, end at last.
+                Format as accepted by gtk_accelerator_parse.
+            </description>
+        </key>
+
+        <key type="s" name="incr-upper">
+            <default>"&lt;Control&gt;&lt;Shift&gt;a"</default>
+            <summary>Insert incrementing ASCII uppercase chars</summary>
+            <description>
+                Insert chars incrementing from A-Z at each mark.
+                Start at first mark placed, end at last.
+                Format as accepted by gtk_accelerator_parse.
+            </description>
+        </key>
+
+        <key type="s" name="word-seperators">
+            <!-- default must be gvariant escaped, then xml escaped -->
+            <default>'!"#$%&amp;\'()*+,./:;&lt;=&gt;?@[\\]^`{|}~'</default>
+            <summary>Word seperators</summary>
+            <description>
+                List of characters classified as seperators (or non-word),
+                affecting vertical marking based on word offset.
+                Default is python's string.punctuation (excluding '_' and '-').
+                Space and tab are always included.
+            </description>
+        </key>
+        
+        <key type="s" name="mark-selection-bg">
+            <default>"#00ddff"</default>
+            <summary>Mark selection background</summary>
+            <description>
+                The background color of mark selections.
+                Should be distinct from other backgrounds (e.g. search matches).
+            </description>
+        </key>
+        
+        <key type="s" name="mark-selection-fg">
+            <default>"#000000"</default>
+            <summary>Mark selection foreground</summary>
+            <description>
+                The foreground color of mark selections.
+            </description>
+        </key>
+        
+    </schema>
+</schemalist>
+

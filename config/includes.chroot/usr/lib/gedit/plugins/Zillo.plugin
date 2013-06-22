@@ -1,0 +1,10 @@
+[Plugin]
+Loader=python
+Module=Zillo
+IAge=3
+Name=Zillo
+Description[en]=Encode and decode text to base64
+Description[es]=Cifra y descifra texto en base64
+Authors=Mario Humberto Frescas Marquez. <maqzma@gmail.com>
+Copyright=Copyright © 2012 Mario Humberto Frescas Marquez
+Website=http://programandoelescritorio.blogspot.com/

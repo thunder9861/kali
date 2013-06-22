@@ -1,104 +1,198 @@
-# Copyright (C) 2006 Osmo Salomaa
-#
-# This program is free software; you can redistribute it and/or modify it under
-# the terms of the GNU General Public License as published by the Free Software
-# Foundation; either version 2 of the License, or (at your option) any later
-# version.
-#
-# This program is distributed in the hope that it will be useful, but WITHOUT
-# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-# FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
-# details.
-#
-# You should have received a copy of the GNU General Public License along with
-# this program; if not, write to the Free Software Foundation, Inc., 51
-# Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+# -*- coding: utf-8 -*-
+# Copyright (c) 2010 Osmo Salomaa
+# Copyright (c) 2012 Joe R. Nassimian
 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, version 3 of the License.
 
-"""Align blocks of text into columns."""
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-from gettext import gettext as _
-import gedit
-import gtk
-import gtk.glade
 import os
+from gettext import gettext as _
+
+from gi.repository import GObject, Gtk, Gedit
 
 
-UI = """
+"""
+Align blocks of text into colomns
+"""
+
+# -----------------------------------------------------------------------------
+
+# Menu item example, insert a new item in the Tools menu
+ui_str = """
 <ui>
-  <menubar name="MenuBar">
-    <menu name="EditMenu" action="Edit">
-      <placeholder name="EditOps_6">
-        <menuitem name="Align" action="Align"/>
-      </placeholder>
-    </menu>
-  </menubar>
+    <menubar name="MenuBar">
+        <menu name="EditMenu" action="Edit">
+            <placeholder name="EditOps_6">
+                <menuitem name="Align" action="Align"/>
+            </placeholder>
+        </menu>
+    </menubar>
 </ui>"""
 
+# -----------------------------------------------------------------------------
 
 class AlignDialog(object):
+    """
+    Dialog for specifying an alignment separator.
+    """
 
-    """Dialog for specifying an alignment separator."""
+    # -------------------------------------------------------------------------
 
     def __init__(self, parent):
+        fn = os.path.join(os.path.dirname(__file__), 'align.ui')
+        self.builder = Gtk.Builder()
+        self.builder.add_from_file(fn)
+        self.builder.connect_signals(self)
 
-        path = os.path.join(os.path.dirname(__file__), 'align.glade')
-        glade_xml = gtk.glade.XML(path)
-        self.dialog = glade_xml.get_widget('dialog')
-        self.entry = glade_xml.get_widget('entry')
+        self.dialog = self.builder.get_object("dialog")
+        self.entry = self.builder.get_object("entry")
 
         self.dialog.set_transient_for(parent)
-        self.dialog.set_default_response(gtk.RESPONSE_OK)
+        self.dialog.set_default_response(Gtk.ResponseType.OK)
 
-    def destroy(self):
-        """Destroy the dialog."""
-
-        return self.dialog.destroy()
-
-    def get_separator(self):
-        """Get separator."""
-
-        return self.entry.get_text()
+    # -------------------------------------------------------------------------
 
     def run(self):
-        """Show and run the dialog."""
+        """
+        Show and run the dialog.
+        """
+        response = self.dialog.run()
 
-        self.dialog.show()
-        return self.dialog.run()
+        if response == Gtk.ResponseType.OK:
+            res = self.entry.get_text()
+        else:
+            res = None
 
+        self.dialog.destroy()
 
-class AlignPlugin(gedit.Plugin):
+        return res
 
-    """Align blocks of text into columns."""
+# -----------------------------------------------------------------------------
+
+class AlignPlugin(GObject.Object, Gedit.WindowActivatable):
+    """
+    Align blocks of text into columns.
+    """
+
+    __gtype_name__ = "AlignPlugin"
+
+    window = GObject.property(type=Gedit.Window)
+
+    # -------------------------------------------------------------------------
 
     def __init__(self):
+        GObject.Object.__init__(self)
 
-        gedit.Plugin.__init__(self)
-
-        self.action_group = None
+        self._action_group = None
         self.ui_id = None
-        self.window = None
 
-    def activate(self, window):
-        """Activate plugin."""
+    # -------------------------------------------------------------------------
 
-        self.window = window
-        self.action_group = gtk.ActionGroup('AlignPluginActions')
-        self.action_group.add_actions([(
+    def _insert_menu(self):
+        # Create a new action group
+        self._action_group = Gtk.ActionGroup("AlignPluginActions")
+        self._action_group.add_actions([(
             'Align',
             None,
             _('Ali_gn...'),
             None,
-            _('Align the selected text to columns'),
-            self.on_align_activate
+            _("Align the selected text to columns"),
+            self.do_align_activate
         )])
-        uim = window.get_ui_manager()
-        uim.insert_action_group(self.action_group, -1)
-        self.ui_id = uim.add_ui_from_string(UI)
+
+        # Get the Gtk.UIManager
+        manager = self.window.get_ui_manager()
+
+        # Insert the action group
+        manager.insert_action_group(self._action_group, -1)
+
+        # Merge the UI
+        self.ui_id = manager.add_ui_from_string(ui_str)
+
+    # -------------------------------------------------------------------------
+
+    def _remove_menu(self):
+        # Get the Gtk.UIManager
+        manager = self.window.get_ui_manager()
+
+        # Remove the ui
+        manager.remove_ui(self.ui_id)
+
+        # Remove the action group
+        manager.remove_action_group(self._action_group)
+
+        # Make sure the manager updates
+        manager.ensure_update()
+
+    # -------------------------------------------------------------------------
+
+    def do_activate(self):
+        """
+        Activate plugin.
+        """
+
+        # Insert menu items
+        self._insert_menu()
+
+    # -------------------------------------------------------------------------
+
+    def do_deactivate(self):
+        """
+        Deactivate plugin.
+        """
+
+        # Remove any installed menu items
+        self._remove_menu()
+
+        # Clear attributes
+        self._action_group = None
+        self.ui_id = None
+
+    # -------------------------------------------------------------------------
+
+    def do_update_state(self):
+        """
+        Update sensitivity of plugin's actions.
+        """
+
+        doc = self.window.get_active_document()
+        self._action_group.set_sensitive(doc is not None)
+
+    # -------------------------------------------------------------------------
+
+    def do_align_activate(self, *args):
+        """
+        Align the selected text into columns.
+        """
+
+        doc = self.window.get_active_document()
+
+        bounds = doc.get_selection_bounds()
+        if not bounds:
+            return
+
+        dialog = AlignDialog(self.window)
+
+        separator = dialog.run()
+
+        if separator:
+            self.align(doc, bounds, separator)
+
+    # -------------------------------------------------------------------------
 
     def align(self, doc, bounds, separator):
-        """Align the selected text into columns."""
+        """
+        Align the selected text into columns.
+        """
 
         splitter = separator.strip() or ' '
         lines = range(bounds[0].get_line(), bounds[1].get_line() + 1)
@@ -110,7 +204,7 @@ class AlignPlugin(gedit.Plugin):
             line_start = doc.get_iter_at_line(lines[i])
             line_end = line_start.copy()
             line_end.forward_to_line_end()
-            text = doc.get_text(line_start, line_end)
+            text = doc.get_text(line_start, line_end, False)
             if text.find(splitter) == -1:
                 lines.pop(i)
                 continue
@@ -155,34 +249,5 @@ class AlignPlugin(gedit.Plugin):
 
         doc.end_user_action()
 
-    def deactivate(self, window):
-        """Deactivate plugin."""
+# -----------------------------------------------------------------------------
 
-        uim = window.get_ui_manager()
-        uim.remove_ui(self.ui_id)
-        uim.remove_action_group(self.action_group)
-        uim.ensure_update()
-
-        self.action_group = None
-        self.ui_id = None
-        self.window = None
-
-    def on_align_activate(self, *args):
-        """Align the selected text into columns."""
-
-        doc = self.window.get_active_document()
-        bounds = doc.get_selection_bounds()
-        if not bounds:
-            return
-        dialog = AlignDialog(self.window)
-        response = dialog.run()
-        separator = dialog.get_separator()
-        dialog.destroy()
-        if response == gtk.RESPONSE_OK and separator:
-            self.align(doc, bounds, separator)
-
-    def update_ui(self, window):
-        """Update sensitivity of plugin's actions."""
-
-        doc = self.window.get_active_document()
-        self.action_group.set_sensitive(doc is not None)

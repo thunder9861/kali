@@ -1,12 +1,12 @@
 # -*- encoding:utf-8 -*-
 
 
-# __init__.py
+# __init__.py is part of smart-highlighting-gedit.
 #
 #
-# Copyright 2010 swatch
+# Copyright 2010-2012 swatch
 #
-# This program is free software; you can redistribute it and/or modify
+# smart-highlighting-gedit is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
@@ -23,36 +23,38 @@
 
 
 
-import gedit
-import gtk
+from gi.repository import GObject, Gtk, Gedit, PeasGtk
+
 from smart_highlight import SmartHighlightWindowHelper
 from config_ui import ConfigUI
+#import config_manager
 
+#class SmartHighlightingPlugin(GObject.Object, Gedit.WindowActivatable, PeasGtk.Configurable):
+class SmartHighlightingPlugin(GObject.Object, Gedit.WindowActivatable):
+	__gtype_name__ = "SmartHighlightingPlugin"
+	window = GObject.property(type=Gedit.Window)
 
-class SmartHighlightingPlugin(gedit.Plugin):
 	def __init__(self):
-		gedit.Plugin.__init__(self)
-		self._instances = {}
+		GObject.Object.__init__(self)
 
-	def activate(self, window):
-		self._instances[window] = SmartHighlightWindowHelper(window)
+	def do_activate(self):
+		self._plugin = SmartHighlightWindowHelper(self, self.window)
 
-	def deactivate(self, window):
-		self._instances[window].deactivate()
-		del self._instances[window]
+	def do_deactivate(self):
+		self._plugin.deactivate()
+		del self._plugin
 
-	def update_ui(self, window):
-		self._instances[window].update_ui()
-
-	def is_configurable(self):
-		return True
+	def do_update_state(self):
+		self._plugin.update_ui()
 		
-	def create_configure_dialog(self):
-		dlg = ConfigUI(self)
-		return dlg.configWindow
-
+	'''
+	def do_create_configure_widget(self):
+		#widget = Gtk.CheckButton("A configuration setting.")
+		#widget.set_border_width(6)
+		widget = ConfigUI(self.window, self.config).configWindow
+		return widget
+	#'''
+	
 	def get_instance(self):
-		window = gedit.app_get_default().get_active_window()
-		return self._instances[window], window
-
+		return self._plugin, self.window
 

@@ -1,0 +1,9 @@
+[Plugin]
+Loader=python
+Module=gedittables
+IAge=3
+Name=Table Maker
+Description=Automatically create text-based tables
+Authors=Joshua Essex <essexjosh@gmail.com>
+Copyright=Copyright © 2012 Joshua Essex
+Website=https://github.com/jessex/gedit-tables
