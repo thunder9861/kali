@@ -1,0 +1,138 @@
+Manifest-Version: 1.0
+Bundle-Name: Pydev debug
+Bundle-ClassPath: pydev-debug.jar
+Bundle-Activator: org.python.pydev.debug.core.PydevDebugPlugin
+Bundle-Vendor: Aptana
+Bundle-ManifestVersion: 2
+Bundle-Localization: plugin
+Bundle-SymbolicName: org.python.pydev.debug; singleton:=true
+Export-Package: org.python.pydev.debug.codecoverage,org.python.pydev.d
+ ebug.core,org.python.pydev.debug.model,org.python.pydev.debug.model.r
+ emote,org.python.pydev.debug.newconsole,org.python.pydev.debug.newcon
+ sole.env,org.python.pydev.debug.newconsole.prefs,org.python.pydev.deb
+ ug.pyunit,org.python.pydev.debug.ui,org.python.pydev.debug.ui.actions
+ ,org.python.pydev.debug.ui.blocks,org.python.pydev.debug.ui.launching
+ ,org.python.pydev.debug.ui.propertypages
+Require-Bundle: org.junit;bundle-version="4.0.0";resolution:=optional,
+ org.eclipse.ui,org.eclipse.ui.ide,org.eclipse.core.runtime,org.eclips
+ e.core.resources,org.eclipse.jface.text,org.eclipse.ui.editors,org.ec
+ lipse.ui.views,org.eclipse.debug.core,org.eclipse.debug.ui,org.eclips
+ e.ui.workbench.texteditor,org.eclipse.core.variables,org.eclipse.ui.c
+ onsole,org.python.pydev.core,org.python.pydev.ast,org.python.pydev.pa
+ rser,org.python.pydev;bundle-version="2.7.5.2013052819",org.eclipse.c
+ ore.expressions,org.python.pydev.jython,org.python.pydev.shared_inter
+ active_console,org.python.pydev.shared_ui
+Bundle-Version: 2.7.5.2013052819
+Eclipse-LazyStart: true
+
+Name: LICENSE.txt
+SHA1-Digest: p+9tB+uCL9D+iYG9D8zDHITgqgU=
+
+Name: icons/python_exception_breakpoint.png
+SHA1-Digest: TYqFXv8KVI8zH3lM+f9szvMQcDA=
+
+Name: icons/python_16x16.png
+SHA1-Digest: Rbnn74+QTphcW6hciZF0K5gk5lk=
+
+Name: icons/pyunit.png
+SHA1-Digest: fgqsdKf9t8xg8K+3y/kv6tu9M9o=
+
+Name: icons/ovr16/success_ovr.gif
+SHA1-Digest: 7nEGyUsQnl/dEEyOXGNdNPPx/2c=
+
+Name: icons/pin.png
+SHA1-Digest: 8o+l4q8j5RphEcFZybWewZxqKGA=
+
+Name: icons/greendot_big.gif
+SHA1-Digest: nRuo7UgAll5rgYeOnCz9e6a4DXs=
+
+Name: icons/jython_run.png
+SHA1-Digest: ACD/L7WM063aKXyoZltQ1uBdGEg=
+
+Name: icons/pin_arrow.png
+SHA1-Digest: XyEV2n4/wGi7fN8xxGh+JVMkqoA=
+
+Name: icons/python_run.png
+SHA1-Digest: YFGVVfN93MOjbbOmP+jFuOhPgVs=
+
+Name: icons/watch_exp.gif
+SHA1-Digest: gbhVbScZ5V97AjvtYXoG9Iy425Y=
+
+Name: icons/breakmarker.gif
+SHA1-Digest: 47r0WkV7ADs0ZBXYyVnBDSoAKzI=
+
+Name: icons/reddot.GIF
+SHA1-Digest: 6J4g2czcfvAkTZnMd1sy+kidFbk=
+
+Name: icons/ovr16/error_ovr.gif
+SHA1-Digest: kjxmfEenOxQJm9GHTTuEbMkVRb0=
+
+Name: icons/greendot.gif
+SHA1-Digest: C5DBl0iqyXqtZOw9X/7RItZdZas=
+
+Name: icons/breakmarker_conditional.gif
+SHA1-Digest: iw7Idkz6OYW1YmdbH10Wb48zc5I=
+
+Name: icons/jython_unit.png
+SHA1-Digest: Mu0DoXj/dbVbK6Jq/EhDb7YFu6A=
+
+Name: icons/stepover_co.gif
+SHA1-Digest: +kc88nB0q3ph+CAuyJbq50901MM=
+
+Name: icons/setnext_co_dis.gif
+SHA1-Digest: MX7CGZfWUHD52JdoladUm9IidMc=
+
+Name: icons/breakmarker_gray.gif
+SHA1-Digest: qyp6/BglW2gScIeGbtVK/hXNgdE=
+
+Name: schema/pydev_debug_console_input_listener.exsd
+SHA1-Digest: GzI7usGPWlqerK4c3S2I5UjumBc=
+
+Name: icons/breakmarker_gray_conditional.gif
+SHA1-Digest: PO2Znfn9t6XSRJnFbNWipEhFpQU=
+
+Name: pydev-debug.jar
+SHA1-Digest: ZUmo5/KTdtnLhU4g0tcSoMnCmyk=
+
+Name: icons/pyunit_old.png
+SHA1-Digest: zbFEDJYtkoTXpPFbZt5mFxhWuVU=
+
+Name: icons/testfailures_ovr.gif
+SHA1-Digest: roBESYwBvb+Q0OHofmGdi7HjUHs=
+
+Name: plugin.xml
+SHA1-Digest: /+I34lxzt8Bkk6x+EspiKtxGGhY=
+
+Name: icons/refresh.png
+SHA1-Digest: rnys0ppgxnoXnfkFXEF0wjms9Hk=
+
+Name: icons/setnext_co.gif
+SHA1-Digest: aEp4yzER2CcnWGoqT+/gNFq2JXQ=
+
+Name: icons/arguments.gif
+SHA1-Digest: 33OC8YA5yukxohcGvpNAWm7HRlY=
+
+Name: icons/python_refactor.png
+SHA1-Digest: C2L/wlJ09B3fvJHliuK8Mkgur4A=
+
+Name: icons/testerrors_ovr.gif
+SHA1-Digest: NwCIn9BRqoPkQbFc9EQtrqaZ29E=
+
+Name: icons/python_coverage.png
+SHA1-Digest: zXtamwZl2f/WOaOW27mCq0yTcKQ=
+
+Name: icons/python_unit.png
+SHA1-Digest: LOMStENMUJluPDoK4tOpS9osUnY=
+
+Name: icons/ovr16/failed_ovr.gif
+SHA1-Digest: 8Iiza8FIxFkjgENShY95bPmx39k=
+
+Name: icons/ironpython_unit.png
+SHA1-Digest: Hf5BtoAGHbN1brOuYMNNmyiDvFY=
+
+Name: icons/failures.gif
+SHA1-Digest: CHTaqGkl7UXVZovBik/tJ6XZUCI=
+
+Name: icons/ironpython_run.png
+SHA1-Digest: mPbZfv8e4zZ3WibzRp10JnHVzko=
+

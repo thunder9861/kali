@@ -1,0 +1,35 @@
+Manifest-Version: 1.0
+Bundle-Name: Parser Plug-in
+Bundle-ClassPath: parser.jar
+Bundle-Activator: org.python.pydev.parser.ParserPlugin
+Bundle-ManifestVersion: 2
+Bundle-Localization: plugin
+Bundle-SymbolicName: org.python.pydev.parser; singleton:=true
+Export-Package: org.python.pydev.parser,org.python.pydev.parser.fastpa
+ rser,org.python.pydev.parser.grammar24,org.python.pydev.parser.gramma
+ r25,org.python.pydev.parser.grammar26,org.python.pydev.parser.grammar
+ 27,org.python.pydev.parser.grammar30,org.python.pydev.parser.grammarc
+ ommon,org.python.pydev.parser.jython,org.python.pydev.parser.jython.a
+ st,org.python.pydev.parser.jython.ast.factory,org.python.pydev.parser
+ .prettyprinter,org.python.pydev.parser.prettyprinterv2,org.python.pyd
+ ev.parser.profile,org.python.pydev.parser.visitors,org.python.pydev.p
+ arser.visitors.comparator,org.python.pydev.parser.visitors.scope
+Require-Bundle: org.junit;bundle-version="4.0.0";resolution:=optional,
+ org.eclipse.ui,org.eclipse.ui.ide,org.eclipse.core.runtime,org.eclips
+ e.core.resources,org.eclipse.jface.text,org.python.pydev.core,org.ecl
+ ipse.ui.editors,org.eclipse.ui.workbench.texteditor
+Bundle-Version: 2.7.5.2013052819
+Eclipse-LazyStart: true
+
+Name: parser.jar
+SHA1-Digest: qNximhPCP/ngWYbsltApcto8mT8=
+
+Name: LICENSE.txt
+SHA1-Digest: p+9tB+uCL9D+iYG9D8zDHITgqgU=
+
+Name: plugin.xml
+SHA1-Digest: FE151nknuW6hYtEBHmV6ABDuMpw=
+
+Name: schema/pydev_parser_observer.exsd
+SHA1-Digest: HwNweo8YWpFE2DT/4TK8PCW6Ty8=
+

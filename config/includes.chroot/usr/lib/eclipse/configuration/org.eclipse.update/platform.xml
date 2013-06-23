@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config date="1372015627342" transient="false" version="3.0">
+<site enabled="true" policy="USER-EXCLUDE" updateable="true" url="file:dropins/sdk/">
+<feature id="org.eclipse.equinox.p2.rcp.feature.source" url="features/org.eclipse.equinox.p2.rcp.feature.source_1.1.0.dist-785EoAUkccGofGMiW9DK982713B5/" version="1.1.0.dist-785EoAUkccGofGMiW9DK982713B5">
+</feature>
+<feature id="org.eclipse.jdt.source" url="features/org.eclipse.jdt.source_3.8.0.dist-8-8lFqnFFgQGJ/" version="3.8.0.dist-8-8lFqnFFgQGJ">
+</feature>
+<feature id="org.eclipse.license" url="features/org.eclipse.license_1.0.0.dist/" version="1.0.0.dist">
+</feature>
+<feature id="org.eclipse.equinox.p2.extras.feature.source" url="features/org.eclipse.equinox.p2.extras.feature.source_1.1.0.dist-7A6FEcBpDPPGofGMiW9DK982713B/" version="1.1.0.dist-7A6FEcBpDPPGofGMiW9DK982713B">
+</feature>
+<feature id="org.eclipse.help.source" url="features/org.eclipse.help.source_1.4.0.dist-8t7kFQYFDiWRagJwV96CIM1/" version="1.4.0.dist-8t7kFQYFDiWRagJwV96CIM1">
+</feature>
+<feature id="org.eclipse.sdk" url="features/org.eclipse.sdk_3.8.0.dist-7Q85DFBoED8aTsvSIGfHAwCpDvofpxSsQVz-WFyavvkK9/" version="3.8.0.dist-7Q85DFBoED8aTsvSIGfHAwCpDvofpxSsQVz-WFyavvkK9">
+</feature>
+<feature id="org.eclipse.cvs.source" url="features/org.eclipse.cvs.source_1.3.200.dist-7B79FJJ9exZ_/" version="1.3.200.dist-7B79FJJ9exZ_">
+</feature>
+<feature id="org.eclipse.equinox.p2.user.ui.source" url="features/org.eclipse.equinox.p2.user.ui.source_2.2.0.dist-62DG8ltBTLdNsEmDGjHpFIpRdhQG/" version="2.2.0.dist-62DG8ltBTLdNsEmDGjHpFIpRdhQG">
+</feature>
+<feature id="org.eclipse.rcp.source" url="features/org.eclipse.rcp.source_3.8.0.dist-8LA2GO8FTJUDJ21934/" version="3.8.0.dist-8LA2GO8FTJUDJ21934">
+</feature>
+<feature id="org.eclipse.pde.source" url="features/org.eclipse.pde.source_3.8.0.dist-7c7vFiuFALX8A/" version="3.8.0.dist-7c7vFiuFALX8A">
+</feature>
+<feature id="org.eclipse.equinox.p2.core.feature.source" url="features/org.eclipse.equinox.p2.core.feature.source_1.1.0.dist-8298FneFLhV8CJ871602A41/" version="1.1.0.dist-8298FneFLhV8CJ871602A41">
+</feature>
+<feature id="org.eclipse.platform.source" url="features/org.eclipse.platform.source_3.8.0.dist-A2F8PIS2G0V65omegoFRjDu2ALt-R2_gtSeiRH/" version="3.8.0.dist-A2F8PIS2G0V65omegoFRjDu2ALt-R2_gtSeiRH">
+</feature>
+<feature id="org.eclipse.pde" url="features/org.eclipse.pde_3.8.0.dist-7c7vFiuFALX8A/" version="3.8.0.dist-7c7vFiuFALX8A">
+</feature>
+</site>
+<site enabled="true" policy="USER-EXCLUDE" updateable="true" url="platform:/base/">
+<feature id="org.eclipse.dltk.ruby" url="features/org.eclipse.dltk.ruby_4.0.0.201206120848/" version="4.0.0.201206120848">
+</feature>
+<feature id="org.eclipse.cdt.platform" url="features/org.eclipse.cdt.platform_8.1.2.201302132326/" version="8.1.2.201302132326">
+</feature>
+<feature id="org.eclipse.equinox.p2.core.feature" url="features/org.eclipse.equinox.p2.core.feature_1.1.0.dist-8298FneFLhV8CJ871602A41/" version="1.1.0.dist-8298FneFLhV8CJ871602A41">
+</feature>
+<feature id="net.sourceforge.vrapper" url="features/net.sourceforge.vrapper_0.32.0/" version="0.32.0">
+</feature>
+<feature id="com.github.eclipsecolortheme.feature" url="features/com.github.eclipsecolortheme.feature_0.12.0.201207240713/" version="0.12.0.201207240713">
+</feature>
+<feature id="org.eclipse.platform" url="features/org.eclipse.platform_3.8.0.dist-A2F8PIS2G0V65omegoFRjDu2ALt-R2_gtSeiRH/" version="3.8.0.dist-A2F8PIS2G0V65omegoFRjDu2ALt-R2_gtSeiRH">
+</feature>
+<feature id="org.eclipse.rcp" url="features/org.eclipse.rcp_3.8.0.dist-8LA2GO8FTJUDJ21934/" version="3.8.0.dist-8LA2GO8FTJUDJ21934">
+</feature>
+<feature id="org.eclipse.dltk.core" plugin-identifier="org.eclipse.dltk" url="features/org.eclipse.dltk.core_4.0.0.201206120848/" version="4.0.0.201206120848">
+</feature>
+<feature id="org.eclipse.help" plugin-identifier="org.eclipse.help.base" url="features/org.eclipse.help_1.4.0.dist-8t7kFQYFDiWRagJwV96CIM1/" version="1.4.0.dist-8t7kFQYFDiWRagJwV96CIM1">
+</feature>
+<feature id="org.python.pydev.feature" plugin-identifier="org.python.pydev" url="features/org.python.pydev.feature_2.7.5.2013052819/" version="2.7.5.2013052819">
+</feature>
+<feature id="org.eclipse.emf.ecore" url="features/org.eclipse.emf.ecore_2.8.3.v20130125-0546/" version="2.8.3.v20130125-0546">
+</feature>
+<feature id="org.eclipse.cdt" url="features/org.eclipse.cdt_8.1.2.201302132326/" version="8.1.2.201302132326">
+</feature>
+<feature id="org.eclipse.cdt.gnu.build" url="features/org.eclipse.cdt.gnu.build_8.1.1.201302132326/" version="8.1.1.201302132326">
+</feature>
+<feature id="org.eclipse.equinox.p2.rcp.feature" url="features/org.eclipse.equinox.p2.rcp.feature_1.1.0.dist-785EoAUkccGofGMiW9DK982713B5/" version="1.1.0.dist-785EoAUkccGofGMiW9DK982713B5">
+</feature>
+<feature id="org.eclipse.equinox.p2.user.ui" url="features/org.eclipse.equinox.p2.user.ui_2.2.0.dist-62DG8ltBTLdNsEmDGjHpFIpRdhQG/" version="2.2.0.dist-62DG8ltBTLdNsEmDGjHpFIpRdhQG">
+</feature>
+<feature id="org.eclipse.equinox.p2.extras.feature" url="features/org.eclipse.equinox.p2.extras.feature_1.1.0.dist-7A6FEcBpDPPGofGMiW9DK982713B/" version="1.1.0.dist-7A6FEcBpDPPGofGMiW9DK982713B">
+</feature>
+<feature id="org.eclipse.cvs" url="features/org.eclipse.cvs_1.3.200.dist-7B79FJJ9exZ_/" version="1.3.200.dist-7B79FJJ9exZ_">
+</feature>
+<feature id="org.eclipse.cdt.gnu.dsf" url="features/org.eclipse.cdt.gnu.dsf_4.0.1.201302132326/" version="4.0.1.201302132326">
+</feature>
+<feature id="org.eclipse.cdt.gdb" url="features/org.eclipse.cdt.gdb_7.0.0.201302132326/" version="7.0.0.201302132326">
+</feature>
+<feature id="org.eclipse.cdt.gnu.debug" url="features/org.eclipse.cdt.gnu.debug_7.1.1.201302132326/" version="7.1.1.201302132326">
+</feature>
+</site>
+<site enabled="true" policy="USER-EXCLUDE" updateable="true" url="file:../../share/eclipse/dropins/jdt/">
+<feature id="org.eclipse.jdt" url="features/org.eclipse.jdt_3.8.0.dist-8-8lFqnFFgQGJ/" version="3.8.0.dist-8-8lFqnFFgQGJ">
+</feature>
+</site>
+</config>

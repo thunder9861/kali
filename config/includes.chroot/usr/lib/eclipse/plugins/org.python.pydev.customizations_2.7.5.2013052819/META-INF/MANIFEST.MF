@@ -1,0 +1,87 @@
+Manifest-Version: 1.0
+Bundle-Name: Customizations Plug-in
+Bundle-ClassPath: customizations.jar
+Bundle-Activator: org.python.pydev.customizations.CustomizationsPlugin
+Bundle-Vendor: Aptana
+Bundle-ManifestVersion: 2
+Bundle-Localization: plugin
+Bundle-SymbolicName: org.python.pydev.customizations; singleton:=true
+Export-Package: org.python.pydev.customizations,org.python.pydev.custo
+ mizations.app_engine.actions,org.python.pydev.customizations.app_engi
+ ne.launching,org.python.pydev.customizations.app_engine.util,org.pyth
+ on.pydev.customizations.app_engine.wizards,org.python.pydev.customiza
+ tions.common
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.python.pyd
+ ev,org.python.pydev.debug,org.eclipse.core.resources,org.python.pydev
+ .core,org.junit;bundle-version="4.0";resolution:=optional,org.eclipse
+ .debug.core,org.eclipse.debug.ui,org.eclipse.core.expressions,org.pyt
+ hon.pydev.shared_ui
+Bundle-Version: 2.7.5.2013052819
+Eclipse-LazyStart: true
+
+Name: LICENSE.txt
+SHA1-Digest: p+9tB+uCL9D+iYG9D8zDHITgqgU=
+
+Name: templates/google_app_engine/hello_webapp_world/description.txt
+SHA1-Digest: FMPXu0eP+EU/tRUjBEPdpPQfMfY=
+
+Name: icons/appengine-noborder-120x30.gif
+SHA1-Digest: jEtXf9ajLPDaS/8V9QDnf9chlsQ=
+
+Name: icons/AppEngine-64.png
+SHA1-Digest: 12125wWhNO74BCVyNF5Gfdf/jEM=
+
+Name: plugin.xml
+SHA1-Digest: umlFfJBdDWunq7cC6etkynsI1zE=
+
+Name: templates/google_app_engine/hello_world/helloworld.py
+SHA1-Digest: voy4QEn9BtA+CHZl5Rz/ojmahwg=
+
+Name: templates/google_app_engine/ask_login/app.yaml
+SHA1-Digest: PUaDuAn8nqIlxD271x5sHrk8Zu8=
+
+Name: templates/google_app_engine/ask_login/description.txt
+SHA1-Digest: ahfWoTHwGaxbcmeg3cpj5L3DOco=
+
+Name: icons/AppEngine-16.png
+SHA1-Digest: rFSYJwgWn4C9VvktJzpyAN48o9w=
+
+Name: customizations.jar
+SHA1-Digest: gmkAC4jtbLge1eKCbaKtWaiFBu0=
+
+Name: icons/AppEngine-256.png
+SHA1-Digest: ZH6TyYgRnHKoC5skl89TiuwVrJQ=
+
+Name: icons/app_engine.gif
+SHA1-Digest: 9L+OKr7D54BKLYZ7jYqrgHcq/Mc=
+
+Name: icons/AppEngine-32.png
+SHA1-Digest: aYw51a0qNTqfYFQ6SQLJrVjMRjk=
+
+Name: templates/google_app_engine/hello_world/description.txt
+SHA1-Digest: uu+XJklbZ0A2T18rjIlJC7yDQMQ=
+
+Name: icons/AppEngine-128.png
+SHA1-Digest: tumXab/Ne9Mk7tO19BzuXpGNzW0=
+
+Name: icons/AppEngine-48.png
+SHA1-Digest: lK1DO7P8yZ14rfs+IvDuvTF6DPM=
+
+Name: templates/google_app_engine/hello_world/app.yaml
+SHA1-Digest: IWHNoXfDYNC5XiXEYilAxnpJGyw=
+
+Name: plugin.properties
+SHA1-Digest: 2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+
+Name: templates/google_app_engine/ask_login/asklogin.py
+SHA1-Digest: GOabkoXy+rNbiZhq9J490H4Jh+I=
+
+Name: templates/google_app_engine/hello_webapp_world/helloworld.py
+SHA1-Digest: BouMrEVDqHeH3WS8EhDBfo7NAjw=
+
+Name: icons/app_engine_16_16.gif
+SHA1-Digest: hErZTaIcKQubAynQsBYoctcshts=
+
+Name: templates/google_app_engine/hello_webapp_world/app.yaml
+SHA1-Digest: IWHNoXfDYNC5XiXEYilAxnpJGyw=
+

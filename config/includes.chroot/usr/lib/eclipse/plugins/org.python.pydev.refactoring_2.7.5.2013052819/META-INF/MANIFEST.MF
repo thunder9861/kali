@@ -1,0 +1,77 @@
+Manifest-Version: 1.0
+Bundle-Name: %peptic.pluginName
+Bundle-ClassPath: refactoring.jar
+Bundle-Activator: org.python.pydev.refactoring.PepticPlugin
+Bundle-Vendor: %peptic.providerName
+Bundle-ManifestVersion: 2
+Bundle-Localization: plugin
+Bundle-SymbolicName: org.python.pydev.refactoring;singleton:=true
+Export-Package: org.python.pydev.refactoring,org.python.pydev.refactor
+ ing.ast,org.python.pydev.refactoring.ast.adapters,org.python.pydev.re
+ factoring.ast.adapters.offsetstrategy,org.python.pydev.refactoring.as
+ t.visitors,org.python.pydev.refactoring.ast.visitors.context,org.pyth
+ on.pydev.refactoring.ast.visitors.info,org.python.pydev.refactoring.a
+ st.visitors.position,org.python.pydev.refactoring.ast.visitors.rename
+ r,org.python.pydev.refactoring.ast.visitors.rewriter,org.python.pydev
+ .refactoring.ast.visitors.selection,org.python.pydev.refactoring.code
+ generator.constructorfield,org.python.pydev.refactoring.codegenerator
+ .constructorfield.edit,org.python.pydev.refactoring.codegenerator.con
+ structorfield.request,org.python.pydev.refactoring.codegenerator.gene
+ rateproperties,org.python.pydev.refactoring.codegenerator.generatepro
+ perties.edit,org.python.pydev.refactoring.codegenerator.generateprope
+ rties.request,org.python.pydev.refactoring.codegenerator.overridemeth
+ ods,org.python.pydev.refactoring.codegenerator.overridemethods.edit,o
+ rg.python.pydev.refactoring.codegenerator.overridemethods.request,org
+ .python.pydev.refactoring.coderefactoring.extractlocal,org.python.pyd
+ ev.refactoring.coderefactoring.extractlocal.edit,org.python.pydev.ref
+ actoring.coderefactoring.extractlocal.request,org.python.pydev.refact
+ oring.coderefactoring.extractmethod,org.python.pydev.refactoring.code
+ refactoring.extractmethod.edit,org.python.pydev.refactoring.coderefac
+ toring.extractmethod.request,org.python.pydev.refactoring.coderefacto
+ ring.inlinelocal,org.python.pydev.refactoring.coderefactoring.inlinel
+ ocal.edit,org.python.pydev.refactoring.coderefactoring.inlinelocal.re
+ quest,org.python.pydev.refactoring.core.base,org.python.pydev.refacto
+ ring.core.change,org.python.pydev.refactoring.core.edit,org.python.py
+ dev.refactoring.core.model,org.python.pydev.refactoring.core.model.co
+ nstructorfield,org.python.pydev.refactoring.core.model.generateproper
+ ties,org.python.pydev.refactoring.core.model.overridemethods,org.pyth
+ on.pydev.refactoring.core.model.tree,org.python.pydev.refactoring.cor
+ e.request,org.python.pydev.refactoring.core.validator,org.python.pyde
+ v.refactoring.messages,org.python.pydev.refactoring.ui.actions,org.py
+ thon.pydev.refactoring.ui.actions.internal
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.python.pyd
+ ev.core,org.python.pydev.parser,org.eclipse.ltk.core.refactoring,org.
+ eclipse.ltk.ui.refactoring,org.eclipse.core.resources,org.eclipse.jfa
+ ce.text,org.eclipse.ui.ide,org.eclipse.ui.workbench.texteditor,org.ec
+ lipse.ui.editors,org.python.pydev;bundle-version="2.7.5.2013052819",o
+ rg.python.pydev.jython,org.eclipse.compare,org.python.pydev.shared_ui
+Bundle-Version: 2.7.5.2013052819
+Eclipse-LazyStart: true
+
+Name: icons/methpub_obj.gif
+SHA1-Digest: b1ksX7InObRkpeTyh4K3bh6e06E=
+
+Name: icons/class_obj.gif
+SHA1-Digest: yj7yWcEVXmJC4fHlp+/ZSYfDvhY=
+
+Name: LICENSE.txt
+SHA1-Digest: p+9tB+uCL9D+iYG9D8zDHITgqgU=
+
+Name: plugin.xml
+SHA1-Digest: HpksPZRy89QrtE16vphedZfm4nY=
+
+Name: plugin.properties
+SHA1-Digest: e1pfK6J5unCrA1rmltfFVoDd7kE=
+
+Name: icons/logo.ufo
+SHA1-Digest: 86NTtDnJ9w/Zk6rLi8Gn9l7io/k=
+
+Name: icons/logo.png
+SHA1-Digest: 98tBZBV001g46J0gTKLS/w1YcRE=
+
+Name: refactoring.jar
+SHA1-Digest: sRtagxN0JrTuioMK1PYcGCnVKNk=
+
+Name: icons/attrpub_obj.gif
+SHA1-Digest: x4KcODHFq0V1N32Op9X/F+CCCQc=
+

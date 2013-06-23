@@ -1,0 +1,260 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?artifactRepository version='1.1.0'?>
+<repository name='/usr/share/eclipse/dropins/jdt' type='org.eclipse.equinox.p2.artifact.repository.simpleRepository' version='1.0.0'>
+  <properties size='1'>
+    <property name='p2.timestamp' value='1372015628161'/>
+  </properties>
+  <mappings size='3'>
+    <rule filter='(&amp; (classifier=osgi.bundle))' output='${repoUrl}/plugins/${id}_${version}.jar'/>
+    <rule filter='(&amp; (classifier=binary))' output='${repoUrl}/binary/${id}_${version}'/>
+    <rule filter='(&amp; (classifier=org.eclipse.update.feature))' output='${repoUrl}/features/${id}_${version}.jar'/>
+  </mappings>
+  <artifacts size='24'>
+    <artifact classifier='osgi.bundle' id='org.eclipse.jdt' version='3.8.0.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='35464'/>
+        <property name='download.size' value='35464'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt_3.8.0.dist.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt_3.8.0.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.junit4' version='4.8.1.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.folder' value='true'/>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/jdt/plugins/org.junit4_4.8.1.dist/'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/jdt/plugins/org.junit4_4.8.1.dist'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.jdt.launching' version='3.6.100.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='302920'/>
+        <property name='download.size' value='302920'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt.launching_3.6.100.dist.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt.launching_3.6.100.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.jdt.debug' version='3.7.100.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.folder' value='true'/>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt.debug_3.7.100.dist/'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt.debug_3.7.100.dist'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.jdt.apt.pluggable.core' version='1.0.400.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='27152'/>
+        <property name='download.size' value='27152'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt.apt.pluggable.core_1.0.400.dist.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt.apt.pluggable.core_1.0.400.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.jdt.ui' version='3.8.0.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='10158166'/>
+        <property name='download.size' value='10158166'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt.ui_3.8.0.dist.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt.ui_3.8.0.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.jdt.junit.core' version='3.7.100.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='137404'/>
+        <property name='download.size' value='137404'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt.junit.core_3.7.100.dist.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt.junit.core_3.7.100.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.jdt.core.manipulation' version='1.5.0.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='79024'/>
+        <property name='download.size' value='79024'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt.core.manipulation_1.5.0.dist.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt.core.manipulation_1.5.0.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.junit' version='4.8.2.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.folder' value='true'/>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/jdt/plugins/org.junit_4.8.2.dist/'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/jdt/plugins/org.junit_4.8.2.dist'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.jdt.junit' version='3.7.100.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='406387'/>
+        <property name='download.size' value='406387'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt.junit_3.7.100.dist.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt.junit_3.7.100.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.jdt.junit4.runtime' version='1.1.200.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='13496'/>
+        <property name='download.size' value='13496'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt.junit4.runtime_1.1.200.dist.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt.junit4.runtime_1.1.200.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.jdt.doc.user' version='3.8.0.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='7839186'/>
+        <property name='download.size' value='7839186'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt.doc.user_3.8.0.dist.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt.doc.user_3.8.0.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='org.eclipse.jdt' version='3.8.0.dist-8-8lFqnFFgQGJ'>
+      <properties size='3'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.folder' value='true'/>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/jdt/features/org.eclipse.jdt_3.8.0.dist-8-8lFqnFFgQGJ/'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/jdt/features/org.eclipse.jdt_3.8.0.dist-8-8lFqnFFgQGJ'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.ant.launching' version='1.0.200.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='144924'/>
+        <property name='download.size' value='144924'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.ant.launching_1.0.200.dist.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.ant.launching_1.0.200.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.junit' version='3.8.2.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='4096'/>
+      </properties>
+      <repositoryProperties size='3'>
+        <property name='artifact.folder' value='true'/>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/jdt/plugins/org.junit_3.8.2.dist/'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/jdt/plugins/org.junit_3.8.2.dist'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.jdt.debug.ui' version='3.6.100.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='1316100'/>
+        <property name='download.size' value='1316100'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt.debug.ui_3.6.100.dist.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt.debug.ui_3.6.100.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.jdt.apt.core' version='3.3.500.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='351603'/>
+        <property name='download.size' value='351603'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt.apt.core_3.3.500.dist.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt.apt.core_3.3.500.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.jdt.compiler.apt' version='1.0.500.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='149040'/>
+        <property name='download.size' value='149040'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt.compiler.apt_1.0.500.dist.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt.compiler.apt_1.0.500.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.jdt.annotation' version='1.0.0.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='8515'/>
+        <property name='download.size' value='8515'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt.annotation_1.0.0.dist.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt.annotation_1.0.0.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.jdt.junit.runtime' version='3.4.300.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='46253'/>
+        <property name='download.size' value='46253'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt.junit.runtime_3.4.300.dist.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt.junit.runtime_3.4.300.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.hamcrest.core' version='1.1.0'>
+      <properties size='2'>
+        <property name='artifact.size' value='67178'/>
+        <property name='download.size' value='67178'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/jdt/plugins/org.hamcrest.core_1.1.0.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/jdt/plugins/org.hamcrest.core_1.1.0.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.ant.ui' version='3.5.300.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='941453'/>
+        <property name='download.size' value='941453'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.ant.ui_3.5.300.dist.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.ant.ui_3.5.300.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.jdt.compiler.tool' version='1.0.101.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='52812'/>
+        <property name='download.size' value='52812'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt.compiler.tool_1.0.101.dist.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt.compiler.tool_1.0.101.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.eclipse.jdt.apt.ui' version='3.3.300.dist'>
+      <properties size='2'>
+        <property name='artifact.size' value='62839'/>
+        <property name='download.size' value='62839'/>
+      </properties>
+      <repositoryProperties size='2'>
+        <property name='artifact.reference' value='file:/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt.apt.ui_3.3.300.dist.jar'/>
+        <property name='file.name' value='/usr/share/eclipse/dropins/jdt/plugins/org.eclipse.jdt.apt.ui_3.3.300.dist.jar'/>
+      </repositoryProperties>
+    </artifact>
+  </artifacts>
+</repository>

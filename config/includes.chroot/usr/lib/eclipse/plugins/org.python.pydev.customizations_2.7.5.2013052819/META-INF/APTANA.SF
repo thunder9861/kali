@@ -1,0 +1,71 @@
+Signature-Version: 1.0
+Created-By: 1.5.0_22 (Sun Microsystems Inc.)
+SHA1-Digest-Manifest-Main-Attributes: 0LDGLpEi9UPbOXPODriExWr4u/s=
+SHA1-Digest-Manifest: Mg+DsUJkq/nVyn98KWedgKNfpTE=
+
+Name: LICENSE.txt
+SHA1-Digest: q6BYIYOKqW7zbviW1rH/+OQQRjE=
+
+Name: templates/google_app_engine/hello_webapp_world/description.txt
+SHA1-Digest: 74zh/oPqzILdL2imRjPRZUgH72Q=
+
+Name: icons/appengine-noborder-120x30.gif
+SHA1-Digest: g+YniCJRBnGwz/rve3WtqSREbsE=
+
+Name: icons/AppEngine-64.png
+SHA1-Digest: Lw6jtQgTNjt9i8idMJT7bh7JvhI=
+
+Name: plugin.xml
+SHA1-Digest: Ud6TCzlDH7O+FMCWU8FYrkiB0SA=
+
+Name: templates/google_app_engine/hello_world/helloworld.py
+SHA1-Digest: 3aPw/nKX/v68PIkdJS3sf3V5BdQ=
+
+Name: templates/google_app_engine/ask_login/app.yaml
+SHA1-Digest: QZVWFJXaUTatlW4yUKO8VzaBV2o=
+
+Name: templates/google_app_engine/ask_login/description.txt
+SHA1-Digest: sRy0Mipzf8FUpKKPU1TOSSmlY4U=
+
+Name: icons/AppEngine-16.png
+SHA1-Digest: yJ6BNb8fVVopM9NBXDwaYT783vM=
+
+Name: customizations.jar
+SHA1-Digest: /iteKcsiMZmbjDyeIT/u43dzz88=
+
+Name: icons/AppEngine-256.png
+SHA1-Digest: 2WE0Br9gkxBCL6MEfBiyPca01cA=
+
+Name: icons/app_engine.gif
+SHA1-Digest: 1T/TqeBNA2eI9zjmI1PX3tCy4u4=
+
+Name: icons/AppEngine-32.png
+SHA1-Digest: FRxhYYX5tSAHcCLurtfuJVBQ7AQ=
+
+Name: icons/AppEngine-48.png
+SHA1-Digest: uTCJtAzuddBfz8vJd+Tp1eSPJx8=
+
+Name: icons/AppEngine-128.png
+SHA1-Digest: ZSQvpirDQrU3vjreN5SRz9F8W8E=
+
+Name: templates/google_app_engine/hello_world/description.txt
+SHA1-Digest: irqYwq+VNwtsui4OFmDAG8ojhv4=
+
+Name: plugin.properties
+SHA1-Digest: brfSYN8/Y/QSFJuDPu2vJWbLHeY=
+
+Name: templates/google_app_engine/hello_world/app.yaml
+SHA1-Digest: LRkJF2A5IpnK9NaC0Z065QsLdAw=
+
+Name: templates/google_app_engine/ask_login/asklogin.py
+SHA1-Digest: m+nxTjt46DOTW+eHCxtX51P7+3Q=
+
+Name: icons/app_engine_16_16.gif
+SHA1-Digest: TWJIZtwqT1MoB4cUcYMvMqw6gz8=
+
+Name: templates/google_app_engine/hello_webapp_world/helloworld.py
+SHA1-Digest: R+KM5D/XmmMovxB0dXAphnPwWkQ=
+
+Name: templates/google_app_engine/hello_webapp_world/app.yaml
+SHA1-Digest: s5zi1Ih8lVIlD/+ELjlYAZd7WeU=
+

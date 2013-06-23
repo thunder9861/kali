@@ -1,0 +1,32 @@
+Manifest-Version: 1.0
+Bundle-Name: Shared Core Plug-in
+Bundle-ClassPath: shared_core.jar
+Bundle-Activator: org.python.pydev.shared_core.SharedCorePlugin
+Bundle-Vendor: Appcelerator
+Bundle-ManifestVersion: 2
+Bundle-Localization: plugin
+Bundle-SymbolicName: org.python.pydev.shared_core;singleton:=true
+Export-Package: org.python.pydev.shared_core,org.python.pydev.shared_c
+ ore.actions,org.python.pydev.shared_core.auto_edit,org.python.pydev.s
+ hared_core.cache,org.python.pydev.shared_core.callbacks,org.python.py
+ dev.shared_core.editor,org.python.pydev.shared_core.io,org.python.pyd
+ ev.shared_core.log,org.python.pydev.shared_core.model,org.python.pyde
+ v.shared_core.net,org.python.pydev.shared_core.parsing,org.python.pyd
+ ev.shared_core.partitioner,org.python.pydev.shared_core.string,org.py
+ thon.pydev.shared_core.structure,org.python.pydev.shared_core.testuti
+ ls,org.python.pydev.shared_core.utils
+Require-Bundle: org.eclipse.core.runtime,org.eclipse.jface.text,org.ju
+ nit;bundle-version="4.0";resolution:=optional,org.eclipse.jface,org.e
+ clipse.core.resources
+Bundle-Version: 2.7.5.2013052819
+Eclipse-LazyStart: true
+
+Name: LICENSE.txt
+SHA1-Digest: p+9tB+uCL9D+iYG9D8zDHITgqgU=
+
+Name: plugin.xml
+SHA1-Digest: vhsqsw4pEKXDdiqIkEMLkjjE6XY=
+
+Name: shared_core.jar
+SHA1-Digest: LsXYz80uPKdHkw+83oViR/jhpyI=
+

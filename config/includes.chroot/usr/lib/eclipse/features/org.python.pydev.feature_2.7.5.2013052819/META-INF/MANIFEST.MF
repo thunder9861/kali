@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Created-By: 1.5.0_22 (Sun Microsystems Inc.)
+
+Name: LICENSE.txt
+SHA1-Digest: p+9tB+uCL9D+iYG9D8zDHITgqgU=
+
+Name: feature.xml
+SHA1-Digest: a08Sqcve7XBpvYz0FNL8i38aDcI=
+

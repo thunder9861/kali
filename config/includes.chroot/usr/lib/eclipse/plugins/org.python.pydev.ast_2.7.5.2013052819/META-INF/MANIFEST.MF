@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-Name: Ast Plug-in
+Bundle-ClassPath: ast.jar
+Bundle-Activator: org.python.pydev.ast.AstPlugin
+Bundle-Vendor: Aptana
+Bundle-ManifestVersion: 2
+Bundle-Localization: plugin
+Bundle-SymbolicName: org.python.pydev.ast; singleton:=true
+Export-Package: org.python.pydev.ast,org.python.pydev.ast.management
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime
+Bundle-Version: 2.7.5.2013052819
+Eclipse-LazyStart: true
+
+Name: LICENSE.txt
+SHA1-Digest: p+9tB+uCL9D+iYG9D8zDHITgqgU=
+
+Name: plugin.xml
+SHA1-Digest: vhsqsw4pEKXDdiqIkEMLkjjE6XY=
+
+Name: ast.jar
+SHA1-Digest: Iqd2YP+1aJYS7v+EmvkS61uyAjU=
+

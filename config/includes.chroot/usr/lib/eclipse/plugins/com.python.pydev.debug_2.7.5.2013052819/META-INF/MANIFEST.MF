@@ -1,0 +1,35 @@
+Manifest-Version: 1.0
+Bundle-Name: Extensions Debug Plug-in
+Bundle-ClassPath: debug.jar
+Bundle-Activator: com.python.pydev.debug.DebugPlugin
+Bundle-Vendor: Aptana
+Bundle-ManifestVersion: 2
+Bundle-Localization: plugin
+Bundle-SymbolicName: com.python.pydev.debug; singleton:=true
+Export-Package: com.python.pydev.debug.remote.client_api
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.python.pyd
+ ev;bundle-version="2.7.5.2013052819",org.python.pydev.core,org.python
+ .pydev.debug,org.eclipse.debug.core,org.eclipse.core.resources,org.ec
+ lipse.debug.ui,com.python.pydev,org.junit;bundle-version="4.0";resolu
+ tion:=optional
+Bundle-Version: 2.7.5.2013052819
+Eclipse-LazyStart: true
+
+Name: icons/start_debug_server.gif
+SHA1-Digest: nNLhvQRVM62hfIc0Xy28+cB+ZgY=
+
+Name: icons/python.gif
+SHA1-Digest: 0yGJ/F/mVyreVeuD2VcuBCosgTw=
+
+Name: LICENSE.TXT
+SHA1-Digest: p+9tB+uCL9D+iYG9D8zDHITgqgU=
+
+Name: icons/term_debug_server.gif
+SHA1-Digest: fEanzqMa79xRoQJFDXSNDbEBVAE=
+
+Name: plugin.xml
+SHA1-Digest: y4WzmnSXcfe7WjJ7hQ3rumk6Seo=
+
+Name: debug.jar
+SHA1-Digest: raQceUupOgkwq4915W5WBqwKzXc=
+

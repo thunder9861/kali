@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.cdt"
+      label="%featureName"
+      version="8.1.2.201302132326"
+      provider-name="%providerName"
+      image="eclipse_update_120.jpg">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://download.eclipse.org/tools/cdt/releases/indigo"/>
+   </url>
+
+   <includes
+         id="org.eclipse.cdt.platform"
+         version="8.1.2.201302132326"/>
+
+   <includes
+         id="org.eclipse.cdt.gnu.build"
+         version="8.1.1.201302132326"/>
+
+   <includes
+         id="org.eclipse.cdt.gdb"
+         version="7.0.0.201302132326"/>
+
+   <includes
+         id="org.eclipse.cdt.gnu.debug"
+         version="7.1.1.201302132326"/>
+
+   <includes
+         id="org.eclipse.cdt.gnu.dsf"
+         version="4.0.1.201302132326"/>
+
+</feature>

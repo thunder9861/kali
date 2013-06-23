@@ -1,0 +1,116 @@
+Signature-Version: 1.0
+Created-By: 1.5.0_22 (Sun Microsystems Inc.)
+SHA1-Digest-Manifest-Main-Attributes: fnsjRcT4uBTWR5huIOIW89A4AKo=
+SHA1-Digest-Manifest: 9Tf7L9t0aiLviCXKXjkQomChtJE=
+
+Name: LICENSE.txt
+SHA1-Digest: q6BYIYOKqW7zbviW1rH/+OQQRjE=
+
+Name: icons/python_exception_breakpoint.png
+SHA1-Digest: 1XgF+76j68mmOKcSAhpJTSdH4W4=
+
+Name: icons/pyunit.png
+SHA1-Digest: DfIvZpPo+oeLxzo25FAtyjP0bUA=
+
+Name: icons/python_16x16.png
+SHA1-Digest: jWKIi+15bp4peW12gmzKwoq0g+A=
+
+Name: icons/ovr16/success_ovr.gif
+SHA1-Digest: S5og7RnM9JbH6fiYXMDxmofaETQ=
+
+Name: icons/pin.png
+SHA1-Digest: Q+QGsQ29VKCd/fsbeUus38fPQ6k=
+
+Name: icons/greendot_big.gif
+SHA1-Digest: 1De4a2g4BvlduvtRUftEZOtoHTc=
+
+Name: icons/jython_run.png
+SHA1-Digest: BwxE0Whnf+zqLdE1JG9Hz08P77k=
+
+Name: icons/python_run.png
+SHA1-Digest: yyT/O2LgtXqqk7n/58Ve4uhxZFA=
+
+Name: icons/pin_arrow.png
+SHA1-Digest: UciFyIZXuyDxVTyRxhUWFLrcuIM=
+
+Name: icons/reddot.GIF
+SHA1-Digest: ESbJrNPtUJ1ylmUspC0eHtX+RaM=
+
+Name: icons/breakmarker.gif
+SHA1-Digest: fgvXqTGzBgj7f05o902FkZPMIvs=
+
+Name: icons/watch_exp.gif
+SHA1-Digest: DsxnG/8JM/0ACCWmma7c4eeLyxU=
+
+Name: icons/ovr16/error_ovr.gif
+SHA1-Digest: Prkf87qamyFxsxLyJNb3SwZNlH0=
+
+Name: icons/greendot.gif
+SHA1-Digest: mfM5NmOs6lp8cIEthBoVg9Jbryg=
+
+Name: icons/breakmarker_conditional.gif
+SHA1-Digest: ER/E57joGqEEm1lK9+RGYTnYXlA=
+
+Name: icons/jython_unit.png
+SHA1-Digest: /K/CO1Sj+LWE25yqpAPiV3n12VI=
+
+Name: icons/stepover_co.gif
+SHA1-Digest: NyX2riXQddT6xY+t/4/aCNTGuLo=
+
+Name: icons/setnext_co_dis.gif
+SHA1-Digest: /MlpjcmfJifxiIrgvCpHkgB6uLE=
+
+Name: icons/breakmarker_gray.gif
+SHA1-Digest: PhUEIM/OSDxsqGXZDmhvADv+Lqc=
+
+Name: schema/pydev_debug_console_input_listener.exsd
+SHA1-Digest: 4FK3bu/TiCP2LKviIwfEtbVOX3E=
+
+Name: icons/breakmarker_gray_conditional.gif
+SHA1-Digest: MyEPwWVjiDxRQkZtDLENTNk5jX8=
+
+Name: pydev-debug.jar
+SHA1-Digest: x6O59/jfSa2UDZT+0sM6QYnLKA0=
+
+Name: icons/pyunit_old.png
+SHA1-Digest: nw22yi0KqYRFn/eKMwtBn+58fXw=
+
+Name: icons/testfailures_ovr.gif
+SHA1-Digest: uzBqGRzylNfbPy/gAlBQpoVslwg=
+
+Name: plugin.xml
+SHA1-Digest: 0AZQGE+UlCAlcWdu4S7GQ6Ezjh4=
+
+Name: icons/refresh.png
+SHA1-Digest: py3CX7u2zFoVAiVVQ0hIAzM4VC4=
+
+Name: icons/setnext_co.gif
+SHA1-Digest: a1pgGAlbggX5eUYzs5wbmy83Ufc=
+
+Name: icons/arguments.gif
+SHA1-Digest: jLgsmf2a5ZninSTkUW3vE2iZzg8=
+
+Name: icons/python_refactor.png
+SHA1-Digest: sxgtYTIs8kavi6lNp2h18Km6tC8=
+
+Name: icons/testerrors_ovr.gif
+SHA1-Digest: 2F8y4OmF8OUrdHvuT4NSEN6droY=
+
+Name: icons/python_coverage.png
+SHA1-Digest: 4+cpQAtj7q4jVX0cltvvTRt5gtg=
+
+Name: icons/python_unit.png
+SHA1-Digest: nrvPe8W+aWVxMvQDoMGkxxDFp0Y=
+
+Name: icons/ovr16/failed_ovr.gif
+SHA1-Digest: /E+1SbKLg8lXuAyto+sitcRH48w=
+
+Name: icons/failures.gif
+SHA1-Digest: 9CCC58mUs1er7XfeCOXWm89QvtQ=
+
+Name: icons/ironpython_unit.png
+SHA1-Digest: WVwLVeJ9DQpr7l+9QVuuustrRzI=
+
+Name: icons/ironpython_run.png
+SHA1-Digest: ofaYwxYkLg+mg7unhKr6+U/ln0E=
+

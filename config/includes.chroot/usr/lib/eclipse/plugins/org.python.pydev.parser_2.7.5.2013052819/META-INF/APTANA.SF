@@ -1,0 +1,17 @@
+Signature-Version: 1.0
+Created-By: 1.5.0_22 (Sun Microsystems Inc.)
+SHA1-Digest-Manifest-Main-Attributes: ehcaLpcwd9SX/n5ARUI8UtKWaWg=
+SHA1-Digest-Manifest: F5dVz1WwZTiLoQQtvxYOzkeBx/s=
+
+Name: parser.jar
+SHA1-Digest: IrB3gSS0PcQzKSKT3ANMNYXw4hI=
+
+Name: LICENSE.txt
+SHA1-Digest: q6BYIYOKqW7zbviW1rH/+OQQRjE=
+
+Name: plugin.xml
+SHA1-Digest: jlkJZDYV+5JDl8nsbMfx6o/soU4=
+
+Name: schema/pydev_parser_observer.exsd
+SHA1-Digest: zNBFFHjy6kAKqKQxzs15YzbcKF8=
+

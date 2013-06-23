@@ -1,0 +1,21 @@
+eclipse.preferences.version=1
+formatter.profiles=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<profiles>\n<profile formatter\="org.eclipse.dltk.ruby.formatter.RubyFormatterFactory" name\="Custom" version\="1">\n<setting id\="line.file.require.after" value\="1"/>\n<setting id\="line.class.before" value\="1"/>\n<setting id\="lines.preserve" value\="1"/>\n<setting id\="formatter.tabulation.char" value\="space"/>\n<setting id\="wrap.comments.length" value\="80"/>\n<setting id\="line.file.method.between" value\="1"/>\n<setting id\="formatter.tabulation.size" value\="3"/>\n<setting id\="indent.case" value\="true"/>\n<setting id\="indent.blocks" value\="true"/>\n<setting id\="indent.if" value\="true"/>\n<setting id\="line.module.before" value\="1"/>\n<setting id\="line.first.before" value\="0"/>\n<setting id\="indent.method" value\="true"/>\n<setting id\="line.method.before" value\="1"/>\n<setting id\="wrap.comments" value\="false"/>\n<setting id\="formatter.indentation.size" value\="3"/>\n<setting id\="line.file.class.between" value\="1"/>\n<setting id\="line.file.module.between" value\="1"/>\n<setting id\="indent.class" value\="true"/>\n<setting id\="indent.module" value\="true"/>\n<setting id\="indent.when" value\="true"/>\n</profile>\n</profiles>\n
+formatter.profiles.active=Custom
+indent.blocks=true
+indent.case=true
+indent.class=true
+indent.if=true
+indent.method=true
+indent.module=true
+indent.when=true
+line.class.before=1
+line.file.class.between=1
+line.file.method.between=1
+line.file.module.between=1
+line.file.require.after=1
+line.first.before=0
+line.method.before=1
+line.module.before=1
+lines.preserve=1
+wrap.comments=false
+wrap.comments.length=80

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * <copyright>
+ *
+ * Copyright (c) 2005, 2007 IBM Corporation and others.
+ * All rights reserved.   This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ 
+ *
+ * </copyright>
+ */
+-->
+<feature
+      id="org.eclipse.dltk.ruby"
+      label="%featureName"
+      version="4.0.0.201206120848"
+      provider-name="%providerName"
+      image="eclipse_update_120.jpg">
+
+   <description url="http://www.eclipse.org/dltk">
+      %description
+   </description>
+
+   <copyright url="http://www.eclipse.org/legal/epl-v10.html">
+      Copyright (c) 2005, 2007 IBM Corporation and others.
+All rights reserved.   This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <requires>
+      <import feature="org.eclipse.dltk.core" version="4.0.0" match="compatible"/>
+   </requires>
+
+   <plugin
+         id="org.eclipse.dltk.ruby.ui"
+         download-size="194"
+         install-size="347"
+         version="4.0.0.201206120848"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk.ruby.core"
+         download-size="712"
+         install-size="1576"
+         version="4.0.0.201206120848"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk.ruby.debug.ui"
+         download-size="47"
+         install-size="88"
+         version="4.0.0.201206120848"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk.ruby.launching"
+         download-size="26"
+         install-size="53"
+         version="4.0.0.201206120848"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk.ruby.debug"
+         download-size="11"
+         install-size="15"
+         version="4.0.0.201206120848"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk.ruby.basicdebugger"
+         download-size="20"
+         install-size="42"
+         version="4.0.0.201206120848"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk.ruby.activestatedebugger"
+         download-size="12"
+         install-size="20"
+         version="4.0.0.201206120848"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk.ruby"
+         download-size="9"
+         install-size="9"
+         version="4.0.0.201206120848"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk.ruby.abstractdebugger"
+         download-size="43"
+         install-size="136"
+         version="4.0.0.201206120848"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk.ruby.fastdebugger"
+         download-size="22"
+         install-size="45"
+         version="4.0.0.201206120848"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk.ruby.formatter"
+         download-size="408"
+         install-size="966"
+         version="4.0.0.201206120848"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk.ruby.testing"
+         download-size="79"
+         install-size="163"
+         version="4.0.0.201206120848"
+         unpack="false"/>
+
+</feature>

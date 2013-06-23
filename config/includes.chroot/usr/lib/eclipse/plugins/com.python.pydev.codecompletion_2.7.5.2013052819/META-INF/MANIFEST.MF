@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-Name: Codecompletion Plug-in
+Bundle-ClassPath: codecompletion.jar
+Bundle-Activator: com.python.pydev.codecompletion.CodecompletionPlugin
+Bundle-Vendor: Aptana
+Bundle-ManifestVersion: 2
+Bundle-Localization: plugin
+Bundle-SymbolicName: com.python.pydev.codecompletion; singleton:=true
+Export-Package: com.python.pydev.codecompletion
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.eclipse.jf
+ ace.text,org.python.pydev;bundle-version="2.7.5.2013052819",com.pytho
+ n.pydev,org.python.pydev.core,org.python.pydev.parser,org.junit;bundl
+ e-version="4.0";resolution:=optional,com.python.pydev.fastparser,org.
+ eclipse.core.resources,com.python.pydev.analysis,org.eclipse.ui.edito
+ rs,com.python.pydev.refactoring,org.python.pydev.shared_interactive_c
+ onsole,org.python.pydev.shared_core,org.python.pydev.shared_ui,org.ec
+ lipse.ui.workbench.texteditor
+Bundle-Version: 2.7.5.2013052819
+Eclipse-LazyStart: true
+
+Name: codecompletion.jar
+SHA1-Digest: +AYDxms5GoDWgvWtuFwa4T6PrGI=
+
+Name: LICENSE.TXT
+SHA1-Digest: p+9tB+uCL9D+iYG9D8zDHITgqgU=
+
+Name: plugin.xml
+SHA1-Digest: 1DoBoOGearFtj9D6UDW7qWGdY4A=
+

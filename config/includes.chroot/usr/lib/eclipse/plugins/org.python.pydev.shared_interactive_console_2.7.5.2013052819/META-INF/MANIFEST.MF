@@ -1,0 +1,65 @@
+Manifest-Version: 1.0
+Bundle-Name: Interactive Console Plug-in
+Bundle-ClassPath: interactive_console.jar,commons-logging-1.1.jar,ws-c
+ ommons-util-1.0.2.jar,xmlrpc-client-3.1.jar,xmlrpc-common-3.1.jar,xml
+ rpc-server-3.1.jar
+Bundle-Activator: org.python.pydev.shared_interactive_console.Interact
+ iveConsolePlugin
+Bundle-Vendor: Appcelerator
+Bundle-ManifestVersion: 2
+Bundle-Localization: plugin
+Bundle-SymbolicName: org.python.pydev.shared_interactive_console;singl
+ eton:=true
+Export-Package: org.apache.commons.logging,org.apache.commons.logging.
+ impl,org.apache.ws.commons.serialize,org.apache.ws.commons.util,org.a
+ pache.xmlrpc,org.apache.xmlrpc.client,org.apache.xmlrpc.client.util,o
+ rg.apache.xmlrpc.common,org.apache.xmlrpc.jaxb,org.apache.xmlrpc.meta
+ data,org.apache.xmlrpc.parser,org.apache.xmlrpc.serializer,org.apache
+ .xmlrpc.server,org.apache.xmlrpc.util,org.apache.xmlrpc.webserver,org
+ .python.pydev.shared_interactive_console,org.python.pydev.shared_inte
+ ractive_console.console,org.python.pydev.shared_interactive_console.c
+ onsole.codegen,org.python.pydev.shared_interactive_console.console.ui
+ ,org.python.pydev.shared_interactive_console.console.ui.internal,org.
+ python.pydev.shared_interactive_console.console.ui.internal.actions,o
+ rg.python.pydev.shared_interactive_console.console.ui.internal.fromec
+ lipse
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.eclipse.jf
+ ace.text,org.eclipse.ui.console,org.eclipse.debug.core,org.eclipse.de
+ bug.ui,org.eclipse.ui.workbench.texteditor,org.python.pydev.shared_co
+ re,org.eclipse.ui.ide,org.python.pydev.shared_ui
+Bundle-Version: 2.7.5.2013052819
+Eclipse-LazyStart: true
+
+Name: LICENSE.txt
+SHA1-Digest: p+9tB+uCL9D+iYG9D8zDHITgqgU=
+
+Name: xmlrpc-common-3.1.jar
+SHA1-Digest: h7PtIygAxFONie75wUz+/jZVx2Y=
+
+Name: icons/sync_ed.gif
+SHA1-Digest: Ghj9SQaJ6vJj8hRCpmwiAfHF1uI=
+
+Name: commons-logging-1.1.jar
+SHA1-Digest: uiTV3oMZEbaEySzSie1f+CYnGCQ=
+
+Name: xmlrpc-server-3.1.jar
+SHA1-Digest: c4ZsPXGR2OknPv/Y+rLuo+puR2k=
+
+Name: ws-commons-util-1.0.2.jar
+SHA1-Digest: P0eObe93LBnRBT9hGY+h9qYRkjg=
+
+Name: plugin.xml
+SHA1-Digest: vhsqsw4pEKXDdiqIkEMLkjjE6XY=
+
+Name: icons/terminate.gif
+SHA1-Digest: kqo+0YlPPDIPH/JIX/czNHDae7Q=
+
+Name: interactive_console.jar
+SHA1-Digest: H+69luksVpX8ZUGPetqfhGHZ/8o=
+
+Name: icons/save.gif
+SHA1-Digest: 4fl7ShbxVcq60UhHKDRDMSPO8Rw=
+
+Name: xmlrpc-client-3.1.jar
+SHA1-Digest: DI4bamCqC5JsCY3zJFr2kWtVyvk=
+

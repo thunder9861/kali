@@ -1,0 +1,38 @@
+Signature-Version: 1.0
+Created-By: 1.5.0_22 (Sun Microsystems Inc.)
+SHA1-Digest-Manifest-Main-Attributes: uJLEFtzp5e8k9hmwcZ34mSkobDw=
+SHA1-Digest-Manifest: puk2MS8ylutC0u39KoNlGyz9fKY=
+
+Name: LICENSE.txt
+SHA1-Digest: q6BYIYOKqW7zbviW1rH/+OQQRjE=
+
+Name: commons-logging-1.1.jar
+SHA1-Digest: Dyc4ei2gLDvEdUhNkiVjvyOdu5I=
+
+Name: icons/sync_ed.gif
+SHA1-Digest: i2NmV0jjuagPsjfC1pKRBy0tSvs=
+
+Name: xmlrpc-common-3.1.jar
+SHA1-Digest: WiS7ZhOApxXprNALxZ2hXDWyqVE=
+
+Name: plugin.xml
+SHA1-Digest: MUIWq6Luc6NUYWE7GbJzWbozZ60=
+
+Name: ws-commons-util-1.0.2.jar
+SHA1-Digest: wuRUhk7a9UyCfzRSudHaqBHbVvw=
+
+Name: xmlrpc-server-3.1.jar
+SHA1-Digest: SPCOPYrLUL2DpdfPSSRuWTIv4j8=
+
+Name: icons/terminate.gif
+SHA1-Digest: WiiSVg08V+9+XXI1oBn5w3/uR5Y=
+
+Name: icons/save.gif
+SHA1-Digest: j3R85o2DrpGtBwXSI+rcJSxurSs=
+
+Name: interactive_console.jar
+SHA1-Digest: YERyr487dReoti1IxHpYBNJ4Q/0=
+
+Name: xmlrpc-client-3.1.jar
+SHA1-Digest: tE7GRn7XbrZ2Xs7k823XkesxSAk=
+

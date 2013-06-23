@@ -1,0 +1,44 @@
+Manifest-Version: 1.0
+Bundle-Name: Core Plug-in
+Bundle-ClassPath: core.jar,lib/jpathwatch-0-94.jar
+Bundle-Activator: org.python.pydev.core.CorePlugin
+Bundle-Vendor: Aptana
+Bundle-ManifestVersion: 2
+Bundle-Localization: plugin
+Bundle-SymbolicName: org.python.pydev.core; singleton:=true
+Export-Package: org.python.pydev.core,org.python.pydev.core.cache,org.
+ python.pydev.core.concurrency,org.python.pydev.core.docutils,org.pyth
+ on.pydev.core.log,org.python.pydev.core.parser,org.python.pydev.core.
+ performanceeval,org.python.pydev.core.resource_stubs,org.python.pydev
+ .core.structure,org.python.pydev.core.tooltips,org.python.pydev.core.
+ tooltips.presenter,org.python.pydev.core.uiutils
+Require-Bundle: org.junit;bundle-version="4.0.0";resolution:=optional,
+ org.eclipse.ui,org.eclipse.core.runtime,org.eclipse.jface.text,org.ec
+ lipse.core.resources,org.eclipse.ui.workbench.texteditor,org.eclipse.
+ core.filebuffers,org.eclipse.ui.console,org.eclipse.core.variables,or
+ g.python.pydev.shared_core;visibility:=reexport,org.python.pydev.shar
+ ed_ui
+Bundle-Version: 2.7.5.2013052819
+Eclipse-LazyStart: true
+
+Name: lib/JPATHWATCH_README.txt
+SHA1-Digest: ScDfRWabNTuJZHVN8gJbISkeMgk=
+
+Name: LICENSE.txt
+SHA1-Digest: p+9tB+uCL9D+iYG9D8zDHITgqgU=
+
+Name: icons/python_logging.png
+SHA1-Digest: B53S93ZEmIb0NP4+Urv+EiZbl/M=
+
+Name: lib/jpathwatch-0-94.jar
+SHA1-Digest: VIBoT02peHiXobd3GF/KXTgRVjo=
+
+Name: plugin.xml
+SHA1-Digest: vhsqsw4pEKXDdiqIkEMLkjjE6XY=
+
+Name: lib/JPATHWATCH_LICENSE.txt
+SHA1-Digest: 5xGJCxKl1gf1sjLCusXb54QaREw=
+
+Name: core.jar
+SHA1-Digest: 5g83xxfUwhAEKL9tLYpGD8sFG8A=
+

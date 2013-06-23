@@ -1,0 +1,314 @@
+Signature-Version: 1.0
+Created-By: 1.5.0_22 (Sun Microsystems Inc.)
+SHA1-Digest-Manifest-Main-Attributes: wIYKWnwCiOfgIoEC9Nf92/w0goQ=
+SHA1-Digest-Manifest: i9uOFy/Ub6uzOTIrjhSmv7gQBD0=
+
+Name: icons/python_logo.png
+SHA1-Digest: aRp9rneHjs0k3g4zOjFoCEcoHiw=
+
+Name: icons/custom_python_file.png
+SHA1-Digest: 1U8jrmf0vxh9DEctOXYed2+TmtY=
+
+Name: icons/new/create_python_module.png
+SHA1-Digest: 5i0yYsP3y+X50WsVMkPr8PK6F7I=
+
+Name: icons/relaunch.png
+SHA1-Digest: 9jEoB8jgEwZEmWUVsXa3hpN0sR4=
+
+Name: icons/packagefolder_obj.gif
+SHA1-Digest: 2/sWFy+HBfmjFQLuKQ8PugBuCiU=
+
+Name: icons/cpyqual_menu.gif
+SHA1-Digest: zF64d78GHTxrck2ivChGNgr2+BM=
+
+Name: icons/environment_obj.gif
+SHA1-Digest: BslSHTRkVFvlOxH4CqvGxAq2FV0=
+
+Name: icons/python_perspective.png
+SHA1-Digest: tGI8HRUg051kKOn2wagaEQqcF18=
+
+Name: icons/new/imp_dec.gif
+SHA1-Digest: LpS+3RY4QeRE/zH0kc5JMq6Qf0w=
+
+Name: icons/pythonNature.gif
+SHA1-Digest: hjUj2x9KHfSrNl7mhCU/pHuZ7bk=
+
+Name: icons/terminate_all.gif
+SHA1-Digest: WC2Hf2HcsD4olCSQZVP7+XmeWbo=
+
+Name: icons/alphab_sort_co.gif
+SHA1-Digest: 4THhHUXRvnPQ3Zpe2OrWCixFBt4=
+
+Name: plugin.xml
+SHA1-Digest: YnM1xnUQEmhOey4mhxE/kPKIaqc=
+
+Name: icons/remove_nature.png
+SHA1-Digest: ow/mxmgQ2cwMWHzeMX7KLAe7T+0=
+
+Name: icons/python_comment.png
+SHA1-Digest: bBF2/362vvnOTwqOiHzrsYk1QMw=
+
+Name: icons/jar_nonexist_obj.gif
+SHA1-Digest: rsrx4oER160Jr9S0CbMkyr5itc0=
+
+Name: icons/correction_move.gif
+SHA1-Digest: Y3q6R2rsEYLYiRRUPSwV60vc70k=
+
+Name: icons/cython.png
+SHA1-Digest: 20Q/ulCJKxEbhi7Z4kWUg7TReW4=
+
+Name: icons/annotation_obj.gif
+SHA1-Digest: DbgYK19KbfDZF4Jae6T3QDPH79s=
+
+Name: icons/error_small.gif
+SHA1-Digest: 8QuIsqFn2p1oxffjhUMi3begmZY=
+
+Name: icons/tabs_inactive.png
+SHA1-Digest: BUPN9ZYyfG4cqVIz9YfWLpflOzo=
+
+Name: LICENSE.txt
+SHA1-Digest: q6BYIYOKqW7zbviW1rH/+OQQRjE=
+
+Name: icons/new/create_method_obj.png
+SHA1-Digest: ML/bXoi+PPcmj2XO0mYGvc2KCuA=
+
+Name: icons/search_docs.gif
+SHA1-Digest: deC/VH3F3/PwtqZ83ILGC0aNpAc=
+
+Name: icons/warning_decoration.gif
+SHA1-Digest: 6iTQfEJzA3tA/bWe6xZBmIgISFs=
+
+Name: icons/jar_desc_obj.gif
+SHA1-Digest: M0NhvLxULocYXa4D5vOCYBoLoS4=
+
+Name: icons/field_public_obj.gif
+SHA1-Digest: EtsROVG2b97n6ys/wb+49HJB8Vo=
+
+Name: shared_ui.jar
+SHA1-Digest: wNOjYzmmzjlrIVefVi+JDKUWGzg=
+
+Name: icons/new/__imp_obj.gif
+SHA1-Digest: wXbtvJ9qy0rtWF51tY5D281JMRI=
+
+Name: icons/sync_ed.gif
+SHA1-Digest: i2NmV0jjuagPsjfC1pKRBy0tSvs=
+
+Name: icons/relaunch1.png
+SHA1-Digest: MRzKsJwQ+qe0J2+WX7mw+C86gSc=
+
+Name: icons/template.gif
+SHA1-Digest: YnUXt/hAI3yBj9Bdqz+WjZabhJM=
+
+Name: icons/folder.gif
+SHA1-Digest: iuGns/HhEDTrmF8z9lskcrQl2sA=
+
+Name: icons/jar_l_obj.gif
+SHA1-Digest: B3aiU+qNri8tp7UhQMn8j+MAJYA=
+
+Name: icons/jar_src_obj.gif
+SHA1-Digest: 4GBFsLaGs9sZL2ZWkgsj9TePG5s=
+
+Name: icons/file.gif
+SHA1-Digest: mixwPO3g/SbllqDkEtGmriVH5P0=
+
+Name: icons/search.gif
+SHA1-Digest: hnkzpyE5MXrBPj5u50LGwFvsX50=
+
+Name: icons/filter.gif
+SHA1-Digest: h8ebue4jT8DszibPKqPp0snO71A=
+
+Name: icons/protected_obj.gif
+SHA1-Digest: 2Ee1MZ6omS2rMwrGhNr0kC2V5f0=
+
+Name: icons/jar_obj.gif
+SHA1-Digest: 6goCVoMxJezXklv3fBo82uikDaE=
+
+Name: icons/new/method_obj.gif
+SHA1-Digest: W20a3mWkSk073deRVSWHnN6kXOI=
+
+Name: icons/gotten_from.txt
+SHA1-Digest: LrH/c8R14DcpyL1QiKp+j2IkwVk=
+
+Name: icons/error_decoration.gif
+SHA1-Digest: 05hrdT5LBJPfK12se51u08UF+xM=
+
+Name: icons/new/create_attrpub_obj.png
+SHA1-Digest: ekles7wgxgzoZfRZOXsE0BVctPo=
+
+Name: icons/python_unit.png
+SHA1-Digest: uWxH3mvDfw2q5xUlBz9aFGtoqzs=
+
+Name: icons/warning.png
+SHA1-Digest: VnpKrnG9LMHvDFExt2n+KYtsdr4=
+
+Name: icons/python_nature.png
+SHA1-Digest: dpqOFZMgVQHVLWCgSHOp5gbf2OQ=
+
+Name: icons/new/old_imp_rel_obj.gif
+SHA1-Digest: JM+VvoDFgvSRmxVOu9HNb/ppFoY=
+
+Name: icons/python_16x16.png
+SHA1-Digest: jWKIi+15bp4peW12gmzKwoq0g+A=
+
+Name: icons/decoration_static_obj.png
+SHA1-Digest: 4IF3K1OIl30cl4/kctR+aNqBbW0=
+
+Name: icons/showerr_tsk.gif
+SHA1-Digest: EQwc30CJpaq2z6iizdz8y0QZb/Y=
+
+Name: icons/python_module.png
+SHA1-Digest: kJ0dhLb5NRr7Fj/E5QJPuXUv7lE=
+
+Name: icons/package_obj.gif
+SHA1-Digest: lTIYopFQMlotSUFJCAEj+yPAT4k=
+
+Name: icons/python_run.png
+SHA1-Digest: 4k69EUTWG+vaTMftZnWdEX1TPyE=
+
+Name: icons/builtin_obj.gif
+SHA1-Digest: LqCc6+MJdLHIvd1gd/i8D1nRwRs=
+
+Name: icons/copy.gif
+SHA1-Digest: SbZ224LWPy87AxmviyjZtxHldrc=
+
+Name: icons/cython_file.png
+SHA1-Digest: zojRFEeKSS0uP+oocQHmHlj5owY=
+
+Name: icons/static_co.gif
+SHA1-Digest: E/GXd6dylvETkya1Qeya83ahUt8=
+
+Name: icons/build_var_obj.gif
+SHA1-Digest: DtvwFHbKe5S8iuzgUwzSf2qOSFs=
+
+Name: icons/close.gif
+SHA1-Digest: uqJziuVDKJSWg6KMg/qFqrQB8gQ=
+
+Name: icons/history_list.gif
+SHA1-Digest: uAfxcN7e6bfaya2VYtSoLwAeda4=
+
+Name: icons/sample.gif
+SHA1-Digest: mURGpp/gEzPu434WkU1WXZbyKOY=
+
+Name: icons/python_comment_black.png
+SHA1-Digest: wVcpQQynvLMvtSIXxRT48KCAmR0=
+
+Name: icons/pydev_package_explorer.gif
+SHA1-Digest: SmFkcKeEfAr/nZT/jsT+q5Xteps=
+
+Name: icons/pylint.png
+SHA1-Digest: CncguyQthDQiPO0Ko7BK0YeCKF8=
+
+Name: icons/fields_co.gif
+SHA1-Digest: Mq+gP1AK4KCndyZeWI8anBwl5Xo=
+
+Name: icons/python_refactor.png
+SHA1-Digest: O5G7qYmTpasZQOSQboOIVYI9Xjs=
+
+Name: icons/magic_co.gif
+SHA1-Digest: iPPyIb7/5n6EwfhW/vtcmWi5sbQ=
+
+Name: icons/new/imp_obj.gif
+SHA1-Digest: 16UWlLtCnIneT4vL+ve4M9gE98M=
+
+Name: icons/backward_nav.gif
+SHA1-Digest: T+1qZry9OT43d2EUXewFcNsTAOA=
+
+Name: icons/terminate.gif
+SHA1-Digest: WiiSVg08V+9+XXI1oBn5w3/uR5Y=
+
+Name: icons/save.gif
+SHA1-Digest: j3R85o2DrpGtBwXSI+rcJSxurSs=
+
+Name: icons/relaunch_errors.png
+SHA1-Digest: JxkSg7yieWw+zVDLyStrGzGa7S4=
+
+Name: icons/collapseall.gif
+SHA1-Digest: Sk0RZTTjpfKTSwIe5SwdF6xHWTk=
+
+Name: icons/forward_nav.gif
+SHA1-Digest: Ffv/orFF2JuIVeDU5K8L1tBDwmY=
+
+Name: icons/decoration_class_obj.png
+SHA1-Digest: V+OqvXXNvg+KpzqWV4bE+CNHIvM=
+
+Name: icons/project_source_folder.gif
+SHA1-Digest: BFN5IHXUcCmPIVo6NfSzXIcLj3k=
+
+Name: icons/expand.gif
+SHA1-Digest: cAI9c0wku488Iiz8zzN3yB8tYFc=
+
+Name: icons/field_protected_obj.gif
+SHA1-Digest: E1NeboDw/awkXBscksEH5Pjt2dc=
+
+Name: icons/tabs_active.png
+SHA1-Digest: /Yq55NcA2OZ7iAxhJoqTdvMqyZA=
+
+Name: icons/toggle_tabs.png
+SHA1-Digest: oeY2yBYrXUjaWHsN9pfOVn9NMAM=
+
+Name: icons/mainfunction.gif
+SHA1-Digest: zBk99R/QVXZL81kZA0Y2iYl3Uvg=
+
+Name: icons/jython_run.png
+SHA1-Digest: pEjfgg6GAAUvzn+Eb/DbS4XFRrI=
+
+Name: icons/add_correction.gif
+SHA1-Digest: 60hzSrUsRAyqqFSPewk7cEtyke0=
+
+Name: icons/new/create_class_obj.png
+SHA1-Digest: 79dj/dC8TyFvMNg+Vi5hDzcIgRk=
+
+Name: icons/python_file.gif
+SHA1-Digest: fwnci6D9/s0Beg21Eg2huEoq87Y=
+
+Name: icons/field_private_obj.gif
+SHA1-Digest: 9Mk307wMXfIBoC0xEw0gOXgn+2I=
+
+Name: icons/new/class_obj.gif
+SHA1-Digest: 9Ym6ZfUkmmCO5PqlRnxQMMj2enE=
+
+Name: icons/library_obj.gif
+SHA1-Digest: GZAVCJ+ySbtHb69IfgWcJGwFVPw=
+
+Name: icons/refresh_nav.gif
+SHA1-Digest: 2BKet6omIQMP22mn/FSsO5kfiI8=
+
+Name: icons/new/imp_rel_obj.gif
+SHA1-Digest: QTiHTTw+yhgHNQx2slZDBx0Z+s4=
+
+Name: icons/new/imp_obj.png
+SHA1-Digest: kImlyfhfeyhTrRRoViBgS8tOA30=
+
+Name: icons/relaunch_background_disabled.png
+SHA1-Digest: cPNaNATceBNT6cH5UElK56FZEww=
+
+Name: icons/custom_init.png
+SHA1-Digest: b7Gn9N5H1SrvTlPW6oWMFseDnSU=
+
+Name: icons/private_obj.gif
+SHA1-Digest: 8hnV4AQuPOrjTQ5Puue+Wg/06Pw=
+
+Name: icons/jar_lsrc_obj.gif
+SHA1-Digest: q5oZL9wgLBdJVppPD8s38rVKr+w=
+
+Name: icons/remove.gif
+SHA1-Digest: vkjwIimpmgZrHg0E0dOiDeHM1JI=
+
+Name: icons/parameters_obj.gif
+SHA1-Digest: yNlo+b8r/2Lpnz2eg+VeJc0vvZs=
+
+Name: icons/relaunch_background_enabled.png
+SHA1-Digest: V7yK0j2781ix6itOT6d9762a1Ag=
+
+Name: icons/python_coverage.png
+SHA1-Digest: mW96iVhgKrkE2rzjjMDg4Pl/WQ0=
+
+Name: icons/new/attrpub_obj.gif
+SHA1-Digest: KogNiNMITws/OXh3klesBehVvb0=
+
+Name: icons/home_nav.gif
+SHA1-Digest: a/coY2cmA1VJU1WxtRlzB70bw1c=
+
+Name: icons/failures.gif
+SHA1-Digest: 9CCC58mUs1er7XfeCOXWm89QvtQ=
+

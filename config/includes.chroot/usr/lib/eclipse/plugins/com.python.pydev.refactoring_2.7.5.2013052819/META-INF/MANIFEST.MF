@@ -1,0 +1,44 @@
+Manifest-Version: 1.0
+Bundle-Name: Refactoring Plug-in
+Bundle-ClassPath: refactoring.jar
+Bundle-Activator: com.python.pydev.refactoring.RefactoringPlugin
+Bundle-Vendor: Aptana
+Bundle-ManifestVersion: 2
+Bundle-Localization: plugin
+Bundle-SymbolicName: com.python.pydev.refactoring; singleton:=true
+Export-Package: com.python.pydev.refactoring.actions,com.python.pydev.
+ refactoring.changes,com.python.pydev.refactoring.hyperlink,com.python
+ .pydev.refactoring.markoccurrences,com.python.pydev.refactoring.refac
+ torer,com.python.pydev.refactoring.refactorer.refactorings.rename,com
+ .python.pydev.refactoring.refactorer.refactorings.renamelocal,com.pyt
+ hon.pydev.refactoring.refactorer.search,com.python.pydev.refactoring.
+ refactorer.search.copied,com.python.pydev.refactoring.search,com.pyth
+ on.pydev.refactoring.tdd,com.python.pydev.refactoring.ui,com.python.p
+ ydev.refactoring.ui.findreplace,com.python.pydev.refactoring.wizards,
+ com.python.pydev.refactoring.wizards.rename,com.python.pydev.refactor
+ ing.wizards.rename.visitors
+Require-Bundle: org.eclipse.ui,org.eclipse.ui.editors,org.eclipse.ui.i
+ de,org.eclipse.ui.workbench.texteditor,org.eclipse.core.runtime,org.e
+ clipse.jface.text,org.python.pydev;bundle-version="2.7.5.2013052819",
+ com.python.pydev,org.junit;bundle-version="4.0";resolution:=optional,
+ org.eclipse.search,org.python.pydev.ast,org.python.pydev.shared_ui,or
+ g.python.pydev.core,org.python.pydev.parser,org.eclipse.core.resource
+ s,com.python.pydev.analysis,org.eclipse.ltk.core.refactoring,org.ecli
+ pse.ltk.ui.refactoring,org.eclipse.jdt.core;resolution:=optional,org.
+ eclipse.jdt.ui;resolution:=optional,org.python.pydev.refactoring;bund
+ le-version="0.9.7.1"
+Bundle-Version: 2.7.5.2013052819
+Eclipse-LazyStart: true
+
+Name: LICENSE.TXT
+SHA1-Digest: p+9tB+uCL9D+iYG9D8zDHITgqgU=
+
+Name: plugin.xml
+SHA1-Digest: /93LQ7XbCH8x+OcYzU494HY3P0o=
+
+Name: plugin.properties
+SHA1-Digest: k3YFYgyxeGpsheAWvZE09comTK0=
+
+Name: refactoring.jar
+SHA1-Digest: xAsqbsYaIrm/06w9EqWiTMfwPpk=
+

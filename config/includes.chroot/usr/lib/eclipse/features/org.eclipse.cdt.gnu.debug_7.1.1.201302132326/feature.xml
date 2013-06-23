@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.cdt.gnu.debug"
+      label="%featureName"
+      version="7.1.1.201302132326"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://download.eclipse.org/tools/cdt/releases/indigo"/>
+   </url>
+
+   <plugin
+         id="org.eclipse.cdt.debug.mi.core"
+         download-size="520"
+         install-size="1076"
+         version="7.2.0.201302132326"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.cdt.debug.mi.ui"
+         download-size="139"
+         install-size="262"
+         version="6.1.1.201302132326"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.cdt.launch"
+         download-size="217"
+         install-size="458"
+         version="7.1.0.201302132326"
+         unpack="false"/>
+
+</feature>

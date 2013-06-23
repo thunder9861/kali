@@ -1,0 +1,44 @@
+Manifest-Version: 1.0
+Bundle-Name: Pydev Extensions
+Bundle-ClassPath: pydev.jar
+Bundle-Activator: com.python.pydev.PydevPlugin
+Bundle-Vendor: Aptana
+Bundle-ManifestVersion: 2
+Bundle-Localization: plugin
+Bundle-SymbolicName: com.python.pydev; singleton:=true
+Export-Package: com.python.pydev,com.python.pydev.actions,com.python.p
+ ydev.refactoring,com.python.pydev.ui.hierarchy,com.python.pydev.ui.se
+ arch,com.python.pydev.util
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.eclipse.jf
+ ace.text,org.python.pydev;bundle-version="2.7.5.2013052819",org.pytho
+ n.pydev.core,org.junit;bundle-version="4.0";resolution:=optional,org.
+ python.pydev.ast,org.python.pydev.parser,org.eclipse.ui.editors,org.e
+ clipse.ui.workbench.texteditor,org.eclipse.core.resources,org.eclipse
+ .core.variables,org.eclipse.debug.core,org.eclipse.debug.ui,org.pytho
+ n.pydev.debug,org.eclipse.ui.console,org.python.pydev.jython,org.ecli
+ pse.search,org.eclipse.ui.ide,org.python.pydev.shared_interactive_con
+ sole,org.python.pydev.shared_ui
+Bundle-Version: 2.7.5.2013052819
+Eclipse-LazyStart: true
+
+Name: icons/class_hi.gif
+SHA1-Digest: vYgFu3TSq5m9t5d1POqGcLSLpAg=
+
+Name: icons/python_file.gif
+SHA1-Digest: gTRixD8CyMaKVlNh1AusW9SNog4=
+
+Name: LICENSE.TXT
+SHA1-Digest: p+9tB+uCL9D+iYG9D8zDHITgqgU=
+
+Name: plugin.xml
+SHA1-Digest: Z/ZcYWB1KOur9xsSoa92ME1Oh9M=
+
+Name: plugin.properties
+SHA1-Digest: 2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+
+Name: icons/searchm_obj.gif
+SHA1-Digest: kCLmGfhNk3E8XFQCF5umAga+HXU=
+
+Name: pydev.jar
+SHA1-Digest: OvA7KkBq4aP4cohP4NdD1a2xPE8=
+
