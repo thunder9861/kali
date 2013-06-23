@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Prints a horizontal rule
 # $1 = Character to use (defaults to '#')
