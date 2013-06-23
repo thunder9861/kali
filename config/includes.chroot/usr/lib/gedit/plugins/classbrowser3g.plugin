@@ -1,9 +1,0 @@
-[Plugin]
-Loader=python
-Module=classbrowser3g
-IAge=3
-Name=Class Browser 3g
-Description=A class browser in the side panel
-Authors=B. Clausius <barcc@gmx.de>;Frederic Back <fredericback@gmail.com>
-Copyright=Copyright 2006-2008 Frederic Back <fredericback@gmail.com>\nCopyright 2012 B. Clausius <barcc@gmx.de>
-Website=https://launchpad.net/gedit-classbrowser3g
