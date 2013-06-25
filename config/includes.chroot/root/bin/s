@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Starts an ssh session with screen
 # $1 = string user@host

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Returns the package that provides a command
 # $1 = string command

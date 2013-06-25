@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Downloads a goo.gl shortened link
 # $1 == string Goo.gl shortened link hash

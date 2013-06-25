@@ -107,6 +107,8 @@ debian-installer
 unetbootin
 mbr
 debian-installer-launcher
+console-data
+console-common
 
 # Wine
 wine

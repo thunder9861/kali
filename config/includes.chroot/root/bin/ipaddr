@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Prints the current internal ip address
 # No arguments needed

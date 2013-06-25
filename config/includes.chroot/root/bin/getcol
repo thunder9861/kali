@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Returns the requested column
 # $1 = int column

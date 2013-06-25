@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Returns the package highest version
 # $1 = string package

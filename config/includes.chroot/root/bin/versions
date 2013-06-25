@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Returns a list of versions for a package
 # $1 = string package

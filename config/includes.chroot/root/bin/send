@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Sends a file
 # $1 = string filename

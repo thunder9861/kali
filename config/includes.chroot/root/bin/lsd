@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Lists only subdirectories
 # $1 = string directories

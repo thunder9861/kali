@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Outputs the text with linenumbers
 # $1 = string filename

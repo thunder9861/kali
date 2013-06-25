@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Calculates the password from a keyfile
 # $1 = Keyfile

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Purges packages
 # $1 = string package

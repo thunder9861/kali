@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Sorts a file by length
 # $1 = string filename

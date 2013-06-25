@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Shows only duplicate lines in a file
 # $1 = string filename

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Show all packages that depend on the specified package
 # $1 = string package

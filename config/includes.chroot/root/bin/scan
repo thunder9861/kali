@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Scans the network with nmap
 # $1 = string ip address or subnet

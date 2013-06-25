@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Finds a package matching the name
 # $1 = string package

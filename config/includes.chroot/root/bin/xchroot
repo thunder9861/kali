@@ -40,6 +40,9 @@ cp /etc/resolv.conf $root/etc/resolv.conf
 # Start the nested X server
 Xephyr -screen 1024x768 -name KaliChroot -title KaliChroot :1 &
 
+# Wait for the X server to start
+sleep 5
+
 # Chroot in and startx
 chroot $root env DISPLAY=localhost:1 startlxde
 

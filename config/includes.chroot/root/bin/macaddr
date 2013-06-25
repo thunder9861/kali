@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Prints the current mac address of the specified network interface
 # $1 = string interface
