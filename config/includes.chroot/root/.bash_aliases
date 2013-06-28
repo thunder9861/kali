@@ -11,6 +11,7 @@ alias du='du -ch'
 alias less='less -XFNRMe'
 alias mkdir='mkdir -pv'
 alias wget='wget -c'
+alias cgdb='cgdb -- --nx'
 
 # Additional
 alias ack='ack-grep -i -u'
