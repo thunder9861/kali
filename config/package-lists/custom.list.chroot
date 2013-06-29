@@ -32,7 +32,6 @@ wget
 rsync
 screen
 byobu
-tmux
 buffer
 util-linux
 grep

@@ -28,6 +28,10 @@ if [ "$TERM" = "linux" ]; then
     clear
 fi
 
+# Swap Caps Lock and Escape
+echo keycode 58 = Escape | loadkeys -
+echo keycode 1 = Caps_Lock | loadkeys -
+
 # If not running interactively, don't do anything
 case $- in
    *i*) ;;

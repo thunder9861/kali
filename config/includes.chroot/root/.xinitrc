@@ -1,1 +1,0 @@
-XKBOPTIONS="caps:swapescape"
