@@ -29,8 +29,8 @@ if [ "$TERM" = "linux" ]; then
 fi
 
 # Swap Caps Lock and Escape
-echo keycode 58 = Escape | loadkeys -
-echo keycode 1 = Caps_Lock | loadkeys -
+echo keycode 58 = Escape | loadkeys - > /dev/null 2>&1
+echo keycode 1 = Caps_Lock | loadkeys - > /dev/null 2>&1
 
 # If not running interactively, don't do anything
 case $- in
