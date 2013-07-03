@@ -21,6 +21,18 @@ kali-root-login
 kali-archive-keyring
 kali-debtags
 
+# Xorg
+xorg
+xserver-xorg-video-nvidia
+xserver-xorg-video-fbdev
+xserver-xorg-video-vesa
+xserver-xorg-video-intel
+xserver-xorg-video-vmware
+xserver-xorg-input-multitouch
+xserver-xorg-input-kbd
+xserver-xorg-input-synaptics
+xserver-xorg-input-wacom
+
 # Command Line
 coreutils
 w3m
