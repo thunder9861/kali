@@ -35,7 +35,7 @@ permissions       = File.stat(filepath).mode.to_s(8)
 setuid            = File.stat(filepath).setuid?
 signal_name       = Signal.list.invert[signal]
 stack             = File.read("/proc/#{pid}/stack")
-time              = Time.now.strftime("%Y-%m-%d-%H-%M")
+time              = Time.now.strftime("%Y%m%d%H%M%S")
 username          = Etc.getpwuid(uid)[:name]
 working_directory = File.readlink("/proc/#{pid}/cwd")
 
@@ -44,9 +44,9 @@ directory = "/var/core"
 Dir.mkdir(directory) unless Dir.exists? directory
 
 # Create core filename
-executable = File.join(directory, "#{filename}-#{time}.bin")
-corefile   = File.join(directory, "#{filename}-#{time}.core")
-metadata   = File.join(directory, "#{filename}-#{time}.metadata")
+executable = File.join(directory, "#{filename}_#{time}.bin")
+corefile   = File.join(directory, "#{filename}_#{time}.core")
+metadata   = File.join(directory, "#{filename}_#{time}.metadata")
 
 # Copy executable
 FileUtils.copy(filepath, executable)
@@ -100,12 +100,12 @@ f.flush
 
 # Get the registers and backtrace from GDB
 f.puts "Loading GDB..."
-f.puts "Running 'backtrace' and 'info registers'"
 f.flush
 r, w = IO.pipe
 child = fork{$stdin.reopen(r); $stdout.reopen(f); $stderr.reopen(f); exec "/usr/bin/gdb -q -c #{corefile}"}
 w.puts "set height 0"
 w.puts "backtrace"
+w.puts "info frame"
 w.puts "info registers"
 w.puts "quit"
 Process.wait
