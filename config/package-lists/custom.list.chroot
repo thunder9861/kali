@@ -57,6 +57,9 @@ findutils
 iw
 ncurses-hexedit
 expect
+uni2ascii
+execstack
+ascii2binary
 
 # Gui
 lxde

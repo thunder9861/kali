@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Converts hex to ascii, accounting for little endian.
+# $1 Hex (without 0x)
+
+python -c "import binascii; print binascii.a2b_hex('$1')[::-1]"

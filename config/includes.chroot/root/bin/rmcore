@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Removes core files
+
+rm -rf /var/core/*
