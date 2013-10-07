@@ -1,18 +1,18 @@
-# Linux
-linux-base
-linux-image-686-pae
-lsb
-lsb-base
-lsb-core
-lsb-cxx
-lsb-desktop
-lsb-graphics
-lsb-multimedia
-lsb-printing
-lsb-release
-lsb-security
+## Linux
+#linux-base
+##linux-image-686-pae
+#lsb
+#lsb-base
+#lsb-core
+#lsb-cxx
+#lsb-desktop
+#lsb-graphics
+#lsb-multimedia
+#lsb-printing
+#lsb-release
+#lsb-security
 
-# Kali
+## Kali
 kali-defaults
 kali-linux
 kali-linux-full
@@ -21,7 +21,7 @@ kali-root-login
 kali-archive-keyring
 kali-debtags
 
-# Xorg
+## Xorg
 xorg
 xserver-xorg-video-nvidia
 xserver-xorg-video-fbdev
@@ -33,7 +33,7 @@ xserver-xorg-input-kbd
 xserver-xorg-input-synaptics
 xserver-xorg-input-wacom
 
-# Command Line
+## Command Line
 coreutils
 w3m
 vim
@@ -61,7 +61,7 @@ uni2ascii
 execstack
 ascii2binary
 
-# Gui
+## Gui
 lxde
 arandr
 gnome-commander
@@ -78,7 +78,7 @@ file-roller
 xcompmgr
 xserver-xephyr
 
-# Package Management
+## Package Management
 deborphan
 debfoster
 aptitude
@@ -90,7 +90,7 @@ apt-xapian-index
 synaptic
 apt-cacher-ng
 
-# Development
+## Development
 kernel-package
 linux-headers-686-pae
 linux-source
@@ -101,15 +101,15 @@ build-essential
 gdb
 ddd
 valgrind
-valkyrie
+#valkyrie
 nasm
-mingw32
+#mingw32
 checkinstall
 strace
 cgdb
 binutils
 
-# System
+## System
 rungetty
 gnome-system-monitor
 aufs-tools
@@ -125,17 +125,17 @@ debian-installer-launcher
 console-data
 console-common
 
-# Wine
+## Wine
 wine
 winetricks
 playonlinux
 
-# Encryption
+## Encryption
 hashalot
 system-config-lvm
 lvm2
 
-# Security
+## Security
 gufw
 tor
 vidalia
@@ -145,7 +145,7 @@ clamtk
 xca
 seahorse
 
-# Cleanup
+## Cleanup
 logrotate
 localepurge
 fslint
@@ -153,43 +153,43 @@ bleachbit
 baobab
 cruft
 
-# Speedup
+## Speedup
 preload
 insserv
 
-# Hardware
+## Hardware
 gparted
 
-# Utilities
+## Utilities
 buffer
 qalculate
 truecrypt
 keepassx
-keepass2
+#keepass2
 grsync
 unshield
 
-# Virtual
+## Virtual
 virtualbox
 virtualbox-guest-additions-iso
 virtualbox-guest-utils
 virtualbox-guest-x11
 
-# Java
+## Java
 default-jdk
 default-jre
 gcj-jdk
 icedtea-plugin
 
-# Mono
-mono-complete
+## Mono
+#mono-complete
 
-# Internet
+## Internet
 transmission
 chromium
 tickr
 
-# Networking
+## Networking
 network-manager-gnome
 minicom
 samba
@@ -202,45 +202,45 @@ ngrep
 bridge-utils
 firestarter
 
-# Pentesting
+## Pentesting
 
-# Programming
+## Programming
 git
 eclipse
-qtcreator
+#qtcreator
 meld
 # eclipse-cdt
 # eclipse-cdt-valgrind
 
-# Python
-python-matplotlib
-python-numpy
-python-sympy
-python-scipy
-python-apsw
-python-yaml
-python-wxgtk2.8
-python-gpgme
-python-pyicu
+## Python
+#python-matplotlib
+#python-numpy
+#python-sympy
+#python-scipy
+#python-apsw
+#python-yaml
+#python-wxgtk2.8
+#python-gpgme
+#python-pyicu
 
-# Ruby
+## Ruby
 jruby
 ruby
-ruby1.8-full
+#ruby1.8-full
 ruby1.9.1-full
 rubygems
 
-# Note Taking
-zim
+## Note Taking
+#zim
 cherrytree
-keepnote
+#keepnote
 gedit
 gedit-plugins
-xournal
+#xournal
 shutter
 webhttrack
 
-# Documents
+## Documents
 cups-pdf
 simple-scan
 evince
@@ -249,29 +249,29 @@ wkhtmltopdf
 sane
 pdfgrep
 
-# Office
-libreoffice
-lyx
-jabref
+## Office
+#libreoffice
+#lyx
+#jabref
 
-# Communication
-icedove
-iceowl-extension
-pidgin
-pidgin-skype
-pidgin-encryption
+## Communication
+#icedove
+#iceowl-extension
+#pidgin
+#pidgin-skype
+#pidgin-encryption
 
-# Media
+## Media
 smplayer
-audacity
-brasero
-recordmydesktop
+#audacity
+#brasero
+#recordmydesktop
 
-# Graphics
+## Graphics
 flashplugin-nonfree
-inkscape
+#inkscape
 
-# Audio
+## Audio
 alsa-utils
 pulseaudio-utils
 pulseaudio-module-bluetooth

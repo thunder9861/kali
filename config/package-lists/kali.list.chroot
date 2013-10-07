@@ -1,108 +1,108 @@
-# kali meta-package depends on everything we want
-kali-linux-full
+## kali meta-package depends on everything we want
+#kali-linux-full
 
-# provide l10n for everybody
-locales-all
+## provide l10n for everybody
+#locales-all
 
-# some tools that we always want
-apache2
-atftpd
-bluez
-bluez-hcidump
+## some tools that we always want
+#apache2
+#atftpd
+#bluez
+#bluez-hcidump
 
-#if ARCHITECTURES armel armhf
-# cgpt
-#endif
+##if ARCHITECTURES armel armhf
+## cgpt
+##endif
 
-clang
-cowsay
-desktop-base
-ethtool
-expect
-gdb
-git
-gparted
+#clang
+#cowsay
+#desktop-base
+#ethtool
+#expect
+#gdb
+#git
+#gparted
 
-#if ARCHITECTURES i386 amd64
-# guymager
-# firmware-b43legacy-installer 
-# firmware-b43-installer
-#endif
+##if ARCHITECTURES i386 amd64
+## guymager
+## firmware-b43legacy-installer 
+## firmware-b43-installer
+##endif
 
-iw
-mysql-server
-ncurses-hexedit
-openvpn
-p7zip-full
-parted
-php5
-php5-mysql
-python-impacket
-python-impacket-doc
-paros
-radare2
-rdesktop
-screen
-sendemail
-snmp
-snmpd
-suckless-tools
-sudo
-tcpdump
-tftp
-tightvncserver
-tmux
-unrar
-upx-ucl
-vim
-xpdf
-leafpad
-vim-gtk
-xtightvncviewer
-zenmap
+#iw
+#mysql-server
+#ncurses-hexedit
+#openvpn
+#p7zip-full
+#parted
+#php5
+#php5-mysql
+#python-impacket
+#python-impacket-doc
+#paros
+#radare2
+#rdesktop
+#screen
+#sendemail
+#snmp
+#snmpd
+#suckless-tools
+#sudo
+#tcpdump
+#tftp
+#tightvncserver
+#tmux
+#unrar
+#upx-ucl
+#vim
+#xpdf
+#leafpad
+#vim-gtk
+#xtightvncviewer
+#zenmap
 
-#if ARCHITECTURES armel armhf
-# vboot-utils
-# vboot-kernel-utils
-#endif
+##if ARCHITECTURES armel armhf
+## vboot-utils
+## vboot-kernel-utils
+##endif
 
-# Graphical desktops depending on the architecture
-#
-# You can replace all the remaining lines with a list of the
-# packages required to install your preferred graphical desktop
-# or you can just comment everything except the package of your
-# preferred desktop.
+## Graphical desktops depending on the architecture
+##
+## You can replace all the remaining lines with a list of the
+## packages required to install your preferred graphical desktop
+## or you can just comment everything except the package of your
+## preferred desktop.
 
-#if ARCHITECTURES i386 amd64
-# *** GNOME DESKTOP ***
-# gnome-core
-# gnome-brave-icon-theme
-# gnome-shell-extensions
-#endif
+##if ARCHITECTURES i386 amd64
+## *** GNOME DESKTOP ***
+## gnome-core
+## gnome-brave-icon-theme
+## gnome-shell-extensions
+##endif
 
-#if ARCHITECTURES armel armhf
-# *** XFCE DESKTOP ***
-# xfce4
-# network-manager-gnome
-# network-manager
-#endif
+##if ARCHITECTURES armel armhf
+## *** XFCE DESKTOP ***
+## xfce4
+## network-manager-gnome
+## network-manager
+##endif
 
-# *** KDE DESKTOP ***
-# kde-plasma-desktop
-# kdm
+## *** KDE DESKTOP ***
+## kde-plasma-desktop
+## kdm
 
-# *** LXDE DESKTOP ***
-lxde
+## *** LXDE DESKTOP ***
+#lxde
 
-# *** Enlightenment DR17 DESKTOP ***
-# e17
+## *** Enlightenment DR17 DESKTOP ***
+## e17
 
-# *** MATE DESKTOP
-# | NOTE: The mate desktop requires other changes to the live config.
-# | See http://docs.kali.org/live-build/customize-the-kali-desktop-environment
-# | for details
-# xorg
-# mate-archive-keyring
-# mate-core
-# mate-desktop-environment
+## *** MATE DESKTOP
+## | NOTE: The mate desktop requires other changes to the live config.
+## | See http://docs.kali.org/live-build/customize-the-kali-desktop-environment
+## | for details
+## xorg
+## mate-archive-keyring
+## mate-core
+## mate-desktop-environment
 
