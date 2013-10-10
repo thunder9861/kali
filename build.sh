@@ -28,7 +28,6 @@ cd $(dirname $0)
 mkdir -p $TARGET_DIR
 
 # Build
-rm -vfr chroot/binary
 lb clean --purge >prepare.log 2>&1
 lb config -a $KALI_ARCH --linux-packages $KERNEL $KALI_CONFIG_OPTS >>prepare.log 2>&1
 lb build

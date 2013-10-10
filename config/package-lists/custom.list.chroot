@@ -1,172 +1,188 @@
 ## Linux
-#linux-base
-##linux-image-686-pae
-#lsb
-#lsb-base
-#lsb-core
-#lsb-cxx
-#lsb-desktop
-#lsb-graphics
-#lsb-multimedia
-#lsb-printing
-#lsb-release
-#lsb-security
+linux-base
+#linux-image-686-pae
+lsb
+lsb-base
+lsb-core
+lsb-cxx
+lsb-desktop
+lsb-graphics
+lsb-multimedia
+lsb-printing
+lsb-release
+lsb-security
 
 ## Kali
-kali-defaults
-kali-linux
-kali-linux-full
-kali-menu
-kali-root-login
 kali-archive-keyring
 kali-debtags
+kali-defaults
+kali-linux
+#kali-linux-all
+#kali-linux-full
+#kali-linux-sdr
+kali-menu
+kali-root-login
 
 ## Xorg
 xorg
-xserver-xorg-video-nvidia
-xserver-xorg-video-fbdev
-xserver-xorg-video-vesa
-xserver-xorg-video-intel
-xserver-xorg-video-vmware
-xserver-xorg-input-multitouch
 xserver-xorg-input-kbd
+xserver-xorg-input-multitouch
 xserver-xorg-input-synaptics
 xserver-xorg-input-wacom
+xserver-xorg-video-fbdev
+xserver-xorg-video-intel
+xserver-xorg-video-nvidia
+xserver-xorg-video-vesa
+xserver-xorg-video-vmware
 
 ## Command Line
-coreutils
-w3m
-vim
-mc
-netcat
-ssh
-wget
-rsync
-screen
-byobu
+ack-grep
+ascii2binary
+aspell
+bar
 buffer
-util-linux
-grep
-gawk
-sed
 busybox
+byobu
+coreutils
 diffutils
+duff
+execstack
+expect
+findutils
+gawk
+grep
+iw
+mc
+msort
+ncurses-hexedit
+netcat
+par2
 patch
 patchutils
-findutils
-iw
-ncurses-hexedit
-expect
+rdiff
+rsync
+screen
+sed
+ssh
+#tmux
+tree
 uni2ascii
-execstack
-ascii2binary
+util-linux
+uuid
+vim
+w3m
+wget
 
 ## Gui
-lxde
 arandr
+file-roller
 gnome-commander
+lxde
 nautilus
 nautilus-actions
 nautilus-compare
 nautilus-dropbox
 nautilus-gtkhash
+nautilus-image-converter
 nautilus-open-terminal
 nautilus-share
-nautilus-image-converter
 terminator
-file-roller
 xcompmgr
 xserver-xephyr
 
 ## Package Management
-deborphan
-debfoster
-aptitude
 apt-build
+apt-cacher-ng
 apt-file
+aptitude
 apt-rdepends
 apt-utils
 apt-xapian-index
+debfoster
+deborphan
 synaptic
-apt-cacher-ng
 
 ## Development
+autoconf
+automake
+binutils
+build-essential
+cdebootstrap
+cgdb
+checkinstall
+ddd
+debootstrap
+gdb
 kernel-package
 linux-headers-686-pae
+linux-headers-amd64
 linux-source
 live-build
-cdebootstrap
-debootstrap
-build-essential
-gdb
-ddd
-valgrind
-#valkyrie
+mingw32
 nasm
-#mingw32
-checkinstall
+ollydbg
 strace
-cgdb
-binutils
+valgrind
 
 ## System
-rungetty
-gnome-system-monitor
 aufs-tools
-squashfs-tools
+console-common
+console-data
 cpufrequtils
+debian-installer
+debian-installer-launcher
 galternatives
+gnome-system-monitor
+mbr
+rungetty
+squashfs-tools
 sysv-rc-conf
 tasksel
-debian-installer
 unetbootin
-mbr
-debian-installer-launcher
-console-data
-console-common
 
 ## Wine
+playonlinux
 wine
 winetricks
-playonlinux
 
 ## Encryption
 hashalot
-system-config-lvm
 lvm2
+paperkey
+system-config-lvm
 
 ## Security
+clamtk
 gufw
-tor
-vidalia
 polipo
 prey
-clamtk
-xca
 seahorse
+tor
+vidalia
+xca
 
 ## Cleanup
-logrotate
-localepurge
-fslint
-bleachbit
 baobab
+bleachbit
 cruft
+fslint
+localepurge
+logrotate
 
 ## Speedup
-preload
 insserv
+preload
 
 ## Hardware
 gparted
 
 ## Utilities
 buffer
+grsync
+keepass2
+keepassx
 qalculate
 truecrypt
-keepassx
-#keepass2
-grsync
 unshield
 
 ## Virtual
@@ -182,48 +198,73 @@ gcj-jdk
 icedtea-plugin
 
 ## Mono
-#mono-complete
+mono-complete
 
 ## Internet
-transmission
 chromium
 tickr
+transmission
+webhttrack
 
 ## Networking
-network-manager-gnome
-minicom
-samba
-wireshark
-sslstrip
-tcpdump
-nmap
-zenmap
-ngrep
+autossh
 bridge-utils
 firestarter
+minicom
+network-manager-gnome
+ngrep
+nmap
+rfkill
+samba
+squid3
+sslstrip
+tcpdump
+wireshark
+zenmap
 
 ## Pentesting
+aircrack-ng
+armitage
+casefile
+ettercap-graphical
+hashcat
+hashcat-utils
+john
+johnny
+kismet
+kismet-plugins
+maltego
+maltego-teeth
+metasploit
+mimikatz
+openvas
+pack
+pipal
+recon-ng
+shellnoob
+veil
 
 ## Programming
-git
 eclipse
-#qtcreator
+#eclipse-cdt
+#eclipse-cdt-valgrind
+git
 meld
-# eclipse-cdt
-# eclipse-cdt-valgrind
+qtcreator
 
 ## Python
-#python-matplotlib
-#python-numpy
-#python-sympy
-#python-scipy
-#python-apsw
-#python-yaml
-#python-wxgtk2.8
-#python-gpgme
-#python-pyicu
+python-apsw
+python-gpgme
+python-matplotlib
+python-numpy
+python-pyicu
+python-scipy
+python-sympy
+python-wxgtk2.8
+python-yaml
 
 ## Ruby
+gem2deb
 jruby
 ruby
 #ruby1.8-full
@@ -231,51 +272,67 @@ ruby1.9.1-full
 rubygems
 
 ## Note Taking
-#zim
 cherrytree
-#keepnote
 gedit
 gedit-plugins
-#xournal
+keepnote
 shutter
 webhttrack
+xournal
+zim
 
 ## Documents
 cups-pdf
-simple-scan
 evince
+pdfgrep
+sane
+simple-scan
 system-config-printer
 wkhtmltopdf
-sane
-pdfgrep
+
+## Dictionary
+dict
+dictconv
+dictd
+dict-gcide
+dict-moby-thesaurus
+dict-wn
+scowl
+wamerican
+wamerican-huge
+wamerican-insane
+wamerican-large
+wamerican-small
+wordnet
 
 ## Office
-#libreoffice
-#lyx
-#jabref
+jabref
+libreoffice
+lyx
 
 ## Communication
-#icedove
-#iceowl-extension
-#pidgin
-#pidgin-skype
-#pidgin-encryption
+icedove
+iceowl-extension
+pidgin
+pidgin-encryption
+pidgin-skype
 
 ## Media
+audacity
+brasero
+flashplugin-nonfree
+recordmydesktop
 smplayer
-#audacity
-#brasero
-#recordmydesktop
+#vlc
 
 ## Graphics
-flashplugin-nonfree
-#inkscape
+inkscape
 
 ## Audio
 alsa-utils
-pulseaudio-utils
-pulseaudio-module-bluetooth
+blueman
 bluetooth
 gnome-bluetooth
-blueman
+pulseaudio-module-bluetooth
+pulseaudio-utils
 
