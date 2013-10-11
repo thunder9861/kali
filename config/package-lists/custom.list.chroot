@@ -43,6 +43,7 @@ bar
 buffer
 busybox
 byobu
+bzip2
 coreutils
 diffutils
 duff
@@ -112,6 +113,7 @@ cgdb
 checkinstall
 ddd
 debootstrap
+fakeroot
 gdb
 kernel-package
 linux-headers-686-pae
@@ -120,6 +122,7 @@ linux-source
 live-build
 mingw32
 nasm
+ncurses-dev
 ollydbg
 strace
 valgrind

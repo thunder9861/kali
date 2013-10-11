@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Check architecture
+ARCH="$(dpkg --print-architecture)"
+case "$ARCH" in
+	i386)
+      # Do nothing
+	;;
+	amd64)
+      # Enable multiarch support
+      dpkg --add-architecture i386
+      apt-get update
+      apt-get install ia32-libs
+	;;
+	*)
+      # Do nothing
+	;;
+esac
