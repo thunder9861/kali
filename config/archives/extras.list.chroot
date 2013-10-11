@@ -1,2 +1,2 @@
 deb http://download.opensuse.org/repositories/isv:ownCloud:community/Debian_7.0/ /
-deb http://debian.freelan.org/ sid main
+#deb http://debian.freelan.org/ sid main
