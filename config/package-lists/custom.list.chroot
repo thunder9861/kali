@@ -28,6 +28,7 @@ xorg
 xserver-xorg-input-kbd
 xserver-xorg-input-multitouch
 xserver-xorg-input-synaptics
+xserver-xorg-input-vmmouse
 xserver-xorg-input-wacom
 xserver-xorg-video-fbdev
 xserver-xorg-video-intel
@@ -189,6 +190,7 @@ truecrypt
 unshield
 
 ## Virtual
+open-vm-tools
 virtualbox
 virtualbox-guest-additions-iso
 virtualbox-guest-utils
@@ -212,6 +214,7 @@ webhttrack
 ## Networking
 autossh
 bridge-utils
+dnsmasq
 firestarter
 minicom
 network-manager-gnome
