@@ -1,5 +1,0 @@
-#!/bin/bash
-
-# Add repository keys
-wget -q http://download.opensuse.org/repositories/isv:ownCloud:community/Debian_7.0/Release.key -O- | apt-key add -
-wget -q http://debian.freelan.org/debian.freelan.org.key -O- | apt-key add -
