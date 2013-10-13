@@ -27,10 +27,22 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Settings from 
-" amix.dk/vim/vimrc.html
+" Tab completion
+function! Tab_Or_Complete()
+   if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+      return "\<C-X>\<C-O>"
+   else
+      return "\<Tab>"
+   endif
+endfunction
 
+inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
+set omnifunc=syntaxcomplete#Complete
+set complete=".,w,b,u,t,i,k"
+set completeopt=longest,menuone
+set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
@@ -80,6 +92,22 @@ set smarttab
 " 1 tab is 3 spaces
 set shiftwidth=3
 set tabstop=3
+set shiftwidth=3
 
 " Show line numbers
 set number
+
+" Use vim defaults
+set nocompatible
+
+" Show the cursor position at all times
+set ruler
+
+" Turn on autoindenting
+set autoindent
+set copyindent
+
+" Shift-Tab
+nmap <S-Tab> <<
+imap <S-Tab> <Esc><<i
+

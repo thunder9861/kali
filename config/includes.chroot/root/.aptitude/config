@@ -1,9 +1,13 @@
+Apt "";
 Apt::Install-Recommends "false";
+Aptitude "";
 Aptitude::Autoclean-After-Update "true";
+Aptitude::CmdLine "";
 Aptitude::CmdLine::Always-Prompt "true";
 Aptitude::CmdLine::Fix-Broken "true";
 Aptitude::CmdLine::Show-Versions "true";
 Aptitude::Keep-Recommends "true";
+Aptitude::ProblemResolver "";
 Aptitude::ProblemResolver::Allow-Break-Holds "true";
 Aptitude::Purge-Unused "true";
 Aptitude::StepLimit "1000000";

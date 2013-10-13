@@ -71,9 +71,15 @@ tree
 uni2ascii
 util-linux
 uuid
-vim
 w3m
 wget
+
+## Vim
+#vim
+vim-addon-manager
+vim-latexsuite
+vim-nox
+vim-scripts
 
 ## Gui
 arandr
