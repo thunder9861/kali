@@ -143,6 +143,7 @@ debian-installer
 debian-installer-launcher
 galternatives
 gnome-system-monitor
+grub2
 mbr
 rungetty
 squashfs-tools
@@ -187,7 +188,6 @@ preload
 gparted
 
 ## Utilities
-buffer
 grsync
 keepass2
 keepassx
@@ -215,7 +215,6 @@ mono-complete
 chromium
 tickr
 transmission
-webhttrack
 
 ## Networking
 autossh

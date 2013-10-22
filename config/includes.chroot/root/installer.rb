@@ -172,6 +172,12 @@ class Installer
    # void build_call_lists(void)
    def build_call_lists
    
+      @CLEANUP_CALLS = []
+      @CLEANUP_CALLS << :unmount_chroot
+      @CLEANUP_CALLS << :unmount_aufs
+      @CLEANUP_CALLS << :unmount_lvm
+      @CLEANUP_CALLS << :close_luks
+   
       @PREINSTALL_CALLS = []
       @PREINSTALL_CALLS << :validate
       @PREINSTALL_CALLS << :partition
@@ -182,6 +188,7 @@ class Installer
       @PREINSTALL_CALLS << :mount_lvm
       @PREINSTALL_CALLS << :mount_aufs
       @PREINSTALL_CALLS << :mount_chroot
+      @PREINSTALL_CALLS << :copy_boot
       
       @CHROOT_CALLS = []
       @CHROOT_CALLS << :create_fstab
@@ -194,7 +201,6 @@ class Installer
       @POSTINSTALL_CALLS << :unmount_aufs
       @POSTINSTALL_CALLS << :unmount_lvm
       @POSTINSTALL_CALLS << :close_luks
-      @POSTINSTALL_CALLS << :cleanup
       
       @REINSTALL_CALLS = []
       @REINSTALL_CALLS << :validate
@@ -484,7 +490,7 @@ class Installer
       block_size = "128k"
       root_size = get_root_size
       
-      command = "dd if=#{input_file} bs=#{block_size} | bar -s #{root_size} | dd of=#{output_file} bs={block_size}"
+      command = "dd if=#{input_file} bs=#{block_size} | bar -s #{root_size} | dd of=#{output_file} bs=#{block_size}"
       result = sh command
 
       return result
@@ -530,12 +536,22 @@ class Installer
       commands << "mount #{@DISK}1 /mnt/chroot/boot"
       commands << "mount -t proc proc /mnt/chroot/proc"
       commands << "mount -t sysfs sys /mnt/chroot/sys"
-      commands << "mount -o bind dev /mnt/chroot/dev"
+      commands << "mount -o bind /dev /mnt/chroot/dev"
       
       result = batch_sh commands
       
       return result
       
+   end
+
+   # bool copy_boot(void)
+   def copy_boot
+   
+      # Copy everything from /boot to /mnt/chroot/boot
+      FileUtils.cp_r("/boot", "/mnt/chroot/boot")
+      
+      return true
+   
    end
 
    # bool create_fstab(void)
@@ -588,7 +604,10 @@ class Installer
    # bool update_initramfs(void)
    def update_initramfs
 
-      return false
+      FileUtils.ln_sf("/usr/sbin/update-initramfs.orig.initramfs-tools", "/usr/sbin/update-initramfs")
+      result = sh "update-initramfs -u"
+
+      return result
       
    end
 
@@ -653,15 +672,14 @@ class Installer
    # bool cleanup(void)
    def cleanup
       
-      FileUtils.rm_rf "/mnt/chroot"
-      FileUtils.rm_rf "/mnt/lvm"
-      
       return true
       
    end
 
    # bool install(void)
    def install
+
+      @CLEANUP_CALLS.each{ |c| send c }
    
       result = batch_call(@PREINSTALL_CALLS)
       
@@ -670,7 +688,7 @@ class Installer
          # Chroot
          fork do
          
-            Dir.chroot "/path/to/root_aufs_layer"
+            Dir.chroot "/mnt/chroot"
             
             result &&= batch_call(@CHROOT_CALLS)
 
