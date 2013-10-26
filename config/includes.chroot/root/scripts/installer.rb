@@ -8,8 +8,8 @@ require "fileutils"
 
 module Configuration
 
-   BOOT_SIZE_MB        = 200
-   INSTALL_SIZE_MB     = 200
+   BOOT_SIZE_MB        = 100 # CANNOT BE EDITED, MAKE A CONSTANT
+   INSTALL_SIZE_MB     = 50
    DATA_SIZE_MB        = 1024
    SWAP_RAM_MULTIPLIER = 1.25
    SQUASHFS_RATIO      = 4.0
@@ -227,6 +227,13 @@ class Installer
       
    end
    
+   # int get_mbr_size(void)
+   def get_mbr_size
+   
+      return 8
+   
+   end
+   
    # int get_boot_size(void)
    def get_boot_size
       
@@ -309,6 +316,9 @@ class Installer
       # Get the total disk size
       size[:disk] = get_disk_size
 
+      # Get the mbr size
+      size[:mbr] = get_mbr_size
+
       # Get the boot partition size
       size[:boot] = get_boot_size
 
@@ -322,7 +332,8 @@ class Installer
       size[:install] = get_install_size
  
       # Get the total size of the core installation
-      size[:total] = size[:boot] +
+      size[:total] = size[:mbr] +
+                     size[:boot] +
                      size[:root] +
                      size[:install]
 
@@ -405,9 +416,10 @@ class Installer
    def partition
 
       # Generate the partition table
+      # Leave room after the MBR for GRUB
       input = <<-EOF
-         0,200,L,*
-         ,,E
+         8,101,L,*
+         110,,E
          ,0
          ,0
          ,,L
@@ -548,7 +560,7 @@ class Installer
    def copy_boot
    
       # Copy everything from /boot to /mnt/chroot/boot
-      FileUtils.cp_r("/boot", "/mnt/chroot/boot")
+      FileUtils.cp_r(Dir.glob("/boot/*"), "/mnt/chroot/boot")
       
       return true
    
@@ -558,10 +570,11 @@ class Installer
    def create_fstab
 
       lines = []
-      lines << "<file system> <mount point> <type> <optios> <dump> <pass>"
+      lines << "\# <file system> <mount point> <type> <optios> <dump> <pass>"
       lines << "proc /proc proc nodev,nosuid,noexec 0 0"
       lines << "/dev/mapper/vg-root / squashfs loop 0 0"
       lines << "#{@DISK}1 /boot ext4 rw,noatime,errors=remount-ro 0 0"
+      lines << "/dev/mapper/vg-swap none swap sw 0 0" if @SWAP
       lines << "tmpfs /tmp tmpfs noatime,nodev,nosuid 0 0"
       lines << "tmpfs /var/run tmpfs noatime,nodev,nosuid 0 0"
       lines << "tmpfs /var/lock tmpfs noatime,nodev,nosuid 0 0"
@@ -569,7 +582,7 @@ class Installer
 
       # Write the file
       File.open("/etc/fstab", "w") do |f|
-         lines.each{ |line| f.write line }
+         lines.each{ |line| f.puts line }
       end
 
       result = File.exist? "/etc/fstab"
@@ -587,12 +600,12 @@ class Installer
       uuid = uuid.split[2]
 
       lines = []
-      lines << "<target name> <source device> <key file> <options>"
+      lines << "\# <target name> <source device> <key file> <options>"
       lines << "pvcrypt /dev/disk/by-uuid/#{uuid} none luks"
       
       # Write the file
       File.open("/etc/crypttab", "w") do |f|
-         lines.each{ |line| f.write line }
+         lines.each{ |line| f.puts line }
       end
 
       result = File.exist? "/etc/crypttab"
@@ -614,7 +627,9 @@ class Installer
    # bool install_grub(void)
    def install_grub
 
-      return false
+      result = sh "grub-install --no-floppy --boot-directory=/boot #{@DISK}"
+
+      return result
       
    end
 
@@ -691,6 +706,8 @@ class Installer
             Dir.chroot "/mnt/chroot"
             
             result &&= batch_call(@CHROOT_CALLS)
+            
+            Kernel.exit! result
 
          end
          
