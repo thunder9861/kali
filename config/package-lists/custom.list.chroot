@@ -164,9 +164,11 @@ system-config-lvm
 
 ## Security
 clamtk
+gnupg2
 gufw
 polipo
 prey
+rng-tools
 seahorse
 tor
 vidalia
@@ -192,6 +194,7 @@ grsync
 keepass2
 keepassx
 qalculate
+qrencode
 truecrypt
 unshield
 

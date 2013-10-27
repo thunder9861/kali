@@ -8,7 +8,8 @@ require "fileutils"
 
 module Configuration
 
-   BOOT_SIZE_MB        = 100 # CANNOT BE EDITED, MAKE A CONSTANT
+   MBR_SIZE_MB         = 2
+   BOOT_SIZE_MB        = 100
    INSTALL_SIZE_MB     = 50
    DATA_SIZE_MB        = 1024
    SWAP_RAM_MULTIPLIER = 1.25
@@ -75,10 +76,10 @@ end
 # Define some constants
 module Constants
    
-   KB_IN_BYTES = 1024
-   MB_IN_BYTES = 1024 * 1024
-   GB_IN_BYTES = 1024 * 1024 * 1024
-   SECTOR_SIZE = 512
+   KB_IN_BYTES  = 1024
+   MB_IN_BYTES  = 1024 * 1024
+   GB_IN_BYTES  = 1024 * 1024 * 1024
+   SECTOR_SIZE  = 512
    
 end
 
@@ -185,16 +186,23 @@ class Installer
       @PREINSTALL_CALLS << :open_luks
       @PREINSTALL_CALLS << :setup_volumes
       @PREINSTALL_CALLS << :copy_squashfs
-      @PREINSTALL_CALLS << :mount_lvm
       @PREINSTALL_CALLS << :mount_aufs
       @PREINSTALL_CALLS << :mount_chroot
-      @PREINSTALL_CALLS << :copy_boot
+      # @PREINSTALL_CALLS << :copy_boot
+      
+      @MOUNT_CALLS = []
+      @MOUNT_CALLS << :open_luks
+      @MOUNT_CALLS << :mount_lvm
+      @MOUNT_CALLS << :mount_aufs
+      @MOUNT_CALLS << :mount_chroot
       
       @CHROOT_CALLS = []
+      @CHROOT_CALLS << :mount_boot
       @CHROOT_CALLS << :create_fstab
       @CHROOT_CALLS << :create_crypttab
       @CHROOT_CALLS << :update_initramfs
       @CHROOT_CALLS << :install_grub
+      @CHROOT_CALLS << :unmount_boot
       
       @POSTINSTALL_CALLS = []
       @POSTINSTALL_CALLS << :unmount_chroot
@@ -230,7 +238,7 @@ class Installer
    # int get_mbr_size(void)
    def get_mbr_size
    
-      return 8
+      return MBR_SIZE_MB
    
    end
    
@@ -417,9 +425,10 @@ class Installer
 
       # Generate the partition table
       # Leave room after the MBR for GRUB
+      start = MBR_SIZE_MB + BOOT_SIZE_MB
       input = <<-EOF
-         8,101,L,*
-         110,,E
+         #{MBR_SIZE_MB},#{BOOT_SIZE_MB},L,*
+         #{start},,E
          ,0
          ,0
          ,,L
@@ -428,6 +437,10 @@ class Installer
       # Write partition table to disk
       command = "sfdisk #{@DISK} -uM"
       result = sh(command, input)
+
+      # Zero the first 512 bytes of /dev/sda1
+      command = "dd if=/dev/zero of=#{@DISK}1 bs=512 count=1"
+      result &&= sh command
 
       result &&= File.exists? "#{@DISK}1"
       result &&= File.exists? "#{@DISK}5"
@@ -516,6 +529,7 @@ class Installer
       FileUtils.mkdir_p "/mnt/lvm/install"
       
       commands = []
+      commands << "vgchange -a y"
       commands << "mount -t squashfs -o ro /dev/mapper/vg-root /mnt/lvm/root"
       commands << "mount -t ext4 -o rw,noatime /dev/mapper/vg-install /mnt/lvm/install"
       result = batch_sh commands
@@ -539,21 +553,47 @@ class Installer
    # bool mount_chroot(void)
    def mount_chroot
 
-      FileUtils.mkdir_p "/mnt/chroot/boot"
       FileUtils.mkdir_p "/mnt/chroot/proc"
       FileUtils.mkdir_p "/mnt/chroot/sys"
       FileUtils.mkdir_p "/mnt/chroot/dev"
       
       commands = []
-      commands << "mount #{@DISK}1 /mnt/chroot/boot"
       commands << "mount -t proc proc /mnt/chroot/proc"
       commands << "mount -t sysfs sys /mnt/chroot/sys"
       commands << "mount -o bind /dev /mnt/chroot/dev"
+      
+      # Mount the temporary drives
+      
+#      lines << "tmpfs /tmp tmpfs noatime,nodev,nosuid 0 0"
+#      lines << "tmpfs /var/run tmpfs noatime,nodev,nosuid 0 0"
+#      lines << "tmpfs /var/lock tmpfs noatime,nodev,nosuid 0 0"
+#      lines << "tmpfs /var/log tmpfs noatime,nodev,nosuid 0 0"
       
       result = batch_sh commands
       
       return result
       
+   end
+
+   # bool mount_boot(void)
+   def mount_boot
+   
+      FileUtils.mkdir_p "/boot"
+      command = "mount #{@DISK}1 /boot"
+      result = sh command
+      
+      return result
+   
+   end
+
+   # bool unmount_boot(void)
+   def unmount_boot
+   
+      command = "umount -f /mnt/chroot/boot"
+      result = sh command
+      
+      return result
+   
    end
 
    # bool copy_boot(void)
@@ -627,7 +667,35 @@ class Installer
    # bool install_grub(void)
    def install_grub
 
-      result = sh "grub-install --no-floppy --boot-directory=/boot #{@DISK}"
+      # Move grub_probe to grub_probe.orig
+      FileUtils.mv("/usr/sbin/grub-probe", "/usr/sbin/grub-probe.orig")
+      
+      # Make link from grub_probe to scripts/grub_probe.sh
+      FileUtils.ln_s("/root/scripts/grub-probe.sh", "/usr/sbin/grub-probe")
+      
+      # Give grub-probe permissions
+      FileUtils.chmod(755, "/usr/sbin/grub-probe")
+      
+      # Get the uuid of the boot partition
+      uuid = `blkid #{@DISK}1`
+      uuid.gsub!('"', ' ')
+      uuid = uuid.split[2]
+      
+      # Set grub probe environment variables
+      ENV["GRUB_PROBE_DEVICE"] = "#{@DISK}1"
+      ENV["GRUB_PROBE_FS"] = "ext2"
+      ENV["GRUB_PROBE_FS_UUID"] = "#{uuid}"
+
+      # Write environment variables for persistence
+
+      # Erase the MBR
+      result = sh "dd if=/dev/zero of=#{@DISK} bs=512 count=1"
+      
+      # Install grub
+      result &&= sh "grub-install --no-floppy #{@DISK}"
+
+      # update-grub2
+      result &&= sh "update-grub2"
 
       return result
       
@@ -637,10 +705,11 @@ class Installer
    def unmount_chroot
 
       commands = []
-      commands << "umount -f /mnt/chroot/boot"
       commands << "umount -f /mnt/chroot/proc"
       commands << "umount -f /mnt/chroot/sys"
       commands << "umount -f /mnt/chroot/dev"
+
+      # Unmount tmpfs
 
       result = batch_sh commands
 
@@ -687,16 +756,24 @@ class Installer
    # bool cleanup(void)
    def cleanup
       
+      @CLEANUP_CALLS.each{ |c| send c }
       return true
+      
+   end
+
+   # bool mount(void)
+   def mount
+      
+      return batch_call @MOUNT_CALLS
       
    end
 
    # bool install(void)
    def install
 
-      @CLEANUP_CALLS.each{ |c| send c }
+      cleanup
    
-      result = batch_call(@PREINSTALL_CALLS)
+      result = batch_call @PREINSTALL_CALLS
       
       if result
       
@@ -705,7 +782,7 @@ class Installer
          
             Dir.chroot "/mnt/chroot"
             
-            result &&= batch_call(@CHROOT_CALLS)
+            result &&= batch_call @CHROOT_CALLS
             
             Kernel.exit! result
 
@@ -717,7 +794,7 @@ class Installer
          
       end
       
-      result &&= batch_call(@POSTINSTALL_CALLS)
+      result &&= batch_call @POSTINSTALL_CALLS
 
       return result
 
@@ -726,7 +803,7 @@ class Installer
    # bool reinstall(void)
    def reinstall
    
-      result = batch_call(@REINSTALL_CALLS)
+      result = batch_call @REINSTALL_CALLS
       
       return result
    

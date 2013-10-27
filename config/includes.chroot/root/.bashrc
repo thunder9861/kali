@@ -101,3 +101,8 @@ if [ -f ~/.bash_aliases ]; then
    . ~/.bash_aliases
 fi
 
+# Environment variables
+if [ -f ~/.bash_environment ]; then
+   . ~/.bash_environment
+fi
+
