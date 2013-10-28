@@ -174,6 +174,7 @@ class Installer
    def build_call_lists
    
       @CLEANUP_CALLS = []
+      @CLEANUP_CALLS << :unmount_boot
       @CLEANUP_CALLS << :unmount_chroot
       @CLEANUP_CALLS << :unmount_aufs
       @CLEANUP_CALLS << :unmount_lvm
@@ -186,25 +187,29 @@ class Installer
       @PREINSTALL_CALLS << :open_luks
       @PREINSTALL_CALLS << :setup_volumes
       @PREINSTALL_CALLS << :copy_squashfs
+      @PREINSTALL_CALLS << :mount_lvm
       @PREINSTALL_CALLS << :mount_aufs
       @PREINSTALL_CALLS << :mount_chroot
-      # @PREINSTALL_CALLS << :copy_boot
+      @PREINSTALL_CALLS << :mount_boot
+      @PREINSTALL_CALLS << :copy_boot
       
       @MOUNT_CALLS = []
       @MOUNT_CALLS << :open_luks
       @MOUNT_CALLS << :mount_lvm
       @MOUNT_CALLS << :mount_aufs
       @MOUNT_CALLS << :mount_chroot
+      @MOUNT_CALLS << :mount_boot
       
       @CHROOT_CALLS = []
-      @CHROOT_CALLS << :mount_boot
+      
       @CHROOT_CALLS << :create_fstab
       @CHROOT_CALLS << :create_crypttab
       @CHROOT_CALLS << :update_initramfs
-      @CHROOT_CALLS << :install_grub
-      @CHROOT_CALLS << :unmount_boot
+      @CHROOT_CALLS << :configure_grub
       
       @POSTINSTALL_CALLS = []
+      @POSTINSTALL_CALLS << :install_grub
+      @POSTINSTALL_CALLS << :unmount_boot
       @POSTINSTALL_CALLS << :unmount_chroot
       @POSTINSTALL_CALLS << :unmount_aufs
       @POSTINSTALL_CALLS << :unmount_lvm
@@ -425,17 +430,20 @@ class Installer
 
       # Generate the partition table
       # Leave room after the MBR for GRUB
-      start = MBR_SIZE_MB + BOOT_SIZE_MB
+      #start = MBR_SIZE_MB + BOOT_SIZE_MB
+      
+      # Calculate sector size
+
       input = <<-EOF
-         #{MBR_SIZE_MB},#{BOOT_SIZE_MB},L,*
-         #{start},,E
+         4096,204800,L,*
+         208896,,E
          ,0
          ,0
          ,,L
          EOF
 
       # Write partition table to disk
-      command = "sfdisk #{@DISK} -uM"
+      command = "sfdisk -uS #{@DISK}"
       result = sh(command, input)
 
       # Zero the first 512 bytes of /dev/sda1
@@ -489,7 +497,7 @@ class Installer
       commands << "lvcreate -n install -L #{@SIZE[:install]}B /dev/mapper/vg"
       commands << "lvcreate -n rw -L #{@SIZE[:rw]}B /dev/mapper/vg"
       commands << "lvcreate -n swap -L #{@SIZE[:swap]}B /dev/mapper/vg" if @SWAP
-      commands << "mkfs.ext4 #{@DISK}1"
+      commands << "mkfs.ext2 #{@DISK}1"
       commands << "mkfs.ext4 /dev/mapper/vg-install"
       commands << "mkfs.ext4 /dev/mapper/vg-rw"
       commands << "mkswap /dev/mapper/vg-swap" if @SWAP
@@ -512,7 +520,7 @@ class Installer
 
       input_file = "/lib/live/mount/medium/live/filesystem.squashfs"
       output_file = "/dev/mapper/vg-root"
-      block_size = "128k"
+      block_size = "2M" # Make this a config option
       root_size = get_root_size
       
       command = "dd if=#{input_file} bs=#{block_size} | bar -s #{root_size} | dd of=#{output_file} bs=#{block_size}"
@@ -578,8 +586,10 @@ class Installer
    # bool mount_boot(void)
    def mount_boot
    
-      FileUtils.mkdir_p "/boot"
-      command = "mount #{@DISK}1 /boot"
+      # Do this as an aufs layer so the previous contents are visible
+   
+      FileUtils.mkdir_p "/mnt/chroot/boot"
+      command = "mount #{@DISK}1 /mnt/chroot/boot"
       result = sh command
       
       return result
@@ -664,8 +674,8 @@ class Installer
       
    end
 
-   # bool install_grub(void)
-   def install_grub
+   # bool configure_grub(void)
+   def configure_grub
 
       # Move grub_probe to grub_probe.orig
       FileUtils.mv("/usr/sbin/grub-probe", "/usr/sbin/grub-probe.orig")
@@ -674,7 +684,7 @@ class Installer
       FileUtils.ln_s("/root/scripts/grub-probe.sh", "/usr/sbin/grub-probe")
       
       # Give grub-probe permissions
-      FileUtils.chmod(755, "/usr/sbin/grub-probe")
+      FileUtils.chmod(0755, "/usr/sbin/grub-probe")
       
       # Get the uuid of the boot partition
       uuid = `blkid #{@DISK}1`
@@ -685,18 +695,41 @@ class Installer
       ENV["GRUB_PROBE_DEVICE"] = "#{@DISK}1"
       ENV["GRUB_PROBE_FS"] = "ext2"
       ENV["GRUB_PROBE_FS_UUID"] = "#{uuid}"
-
-      # Write environment variables for persistence
-
-      # Erase the MBR
-      result = sh "dd if=/dev/zero of=#{@DISK} bs=512 count=1"
+      ENV["GRUB_PROBE_PARTMAP"] = "msdos"
+      ENV["GRUB_PROBE_DRIVE"] = "(#{@DISK},msdos1)"
       
-      # Install grub
-      result &&= sh "grub-install --no-floppy #{@DISK}"
+      # Write environment variables for persistence
+      lines = []
+      lines << "export GRUB_PROBE_DEVICE=#{@DISK}"
+      lines << "export GRUB_PROBE_FS=ext2"
+      lines << "export GRUB_PROBE_FS_UUID=#{uuid}"
+      lines << "export GRUB_PROBE_PARTMAP=msdos"
+      lines << "export GRUB_PROBE_DRIVE=(#{@DISK},msdos1)"
 
-      # update-grub2
-      result &&= sh "update-grub2"
+      # Write the file
+      File.open("/root/.bash_environment", "a") do |f|
+         lines.each{ |line| f.puts line }
+      end
+      
+      # Sort and remove duplicates in .bash_environment
 
+      result = sh "update-grub2"
+
+      return result
+      
+   end
+   
+   # bool install_grub(void)
+   def install_grub
+   
+      # Erase the MBR, NOT THE PARTITION TABLE
+      # Then install grub
+      commands = []
+      commands << "dd if=/dev/zero of=#{@DISK} bs=446 count=1"
+      commands << "grub-install --no-floppy --recheck --boot-directory=/mnt/chroot/boot #{@DISK}"
+      
+      result = batch_sh commands
+      
       return result
       
    end

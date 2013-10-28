@@ -9,7 +9,6 @@ do
    --device)
       ;;
    --target=*)
-      # = device, = fs, = fs_uuid
       target=${opt#*=}
       ;;
    *)
@@ -19,6 +18,12 @@ do
 done
 
 case "$target" in
+   partmap)
+      echo "$GRUB_PROBE_PARTMAP"
+      ;;
+   drive)
+      echo "$GRUB_PROBE_DRIVE"
+      ;;
    device)
       echo "$GRUB_PROBE_DEVICE"
       ;;
