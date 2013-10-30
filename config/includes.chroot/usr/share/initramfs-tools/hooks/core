@@ -1,27 +1,35 @@
 #!/bin/sh
 
+# Do not modify anything between these lines
+############################################
 PREREQ=""
 
 prereqs()
 {
-	echo "$PREREQ"
+   echo "$PREREQ"
 }
 
 case $1 in
 prereqs)
-	prereqs
-	exit 0
-	;;
+   exit 0
+   ;;
 esac
 
 . /usr/share/initramfs-tools/hook-functions
 
-# copy_exec dropbear
-copy_exec wget
-copy_exec w3m
-copy_exec vim
-copy_exec grep
-copy_exec awk
-copy_exec sed
-copy_exec nc
+############################################
+
+copy_exec /bin/grep /bin
+copy_exec /bin/nc /bin
+copy_exec /bin/sed /bin
+copy_exec /sbin/cryptsetup /bin
+copy_exec /sbin/e2fsck /bin
+copy_exec /sbin/lvm /bin
+copy_exec /sbin/mke2fs /bin
+copy_exec /usr/bin/awk /bin
+copy_exec /usr/bin/sha512sum /bin
+copy_exec /usr/bin/vim /bin
+copy_exec /usr/bin/w3m /bin
+copy_exec /usr/bin/wget /bin
+# copy_exec /usr/sbin/dropbear /bin
 
