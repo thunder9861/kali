@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# Do not modify anything between these lines
+############################################
+PREREQ=""
+
+prereqs()
+{
+   echo "$PREREQ"
+}
+
+case $1 in
+prereqs)
+   exit 0
+   ;;
+esac
+
+############################################
+
+# Need some modules
+modprobe squashfs
+modprobe aufs
+
+# Make the directories on the initramfs
+mkdir /aufs /ro /rw
+
+# Mount the ro and rw layer drives to the initramfs
+mount -o ro /dev/mapper/vg-install /ro
+mount -o rw /dev/mapper/vg-rw /rw
+
+# Aufs stack the 3 drives
+mount -t aufs -o dirs=/rw=rw:/ro=ro:/root=rr aufs /aufs
+
+# Migrate to the new root
+mount --move /aufs ${rootmnt}
+
+exit 0

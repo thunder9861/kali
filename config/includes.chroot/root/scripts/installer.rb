@@ -10,7 +10,7 @@ module Configuration
 
    MBR_SIZE_MB         = 2
    BOOT_SIZE_MB        = 100
-   INSTALL_SIZE_MB     = 50
+   INSTALL_SIZE_MB     = 100
    DATA_SIZE_MB        = 1024
    SWAP_RAM_MULTIPLIER = 1.25
    SQUASHFS_RATIO      = 4.0
