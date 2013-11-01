@@ -29,7 +29,7 @@ mkdir -p $TARGET_DIR
 
 # Build
 lb clean --purge >prepare.log 2>&1
-lb config -a $KALI_ARCH --linux-packages $KERNEL $KALI_CONFIG_OPTS >>prepare.log 2>&1
+lb config -a $KALI_ARCH --linux-packages $KERNEL $KALI_CONFIG_OPTS --mirror-bootstrap "http://127.0.0.1/ftp.us.debian.org/debian/" >>prepare.log 2>&1
 lb build
 
 if [ $? -ne 0 ] || [ ! -e $IMAGE_NAME ]; then
