@@ -1,3 +1,0 @@
-#!/bin/bash
-
-apt-get -y purge texlive-latex-extra-doc qt4-doc texlive-pstricks-doc texlive-fonts-extra-doc texlive-pictures-doc texlive-latex-base-doc texlive-latex-recommended-doc qt4-demos texlive-science-doc libx11-doc texlive-fonts-recommended-doc qtcreator-doc docutils-doc libssl-doc python-pyexiv2-doc live-config-doc live-boot-doc texlive-fonts-extra fonts-linuxlibertine otf-freefont fonts-freefont-otf fonts-junicode fonts-sil-gentium fonts-stix fonts-gfs-didot fonts-gfs-artemisia fonts-comfortaa fonts-gfs-neohellenic fonts-oflb-asana-math fonts-gfs-complutum fonts-gfs-olga fonts-gfs-solomos xscreensaver xscreensaver-data tmux vim-gtk

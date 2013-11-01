@@ -22,16 +22,16 @@ modprobe squashfs
 modprobe aufs
 
 # Make the directories on the initramfs
-mkdir /aufs /ro /rw
+mkdir /rr /ro /rw
+
+# Move root out of the way
+mount --move ${rootmnt} /rr
 
 # Mount the ro and rw layer drives to the initramfs
-mount -o ro /dev/mapper/vg-install /ro
-mount -o rw /dev/mapper/vg-rw /rw
+mount -o ro -t ext4 /dev/mapper/vg-install /ro
+mount -o rw -t ext4 /dev/mapper/vg-rw /rw
 
 # Aufs stack the 3 drives
-mount -t aufs -o dirs=/rw=rw:/ro=ro:/root=rr aufs /aufs
-
-# Migrate to the new root
-mount --move /aufs ${rootmnt}
+mount -t aufs -o dirs=/rw=rw:/ro=ro:/rr=rr aufs ${rootmnt}
 
 exit 0
