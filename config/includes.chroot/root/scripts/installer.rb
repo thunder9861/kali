@@ -202,6 +202,7 @@ class Installer
       
       @CHROOT_CALLS = []
       
+      @CHROOT_CALLS << :set_password
       @CHROOT_CALLS << :create_fstab
       @CHROOT_CALLS << :create_crypttab
       @CHROOT_CALLS << :update_initramfs
@@ -613,6 +614,13 @@ class Installer
       FileUtils.cp_r(Dir.glob("/boot/*"), "/mnt/chroot/boot")
       
       return true
+   
+   end
+
+   # bool set_password(void)
+   def set_password
+   
+      return sh("chpasswd", "root:root")
    
    end
 
