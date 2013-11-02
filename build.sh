@@ -3,17 +3,18 @@
 set -e
 
 # Speed up builds
-/etc/init.d/apt-cacher-ng start
-export http_proxy=http://127.0.0.1:3142/
+/etc/init.d/apt-cacher-ng restart
+# export http_proxy=http://127.0.0.1:3142/
 
 # Set mirror options
-KALI_MIRROR_OPRIONS=\
-'--mirror-bootstrap http://127.0.0.1:3142/archive.kali.org/kali '\
-'--mirror-debian-installer http://127.0.0.1:3142/archive.kali.org/kali '\
-'--mirror-chroot http://127.0.0.1:3142/archive.kali.org/kali '\
-'--mirror-chroot-security http://127.0.0.1:3142/archive.kali.org/kali-security '\
-'--mirror-binary http://127.0.0.1:3142/http.kali.org/kali '\
-'--mirror-binary-security http://127.0.0.1:3142/security.kali.org/kali-security '
+MIRROR_OPTIONS=\
+'--apt-http-proxy http://127.0.0.1:3142 '
+#'--mirror-bootstrap http://127.0.0.1:3142/archive.kali.org/kali '\
+#'--mirror-debian-installer http://127.0.0.1:3142/archive.kali.org/kali '\
+#'--mirror-chroot http://127.0.0.1:3142/archive.kali.org/kali '\
+#'--mirror-chroot-security http://127.0.0.1:3142/archive.kali.org/kali-security '\
+#'--mirror-binary http://127.0.0.1:3142/http.kali.org/kali '\
+#'--mirror-binary-security http://127.0.0.1:3142/security.kali.org/kali-security '
 
 # Set variables
 KALI_VERSION="${VERSION:-daily}"
@@ -37,8 +38,8 @@ cd $(dirname $0)
 mkdir -p $TARGET_DIR
 
 # Build
-lb clean --purge >prepare.log 2>&1
-lb config -a $KALI_ARCH --linux-packages $KERNEL $KALI_CONFIG_OPTS $KALI_MIRROR_OPTIONS >> prepare.log 2>&1
+lb clean > prepare.log 2>&1
+lb config $MIRROR_OPTIONS -a $KALI_ARCH --linux-packages $KERNEL $KALI_CONFIG_OPTS >> prepare.log 2>&1
 lb build
 
 if [ $? -ne 0 ] || [ ! -e $IMAGE_NAME ]; then
