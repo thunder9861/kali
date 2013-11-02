@@ -2,3 +2,7 @@
 
 # Replace sysvinit with upstart
 echo 'Yes, do as I say!' | apt-get -o DPkg::options=--force-remove-essential -y --force-yes install upstart live-config-upstart
+
+# Autologin with rungetty
+sed -i 's/exec/# exec/g' /etc/init/tty1.conf
+echo 'exec /sbin/rungetty tty1 --autologin root' >> /etc/init/tty1.conf
