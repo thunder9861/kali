@@ -1,15 +1,15 @@
 #!/bin/bash
 
 # Remove sysvinit
-echo 'Yes, do as I say!' | apt-get -o DPkg::options=--force-remove-essential -y --force-yes remove --purge sysvinit live-config-sysvinit
-echo "sysvinit hold" | dpkg --set-selections
-echo "live-config-sysvinit hold" | dpkg --set-selections
+#echo 'Yes, do as I say!' | apt-get -o DPkg::options=--force-remove-essential -y --force-yes remove --purge sysvinit live-config-sysvinit
+#echo "sysvinit hold" | dpkg --set-selections
+#echo "live-config-sysvinit hold" | dpkg --set-selections
 
 # Install upstart
-echo 'Yes, do as I say!' | apt-get -o DPkg::options=--force-remove-essential -y --force-yes install upstart live-config-upstart
-echo "upstart hold" | dpkg --set-selections
-echo "live-config-upstart hold" | dpkg --set-selections
+#echo 'Yes, do as I say!' | apt-get -o DPkg::options=--force-remove-essential -y --force-yes install upstart live-config-upstart
+#echo "upstart hold" | dpkg --set-selections
+#echo "live-config-upstart hold" | dpkg --set-selections
 
 # Autologin with rungetty
-sed -i 's/exec/# exec/g' /etc/init/tty1.conf
-echo 'exec /sbin/rungetty tty1 --autologin root' >> /etc/init/tty1.conf
+#sed -i 's/exec/# exec/g' /etc/init/tty1.conf
+#echo 'exec /sbin/rungetty tty1 --autologin root' >> /etc/init/tty1.conf
