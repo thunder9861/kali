@@ -53,7 +53,8 @@ po::powerokwait:/etc/init.d/powerfail stop
 #
 # 1:2345:respawn:/sbin/getty 38400 tty1
 1:2345:respawn:/sbin/rungetty tty1 --autologin root
-2:23:respawn:/sbin/getty 38400 tty2
+# 2:23:respawn:/sbin/getty 38400 tty2
+2:23:respawn:/sbin/rungetty tty2 --autologin root
 
 # Example how to put a getty on a serial line (for a terminal)
 #
