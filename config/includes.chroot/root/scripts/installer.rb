@@ -497,10 +497,12 @@ class Installer
       commands << "lvcreate -n root -L #{@SIZE[:root]}B /dev/mapper/vg"
       commands << "lvcreate -n install -L #{@SIZE[:install]}B /dev/mapper/vg"
       commands << "lvcreate -n rw -L #{@SIZE[:rw]}B /dev/mapper/vg"
+      commands << "lvcreate -n data -L #{@SIZE[:data]}B /dev/mapper/vg"
       commands << "lvcreate -n swap -L #{@SIZE[:swap]}B /dev/mapper/vg" if @SWAP
       commands << "mkfs.ext2 #{@DISK}1"
       commands << "mkfs.ext4 /dev/mapper/vg-install"
       commands << "mkfs.ext4 /dev/mapper/vg-rw"
+      commands << "mkfs.ext4 /dev/mapper/vg-data"
       commands << "mkswap /dev/mapper/vg-swap" if @SWAP
 
       result = batch_sh(commands)
@@ -570,6 +572,7 @@ class Installer
       commands << "mount -t proc proc /mnt/chroot/proc"
       commands << "mount -t sysfs sys /mnt/chroot/sys"
       commands << "mount -o bind /dev /mnt/chroot/dev"
+      commands << "mount -t devpts none /mnt/chroot/dev/pts"
       
       # Mount the temporary drives
       
@@ -627,11 +630,14 @@ class Installer
    # bool create_fstab(void)
    def create_fstab
 
+      FileUtils.mkdir_p "/mnt/chroot/root/Downloads"
+
       lines = []
       lines << "\# <file system> <mount point> <type> <optios> <dump> <pass>"
       lines << "proc /proc proc nodev,nosuid,noexec 0 0"
       lines << "/dev/mapper/vg-root / squashfs loop 0 0"
       lines << "#{@DISK}1 /boot ext4 rw,noatime,errors=remount-ro 0 0"
+      lines << "/dev/mapper/vg-data /root/Downloads ext4 rw,noatime,errors=remount-ro 0 0"
       lines << "/dev/mapper/vg-swap none swap sw 0 0" if @SWAP
       lines << "tmpfs /tmp tmpfs noatime,nodev,nosuid 0 0"
       lines << "tmpfs /var/run tmpfs noatime,nodev,nosuid 0 0"
@@ -749,6 +755,7 @@ class Installer
       commands << "umount -f /mnt/chroot/proc"
       commands << "umount -f /mnt/chroot/sys"
       commands << "umount -f /mnt/chroot/dev"
+      commands << "umount -f /mnt/chroot/dev/pts"
 
       # Unmount tmpfs
 
@@ -864,6 +871,7 @@ options[:yes] = false
 
 option_parser = OptionParser.new do |opts|
    opts.on("-d", "--disk DISK", "Disk to install to (required) (ex: /dev/sda)"){|d| options[:disk] = d}
+   opts.on("-m", "--mount", "Mount an existing installation (optional)"){options[:reinstall] = true}
    opts.on("-p", "--password PASSWORD", "Password to use (required)"){|p| options[:password] = p}
    opts.on("-q", "--quiet", "Suppress output (optional)"){options[:quiet] = true}
    opts.on("-r", "--reinstall", "Reinstall the image without formatting the disk (optional)"){options[:reinstall] = true}

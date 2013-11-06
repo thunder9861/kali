@@ -2,7 +2,7 @@
 require 'rubygems'
 require 'interactive_editor'
 require 'wirble'
-require 'ap'
+require 'awesome_print'
 require 'what_methods'
 
 # Set some IRB configuration settings
