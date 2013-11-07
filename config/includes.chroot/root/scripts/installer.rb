@@ -14,7 +14,7 @@ module Configuration
    DATA_SIZE_MB        = 1024
    SWAP_RAM_MULTIPLIER = 1.25
    SQUASHFS_RATIO      = 4.0
-
+   
 end
 
 ################################################################################
@@ -80,6 +80,7 @@ module Constants
    MB_IN_BYTES  = 1024 * 1024
    GB_IN_BYTES  = 1024 * 1024 * 1024
    SECTOR_SIZE  = 512
+   OVERHEAD_PER_VOLUME_MB = 4
    
 end
 
@@ -322,6 +323,19 @@ class Installer
       
    end
    
+   # int get_overhead_size(void)
+   def get_overhead_size
+   
+      overhead = OVERHEAD_PER_VOLUME_MB * MB_IN_BYTES
+      
+      # root, install, rw
+      num_volumes = 3
+      num_volumes += 1 if @SWAP
+      
+      return overhead * num_volumes
+      
+   end
+   
    # void calculate_sizes(void)
    def calculate_sizes
       
@@ -344,12 +358,16 @@ class Installer
 
       # Get the install partition size
       size[:install] = get_install_size
+      
+      # Get the overhead size
+      size[:overhead] = get_overhead_size
  
       # Get the total size of the core installation
       size[:total] = size[:mbr] +
                      size[:boot] +
                      size[:root] +
-                     size[:install]
+                     size[:install] +
+                     size[:overhead]
 
       # Account for swap space
       if @SWAP
@@ -754,8 +772,8 @@ class Installer
       commands = []
       commands << "umount -f /mnt/chroot/proc"
       commands << "umount -f /mnt/chroot/sys"
-      commands << "umount -f /mnt/chroot/dev"
       commands << "umount -f /mnt/chroot/dev/pts"
+      commands << "umount -f /mnt/chroot/dev"
 
       # Unmount tmpfs
 
