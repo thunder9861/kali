@@ -3,7 +3,12 @@
 set -e
 
 # Speed up builds
-/etc/init.d/apt-cacher-ng restart
+# /etc/init.d/apt-cacher-ng restart
+
+# Hack because apt-cacher doesn't seem to like the tmpfs log directory for some reason
+killall -9 apt-cacher-ng
+apt-cacher-ng || true
+
 # export http_proxy=http://127.0.0.1:3142/
 
 # Set mirror options

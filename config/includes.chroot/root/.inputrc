@@ -1,14 +1,22 @@
-$include /etc/inputrc
+$if ruby
 
-# Uncomment this line to put a newlne before execution of the command at the bash prompt
-#RETURN: "\C-e\C-v\n\C-v\n\n"
+   # IRB's readline has bugs that prevent it from working correctly in vi mode.
+   # Disable advanced readline support in IRB
 
-set editing-mode vi
-set echo-control-characters off
-set show-all-if-ambiguous on
-set completion-ignore-case on
-set history-preserve-point on
+$else
 
-"\e[A":history-search-backward
-"\e[B":history-search-forward
+   $include /etc/inputrc
 
+   # Uncomment this line to put a newlne before execution of the command at the bash prompt
+   #RETURN: "\C-e\C-v\n\C-v\n\n"
+
+   set editing-mode vi
+   set echo-control-characters off
+   set show-all-if-ambiguous on
+   set completion-ignore-case on
+   set history-preserve-point on
+
+   "\e[A":history-search-backward
+   "\e[B":history-search-forward
+
+$endif

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+from='!{#$%&}()*+,-./0123456789:;<=>?@ypltavkrezgmshubxncdijfqow[|]^_`~'
+to='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
+
+tr $from $to | base64 -d
+
