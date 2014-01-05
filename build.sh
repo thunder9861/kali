@@ -6,20 +6,12 @@ set -e
 # /etc/init.d/apt-cacher-ng restart
 
 # Hack because apt-cacher doesn't seem to like the tmpfs log directory for some reason
-killall -9 apt-cacher-ng
+killall -9 apt-cacher-ng || true
 apt-cacher-ng || true
-
-# export http_proxy=http://127.0.0.1:3142/
 
 # Set mirror options
 MIRROR_OPTIONS=\
 '--apt-http-proxy http://127.0.0.1:3142 '
-#'--mirror-bootstrap http://127.0.0.1:3142/archive.kali.org/kali '\
-#'--mirror-debian-installer http://127.0.0.1:3142/archive.kali.org/kali '\
-#'--mirror-chroot http://127.0.0.1:3142/archive.kali.org/kali '\
-#'--mirror-chroot-security http://127.0.0.1:3142/archive.kali.org/kali-security '\
-#'--mirror-binary http://127.0.0.1:3142/http.kali.org/kali '\
-#'--mirror-binary-security http://127.0.0.1:3142/security.kali.org/kali-security '
 
 # Set variables
 KALI_VERSION="${VERSION:-daily}"
