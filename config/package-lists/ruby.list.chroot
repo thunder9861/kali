@@ -1,0 +1,7 @@
+gem2deb
+jruby
+rake
+ruby
+#ruby1.8-full
+ruby1.9.1-full
+rubygems

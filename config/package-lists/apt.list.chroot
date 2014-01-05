@@ -1,0 +1,10 @@
+apt-build
+apt-cacher-ng
+apt-file
+aptitude
+apt-rdepends
+apt-utils
+apt-xapian-index
+debfoster
+deborphan
+synaptic

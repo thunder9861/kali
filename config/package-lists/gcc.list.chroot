@@ -1,0 +1,7 @@
+autoconf
+automake
+binutils
+build-essential
+checkinstall
+mingw32
+nasm

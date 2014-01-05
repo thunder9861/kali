@@ -1,0 +1,9 @@
+python-apsw
+python-gpgme
+python-matplotlib
+python-numpy
+python-pyicu
+python-scipy
+python-sympy
+python-wxgtk2.8
+python-yaml
