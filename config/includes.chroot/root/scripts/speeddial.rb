@@ -7,9 +7,7 @@
 
 # ---
 # Group:
-#    Dial:
-#       - Url
-#       - Thumbnail Url
+#    Dial_Title: Url
 # ...
 
 require 'singleton'
@@ -321,8 +319,8 @@ class SpeedDial
 
             # Create a dial object
             dial_title = d.keys[0]
-            url = d.values[0][0]
-            thumbnail = d.values[0][1]
+            url = d.values[0]
+            thumbnail = get_thumbnail(url)
 
             dial = Dial.new(dial_title, url, thumbnail)
 
@@ -338,6 +336,11 @@ class SpeedDial
 
    end
 
+   def get_thumbnail(url)
+      return "http://api.webthumbnail.org/?width=500&height=400&screen=1024&url=" + url
+      
+   end
+   
    def save_json(filename)
 
       # Set up the json dictionary
@@ -447,3 +450,4 @@ end
 sd = SpeedDial.new
 sd.load_yaml(options.input)
 sd.save_json(options.output)
+

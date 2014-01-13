@@ -1,64 +1,61 @@
 ---
-Google:
+Search:
+ - Addictomatic: http://addictomatic.com/
+ - Bing: http://www.bing.com
+ - Duck Duck Go: https://duckduckgo.com/
+ - IxQuick: https://ixquick.com/
  - Google: https://encrypted.google.com/
- - Blogs: https://www.google.com/blogsearch
- - Docs: http://docs.google.com/
- - Drive: https://drive.google.com/
- - Finance: https://www.google.com/finance
- - Flights: http://www.google.com/flights/
- - Gmail: http://mail.google.com
- - Hotels: http://www.google.com/hotelfinder/
- - Images: https://encrypted.google.com/imghp
- - Maps: https://maps.google.com/
- - News: https://www.google.com/news
- - Plus: https://plus.google.com/
- - Shopping: http://www.google.com/shopping
- - Translate: http://translate.google.com/
- - Trends: https://www.google.com/trends/
- - Video: http://www.google.com/videohp
- - Voice: https://www.google.com/voice
+ - Metacrawler: http://www.metacrawler.com/
+ - Million Short: https://millionshort.com/index.html
+ - Nerdy Data: https://search.nerdydata.com
+ - Pastebin Search: https://www.google.com/cse/home?cx=016532440259489736171:xdorrqdrvv0
+ - Rss: http://www.rsssearchhub.com/
+ - Runnable: http://runnable.com/
+ - Search.com: http://www.search.com/
+ - Sencept: http://www.sencept.com/
+ - Wayback Machine: http://archive.org/web/web.php
+ - Wikia: http://www.wikia.com/Wikia
+ - Wikipedia: https://en.wikipedia.org/wiki/Main_Page
+ - Wolfram Alpha: https://www.wolframalpha.com/
+ - Yahoo: http://www.yahoo.com
 
 Api:
  - Convert Api: http://www.convertapi.com/
+ - Programmable Web: http://www.programmableweb.com/
  
 Banking:
- - Bitcoin: http://bitcoin.org/
- - Bitinstant: https://www.bitinstant.com/
  - Chase: https://www.chase.com/
  - Citibank: http://www.citibank.com
- - Coinbase: https://coinbase.com/
  - Dwolla: http://www.dwolla.com/
  - Etrade: https://us.etrade.com/home
+ - Google Finance: https://www.google.com/finance
  - Internet Credit Union: https://iafcu.org/
- - Liberty Reserve: http://www.libertyreserve.com/
- - Moneygram: https://www.moneygram.com
+ - Mint: https://www.mint.com/
  - Morningstar: http://www.morningstar.com/
- - Mt Gox: https://mtgox.com/
  - Paypal: https://www.paypal.com/
  - Quizzle: https://www.quizzle.com/
- - Square: https://squareup.com/
- - Stripe: https://stripe.com/
  - Vanguard: https://investor.vanguard.com/home/
  - Wells Fargo: https://www.wellsfargo.com/
- - WesternUnion: http://www.westernunion.com/
- - Mint: https://www.mint.com/
- 
+
 Bitcoin:
+ - Bitaddress: https://www.bitaddress.org
+ - Bitcoin Market: http://bitcoinity.org/markets
+ - Bitcoin: http://bitcoin.org/
+ - Coin List: http://www.thecoinlist.com/
+ - Coin Market Capitalizations: http://coinmarketcap.com/
+ - Coinbase: https://coinbase.com/
  - Local Bitcoins: https://localbitcoins.com/
  - Market Data: http://bitcoin.clarkmoody.com/
- - Coin Market Capitalizations: http://coinmarketcap.com/
- - Bitcoin Market: http://bitcoinity.org/markets
- - Bitaddress: https://www.bitaddress.org
- - Coin List: http://www.thecoinlist.com/
+ - Mt Gox: https://mtgox.com/
  
 Blogs:
  - Hackaday: http://hackaday.com/
  - ITS Tactical: http://www.itstactical.com/
  - Lifehacker: http://blog.lifehacker.com/
+ - Low End Box: http://lowendbox.com/
  - Prepper Journal: http://www.theprepperjournal.com/
  - Stormdrane: http://stormdrane.blogspot.com/
  - Teotwawki: http://teotwawkiblog.blogspot.co.uk/
- - Low End Box: http://lowendbox.com/
  
 Cloud Storage:
  - Adrive: http://www.adrive.com/
@@ -66,114 +63,96 @@ Cloud Storage:
  - Dropbox: https://www.dropbox.com/
  - Evernote: https://evernote.com/
  - Github: https://github.com/
+ - Google Drive: https://drive.google.com/
+ - Owncloud: http://owncloud.org/
  - Pastebin: http://pastebin.com/
  - Skydrive: https://skydrive.live.com/
- - Owncloud: http://owncloud.org/
  - Wuala: https://www.wuala.com/
  
 Databases:
+ - 5000 Best: http://5000best.com/
  - CVE Details: http://www.cvedetails.com/
+ - Data Loss: http://datalossdb.org/
+ - Dbpedia: http://dbpedia.org/
  - Exploit Database: http://www.exploit-db.com/
  - Google Hacking Database: http://www.hackersforcharity.org/ghdb/
  - GoogleDorks: http://www.exploit-db.com/google-dorks/
+ - Integer Sequences: http://oeis.org/
+ - LeakedIn: http://www.leakedin.com/
+ - Leaks: http://www.leaksdb.org/
+ - Radio Reference: http://www.radioreference.com/
  - SecurityFocus: http://www.securityfocus.com/
  - Shellcode Database: http://www.shell-storm.org/shellcode/
  - Vulnerability Database: http://osvdb.org/
  - WineDB: http://appdb.winehq.org/
- - Leaks: http://www.leaksdb.org/
- - LeakedIn: http://www.leakedin.com/
- - Dbpedia: http://dbpedia.org/
- - Integer Sequences: http://oeis.org/
- - 5000 Best: http://5000best.com/
- - Data Loss: http://datalossdb.org/
- - Radio Reference: http://www.radioreference.com/
  
 Editors:
+ - Ideone: http://ideone.com/
  - Notex: https://notex.ch/
+ - Repl.it: http://repl.it/
  - Restructured Text: http://rst.ninjs.org/
  
 Fonts:
+ - Identifont: http://www.identifont.com/
  - WhatTheFont: http://www.myfonts.com/WhatTheFont/
  
 Footprinting:
  - Alexa: http://www.alexa.com/
  - Arin: https://www.arin.net/
  - Built With: http://builtwith.com/
- - Bulk IP Address Location: http://www.ipligence.com/iplocation
- - Dns Tools: http://www.dnsstuff.com/tools
- - Domain Dossier: http://centralops.net/co/
- - Domain Tools: http://www.domaintools.com/
- - Glass Door: http://www.glassdoor.com/index.htm
- - Hacking Tools: http://www.phaster.com/find_info_net_traffic.shtml
- - IP Address Tracer: http://www.ip-adress.com/ip_tracer
- - IP Neighbors: http://www.my-ip-neighbors.com/
  - Netcraft: http://news.netcraft.com/
  - Recorded Future: https://www.recordedfuture.com/live/
- - Reverse Whois: http://www.ewhois.com/
  - Ripe: https://apps.db.ripe.net/search/query.html
  - Server Sniff: http://serversniff.net/index.php
  - Shodan: http://www.shodanhq.com/
- - SSL Server Test: https://www.ssllabs.com/ssltest/index.html
- - Tcpiputils: http://www.tcpiputils.com/
- - Testing: www.jonasjohn.de/test-tool
- - You Get Signal: http://www.yougetsignal.com/
- 
+
 Forums:
  - 4chan: http://www.4chan.org/
- - AntiOnline: http://www.antionline.com/
- - Binary Revolution: http://www.binrev.com/forums/
  - Every Day Carry: http://www.edcforums.com/forum/
- - Government Security: http://www.governmentsecurity.org/forum/
- - HackThisSite: http://www.hackthissite.org/forums/index.php
- - Hak5: http://forums.hak5.org/
- - Kali: http://forums.kali.org/forum.php
- - Reddit: http://www.reddit.com/
- - SecurityOverride: http://securityoverride.org/forum/index.php
- - Stack Overflow: http://stackoverflow.com/
  - Survival Cache: http://www.survivalcache.com/forums/forum.php
+ - Talk Gold: http://www.talkgold.com/forum/
  - Ubuntu: http://ubuntuforums.org/
  - Urban Exploration: http://www.uer.ca/
- - Ycombinator: http://news.ycombinator.com
  - Zombie Squad: http://www.zombiehunters.org/forum/
- - Talk Gold: http://www.talkgold.com/forum/
  
 Knowledge:
+ - Khan Academy: https://www.khanacademy.org/
  - Linux Information: http://www.linfo.org/
  - Password Research: http://www.passwordresearch.com/index.html
- - Khan Academy: https://www.khanacademy.org/
  
 Maps:
  - Area Code Maps: http://www.allareacodes.com/area-code-map.htm
  - Bing Maps: http://www.bing.com/maps/#CloseTaskArea
  - Cia Factbook: https://www.cia.gov/library/publications/the-world-factbook/index.html
- - Jiwire: http://v4.jiwire.com/search-hotspot-locations.htm
- - Mapquest: http://www.mapquest.com/satellite-maps/
- - TerraServer: http://www.terraserver.com/
- - Wifi: https://wigle.net/gps/gps/Map/onlinemap2/
- - Wikivoyage: http://en.wikivoyage.org/wiki/Main_Page
- - Zip Code Maps: http://www.usnaviguide.com/zip.htm
- - Zillow: http://www.zillow.com
- - Trulia: http://www.trulia.com
- - Roadtrip: https://roadtrippers.com/
- - Neighbors: http://neighbors.whitepages.com/
- - Waymarking: http://www.waymarking.com/
- - Spot Crime: http://www.spotcrime.com/
  - Falling Fruit: http://fallingfruit.org/
  - Geocaching: http://www.geocaching.com/
+ - Google Maps: https://maps.google.com/
+ - Jiwire: http://v4.jiwire.com/search-hotspot-locations.htm
+ - Mapquest: http://www.mapquest.com/satellite-maps/
+ - Neighbors: http://neighbors.whitepages.com/
+ - Roadtrip: https://roadtrippers.com/
+ - Spot Crime: http://www.spotcrime.com/
+ - TerraServer: http://www.terraserver.com/
+ - Trulia: http://www.trulia.com
+ - Waymarking: http://www.waymarking.com/
+ - Wifi: https://wigle.net/gps/gps/Map/onlinemap2/
+ - Wikivoyage: http://en.wikivoyage.org/wiki/Main_Page
+ - Zillow: http://www.zillow.com
+ - Zip Code Maps: http://www.usnaviguide.com/zip.htm
  
 Media:
- - Camera Finder: http://www.stolencamerafinder.com/
  - Dailymotion: http://www.dailymotion.com/us
  - DeviantArt: http://www.deviantart.com/
  - Exif Viewer: http://regex.info/exif.cgi
  - Filecrop: http://www.filecrop.com/
  - Flickr: https://secure.flickr.com/
+ - Google Images: https://encrypted.google.com/imghp
+ - Imgur: https://imgur.com/
  - Keepvid: http://keepvid.com/
  - Picgeni: http://www.picgeni.com/
  - Security Tube: http://www.securitytube.net/
  - Tineye: https://www.tineye.com/
  - Youtube: https://www.youtube.com/
- - Imgur: https://imgur.com/
  
 Medical:
  - Drugs: http://www.drugs.com/
@@ -184,12 +163,25 @@ Nature:
  - Plant Identifier: http://plant-id.novenyhatarozo.info/Identifier
  
 Network Tools:
+ - Bulk IP Address Location: http://www.ipligence.com/iplocation
+ - Dns Tools: http://www.dnsstuff.com/tools
+ - Domain Dossier: http://centralops.net/co/
+ - Domain Tools: http://www.domaintools.com/
+ - Hacking Tools: http://www.phaster.com/find_info_net_traffic.shtml
+ - IP Address Tracer: http://www.ip-adress.com/ip_tracer
+ - IP Neighbors: http://www.my-ip-neighbors.com/
+ - Reverse Whois: http://www.ewhois.com/
+ - SSL Server Test: https://www.ssllabs.com/ssltest/index.html
+ - Tcpiputils: http://www.tcpiputils.com/
+ - Testing: www.jonasjohn.de/test-tool
  - W3dt: https://w3dt.net/
+ - You Get Signal: http://www.yougetsignal.com/
  
 News:
  - BBC: http://www.bbc.co.uk/news/world/
  - CNN: http://www.cnn.com/
  - Digg: http://www.digg.com/
+ - Google News: https://www.google.com/news
  - Huffington Post: http://www.huffingtonpost.com
  - Newsmap: http://newsmap.jp/
  - NHK: http://www3.nhk.or.jp/nhkworld/
@@ -198,31 +190,39 @@ News:
 Parsers:
  - Explain Shell: http://explainshell.com/
  - Linux Commands Examples: http://linux-commands-examples.com/
+ - Sql Fiddle: http://sqlfiddle.com/
+ - Yaml Parser: https://yaml-online-parser.appspot.com/
+ - Ruby: http://joshnuss.github.io/mruby-web-irb/
+ - Json Parser: http://json.parser.online.fr/
  
 Password Cracking:
- - Collision: http://www.c0llision.net/webcrack.php
  - Crackstation: http://crackstation.net/
  - Md5Crack: http://www.md5crack.com/
  - Md5Decrypter: http://www.md5decrypter.co.uk/
  
 Payment:
+ - Moneygram: https://www.moneygram.com
  - Ripple: https://ripple.com/
+ - Square: https://squareup.com/
+ - Stripe: https://stripe.com/
+ - WesternUnion: http://www.westernunion.com/
  
 Pentesting:
  - Bookmarks: https://code.google.com/p/pentest-bookmarks/wiki/BookmarksList
  - CSO: http://www.csoonline.com/
- - Pentest Standard: http://www.pentest-standard.org/index.php/Main_Page
+ - Ikat: http://ha.cked.net/
  - Nessus: http://www.tenable.com/products/nessus
+ - Pentest Standard: http://www.pentest-standard.org/index.php/Main_Page
  - Rapid7: http://www.rapid7.com/
  - Vulnerability Assessment: http://www.vulnerabilityassessment.co.uk/Penetration%20Test.html
  - Wifi Pineapple: http://cloud.wifipineapple.com/
- - Ikat: http://ha.cked.net/
  
 Pentesting Blogs:
  - CarnalOwnage: http://carnal0wnage.attackresearch.com/
  - Corelan: https://www.corelan.be/
  - Darknet: http://www.darknet.org.uk/
  - Digininja: http://www.digininja.org/blog.php
+ - Exploit Monday: http://www.exploit-monday.com/
  - Irongeek: http://www.irongeek.com/
  - Kali: http://www.kali.org/blog/
  - Maltego: http://maltego.blogspot.com/
@@ -231,9 +231,8 @@ Pentesting Blogs:
  - Redteams: http://redteams.net/
  - Sensepost: http://www.sensepost.com/blog/
  - Social Engineering: http://www.social-engineer.org/blog/
- - TrustedSec: https://www.trustedsec.com/news-and-events/
- - Exploit Monday: http://www.exploit-monday.com/
  - Tek Defense: http://www.tekdefense.com/
+ - TrustedSec: https://www.trustedsec.com/news-and-events/
  
 People Search:
  - 123People: http://www.123people.com/
@@ -272,70 +271,61 @@ Programming Reference:
  - wxPython: http://wiki.wxpython.org/
  
 Questions:
+ - Server Fault: https://serverfault.com/
  - Stack Overflow: https://stackoverflow.com/
  - Super User: https://superuser.com/
- - Server Fault: https://serverfault.com/
  - Yahoo Answers: http://answers.yahoo.com/
  
 Regex:
  - Regex101: http://regex101.com/
- - Rubular: http://rubular.com/
- - Regular Expression Analyzer: http://www.myezapp.com/apps/dev/regexp/show.ws
  - RegexLib: http://regexlib.com/
+ - Regexpal: http://regexpal.com/
+ - Regular Expression Analyzer: http://www.myezapp.com/apps/dev/regexp/show.ws
+ - Rubular: http://rubular.com/
+ - Txt2re: http://txt2re.com/
  
 Reviews:
- - Yelp: http://www.yelp.com/
- - Glassdoor: http://www.glassdoor.com/
  - Better Business Bureau: http://www.bbb.org/
+ - Glassdoor: http://www.glassdoor.com/
+ - Yelp: http://www.yelp.com/
  
 Scripts:
  - Command Line Fu: http://www.commandlinefu.com/commands/browse
- - Shell Fu: http://www.shell-fu.org/
  - Pentesting Scripts: http://www.pentesterscripting.com/
- 
-Search:
- - Addictomatic: http://addictomatic.com/
- - Bing: http://www.bing.com
- - Duck Duck Go: https://duckduckgo.com/
- - IxQuick: https://ixquick.com/
- - Metacrawler: http://www.metacrawler.com/
- - Rss: http://www.rsssearchhub.com/
- - Search.com: http://www.search.com/
- - Wayback Machine: http://archive.org/web/web.php
- - Wikia: http://www.wikia.com/Wikia
- - Wikipedia: https://en.wikipedia.org/wiki/Main_Page
- - Wolfram Alpha: https://www.wolframalpha.com/
- - Yahoo: http://www.yahoo.com
- - Pastebin Search: https://www.google.com/cse/home?cx=016532440259489736171:xdorrqdrvv0
- - Runnable: http://runnable.com/
- - Nerdy Data: https://search.nerdydata.com
- - Sencept: http://www.sencept.com/
- - Million Short: https://millionshort.com/index.html
+ - Shell Fu: http://www.shell-fu.org/
  
 Security Forums:
+ - AntiOnline: http://www.antionline.com/
+ - Binary Revolution: http://www.binrev.com/forums/
+ - Government Security: http://www.governmentsecurity.org/forum/
+ - HackThisSite: http://www.hackthissite.org/forums/index.php
+ - Hak5: http://forums.hak5.org/
  - InsidePro: http://forum.insidepro.com/
+ - Kali: http://forums.kali.org/forum.php
+ - SecurityOverride: http://securityoverride.org/forum/index.php
  
 Security News:
- - DarkReading: http://www.darkreading.com/
- - PacketStorm: http://packetstormsecurity.com/news/
- - Infosec Island: http://infosecisland.com/
- - Hacker News: http://thehackernews.com/
  - Cyber War News: http://www.cyberwarnews.info/
+ - DarkReading: http://www.darkreading.com/
+ - Hacker News: http://thehackernews.com/
+ - Infosec Island: http://infosecisland.com/
  - Nova Infosec: https://www.novainfosec.com/
+ - PacketStorm: http://packetstormsecurity.com/news/
  
 Services:
+ - Amazon Web Services: https://aws.amazon.com/free/
+ - Backupsy: http://backupsy.com/
  - Crashplan: http://www.crashplan.com/
+ - Dreamhost: http://www.dreamhost.com/
+ - Gmail: http://mail.google.com
  - IFTTT: https://ifttt.com/
  - Lastpass: https://lastpass.com/
+ - Mailstrom: https://mailstrom.co/
  - Namecheap: https://www.namecheap.com/
  - Prey: http://preyproject.com/
  - Rss: http://fulltextrssfeed.com/
- - Yahoo Pipes: http://pipes.yahoo.com/pipes/
- - Mailstrom: https://mailstrom.co/
  - Visualping: http://visualping.io/
- - Backupsy: http://backupsy.com/
- - Dreamhost: http://www.dreamhost.com/
- - Amazon Web Services: https://aws.amazon.com/free/
+ - Yahoo Pipes: http://pipes.yahoo.com/pipes/
  
 Shopping:
  - 511 Tactical: http://www.511tactical.com/
@@ -344,12 +334,13 @@ Shopping:
  - Camel: http://camelcamelcamel.com/
  - Craigslist: http://www.craigslist.org
  - Ebay: http://www.ebay.com/
+ - Google Shopping: http://www.google.com/shopping
  - LockPick Shop: http://www.lockpickshop.com/
  - Minimus: http://www.minimus.biz/
  - Newegg: http://www.newegg.com/
+ - Overstock: http://www.overstock.com/
  - TigerDirect: http://www.tigerdirect.com
  - Vigilant Gear: http://www.vigilantgear.com/
- - Overstock: http://www.overstock.com/
  
 Similar:
  - More Of It: http://www.moreofit.com/
@@ -364,52 +355,49 @@ Social Engineering:
  
 Social Media:
  - Facebook: https://www.facebook.com/
+ - Foursquare: https://foursquare.com/
+ - Google Plus: https://plus.google.com/
+ - Instagram: http://instagram.com/
  - IRC: http://searchirc.com/
  - Linkedin: http://www.linkedin.com/
+ - Meetup: http://www.meetup.com/
  - Myspace: https://www.myspace.com/
  - Pinterest: http://www.pinterest.com/popular
- - Twitter: https://twitter.com/
  - Tumblr: http://www.tumblr.com
- - Instagram: http://instagram.com/
- - Foursquare: https://foursquare.com/
- - Meetup: http://www.meetup.com/
+ - Twitter: https://twitter.com/
  - Wamble: http://wamble.co/
  
 Social News:
  - Reddit: http://us.reddit.com
+ - Ycombinator: http://news.ycombinator.com
  
 Tech News:
  - ArsTechnica: http://arstechnica.com/
  - Engadget: http://www.engadget.com/
  - Gizmodo: http://blog.gizmodo.com/
+ - Tech In Asia: http://www.techinasia.com/
  - The Verge: http://www.theverge.com/
  - Wired: http://www.wired.com/
- - Tech In Asia: http://www.techinasia.com/
  
 Tools:
  - Chrome Extension Downloader: http://chrome-extension-downloader.com/
- - Identifont: http://www.identifont.com/
- - Ideone: http://ideone.com/
- - Json Parser: http://json.parser.online.fr/
- - Regexpal: http://regexpal.com/
- - Repl.it: http://repl.it/
- - Restructured Text: http://rst.ninjs.org/
- - Ruby: http://joshnuss.github.io/mruby-web-irb/
- - Shapecatcher: http://shapecatcher.com/
- - Sql Fiddle: http://sqlfiddle.com/
- - Txt2re: http://txt2re.com/
- - Yaml Parser: https://yaml-online-parser.appspot.com/
+ - Google Translate: http://translate.google.com/
+ - Google Trends: https://www.google.com/trends/
  - Just Delete Me: http://justdelete.me/
  - Page2Rss: http://page2rss.com/
+ - Shapecatcher: http://shapecatcher.com/
  
 Torrents:
- - Pirate Bay: https://thepiratebay.se/
  - Kickass Torrents: http://kickass.to/
+ - Pirate Bay: https://thepiratebay.se/
  
 Travel:
  - AirBnB: https://www.airbnb.com
  - Couch Surfing: https://www.couchsurfing.org/
+ - Cruise Sheet: http://cruisesheet.com/
  - Fly or Drive Calculator: http://www.befrugal.com/tools/fly-or-drive-calculator/
+ - Google Flights: http://www.google.com/flights/
+ - Google Hotels: http://www.google.com/hotelfinder/
  - Hipmunk: http://www.hipmunk.com/
  - Hotwire: https://www.hotwire.com/
  - Kayak: http://www.kayak.com/
@@ -418,17 +406,16 @@ Travel:
  - Skyscanner: http://www.skyscanner.com/
  - Travelocity: http://www.travelocity.com/
  - TripIt: https://www.tripit.com
- - Cruise Sheet: http://cruisesheet.com/
  
 User Search:
  - Checkusernames: http://checkusernames.com/
+ - Have I been Pwned: https://haveibeenpwned.com/
  - Knowem: http://knowem.com/
  - Namechk: http://namechk.com/
  - SimplyMeasured: http://simplymeasured.com/free-social-media-tools
  - Social Mention: http://socialmention.com/
  - Tweepz: http://tweepz.com/
  - YoName: http://www.yoname.com/
- - Have I been Pwned: https://haveibeenpwned.com/
  
 Webcams:
  - Biglook: http://www.webcambiglook.com/index.htm
@@ -445,9 +432,11 @@ Webcams:
  - WXnation: http://www.wxnation.com/webcams.html
  
 Wikis:
- - The Password Project: http://thepasswordproject.com/
  - Skull Security: https://wiki.skullsecurity.org/index.php?title=Main_Page
+ - The Password Project: http://thepasswordproject.com/
  
 Words:
+ - Urban Dictionary: http://www.urbandictionary.com/
  - Words For That: http://www.wordsforthat.com/
+ - Word Hippo: http://www.wordhippo.com/
 ...
