@@ -1,7 +1,7 @@
 =begin
  This is a machine generated stub using stdlib-doc for <b>module ObjectSpace</b>
- Sources used:  Ruby 1.9.3-p194
- Created on Mon Aug 13 21:17:55 +0400 2012 by IntelliJ Ruby Stubs Generator.
+ Sources used:  Ruby 1.9.3-p429
+ Created on 2013-07-25 12:27:52 +0400 by IntelliJ Ruby Stubs Generator.
 =end
 
 # The <code>ObjectSpace</code> module contains a number of routines
@@ -110,6 +110,117 @@ module ObjectSpace
     # 
     # This method is not expected to work except C Ruby.
     def self.count_objects(*result_hash)
+        #This is a stub, used for indexing
+    end
+    # ObjectSpace.memsize_of(obj) -> Integer
+    #  
+    # Return consuming memory size of obj.
+    # 
+    # Note that the return size is incomplete.  You need to deal with
+    # this information as only a *HINT*.  Especially, the size of
+    # T_DATA may not be correct.
+    # 
+    # This method is not expected to work except C Ruby.
+    def self.memsize_of(obj)
+        #This is a stub, used for indexing
+    end
+    # ObjectSpace.memsize_of_all([klass]) -> Integer
+    #  
+    # Return consuming memory size of all living objects.
+    # If klass (should be Class object) is given, return the total
+    # memory size of instances of the given class.
+    # 
+    # Note that the returned size is incomplete.  You need to deal with
+    # this information as only a *HINT*.  Especially, the size of
+    # T_DATA may not be correct.
+    # 
+    # Note that this method does *NOT* return total malloc'ed memory size.
+    # 
+    # This method can be defined by the following Ruby code:
+    # 
+    # def memsize_of_all klass = false
+    #   total = 0
+    #   ObjectSpace.each_objects{|e|
+    #     total += ObjectSpace.memsize_of(e) if klass == false || e.kind_of?(klass)
+    #   }
+    #   total
+    # end
+    # 
+    # This method is not expected to work except C Ruby.
+    def self.memsize_of_all(*klass)
+        #This is a stub, used for indexing
+    end
+    # ObjectSpace.count_objects_size([result_hash]) -> hash
+    #  
+    # Counts objects size (in bytes) for each type.
+    # 
+    # Note that this information is incomplete.  You need to deal with
+    # this information as only a *HINT*.  Especially, total size of
+    # T_DATA may not right size.
+    # 
+    # It returns a hash as:
+    #   {:TOTAL=>1461154, :T_CLASS=>158280, :T_MODULE=>20672, :T_STRING=>527249, ...}
+    # 
+    # If the optional argument, result_hash, is given,
+    # it is overwritten and returned.
+    # This is intended to avoid probe effect.
+    # 
+    # The contents of the returned hash is implementation defined.
+    # It may be changed in future.
+    # 
+    # This method is not expected to work except C Ruby.
+    def self.count_objects_size(*result_hash)
+        #This is a stub, used for indexing
+    end
+    # ObjectSpace.count_nodes([result_hash]) -> hash
+    #  
+    # Counts nodes for each node type.
+    # 
+    # This method is not for ordinary Ruby programmers, but for MRI developers
+    # who have interest in MRI performance and memory usage.
+    # 
+    # It returns a hash as:
+    # {:NODE_METHOD=>2027, :NODE_FBODY=>1927, :NODE_CFUNC=>1798, ...}
+    # 
+    # If the optional argument, result_hash, is given,
+    # it is overwritten and returned.
+    # This is intended to avoid probe effect.
+    # 
+    # The contents of the returned hash is implementation defined.
+    # It may be changed in future.
+    # 
+    # This method is not expected to work except C Ruby.
+    def self.count_nodes(*result_hash)
+        #This is a stub, used for indexing
+    end
+    # ObjectSpace.count_tdata_objects([result_hash]) -> hash
+    #  
+    # Counts objects for each T_DATA type.
+    # 
+    # This method is not for ordinary Ruby programmers, but for MRI developers
+    # who interest on MRI performance.
+    # 
+    # It returns a hash as:
+    # {RubyVM::InstructionSequence=>504, :parser=>5, :barrier=>6,
+    #  :mutex=>6, Proc=>60, RubyVM::Env=>57, Mutex=>1, Encoding=>99,
+    #  ThreadGroup=>1, Binding=>1, Thread=>1, RubyVM=>1, :iseq=>1,
+    #  Random=>1, ARGF.class=>1, Data=>1, :autoload=>3, Time=>2}
+    # # T_DATA objects existing at startup on r32276.
+    # 
+    # If the optional argument, result_hash, is given,
+    # it is overwritten and returned.
+    # This is intended to avoid probe effect.
+    # 
+    # The contents of the returned hash is implementation defined.
+    # It may be changed in future.
+    # 
+    # In this version, keys are Class object or Symbol object.
+    # If object is kind of normal (accessible) object, the key is Class object.
+    # If object is not a kind of normal (internal) object, the key is symbol
+    # name, registered by rb_data_type_struct.
+    # 
+    # This method is not expected to work except C Ruby.
+    def self.count_tdata_objects(*result_hash)
         #This is a stub, used for indexing
     end
 end

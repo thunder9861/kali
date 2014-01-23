@@ -5,3 +5,5 @@ ruby
 #ruby1.8-full
 ruby1.9.1-full
 rubygems
+ruby-dev
+

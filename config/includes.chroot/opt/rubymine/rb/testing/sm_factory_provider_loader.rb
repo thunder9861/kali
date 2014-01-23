@@ -1,4 +1,4 @@
-# Copyright 2000-2009 JetBrains s.r.o.
+# Copyright 2000-2012 JetBrains s.r.o.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -102,5 +102,3 @@ class MyServiceMessageFactoryDelegate
     FACTORY.create_test_reported_attached
   end
 end
-
-ServiceMessageFactoryProvider.get_instance.delegate = MyServiceMessageFactoryDelegate.new

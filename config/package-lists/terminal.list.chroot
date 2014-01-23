@@ -1,4 +1,5 @@
 ack-grep
+bar
 busybox
 byobu
 bzip2
@@ -6,6 +7,7 @@ coreutils
 expect
 findutils
 gawk
+git
 grep
 iw
 mc
@@ -14,6 +16,7 @@ rsync
 screen
 sed
 ssh
+tar
 #tmux
 tree
 util-linux

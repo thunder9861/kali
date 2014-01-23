@@ -127,8 +127,8 @@ method_types:
 
   # RSpec bundled mocking framework
   Spec:
-    Mocks: 
-      Methods: 
+    Mocks:
+      Methods:
         null_object?: Boolean
         stub!: Spec::Mocks::MessageExpectation
         should_not_receive: Spec::Mocks::MessageExpectation
@@ -146,7 +146,22 @@ method_types:
         stub_chain: RSpec::Mocks::MessageExpectation
         null_object?: Boolean
         received_message?: Boolean
+  Object:
+        stub: RSpec::Mocks::MessageExpectation
+        stub!: RSpec::Mocks::MessageExpectation
+        should_receive: RSpec::Mocks::MessageExpectation
+        should_not_receive: RSpec::Mocks::MessageExpectation
+        unstub: RSpec::Mocks::MessageExpectation
+        unstub!: RSpec::Mocks::MessageExpectation
+        stub_chain: RSpec::Mocks::MessageExpectation
+        received_message?: Boolean
+
 dynamic_members:
+  Kernel:
+    rspec-expectations >=2.11.0:
+      instance_methods:
+        should: RSpec::Expectations::ExpectationTarget
+        should_not: RSpec::Expectations::ExpectationTarget
   RR: 
     # add stub, mock, don't allow using verification strategy,
     # see: rr-0.10.0/lib/rr/double_definitions/strategies/verification/[stub.rb, mock.rb, dont_allow.rb]
@@ -158,6 +173,19 @@ dynamic_members:
       Strategies:
         StrategyMethods:
           instance_methods: do_not_allow, rr_do_not_allow, do_not_allow!, rr_do_not_allow!, probe, probe!, rr_probe, rr_probe!, new_instance_of, rr_new_instance_of, all_instances_of, rr_all_instances_of, all_instances_of!, rr_all_instances_of!
+
+  Object:
+    rspec-mocks >=2.14.0:
+      instance_methods:
+        stub: RSpec::Mocks::Syntax::enable_should
+        stub!: RSpec::Mocks::Syntax::enable_should
+        should_receive: RSpec::Mocks::Syntax::enable_should
+        should_not_receive: RSpec::Mocks::Syntax::enable_should
+        unstub: RSpec::Mocks::Syntax::enable_should
+        unstub!: RSpec::Mocks::Syntax::enable_should
+        stub_chain: RSpec::Mocks::Syntax::enable_should
+        received_message?: RSpec::Mocks::Syntax::enable_should
+
   Spec:
     Matchers: 
       instance_methods: 

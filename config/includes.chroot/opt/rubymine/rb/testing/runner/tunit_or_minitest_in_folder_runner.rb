@@ -1,4 +1,4 @@
-# Copyright 2000-2009 JetBrains s.r.o.
+# Copyright 2000-2012 JetBrains s.r.o.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -77,10 +77,14 @@ def drb_launch_tests(drb_runner, test_scripts)
   # drb runner
   cmdline << drb_runner
 
-  load_path = cmdline.find_all{ |param|
-    (not param.nil?) and param.start_with?('-I')
-  }
-  cmdline.concat load_path
+  if drb_runner.end_with?('zeus')
+    cmdline << 'test'
+  else
+    load_path = cmdline.find_all{ |param|
+      (not param.nil?) and param.start_with?('-I')
+    }
+    cmdline.concat load_path
+  end
 
   ARGV.each { |arg|
     cmdline << arg

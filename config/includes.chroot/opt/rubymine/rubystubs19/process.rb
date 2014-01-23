@@ -1,7 +1,7 @@
 =begin
  This is a machine generated stub using stdlib-doc for <b>module Process</b>
  Sources used:  Ruby 1.9.2-p320
- Created on Mon Aug 13 21:19:06 +0400 2012 by IntelliJ Ruby Stubs Generator.
+ Created on 2013-07-25 12:24:14 +0400 by IntelliJ Ruby Stubs Generator.
 =end
 
 # The <code>Process</code> module is a collection of methods used to

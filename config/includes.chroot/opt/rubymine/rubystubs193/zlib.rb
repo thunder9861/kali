@@ -1,7 +1,7 @@
 =begin
  This is a machine generated stub using stdlib-doc for <b>module Zlib</b>
- Sources used:  Ruby 1.9.3-p194
- Created on Mon Aug 13 21:17:55 +0400 2012 by IntelliJ Ruby Stubs Generator.
+ Sources used:  Ruby 1.9.3-p429
+ Created on 2013-07-25 12:27:52 +0400 by IntelliJ Ruby Stubs Generator.
 =end
 
 # == Overview
@@ -878,7 +878,23 @@ module Zlib
         # 
         # Raises a Zlib::NeedDict exception if a preset dictionary is needed to
         # decompress.  Set the dictionary by Zlib::Inflate#set_dictionary and then
-        # call this method again with an empty string.  (<i>???</i>)
+        # call this method again with an empty string to flush the stream:
+        # 
+        #   inflater = Zlib::Inflate.new
+        # 
+        #   begin
+        #     out = inflater.inflate compressed
+        #   rescue Zlib::NeedDict
+        #     # ensure the dictionary matches the stream's required dictionary
+        #     raise unless inflater.adler == Zlib.adler32(dictionary)
+        # 
+        #     inflater.set_dictionary dictionary
+        #     inflater.inflate ''
+        #   end
+        # 
+        #   # ...
+        # 
+        #   inflater.close
         # 
         # See also Zlib::Inflate.new
         def inflate(string)

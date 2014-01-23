@@ -1,7 +1,7 @@
 =begin
  This is a machine generated stub using stdlib-doc for <b>module Process</b>
- Sources used:  Ruby 1.8.7-p358
- Created on Mon Aug 13 21:20:02 +0400 2012 by IntelliJ Ruby Stubs Generator.
+ Sources used:  Ruby 1.8.7-p371
+ Created on 2013-05-16 17:08:27 +0400 by IntelliJ Ruby Stubs Generator.
 =end
 
 # The <code>Process</code> module is a collection of methods used to
@@ -123,7 +123,7 @@ module Process
     # Terminate execution immediately, effectively by calling
     # <code>Kernel.exit(1)</code>. If _msg_ is given, it is written
     # to STDERR prior to terminating.
-    def self.abort()
+    def self.abort(message='')
         #This is a stub, used for indexing
     end
     # Process.kill(signal, pid, ...)    => fixnum

@@ -14,7 +14,7 @@
 		<!-- Uncomment to disable the private data password feature. <disableDataPassword>true</disableDataPassword> -->
 		<hiddenFiles/>
 		<backupConfig>
-			<manifestPath>/backup</manifestPath>
+			<manifestPath>/opt/crashplan/manifest</manifestPath>
 			<excludeSystem/>
 			<noCompressionPatterns/>
 			<manualFileWatchPatterns/>

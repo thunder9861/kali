@@ -1,7 +1,7 @@
 =begin
  This is a machine generated stub using stdlib-doc for <b>class Fiber</b>
- Sources used:  Ruby 1.9.3-p194
- Created on Mon Aug 13 21:17:55 +0400 2012 by IntelliJ Ruby Stubs Generator.
+ Sources used:  Ruby 1.9.3-p429
+ Created on 2013-07-25 12:27:51 +0400 by IntelliJ Ruby Stubs Generator.
 =end
 
 # Fibers are primitives for implementing light weight cooperative
@@ -68,7 +68,7 @@ class Fiber
     # processing at this point when <code>resume</code> is called next.
     # Any arguments passed to the next <code>resume</code> will be the
     # value that this <code>Fiber.yield</code> expression evaluates to.
-    def self.yield(args, *smth)
+    def self.yield(*smth)
         #This is a stub, used for indexing
     end
     # fiber.resume(args, ...) -> obj
@@ -83,7 +83,7 @@ class Fiber
     # to the next <code>Fiber.yield</code> statement inside the fiber's block
     # or to the block value if it runs to completion without any
     # <code>Fiber.yield</code>
-    def resume(args, *smth)
+    def resume(*smth)
         #This is a stub, used for indexing
     end
     # fiber.transfer(args, ...) -> obj
@@ -101,7 +101,7 @@ class Fiber
     # You cannot resume a fiber that transferred control to another one.
     # This will cause a double resume error. You need to transfer control
     # back to this fiber before it can yield and resume.
-    def transfer(args, *smth)
+    def transfer(*smth)
         #This is a stub, used for indexing
     end
     # fiber.alive? -> true or false

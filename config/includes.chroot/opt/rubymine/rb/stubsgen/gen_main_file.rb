@@ -30,29 +30,47 @@ MAIN_FILE << <<GLOBAL_VARS
 # This variable is thread local.
 $! = Exception.new #{VALUE_UNKNOWN_COMMENT}
 
+# Alias to $!
+$ERROR_INFO = $! #{VALUE_UNKNOWN_COMMENT}
+
 # Array of backtrace of the last exception thrown.
 # This variable is thread local.
 $@ = [] #{VALUE_UNKNOWN_COMMENT}
+
+# Alias to $@
+$ERROR_POSITION = $@ #{VALUE_UNKNOWN_COMMENT}
 
 # String matched by last successful pattern match in this scope.
 # Ruby interpreter sets this variable to 'nil' after an unsuccessful match.
 # This variable is defined in current scope, thread local and read-only.
 $& = "" #{VALUE_UNKNOWN_COMMENT}
 
+# Alias to $&
+$MATCH = $& #{VALUE_UNKNOWN_COMMENT}
+
 # String to the left of last successful pattern match.
 # Ruby interpreter sets this variable to 'nil' after an unsuccessful match.
 # This variable is defined in current scope, thread local and read-only.
 $` = "" #{VALUE_UNKNOWN_COMMENT}
+
+# Alias to $`
+$PREMATCH = $` #{VALUE_UNKNOWN_COMMENT}
 
 # String to the right of last successful pattern match.
 # Ruby interpreter sets this variable to 'nil' after an unsuccessful match.
 # This variable is defined in current scope, thread local and read-only.
 $' = "" #{VALUE_UNKNOWN_COMMENT}
 
+# Alias to $'
+$POSTMATCH = $' #{VALUE_UNKNOWN_COMMENT}
+
 # Last bracket(group) matched by last successful pattern match.
 # Ruby interpreter sets this variable to 'nil' after an unsuccessful match.
 # This variable is defined in current scope, thread local and read-only.
 $+ = "" #{VALUE_UNKNOWN_COMMENT}
+
+# Alias to $+
+$LAST_PAREN_MATCH = "" #{VALUE_UNKNOWN_COMMENT}
 
 # 1st group of last successful pattern match.
 # Ruby interpreter sets this variable to 'nil' after an unsuccessful match.
@@ -105,11 +123,17 @@ $9 = "" #{VALUE_UNKNOWN_COMMENT}
 # This variable is defined in current scope and thread local.
 $~ = MatchData.new #{VALUE_UNKNOWN_COMMENT}
 
+# Alias to $~
+$LAST_MATCH_INFO = $~ #{VALUE_UNKNOWN_COMMENT}
+
 # Deprecated.
 # The flag for case insensitive, nil by default. If flag is not 'nil'
 # and not 'false' pattern matches and string comparisions will be case
 # insensitive.
 $= = Object.new #{VALUE_UNKNOWN_COMMENT}
+
+# Alias to $=
+$IGNORECASE = $= #{VALUE_UNKNOWN_COMMENT}
 
 # Input record separator, newline by default. This variable is used by
 # Kernel#gets to separate records. If $/ is 'nil', Kernel#gets will read the
@@ -119,13 +143,31 @@ $/ = "" #{VALUE_UNKNOWN_COMMENT}
 # Alias to $/.
 $-0 = $/ #{VALUE_UNKNOWN_COMMENT}
 
+# Alias to $/.
+$INPUT_RECORD_SEPARATOR = $/ #{VALUE_UNKNOWN_COMMENT}
+
+# Alias to $/.
+$RS = $/ #{VALUE_UNKNOWN_COMMENT}
+
 # Output record separator string for Kernel#print and IO#write.
 # Default is nil.
 $\\ = "" #{VALUE_UNKNOWN_COMMENT}
 
+# Alias to $\\
+$OUTPUT_RECORD_SEPARATOR = $\\ #{VALUE_UNKNOWN_COMMENT}
+
+# Alias to $\\
+$ORS = $\\ #{VALUE_UNKNOWN_COMMENT}
+
 # Output field separator string for Kernel#print and Array#join.
 # Default is nil.
 $, = "" #{VALUE_UNKNOWN_COMMENT}
+
+# Alias to $,
+$OUTPUT_FIELD_SEPARATOR = $, #{VALUE_UNKNOWN_COMMENT}
+
+# Alias to $,
+$OFS = $, #{VALUE_UNKNOWN_COMMENT}
 
 # Default separator for String#split.
 $; = "" #{VALUE_UNKNOWN_COMMENT}
@@ -133,36 +175,72 @@ $; = "" #{VALUE_UNKNOWN_COMMENT}
 # Alias to $;.
 $-F = $; #{VALUE_UNKNOWN_COMMENT}
 
+# Alias to $;.
+$FIELD_SEPARATOR = $; #{VALUE_UNKNOWN_COMMENT}
+
+# Alias to $;.
+$FS = $; #{VALUE_UNKNOWN_COMMENT}
+
 # Current input line number of last file that was read.
 $. = 0 #{VALUE_UNKNOWN_COMMENT}
+
+# Alias to $.
+$INPUT_LINE_NUMBER = $. #{VALUE_UNKNOWN_COMMENT}
+
+# Alias to $.
+$NR = $. #{VALUE_UNKNOWN_COMMENT}
 
 # Virtual concatenation file of files given on command line.
 # $< supports File and Enumerable methods.
 # This variable is read-only.
 $< = File.new #{VALUE_UNKNOWN_COMMENT}
 
+# Alias to $<
+$DEFAULT_INPUT = $< #{VALUE_UNKNOWN_COMMENT}
+
 # Default output for Kernel#print, Kernel#printf. $stdout by default
 $> = IO.new #{VALUE_UNKNOWN_COMMENT}
+
+# Alias to $>
+$DEFAULT_OUTPUT = $> #{VALUE_UNKNOWN_COMMENT}
 
 # Last line read by Kernel#gets or Kernel#readline.
 # This variable is defined in current scope, thread local.
 $_ = "" #{VALUE_UNKNOWN_COMMENT}
 
+# Alias to $_
+$LAST_READ_LINE = $_ #{VALUE_UNKNOWN_COMMENT}
+
 # Name of the script being executed. May be assignable.
 $0 = "" #{VALUE_UNKNOWN_COMMENT}
+
+# Alias to $0.
+$PROGRAM_NAME = $0 #{VALUE_UNKNOWN_COMMENT}
 
 # Command line arguments given for the script.
 # Does not include interpreter arguments.
 # This variable is read-only.
 $* = [] #{VALUE_UNKNOWN_COMMENT}
 
+# Alias to $*
+$ARGV = $* #{VALUE_UNKNOWN_COMMENT}
+
 # Process number of Ruby instance running this script.
 # This variable is read-only.
 $$ = 0 #{VALUE_UNKNOWN_COMMENT}
 
+# Alias to $$
+$PROCESS_ID = $$ #{VALUE_UNKNOWN_COMMENT}
+
+# Alias to $$
+$PID = $$ #{VALUE_UNKNOWN_COMMENT}
+
 # Status of last executed child process.
 # This variable is thread local and read-only.
 $? = Process::Status.new #{VALUE_UNKNOWN_COMMENT}
+
+# Alias to $?
+$CHILD_STATUS = $? #{VALUE_UNKNOWN_COMMENT}
 
 # Load path for scripts and binary modules by load or require. You can
 # append directory to load path using $: << dir_path.
@@ -173,11 +251,11 @@ $: = [] #{VALUE_UNKNOWN_COMMENT}
 $-I = $: #{VALUE_UNKNOWN_COMMENT}
 
 # Alias to $:.
-$LOAD_PATH  = $: #{VALUE_UNKNOWN_COMMENT}
+$LOAD_PATH = $: #{VALUE_UNKNOWN_COMMENT}
 
 # Module names loaded by require.
 # Ruby interpreters have the following bug:
-# 
+#
 # require "my/file"
 # require "my/../my/file" #the same file as my/file
 # p $"
@@ -186,6 +264,9 @@ $LOAD_PATH  = $: #{VALUE_UNKNOWN_COMMENT}
 #
 # This variable is read-only.
 $" = [] #{VALUE_UNKNOWN_COMMENT}
+
+# Alias to $".
+$LOADED_FEATURES = $" #{VALUE_UNKNOWN_COMMENT}
 
 # True if command-line option -d is set.
 $DEBUG = Object.new #{VALUE_UNKNOWN_COMMENT}
@@ -224,16 +305,16 @@ $stdout = IO.new #{VALUE_UNKNOWN_COMMENT}
 #        not be modified. Typically, this will be used to create a sandbox: the program sets
 #        up an environment using a lower $SAFE level, then resets $SAFE to 4 to prevent
 #        subsequent changes to that environment.
-$SAFE  = 0 #{VALUE_UNKNOWN_COMMENT}
+$SAFE = 0 #{VALUE_UNKNOWN_COMMENT}
 
 # Verbose flag. Set by the -v, --version, -w, -W switch.
-$VERBOSE  = Object.new #{VALUE_UNKNOWN_COMMENT}
+$VERBOSE = Object.new #{VALUE_UNKNOWN_COMMENT}
 
 # Alias to $VERBOSE.
-$-v  = $VERBOSE #{VALUE_UNKNOWN_COMMENT}
+$-v = $VERBOSE #{VALUE_UNKNOWN_COMMENT}
 
 # Alias to $VERBOSE.
-$-w  = $VERBOSE #{VALUE_UNKNOWN_COMMENT}
+$-w = $VERBOSE #{VALUE_UNKNOWN_COMMENT}
 
 # True if command-line option -a ("autosplit" mode) is set.
 # This variable is read-only.
@@ -250,12 +331,15 @@ $-i = "" #{VALUE_UNKNOWN_COMMENT}
 # May be one of: u, U for UTF-8; or a, A, n, N for ASCII; e, E for EUC; s, S for SJIS
 $-K = "" #{VALUE_UNKNOWN_COMMENT}
 
+# Alias to $-K
+$KCODE = $-K #{VALUE_UNKNOWN_COMMENT}
+
 # True if command-line option -l is set ("line-ending processing" is on).
 $-l = Object.new #{VALUE_UNKNOWN_COMMENT}
 
 # True if command-line option -p is set ("loop" mode is on).
 # This variable is read-only.
-$-p  = Object.new #{VALUE_UNKNOWN_COMMENT}
+$-p = Object.new #{VALUE_UNKNOWN_COMMENT}
 
 # If a constant SCRIPT_LINES__ is defined as a Hash, then the source code of
 # all files loaded by Kernel#load and Kernel#require will be stored in Hash.
@@ -288,8 +372,7 @@ end
 
 @number = 0
 def require_constant some_constant, indent = 0
-
-  some_object = eval "#{some_constant}"
+  some_object = eval "#{some_constant.to_s == "Config" ? "RbConfig" : some_constant}"
   if some_object.kind_of? Class or some_object.kind_of? Module
 
     if VISITED.include? some_object

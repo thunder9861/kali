@@ -1,7 +1,7 @@
 =begin
  This is a machine generated stub using stdlib-doc for <b>class Object</b>
- Sources used:  Ruby 1.9.3-p194
- Created on Mon Aug 13 21:17:55 +0400 2012 by IntelliJ Ruby Stubs Generator.
+ Sources used:  Ruby 1.9.3-p429
+ Created on 2013-07-25 12:27:51 +0400 by IntelliJ Ruby Stubs Generator.
 =end
 
 # Object is the root of Ruby's class hierarchy.  Its methods are available
@@ -403,6 +403,24 @@ class Object < BasicObject
     def inspect()
         #This is a stub, used for indexing
     end
+    # obj.methods    -> array
+    #  
+    # Returns a list of the names of public and protected methods of
+    # <i>obj</i>. This will include all the methods accessible in
+    # <i>obj</i>'s ancestors.
+    # 
+    #    class Klass
+    #      def klass_method()
+    #      end
+    #    end
+    #    k = Klass.new
+    #    k.methods[0..9]    #=> [:klass_method, :nil?, :===,
+    #                       #    :==~, :!, :eql?
+    #                       #    :hash, :<=>, :class, :singleton_class]
+    #    k.methods.length   #=> 57
+    def methods()
+        #This is a stub, used for indexing
+    end
     # obj.singleton_methods(all=true)    -> array
     #  
     # Returns an array of the names of singleton methods for <i>obj</i>.
@@ -433,6 +451,30 @@ class Object < BasicObject
     #    a.singleton_methods(false)  #=> [:two, :one]
     #    a.singleton_methods         #=> [:two, :one, :three]
     def singleton_methods(all=true)
+        #This is a stub, used for indexing
+    end
+    # obj.protected_methods(all=true)   -> array
+    #  
+    # Returns the list of protected methods accessible to <i>obj</i>. If
+    # the <i>all</i> parameter is set to <code>false</code>, only those methods
+    # in the receiver will be listed.
+    def protected_methods(all=true)
+        #This is a stub, used for indexing
+    end
+    # obj.private_methods(all=true)   -> array
+    #  
+    # Returns the list of private methods accessible to <i>obj</i>. If
+    # the <i>all</i> parameter is set to <code>false</code>, only those methods
+    # in the receiver will be listed.
+    def private_methods(all=true)
+        #This is a stub, used for indexing
+    end
+    # obj.public_methods(all=true)   -> array
+    #  
+    # Returns the list of public methods accessible to <i>obj</i>. If
+    # the <i>all</i> parameter is set to <code>false</code>, only those methods
+    # in the receiver will be listed.
+    def public_methods(all=true)
         #This is a stub, used for indexing
     end
     # obj.instance_variables    -> array

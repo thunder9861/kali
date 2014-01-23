@@ -1,7 +1,7 @@
 =begin
  This is a machine generated stub using stdlib-doc for <b>class WIN32OLE_VARIANT</b>
- Sources used:  Ruby 1.9.3-p194
- Created on Mon Aug 13 21:17:55 +0400 2012 by IntelliJ Ruby Stubs Generator.
+ Sources used:  Ruby 1.9.3-p429
+ Created on 2013-07-25 12:27:52 +0400 by IntelliJ Ruby Stubs Generator.
 =end
 
 class WIN32OLE_VARIANT
@@ -106,7 +106,7 @@ class WIN32OLE_VARIANT
     #    p obj.value # => [[7,2,3], [8,5,6]]
     #    obj[2,0] = 9 # => WIN32OLERuntimeError
     #    obj[0, -1] = 9 # => WIN32OLERuntimeError
-    def []=(*args)
+    def []=(i,j,*smth, val)
         #This is a stub, used for indexing
     end
 end

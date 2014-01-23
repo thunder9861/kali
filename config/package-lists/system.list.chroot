@@ -1,0 +1,13 @@
+aufs-tools
+console-common
+console-data
+cpufrequtils
+grub2
+insserv
+localepurge
+logrotate
+preload
+rng-tools
+rungetty
+squashfs-tools
+tasksel

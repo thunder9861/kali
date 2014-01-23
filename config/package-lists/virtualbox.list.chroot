@@ -1,5 +1,4 @@
-open-vm-tools
-virtualbox
-virtualbox-guest-additions-iso
-virtualbox-guest-utils
-virtualbox-guest-x11
+#virtualbox
+#virtualbox-guest-additions-iso
+#virtualbox-guest-utils
+#virtualbox-guest-x11

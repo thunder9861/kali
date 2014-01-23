@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<config id="service" modified="2013-03-30T04:05:36:201+0000" version="3">
+<config id="service" modified="2014-01-23T00:06:15:239+0000" version="4">
   <configDateMs nil="true"/>
-  <installVersion>1360908000352</installVersion>
+  <installVersion>1364274000353</installVersion>
   <logPropertiesFile>conf/my.log.properties</logPropertiesFile>
   <serviceLog>
     <fileHandler append="true" count="2" level="ALL" limit="26214400" pattern="log/service.log"/>
@@ -15,7 +15,7 @@
   <systrayOnStartup>true</systrayOnStartup>
   <location>0.0.0.0:4242</location>
   <helpNovice>STILL_RUNNING</helpNovice>
-  <userHome nil="true"/>
+  <userHome>/root</userHome>
   <windowsPriorityClass>NORMAL</windowsPriorityClass>
   <windowsPriorityBoost>false</windowsPriorityBoost>
   <macIOPriority>IOPOL_THROTTLE</macIOPriority>
@@ -31,7 +31,7 @@
   </serviceUIConfig>
   <servicePeerConfig>
     <authority address="central.crashplan.com:443" hideAddress="false"/>
-    <lastKnownVersion>1360908000352</lastKnownVersion>
+    <lastKnownVersion>1364274000353</lastKnownVersion>
     <upgradeVersion nil="true"/>
     <upgradePath>upgrade</upgradePath>
     <upgradeDelay>15000</upgradeDelay>
@@ -66,6 +66,22 @@
     <lowBandwidthRate>25.0</lowBandwidthRate>
     <lanHighBandwidthRate>0.0</lanHighBandwidthRate>
     <lanLowBandwidthRate>0.0</lanLowBandwidthRate>
+    <wanNetworks>
+      <patternList>
+        <windows/>
+        <macintosh/>
+        <linux/>
+        <solaris/>
+      </patternList>
+    </wanNetworks>
+    <lanNetworks>
+      <patternList>
+        <windows/>
+        <macintosh/>
+        <linux/>
+        <solaris/>
+      </patternList>
+    </lanNetworks>
     <wanTcpTrafficClass>2</wanTcpTrafficClass>
     <lanTcpTrafficClass>0</lanTcpTrafficClass>
     <tcpNoDelay>true</tcpNoDelay>
@@ -120,9 +136,11 @@
           <name>Default</name>
           <priority>1</priority>
           <backupPaths>
-            <lastModified>1364616333057</lastModified>
+            <lastModified>1390435563327</lastModified>
             <pathset>
-              <paths os="Linux"/>
+              <paths os="Linux">
+                <path include="/root/"/>
+              </paths>
             </pathset>
             <excludeUser>
               <patternList>
@@ -150,7 +168,7 @@
             <backupFrequency>900000</backupFrequency>
             <keepDeleted>true</keepDeleted>
             <keepDeletedMinutes>10080</keepDeletedMinutes>
-            <lastModified>1364616332871</lastModified>
+            <lastModified>1390435563117</lastModified>
             <versionLastNinetyDaysInterval>1440</versionLastNinetyDaysInterval>
             <versionLastWeekInterval>15</versionLastWeekInterval>
             <versionLastYearInterval>10080</versionLastYearInterval>
@@ -159,7 +177,7 @@
         </backupSet>
       </backupSets>
       <cachePath>/opt/crashplan/cache</cachePath>
-      <manifestPath>/backup/</manifestPath>
+      <manifestPath>/opt/crashplan/manifest/</manifestPath>
       <softDeleteOfFiles>false</softDeleteOfFiles>
       <smallBlockSize>4096</smallBlockSize>
       <blockSize>32768</blockSize>

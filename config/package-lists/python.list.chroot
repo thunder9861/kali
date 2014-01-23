@@ -1,7 +1,11 @@
 python-apsw
+python-docutils
 python-gpgme
+python-gtk2
+python-markdown
 python-matplotlib
 python-numpy
+python-psutil
 python-pyicu
 python-scipy
 python-sympy

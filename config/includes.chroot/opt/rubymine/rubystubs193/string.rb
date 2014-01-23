@@ -1,7 +1,7 @@
 =begin
  This is a machine generated stub using stdlib-doc for <b>class String</b>
- Sources used:  Ruby 1.9.3-p194
- Created on Mon Aug 13 21:17:55 +0400 2012 by IntelliJ Ruby Stubs Generator.
+ Sources used:  Ruby 1.9.3-p429
+ Created on 2013-07-25 12:27:51 +0400 by IntelliJ Ruby Stubs Generator.
 =end
 
 # A <code>String</code> object holds and manipulates an arbitrary sequence of
@@ -1695,6 +1695,10 @@ class String
     # Encoding::InvalidByteSequenceError for invalid byte sequences
     # in the source encoding. The last form by default does not raise
     # exceptions but uses replacement strings.
+    # 
+    # Please note that conversion from an encoding +enc+ to the
+    # same encoding +enc+ is a no-op, i.e. the receiver is returned without
+    # any changes, and no exceptions are raised, even if there are invalid bytes.
     # 
     # The +options+ Hash gives details for conversion and can have the following
     # keys:

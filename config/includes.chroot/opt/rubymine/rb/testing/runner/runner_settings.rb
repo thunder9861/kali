@@ -1,4 +1,4 @@
-# Copyright 2000-2009 JetBrains s.r.o.
+# Copyright 2000-2012 JetBrains s.r.o.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -84,6 +84,9 @@ module IntelliJ
   # Parses string with launcher settings
   def self.parse_launcher_string(args_string, args_array)
     args_string.split("\n").each { |item|
+      if '\'$stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)\'' == item
+        item = '$stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)'
+      end
       (args_array << item) unless item.strip.empty?
     }
   end

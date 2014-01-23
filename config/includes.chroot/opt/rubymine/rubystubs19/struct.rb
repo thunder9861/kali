@@ -1,7 +1,7 @@
 =begin
  This is a machine generated stub using stdlib-doc for <b>class Struct</b>
  Sources used:  Ruby 1.9.2-p320
- Created on Mon Aug 13 21:19:06 +0400 2012 by IntelliJ Ruby Stubs Generator.
+ Created on 2013-07-25 12:24:14 +0400 by IntelliJ Ruby Stubs Generator.
 =end
 
 # A <code>Struct</code> is a convenient way to bundle a number of
@@ -238,7 +238,7 @@ class Struct
     #    a.values_at(1, 3, 5, 7)
     #    a.values_at(-1, -3, -5, -7)
     #    a.values_at(1..3, 2...5)
-    def values_at(selector,*smth )
+    def values_at(selector,*smth)
         #This is a stub, used for indexing
     end
     # struct.members    -> array

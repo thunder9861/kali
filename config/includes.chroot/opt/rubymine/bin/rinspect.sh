@@ -5,7 +5,7 @@
 # ------------------------------------------------------
 #
 
-export DEFAULT_PROJECT_PATH=`pwd`
+export DEFAULT_PROJECT_PATH="$(pwd)"
 
-IDE_BIN_HOME="$(dirname "$0")"
-exec "$IDE_BIN_HOME/rubymine.sh" rinspect $*
+IDE_BIN_HOME="${0%/*}"
+exec "$IDE_BIN_HOME/rubymine.sh" rinspect "$@"

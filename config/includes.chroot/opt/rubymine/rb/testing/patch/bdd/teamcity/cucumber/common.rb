@@ -1,3 +1,17 @@
+# Copyright 2000-2012 JetBrains s.r.o.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 require 'cucumber/formatter/console'
 require 'fileutils'
 
@@ -107,9 +121,13 @@ module Teamcity
         # AST and visitor API specific
         register_tags_holder
 
-        # each feature file contains only one feature
-        # so let's use 1 line of feature file for navigation
-        @current_feature_file_colon_line = feature.file_colon_line(1)
+        if feature.method(:file_colon_line).arity == 1
+          # each feature file contains only one feature
+          # so let's use 1 line of feature file for navigation
+          @current_feature_file_colon_line = feature.file_colon_line(1)
+        else
+          @current_feature_file_colon_line = feature.file_colon_line
+        end
       end
 
       def tc_after_feature (feature)
@@ -187,9 +205,17 @@ module Teamcity
 #### Scenarios, Scenario Outlines(real and fake from Example's table rows):
 # @Processes: Scenario(real without examples' fake scenarios), ScenarioOutline
 # Here we can do cleanup for scenarios in current feature: Scenario, ScenarioOutline
+      def scenario_outline?(feature_element)
+        if defined? ::Cucumber::Ast
+          feature_element.class == ::Cucumber::Ast::ScenarioOutline
+        else
+          # API changed in Cucumber 2.0 
+          feature_element.class == ::Cucumber::Core::Ast::ScenarioOutline
+        end
+      end
+
       def tc_before_feature_element (feature_element)
-        is_outline = feature_element.class == ::Cucumber::Ast::ScenarioOutline
-        @in_outline_scenario_stack.push((is_outline) ? true : nil)
+        @in_outline_scenario_stack.push(scenario_outline?(feature_element) ? true : nil)
         register_tags_holder
       end
 
@@ -212,7 +238,7 @@ module Teamcity
 
         process_new_feature_element_name(keyword, name, file_colon_line, source_indent)
 
-        unless (scenario_outline_suites_set?)
+        unless scenario_outline_suites_set?
           # don't trigger on "Scenario Outline" suite of substituted scenarios
           log_in_idea(@message_factory.create_custom_progress_test_status(:started))
         end
@@ -396,7 +422,7 @@ module Teamcity
       def log_status_and_test_finished(status, name, duration_ms,
           exception = nil, multiline_arg = nil, keyword = nil, diagnostic_info=nil)
         msg = exception.nil? ? "" : "#{exception.class.name}: #{exception.message}"
-        backtrace = exception.nil? ? "" : format_backtrace(exception.backtrace)
+        backtrace = exception.nil? ? "" : ::Rake::TeamCity::RunnerCommon.format_backtrace(exception.backtrace)
 
         case status
           when :pending

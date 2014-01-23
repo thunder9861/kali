@@ -1,7 +1,7 @@
 =begin
  This is a machine generated stub using stdlib-doc for <b>class ARGF</b>
- Sources used:  Ruby 1.9.3-p194
- Created on Mon Aug 13 21:17:55 +0400 2012 by IntelliJ Ruby Stubs Generator.
+ Sources used:  Ruby 1.9.3-p429
+ Created on 2013-07-25 12:27:51 +0400 by IntelliJ Ruby Stubs Generator.
 =end
 
 # +ARGF+ is a stream designed for use in scripts that process files given as
@@ -214,6 +214,25 @@ class ARGF
     def each_char(*several_variants)
         #This is a stub, used for indexing
     end
+    # ARGF.codepoints      {|codepoint| block }  -> ARGF
+    # ARGF.codepoints                       -> an_enumerator
+    # 
+    # ARGF.each_codepoint  {|codepoint| block }  -> ARGF
+    # ARGF.each_codepoint                   -> an_enumerator
+    #  
+    # Iterates over each codepoint of each file in +ARGF+.
+    # 
+    # This method allows you to treat the files supplied on the command line as
+    # a single file consisting of the concatenation of each named file. After
+    # the last codepoint of the first file has been returned, the first
+    # codepoint of the second file is returned. The +ARGF.filename+ method can
+    # be used to determine the name of the file in which the current codepoint
+    # appears.
+    # 
+    # If no block is given, an enumerator is returned instead.
+    def each_codepoint(*several_variants)
+        #This is a stub, used for indexing
+    end
     # ARGF.each(sep=$/)            {|line| block }  -> ARGF
     # ARGF.each(sep=$/,limit)      {|line| block }  -> ARGF
     # ARGF.each(...)                                -> an_enumerator
@@ -290,6 +309,25 @@ class ARGF
     # 
     # If no block is given, an enumerator is returned instead.
     def chars(*several_variants)
+        #This is a stub, used for indexing
+    end
+    # ARGF.codepoints      {|codepoint| block }  -> ARGF
+    # ARGF.codepoints                       -> an_enumerator
+    # 
+    # ARGF.each_codepoint  {|codepoint| block }  -> ARGF
+    # ARGF.each_codepoint                   -> an_enumerator
+    #  
+    # Iterates over each codepoint of each file in +ARGF+.
+    # 
+    # This method allows you to treat the files supplied on the command line as
+    # a single file consisting of the concatenation of each named file. After
+    # the last codepoint of the first file has been returned, the first
+    # codepoint of the second file is returned. The +ARGF.filename+ method can
+    # be used to determine the name of the file in which the current codepoint
+    # appears.
+    # 
+    # If no block is given, an enumerator is returned instead.
+    def codepoints(*several_variants)
         #This is a stub, used for indexing
     end
     # ARGF.read([length [, buffer]])    -> string, buffer, or nil

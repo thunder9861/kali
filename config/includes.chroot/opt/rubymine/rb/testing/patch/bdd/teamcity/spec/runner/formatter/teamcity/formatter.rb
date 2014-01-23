@@ -1,4 +1,4 @@
-# Copyright 2000-2009 JetBrains s.r.o.
+# Copyright 2000-2012 JetBrains s.r.o.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -89,6 +89,7 @@ module Spec
 
           # Initializes
           @groups_stack = []
+          @ex_group_finished_event_supported = nil
 
           # check out output stream is a Drb stream, in such case all commands should be send there
           redirect_output_via_drb = !output_stream.nil? && (defined? DRb::DRbObject) && output_stream.kind_of?(DRb::DRbObject)
@@ -274,7 +275,7 @@ module Spec
                     end
 
           # Backtrace
-          backtrace = failure.exception.nil? ? "" : format_backtrace(failure.exception.backtrace)
+          backtrace = calc_backtrace(failure.exception, example)
 
           #if ::Rake::TeamCity.is_in_buildserver_mode
           #  # failure description
@@ -291,6 +292,15 @@ module Spec
             log(@message_factory.create_test_error(running_example_full_name, message, backtrace))
           end
           close_test_block(example)
+        end
+
+        def calc_backtrace(exception, example)
+          return "" if exception.nil?
+          if rspec_2? && respond_to?(:format_backtrace) && self.class.instance_method(:format_backtrace).arity == 2
+            format_backtrace(exception.backtrace, example).join("\n")
+          else
+            ::Rake::TeamCity::RunnerCommon.format_backtrace(exception.backtrace)
+          end
         end
 
         def example_pending(*args)
@@ -474,7 +484,7 @@ module Spec
               get_time_in_ms(example.execution_result[:started_at]) :
               get_current_time_in_ms
 
-          debug_log("Output caputre started.")
+          debug_log("Output capturing started.")
 
           put_data_to_storage(example, RunningExampleData.new(my_running_example_full_name, "", started_at_ms, *std_files))
         end

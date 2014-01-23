@@ -1,3 +1,17 @@
+# Copyright 2000-2012 JetBrains s.r.o.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 # Change list
 #
 # 30.09.2009
@@ -23,16 +37,6 @@ require 'teamcity/utils/url_formatter'
 module Teamcity
   module Cucumber
 
-    # old formatter api, cucumber < 0.3.103
-    # new formatter api, cucumber >= 0.3.103
-
-    USE_OLD_API = (defined? ::Cucumber::Ast::TreeWalker).nil?
-    if USE_OLD_API
-      require File.expand_path(File.dirname(__FILE__) + '/old_formatter')
-    else
-      require File.expand_path(File.dirname(__FILE__) + '/formatter_03103')
-    end
-
     def self.same_or_newer?(version)
       given_version = version.split('.', 4)
       cuke_version = ::Cucumber::VERSION.split('.', 4)
@@ -43,11 +47,22 @@ module Teamcity
         gnum = given_version[i]
         if num =~ /\d*/ && gnum =~ /\d*/ && num.to_i > gnum.to_i
           return true
-        elsif (num =~ /\d*/ && gnum =~ /a-zA-Z/)
+        elsif num =~ /\d*/ && gnum =~ /a-zA-Z/
           return true
         end
       end
       false
+    end
+
+    # old formatter api, cucumber < 0.3.103
+    # new formatter api, cucumber >= 0.3.103
+
+    USE_OLD_API =  !same_or_newer?('1.2.0') && (defined? ::Cucumber::Ast::TreeWalker).nil?
+
+    if USE_OLD_API
+      require File.expand_path(File.dirname(__FILE__) + '/old_formatter')
+    else
+      require File.expand_path(File.dirname(__FILE__) + '/formatter_03103')
     end
   end
 end

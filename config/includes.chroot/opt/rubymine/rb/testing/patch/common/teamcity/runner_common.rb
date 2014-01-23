@@ -1,4 +1,4 @@
-# Copyright 2000-2010 JetBrains s.r.o.
+# Copyright 2000-2012 JetBrains s.r.o.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -49,11 +49,11 @@ module Rake
       end
 
       # Is from base_text_formatter.rb of rspec 1.1.4
-      def backtrace_line(line)
+      def self.backtrace_line(line)
         line.sub(/\A([^:]+:\d+)$/, '\\1:')
       end
 
-      def format_backtrace(backtrace)
+      def self.format_backtrace(backtrace)
         return "" if backtrace.nil?
         backtrace.map { |line| backtrace_line(line) }.join("\n")
       end

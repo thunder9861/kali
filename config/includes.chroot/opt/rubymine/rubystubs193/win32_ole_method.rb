@@ -1,7 +1,7 @@
 =begin
  This is a machine generated stub using stdlib-doc for <b>class WIN32OLE_METHOD</b>
- Sources used:  Ruby 1.9.3-p194
- Created on Mon Aug 13 21:17:55 +0400 2012 by IntelliJ Ruby Stubs Generator.
+ Sources used:  Ruby 1.9.3-p429
+ Created on 2013-07-25 12:27:52 +0400 by IntelliJ Ruby Stubs Generator.
 =end
 
 # <code>WIN32OLE_METHOD</code> objects represent OLE method information.

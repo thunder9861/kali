@@ -34,8 +34,8 @@ def _params_from_call_seq(method_name, call_seq)
                 args = margs.strip
                 if (args.empty?)
                     params_signatures << "()"
-                elsif args =~ /.*,\s*\.\.\.\s*\)?/
-                    params_signatures <<  (args.gsub(/\.\.\./, "*smth"))
+                elsif args =~ /.*(args)?,\s*\.\.\.\s*\)?/
+                    params_signatures <<  (args.gsub(/(args,\s*)?\.\.\.\s*/, "*smth"))
                 else
                     params_signatures <<  (args[0, 1] == '(' ? args : " #{args}")
                 end
@@ -166,6 +166,7 @@ def _split_call_seq(method_name, metod_def_seq)
     m_def = _strip_if_not_null($1) # definition piece
     m_args = $3 ? $3.strip : ($4 ? $4.strip : "")
     m_tail = _strip_if_not_null("#{$5}#{$6}#{$7}#{$8}") # tail piece
+    m_args.gsub!(/\[(.*)\]/, '*\1')
 
     return m_def, m_args, m_tail
 end

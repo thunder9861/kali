@@ -24,8 +24,8 @@ INSTALLATION INSTRUCTIONS
 
   [OPTIONAL] Changing location of "config" and "system" directory
   ------------------------------------------------------------------------------
-  By default RubyMine stores all your settings under ~/.RubyMine40/config directory
-  and stores data cache under ~/.RubyMine40/system directory.
+  By default RubyMine stores all your settings under ~/.RubyMine60/config directory
+  and stores data cache under ~/.RubyMine60/system directory.
   If you want to change these settings,
 
   1. Open a console and cd into "{installation home}/bin"

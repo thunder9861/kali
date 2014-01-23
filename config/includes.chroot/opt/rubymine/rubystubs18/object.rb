@@ -1,7 +1,7 @@
 =begin
  This is a machine generated stub using stdlib-doc for <b>class Object</b>
- Sources used:  Ruby 1.8.7-p358
- Created on Mon Aug 13 21:20:01 +0400 2012 by IntelliJ Ruby Stubs Generator.
+ Sources used:  Ruby 1.8.7-p371
+ Created on 2013-05-16 17:08:27 +0400 by IntelliJ Ruby Stubs Generator.
 =end
 
 # <code>Object</code> is the parent class of all classes in Ruby. Its
@@ -17,7 +17,7 @@
 # In the descriptions of Object's methods, the parameter <i>symbol</i> refers
 # to a symbol, which is either a quoted string or a
 # <code>Symbol</code> (such as <code>:name</code>).
-class Object
+class Object < BasicObject
     include Kernel
     # The top level binding object.
     TOPLEVEL_BINDING = Binding.new #value is unknown, used for indexing.

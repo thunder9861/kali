@@ -1,7 +1,7 @@
 =begin
  This is a machine generated stub using stdlib-doc for <b>class Proc</b>
- Sources used:  Ruby 1.8.7-p358
- Created on Mon Aug 13 21:20:02 +0400 2012 by IntelliJ Ruby Stubs Generator.
+ Sources used:  Ruby 1.8.7-p371
+ Created on 2013-05-16 17:08:27 +0400 by IntelliJ Ruby Stubs Generator.
 =end
 
 # <code>Proc</code> objects are blocks of code that have been bound to
@@ -70,7 +70,7 @@ class Proc
     #    prog.rb:5: wrong number of arguments (3 for 2) (ArgumentError)
     #     from prog.rb:4:in `call'
     #     from prog.rb:5
-    def call(params,*smth)
+    def call(*params)
         #This is a stub, used for indexing
     end
     # prc.arity -> fixnum
@@ -120,7 +120,7 @@ class Proc
     #    prog.rb:5: wrong number of arguments (3 for 2) (ArgumentError)
     #     from prog.rb:4:in `call'
     #     from prog.rb:5
-    def [](params, *smth)
+    def [](*params)
         #This is a stub, used for indexing
     end
     # prc == other_proc   =>  true or false

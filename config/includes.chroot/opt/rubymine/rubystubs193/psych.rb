@@ -1,7 +1,7 @@
 =begin
  This is a machine generated stub using stdlib-doc for <b>module Psych</b>
- Sources used:  Ruby 1.9.3-p194
- Created on Mon Aug 13 21:17:55 +0400 2012 by IntelliJ Ruby Stubs Generator.
+ Sources used:  Ruby 1.9.3-p429
+ Created on 2013-07-25 12:27:52 +0400 by IntelliJ Ruby Stubs Generator.
 =end
 
 module Psych
@@ -12,10 +12,10 @@ module Psych
         #This is a stub, used for indexing
     end
     class Emitter < Handler
-        # Psych::Emitter.new(io)
+        # Psych::Emitter.new(io, options = Psych::Emitter::OPTIONS)
         #  
         # Create a new Psych::Emitter that writes to +io+.
-        def self.new(io)
+        def self.new(io, options = Psych::Emitter::OPTIONS)
             #This is a stub, used for indexing
         end
         # emitter.start_stream(encoding)

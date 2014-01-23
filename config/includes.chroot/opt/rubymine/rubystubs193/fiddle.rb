@@ -1,7 +1,7 @@
 =begin
  This is a machine generated stub using stdlib-doc for <b>module Fiddle</b>
- Sources used:  Ruby 1.9.3-p194
- Created on Mon Aug 13 21:17:55 +0400 2012 by IntelliJ Ruby Stubs Generator.
+ Sources used:  Ruby 1.9.3-p429
+ Created on 2013-07-25 12:27:52 +0400 by IntelliJ Ruby Stubs Generator.
 =end
 
 # == Description
@@ -63,7 +63,7 @@ module Fiddle
     #   func.call
     #   => 10
     class Closure
-        # new(ret, *args, abi = Fiddle::DEFAULT)
+        # new(ret, args, abi = Fiddle::DEFAULT)
         #  
         # Construct a new Closure object.
         # 
@@ -73,7 +73,7 @@ module Fiddle
         # 
         # If there is an error in preparing the ffi_cif or ffi_prep_closure,
         # then a RuntimeError will be raised.
-        def self.new(p1, p2, p3 = v3)
+        def self.new(ret, args, abi = Fiddle::DEFAULT)
             #This is a stub, used for indexing
         end
         # Returns the memory address for this closure
@@ -123,14 +123,14 @@ module Fiddle
         def call(*args)
             #This is a stub, used for indexing
         end
-        # new(ptr, *args, ret_type, abi = DEFAULT)
+        # new(ptr, args, ret_type, abi = DEFAULT)
         #  
         # Constructs a Function object.
         # * +ptr+ is a referenced function, of a DL::Handle
         # * +args+ is an Array of arguments, passed to the +ptr+ function
         # * +ret_type+ is the return type of the function
         # * +abi+ is the ABI of the function
-        def self.new(p1, p2, p3, p4 = v4)
+        def self.new(ptr, args, ret_type, abi = DEFAULT)
             #This is a stub, used for indexing
         end
     end

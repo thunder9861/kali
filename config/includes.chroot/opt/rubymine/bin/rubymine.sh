@@ -5,6 +5,24 @@
 # ---------------------------------------------------------------------
 #
 
+message()
+{
+  TITLE="Cannot start RubyMine"
+  if [ -t 1 ]; then
+    echo "ERROR: $TITLE\n$1"
+  elif [ -n `which zenity` ]; then
+    zenity --error --title="$TITLE" --text="$1"
+  elif [ -n `which kdialog` ]; then
+    kdialog --error --title "$TITLE" "$1"
+  elif [ -n `which xmessage` ]; then
+    xmessage -center "ERROR: $TITLE: $1"
+  elif [ -n `which notify-send` ]; then
+    notify-send "ERROR: $TITLE: $1"
+  else
+    echo "ERROR: $TITLE\n$1"
+  fi
+}
+
 UNAME=`which uname`
 GREP=`which egrep`
 GREP_OPTIONS=""
@@ -16,7 +34,7 @@ CAT=`which cat`
 TR=`which tr`
 
 if [ -z "$UNAME" -o -z "$GREP" -o -z "$CUT" -o -z "$MKTEMP" -o -z "$RM" -o -z "$CAT" -o -z "$TR" ]; then
-  echo "ERROR: required tools are missing - check beginning of \"$0\" file for details."
+  message "Required tools are missing - check beginning of \"$0\" file for details."
   exit 1
 fi
 
@@ -68,37 +86,15 @@ else
 fi
 
 if [ -z "$JDK" ]; then
-  echo "ERROR: cannot start RubyMine."
-  echo "No JDK found. Please validate either RUBYMINE_JDK, JDK_HOME or JAVA_HOME environment variable points to valid JDK installation."
-  echo
-  echo "Press Enter to continue."
-  read IGNORE
+  message "No JDK found. Please validate either RUBYMINE_JDK, JDK_HOME or JAVA_HOME environment variable points to valid JDK installation."
   exit 1
 fi
 
 VERSION_LOG=`"$MKTEMP" -t java.version.log.XXXXXX`
 "$JDK/bin/java" -version 2> "$VERSION_LOG"
-"$GREP" 'OpenJDK' "$VERSION_LOG"
-OPEN_JDK=$?
-"$GREP" "64-Bit|x86_64" "$VERSION_LOG"
+"$GREP" "64-Bit|x86_64" "$VERSION_LOG" > /dev/null
 BITS=$?
 "$RM" -f "$VERSION_LOG"
-if [ $OPEN_JDK -eq 0 ]; then
-  echo "WARNING: You are launching the IDE using OpenJDK Java runtime."
-  echo
-  echo "         ITS KNOWN TO HAVE PERFORMANCE AND GRAPHICS ISSUES!"
-  echo "         SWITCH TO THE ORACLE(SUN) JDK BEFORE REPORTING PROBLEMS!"
-  echo
-  echo "NOTE:    If you have both Oracle (Sun) JDK and OpenJDK installed"
-  echo "         please validate either RUBYMINE_JDK, JDK_HOME, or JAVA_HOME environment variable points to valid Oracle (Sun) JDK installation."
-  echo "         See http://ow.ly/6TuKQ for more info on switching default JDK."
-  echo
-  echo "Press Enter to continue."
-# ---------------------------------------------------------------------
-# COMMENT LINE BELOW TO REMOVE PAUSE AFTER OPEN JDK WARNING
-# ---------------------------------------------------------------------
-  read IGNORE
-fi
 if [ $BITS -eq 0 ]; then
   BITS="64"
 else
@@ -145,11 +141,11 @@ if [ "$IS_EAP" = "true" ]; then
   OS_NAME=`echo $OS_TYPE | "$TR" '[:upper:]' '[:lower:]'`
   AGENT_LIB="yjpagent-$OS_NAME$BITS"
   if [ -r "$IDE_BIN_HOME/lib$AGENT_LIB.so" ]; then
-    AGENT="-agentlib:$AGENT_LIB=disablej2ee,disablealloc,sessionname=RubyMine40"
+    AGENT="-agentlib:$AGENT_LIB=disablej2ee,disablealloc,delay=10000,sessionname=RubyMine60"
   fi
 fi
 
-COMMON_JVM_ARGS="\"-Xbootclasspath/a:$IDE_HOME/lib/boot.jar\" -Didea.paths.selector=RubyMine40 $IDE_PROPERTIES_PROPERTY"
+COMMON_JVM_ARGS="\"-Xbootclasspath/a:$IDE_HOME/lib/boot.jar\" -Didea.paths.selector=RubyMine60 $IDE_PROPERTIES_PROPERTY"
 IDE_JVM_ARGS="-Didea.platform.prefix=Ruby -Didea.no.jre.check=true"
 ALL_JVM_ARGS="$VM_OPTIONS $COMMON_JVM_ARGS $IDE_JVM_ARGS $AGENT $REQUIRED_JVM_ARGS"
 
@@ -172,6 +168,6 @@ export LD_LIBRARY_PATH
 # Run the IDE.
 # ---------------------------------------------------------------------
 while true ; do
-  eval "$JDK/bin/java" $ALL_JVM_ARGS -Djb.restart.code=88 $MAIN_CLASS_NAME $*
+  eval "$JDK/bin/java" $ALL_JVM_ARGS -Djb.restart.code=88 $MAIN_CLASS_NAME "$@"
   test $? -ne 88 && break
 done

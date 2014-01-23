@@ -3,5 +3,5 @@
 # Returns the dependencies of a package
 # $1 = string package
 
-apt-rdepends -f DEPENDS $1  2>&1 /dev/null | grep Depends: | awk '{print $2}' | sort -u
+apt-rdepends -f Depends $1  2>&1 /dev/null | grep Depends: | awk '{print $2}' | sort -u
 

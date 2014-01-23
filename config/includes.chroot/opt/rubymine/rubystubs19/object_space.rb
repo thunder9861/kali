@@ -1,7 +1,7 @@
 =begin
  This is a machine generated stub using stdlib-doc for <b>module ObjectSpace</b>
  Sources used:  Ruby 1.9.2-p320
- Created on Mon Aug 13 21:19:06 +0400 2012 by IntelliJ Ruby Stubs Generator.
+ Created on 2013-07-25 12:24:14 +0400 by IntelliJ Ruby Stubs Generator.
 =end
 
 # The <code>ObjectSpace</code> module contains a number of routines
@@ -110,6 +110,82 @@ module ObjectSpace
     # 
     # This method is not expected to work except C Ruby.
     def self.count_objects(*result_hash)
+        #This is a stub, used for indexing
+    end
+    # ObjectSpace.count_objects_size([result_hash]) -> hash
+    #  
+    # Counts objects size (in bytes) for each type.
+    # 
+    # Note that this information is incomplete.  You need to deal with
+    # this information as only a *HINT*.  Especaially, total size of
+    # T_DATA may not right size.
+    # 
+    # It returns a hash as:
+    #   {:TOTAL=>1461154, :T_CLASS=>158280, :T_MODULE=>20672, :T_STRING=>527249, ...}
+    # 
+    # If the optional argument, result_hash, is given,
+    # it is overwritten and returned.
+    # This is intended to avoid probe effect.
+    # 
+    # The contents of the returned hash is implementation defined.
+    # It may be changed in future.
+    # 
+    # This method is not expected to work except C Ruby.
+    def self.count_objects_size(*result_hash)
+        #This is a stub, used for indexing
+    end
+    # ObjectSpace.memsize_of(obj) -> Integer
+    #  
+    # Return consuming memory size of obj.
+    # 
+    # Note that this information is incomplete.  You need to deal with
+    # this information as only a *HINT*.  Especaially, the size of
+    # T_DATA may not right size.
+    # 
+    # This method is not expected to work except C Ruby.
+    def self.memsize_of(obj)
+        #This is a stub, used for indexing
+    end
+    # ObjectSpace.count_nodes([result_hash]) -> hash
+    #  
+    # Counts nodes for each node type.
+    # 
+    # This method is not for ordinary Ruby programmers, but for MRI developers
+    # who have interest in MRI performance and memory usage.
+    # 
+    # It returns a hash as:
+    # {:NODE_METHOD=>2027, :NODE_FBODY=>1927, :NODE_CFUNC=>1798, ...}
+    # 
+    # If the optional argument, result_hash, is given,
+    # it is overwritten and returned.
+    # This is intended to avoid probe effect.
+    # 
+    # The contents of the returned hash is implementation defined.
+    # It may be changed in future.
+    # 
+    # This method is not expected to work except C Ruby.
+    def self.count_nodes(*result_hash)
+        #This is a stub, used for indexing
+    end
+    # ObjectSpace.count_tdata_objects([result_hash]) -> hash
+    #  
+    # Counts nodes for each node type.
+    # 
+    # This method is not for ordinary Ruby programmers, but for MRI developers
+    # who interest on MRI performance.
+    # 
+    # It returns a hash as:
+    # {:NODE_METHOD=>2027, :NODE_FBODY=>1927, :NODE_CFUNC=>1798, ...}
+    # 
+    # If the optional argument, result_hash, is given,
+    # it is overwritten and returned.
+    # This is intended to avoid probe effect.
+    # 
+    # The contents of the returned hash is implementation defined.
+    # It may be changed in future.
+    # 
+    # This method is not expected to work except C Ruby.
+    def self.count_tdata_objects(*result_hash)
         #This is a stub, used for indexing
     end
 end

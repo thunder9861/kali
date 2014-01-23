@@ -1,7 +1,7 @@
 =begin
  This is a machine generated stub using stdlib-doc for <b>class File</b>
- Sources used:  Ruby 1.9.3-p194
- Created on Mon Aug 13 21:17:55 +0400 2012 by IntelliJ Ruby Stubs Generator.
+ Sources used:  Ruby 1.9.3-p429
+ Created on 2013-07-25 12:27:51 +0400 by IntelliJ Ruby Stubs Generator.
 =end
 
 # A <code>File</code> is an abstraction of any file object accessible
@@ -280,7 +280,7 @@ class File < IO
     # processed.
     # 
     #    File.chmod(0644, "testfile", "out")   #=> 2
-    def self.chmod(mode_int, file_name, *smth )
+    def self.chmod(mode_int, file_name, *smth)
         #This is a stub, used for indexing
     end
     # File.chown(owner_int, group_int, file_name,... )  ->  integer
@@ -293,7 +293,7 @@ class File < IO
     # Returns the number of files processed.
     # 
     #    File.chown(nil, 100, "testfile")
-    def self.chown(owner_int, group_int, file_name,*smth )
+    def self.chown(owner_int, group_int, file_name,*smth)
         #This is a stub, used for indexing
     end
     # File.lchmod(mode_int, file_name, ...)  -> integer

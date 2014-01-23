@@ -1,7 +1,7 @@
 =begin
  This is a machine generated stub using stdlib-doc for <b>class Encoding</b>
  Sources used:  Ruby 1.9.2-p320
- Created on Mon Aug 13 21:19:05 +0400 2012 by IntelliJ Ruby Stubs Generator.
+ Created on 2013-07-25 12:24:14 +0400 by IntelliJ Ruby Stubs Generator.
 =end
 
 class Encoding
@@ -199,7 +199,6 @@ class Encoding
     def self.locale_charmap()
         #This is a stub, used for indexing
     end
-    require 'encoding_error'
     # Raised by Encoding and String methods when the source encoding is
     # incompatible with the target encoding.
     class CompatibilityError < EncodingError

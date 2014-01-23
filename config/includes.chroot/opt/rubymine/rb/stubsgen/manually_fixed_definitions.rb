@@ -119,7 +119,10 @@ module Generators
                 "[].cont[args, ...]" => "(args, *smth)",
 
              #proc.rb
-                "[].prc[params,...]        => obj" => "(params, *smth)",
+                "call.prc.call(params,...)      => obj" => "(*params)",
+                "[].prc[params,...]        => obj" => "(*params)",
+                "call.prc.call(params,...)   -> obj" => "(*params)",
+                "[].prc[params,...]        -> obj" => "(*params)",
              #dir.rb
                 "mkdir.Dir.mkdir( string [, integer] ) => 0" => "(string, *permissions_int)",
              #io.rb
@@ -164,6 +167,7 @@ module Generators
                 "p(obj, ...)    => nil" => "(*arg)",
                 "puts(obj, *smth)" => "(obj='', *arg)",
                 "puts.puts(obj, ...)    => nil" => "(obj='', *arg)",
+                "abort.Kernel::abort" => "(message='')",
                 "abort.Kernel::abort([msg])" => "(message='')",
 
              #object.rb
@@ -218,7 +222,8 @@ module Generators
                 "deflate.Zlib::Deflate.deflate(string[, level])" => "(string, level=nil)",
              #big_decimal.rb
                "new.new(initial, digits)" => "(initial, digits=nil)",
-
+             #class.rb
+               "new.class.new(args, ...)    ->  obj" => "(*args)",
         }
 
         MANUALLY_PATCHED_FILE_NAMES = {
@@ -239,3 +244,4 @@ RDoc::KNOWN_CLASSES["ePKeyError"] = "PKeyError"
 RDoc::KNOWN_CLASSES["eOSSLError"] = "OpenSSLError"
 RDoc::KNOWN_CLASSES["mDigest"] = "Digest"
 RDoc::KNOWN_CLASSES["cASN1ObjectId"] = "ASN1ObjectId"
+RDoc::KNOWN_CLASSES["rb_mObjSpace"] = "ObjectSpace"

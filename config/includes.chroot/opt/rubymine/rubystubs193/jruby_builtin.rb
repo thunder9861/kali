@@ -24,5 +24,5 @@ require '1.8/builtin/javasupport'
 require 'builtin/javasupport'     # JRuby 1.1.5
 
 # Require JRuby extentions for java classes
-require File.dirname(__FILE__) + '/jruby_extentions'
+require File.dirname(__FILE__) + '/jruby_extensions'
 

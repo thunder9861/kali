@@ -75,6 +75,14 @@ dynamic_members:
       instance_methods: float, integer, string
 
   ActiveRecord:
+    Associations:
+      HasManyAssociation:
+        # When calling has_many :items we're invoking Associations::Builder::HasMany that defines method 'items' that delegates to
+        # association method 'reader' which (in case of has_many) association uses CollectionProxy that delegates to corresponding scope.
+        # Thus we cannot see a gopher, but it's there
+        rails >=4.0.0.beta:
+          instance_methods:
+            sum: ActiveRecord::Associations::CollectionProxy
     Callbacks:
       # see activerecord-xxx/lib/active_record/callbacks.rb:
       rails >=3.0.0.beta:
@@ -103,9 +111,11 @@ dynamic_members:
           text_field: ActionView::Helpers::FormHelper::text_field
   AbstractController: 
     Callbacks: 
-      ClassMethods: 
-        instance_methods: after_filter, append_after_filter, append_around_filter, append_before_filter, around_filter, before_filter, prepend_after_filter, prepend_around_filter, prepend_before_filter, skip_after_filter, skip_before_filter, skip_filter
-
+      ClassMethods:
+        rails <4.0.0.beta:
+          instance_methods: after_filter, append_after_filter, append_around_filter, append_before_filter, around_filter, before_filter, prepend_after_filter, prepend_around_filter, prepend_before_filter, skip_after_filter, skip_before_filter, skip_filter
+        rails >=4.0.0.beta:
+          instance_methods: after_filter, append_after_filter, append_around_filter, append_before_filter, around_filter, before_filter, prepend_after_filter, prepend_around_filter, prepend_before_filter, skip_after_filter, skip_before_filter, skip_filter, after_action, append_after_action, append_around_action, append_before_action, around_action, before_action, prepend_after_action, prepend_around_action, prepend_before_action, skip_after_action, skip_before_action, skip_action
 
 block_variable_types:
   ActionView::Helpers::FormHelper.form_for: ActionView::Helpers::FormBuilder

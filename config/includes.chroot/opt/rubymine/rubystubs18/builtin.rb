@@ -1,6 +1,6 @@
 =begin
  This is a machine generated main stub file using stdlib-doc
- Created on Mon Aug 13 21:19:55 +0400 2012 by IntelliJ Ruby Stubs Generator.
+ Created on 2013-05-16 17:08:08 +0400 by IntelliJ Ruby Stubs Generator.
 
  This documentation uses content from the book "Programming Ruby - The Pragmatic Programmer's Guide"
  Copyright (C) 2001 by Addison Wesley Longman, Inc. This material may be distributed only subject to the terms and conditions set forth in the Open Publication License, v1.0 or later (the latest version is presently available at http://www.opencontent.org/openpub/)).
@@ -15,29 +15,47 @@
 # This variable is thread local.
 $! = Exception.new #value is unknown, used for indexing.
 
+# Alias to $!
+$ERROR_INFO = $! #value is unknown, used for indexing.
+
 # Array of backtrace of the last exception thrown.
 # This variable is thread local.
 $@ = [] #value is unknown, used for indexing.
+
+# Alias to $@
+$ERROR_POSITION = $@ #value is unknown, used for indexing.
 
 # String matched by last successful pattern match in this scope.
 # Ruby interpreter sets this variable to 'nil' after an unsuccessful match.
 # This variable is defined in current scope, thread local and read-only.
 $& = "" #value is unknown, used for indexing.
 
+# Alias to $&
+$MATCH = $& #value is unknown, used for indexing.
+
 # String to the left of last successful pattern match.
 # Ruby interpreter sets this variable to 'nil' after an unsuccessful match.
 # This variable is defined in current scope, thread local and read-only.
 $` = "" #value is unknown, used for indexing.
+
+# Alias to $`
+$PREMATCH = $` #value is unknown, used for indexing.
 
 # String to the right of last successful pattern match.
 # Ruby interpreter sets this variable to 'nil' after an unsuccessful match.
 # This variable is defined in current scope, thread local and read-only.
 $' = "" #value is unknown, used for indexing.
 
+# Alias to $'
+$POSTMATCH = $' #value is unknown, used for indexing.
+
 # Last bracket(group) matched by last successful pattern match.
 # Ruby interpreter sets this variable to 'nil' after an unsuccessful match.
 # This variable is defined in current scope, thread local and read-only.
 $+ = "" #value is unknown, used for indexing.
+
+# Alias to $+
+$LAST_PAREN_MATCH = "" #value is unknown, used for indexing.
 
 # 1st group of last successful pattern match.
 # Ruby interpreter sets this variable to 'nil' after an unsuccessful match.
@@ -90,11 +108,17 @@ $9 = "" #value is unknown, used for indexing.
 # This variable is defined in current scope and thread local.
 $~ = MatchData.new #value is unknown, used for indexing.
 
+# Alias to $~
+$LAST_MATCH_INFO = $~ #value is unknown, used for indexing.
+
 # Deprecated.
 # The flag for case insensitive, nil by default. If flag is not 'nil'
 # and not 'false' pattern matches and string comparisions will be case
 # insensitive.
 $= = Object.new #value is unknown, used for indexing.
+
+# Alias to $=
+$IGNORECASE = $= #value is unknown, used for indexing.
 
 # Input record separator, newline by default. This variable is used by
 # Kernel#gets to separate records. If $/ is 'nil', Kernel#gets will read the
@@ -104,13 +128,31 @@ $/ = "" #value is unknown, used for indexing.
 # Alias to $/.
 $-0 = $/ #value is unknown, used for indexing.
 
+# Alias to $/.
+$INPUT_RECORD_SEPARATOR = $/ #value is unknown, used for indexing.
+
+# Alias to $/.
+$RS = $/ #value is unknown, used for indexing.
+
 # Output record separator string for Kernel#print and IO#write.
 # Default is nil.
 $\ = "" #value is unknown, used for indexing.
 
+# Alias to $\
+$OUTPUT_RECORD_SEPARATOR = $\ #value is unknown, used for indexing.
+
+# Alias to $\
+$ORS = $\ #value is unknown, used for indexing.
+
 # Output field separator string for Kernel#print and Array#join.
 # Default is nil.
 $, = "" #value is unknown, used for indexing.
+
+# Alias to $,
+$OUTPUT_FIELD_SEPARATOR = $, #value is unknown, used for indexing.
+
+# Alias to $,
+$OFS = $, #value is unknown, used for indexing.
 
 # Default separator for String#split.
 $; = "" #value is unknown, used for indexing.
@@ -118,36 +160,72 @@ $; = "" #value is unknown, used for indexing.
 # Alias to $;.
 $-F = $; #value is unknown, used for indexing.
 
+# Alias to $;.
+$FIELD_SEPARATOR = $; #value is unknown, used for indexing.
+
+# Alias to $;.
+$FS = $; #value is unknown, used for indexing.
+
 # Current input line number of last file that was read.
 $. = 0 #value is unknown, used for indexing.
+
+# Alias to $.
+$INPUT_LINE_NUMBER = $. #value is unknown, used for indexing.
+
+# Alias to $.
+$NR = $. #value is unknown, used for indexing.
 
 # Virtual concatenation file of files given on command line.
 # $< supports File and Enumerable methods.
 # This variable is read-only.
 $< = File.new #value is unknown, used for indexing.
 
+# Alias to $<
+$DEFAULT_INPUT = $< #value is unknown, used for indexing.
+
 # Default output for Kernel#print, Kernel#printf. $stdout by default
 $> = IO.new #value is unknown, used for indexing.
+
+# Alias to $>
+$DEFAULT_OUTPUT = $> #value is unknown, used for indexing.
 
 # Last line read by Kernel#gets or Kernel#readline.
 # This variable is defined in current scope, thread local.
 $_ = "" #value is unknown, used for indexing.
 
+# Alias to $_
+$LAST_READ_LINE = $_ #value is unknown, used for indexing.
+
 # Name of the script being executed. May be assignable.
 $0 = "" #value is unknown, used for indexing.
+
+# Alias to $0.
+$PROGRAM_NAME = $0 #value is unknown, used for indexing.
 
 # Command line arguments given for the script.
 # Does not include interpreter arguments.
 # This variable is read-only.
 $* = [] #value is unknown, used for indexing.
 
+# Alias to $*
+$ARGV = $* #value is unknown, used for indexing.
+
 # Process number of Ruby instance running this script.
 # This variable is read-only.
 $$ = 0 #value is unknown, used for indexing.
 
+# Alias to $$
+$PROCESS_ID = $$ #value is unknown, used for indexing.
+
+# Alias to $$
+$PID = $$ #value is unknown, used for indexing.
+
 # Status of last executed child process.
 # This variable is thread local and read-only.
 $? = Process::Status.new #value is unknown, used for indexing.
+
+# Alias to $?
+$CHILD_STATUS = $? #value is unknown, used for indexing.
 
 # Load path for scripts and binary modules by load or require. You can
 # append directory to load path using $: << dir_path.
@@ -158,11 +236,11 @@ $: = [] #value is unknown, used for indexing.
 $-I = $: #value is unknown, used for indexing.
 
 # Alias to $:.
-$LOAD_PATH  = $: #value is unknown, used for indexing.
+$LOAD_PATH = $: #value is unknown, used for indexing.
 
 # Module names loaded by require.
 # Ruby interpreters have the following bug:
-# 
+#
 # require "my/file"
 # require "my/../my/file" #the same file as my/file
 # p $"
@@ -171,6 +249,9 @@ $LOAD_PATH  = $: #value is unknown, used for indexing.
 #
 # This variable is read-only.
 $" = [] #value is unknown, used for indexing.
+
+# Alias to $".
+$LOADED_FEATURES = $" #value is unknown, used for indexing.
 
 # True if command-line option -d is set.
 $DEBUG = Object.new #value is unknown, used for indexing.
@@ -209,16 +290,16 @@ $stdout = IO.new #value is unknown, used for indexing.
 #        not be modified. Typically, this will be used to create a sandbox: the program sets
 #        up an environment using a lower $SAFE level, then resets $SAFE to 4 to prevent
 #        subsequent changes to that environment.
-$SAFE  = 0 #value is unknown, used for indexing.
+$SAFE = 0 #value is unknown, used for indexing.
 
 # Verbose flag. Set by the -v, --version, -w, -W switch.
-$VERBOSE  = Object.new #value is unknown, used for indexing.
+$VERBOSE = Object.new #value is unknown, used for indexing.
 
 # Alias to $VERBOSE.
-$-v  = $VERBOSE #value is unknown, used for indexing.
+$-v = $VERBOSE #value is unknown, used for indexing.
 
 # Alias to $VERBOSE.
-$-w  = $VERBOSE #value is unknown, used for indexing.
+$-w = $VERBOSE #value is unknown, used for indexing.
 
 # True if command-line option -a ("autosplit" mode) is set.
 # This variable is read-only.
@@ -235,12 +316,15 @@ $-i = "" #value is unknown, used for indexing.
 # May be one of: u, U for UTF-8; or a, A, n, N for ASCII; e, E for EUC; s, S for SJIS
 $-K = "" #value is unknown, used for indexing.
 
+# Alias to $-K
+$KCODE = $-K #value is unknown, used for indexing.
+
 # True if command-line option -l is set ("line-ending processing" is on).
 $-l = Object.new #value is unknown, used for indexing.
 
 # True if command-line option -p is set ("loop" mode is on).
 # This variable is read-only.
-$-p  = Object.new #value is unknown, used for indexing.
+$-p = Object.new #value is unknown, used for indexing.
 
 # If a constant SCRIPT_LINES__ is defined as a Hash, then the source code of
 # all files loaded by Kernel#load and Kernel#require will be stored in Hash.
@@ -257,86 +341,95 @@ $-p  = Object.new #value is unknown, used for indexing.
 #   ["require 'other_file'\n", "\n"]
 SCRIPT_LINES__ = nil #value is unknown, used for indexing.
 
+require 'basic_object'
 require 'kernel'
 require 'object'
-require 'exception'
-require 'standard_error'
-require 'thread_error'
-require 'regexp'
-require 'comparable'
-require 'numeric'
-require 'system_stack_error'
-require 'enumerable'
-require 'string'
-require 'precision'
-require 'integer'
-require 'bignum'
-require 'index_error'
-require 'security_error'
-require 'set'
-require 'name_error'
-require 'no_method_error'
-require 'range'
-require 'file/constants'
-require 'io'
-require 'type_error'
-require 'dir'
-require 'zero_division_error'
-require 'signal'
-require 'system_exit'
-require 'script_error'
-require 'not_implemented_error'
-require 'hash'
-require 'regexp_error'
-require 'date'
-require 'rb_config'
-require 'math'
-require 'signal_exception'
-require 'interrupt'
-require 'syntax_error'
-require 'struct'
 require 'module'
 require 'class'
-require 'continuation'
-require 'io_error'
-require 'range_error'
+require 'nil_class'
 require 'data'
-require 'thread'
-require 'gem'
-require 'proc'
-require 'process'
-require 'array'
-require 'no_memory_error'
-require 'sorted_set'
-require 'time'
-require 'file_test'
-require 'match_data'
-require 'method'
-require 'option_parser'
-require 'stop_iteration'
-require 'argument_error'
-require 'float'
-require 'float_domain_error'
-require 'runtime_error'
-require 'thread_group'
-require 'unbound_method'
-require 'etc'
-require 'fixnum'
+require 'true_class'
 require 'false_class'
-require 'r_doc'
-require 'errno'
-require 'eof_error'
+require 'encoding'
+require 'comparable'
+require 'enumerable'
+require 'string'
+require 'symbol'
+require 'exception'
+require 'system_exit'
+require 'signal_exception'
+require 'interrupt'
+require 'standard_error'
+require 'type_error'
+require 'argument_error'
+require 'index_error'
+require 'key_error'
+require 'range_error'
+require 'script_error'
+require 'syntax_error'
 require 'load_error'
+require 'not_implemented_error'
+require 'name_error'
+require 'no_method_error'
+require 'runtime_error'
+require 'security_error'
+require 'no_memory_error'
+require 'encoding_error'
+require 'system_call_error'
+require 'errno'
+require 'zero_division_error'
+require 'float_domain_error'
+require 'numeric'
+require 'integer'
+require 'fixnum'
+require 'float'
+require 'bignum'
+require 'array'
+require 'hash'
+require 'struct'
+require 'regexp_error'
+require 'regexp'
+require 'match_data'
+require 'marshal'
+require 'range'
+require 'io_error'
+require 'eof_error'
+require 'file/constants'
+require 'io'
+require 'file_test'
+require 'file'
+require 'dir'
+require 'time'
+require 'random'
+require 'signal'
+require 'process'
+require 'proc'
+require 'local_jump_error'
+require 'system_stack_error'
+require 'method'
+require 'unbound_method'
+require 'binding'
+require 'math'
+require 'gc'
+require 'object_space'
+require 'enumerator'
+require 'stop_iteration'
+require 'ruby_vm'
+require 'thread'
+require 'thread_group'
+require 'mutex'
+require 'thread_error'
+require 'fiber'
+require 'fiber_error'
+require 'rational'
+require 'complex'
+require 'gem'
+require 'rb_config'
+require 'option_parser'
 require 'file_utils/stream_utils_'
 require 'file_utils'
-require 'true_class'
-require 'nil_class'
-require 'gc'
-require 'system_call_error'
-require 'file'
-require 'local_jump_error'
-require 'binding'
-require 'symbol'
-require 'object_space'
-require 'marshal'
+require 'etc'
+require 'r_doc'
 require 'generators'
+require 'set'
+require 'sorted_set'
