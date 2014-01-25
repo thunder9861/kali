@@ -43,17 +43,19 @@ eval set -- "$temp"
 
 case "$arch" in
     amd64)
-	lb_opts="--debian-installer live"
+	 # lb_opts="--debian-installer live"
+	 lb_opts="--debian-installer false"
     ;;
     i386)
-	lb_opts="--debian-installer live --linux-flavours 686-pae"
+	 # lb_opts="--debian-installer live --linux-flavours 686-pae"
+	 lb_opts="--debian-installer false --linux-flavours 686-pae"
     ;;
     armel|armhf)
-	lb_opts="--binary-images hdd --binary-filesystem ext4 --chroot-filesystem none"
+	 lb_opts="--binary-images hdd --binary-filesystem ext4 --chroot-filesystem none"
     ;;
     *)
-	echo "WARNING: configuration not tested on arch $arch" >&2
-	lb_opts=""
+	 echo "WARNING: configuration not tested on arch $arch" >&2
+	 lb_opts=""
     ;;
 esac
 
