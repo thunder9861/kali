@@ -3,7 +3,5 @@
 # Show all packages that depend on the specified package
 # $1 = string package
 
-depends=`apt-rdepends -r $1 2>&1 /dev/null | grep Depends: | awk '{print $3}' | sort -u`
-installed=`dpkg --get-selections | grep install | awk '{print $1}'`
-echo $depends $installed | tr ' ' '\n' | sort | uniq -d
+apt-rdepends -r $1 2>&1 /dev/null | grep Depends: | awk '{print $3}' | sort -u
 

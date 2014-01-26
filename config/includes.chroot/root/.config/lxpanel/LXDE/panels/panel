@@ -48,13 +48,19 @@ Plugin {
     type = launchbar
     Config {
         Button {
-            id=/usr/share/applications/terminator.desktop
-        }
-        Button {
             id=/usr/share/applications/chromium.desktop
         }
         Button {
+            id=/usr/share/applications/terminator.desktop
+        }
+        Button {
+            id=/usr/share/applications/gedit.desktop
+        }
+        Button {
             id=/var/lib/menu-xdg/applications/menu-xdg/X-Debian-Applications-File-Management-nautilus.desktop
+        }
+        Button {
+            id=/usr/share/applications/shutter.desktop
         }
     }
 }

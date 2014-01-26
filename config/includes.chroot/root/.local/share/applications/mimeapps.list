@@ -1,5 +1,15 @@
 [Added Associations]
 text/plain=gedit.desktop;
+image/jpeg=gpicview.desktop;
+text/x-matlab=gedit.desktop;
+audio/mpeg=vlc.desktop;
+video/x-matroska=vlc.desktop;
+application/pdf=evince.desktop;
 
 [Default Applications]
 text/plain=gedit.desktop
+image/jpeg=gpicview.desktop
+text/x-matlab=gedit.desktop
+audio/mpeg=vlc.desktop
+video/x-matroska=vlc.desktop
+application/pdf=evince.desktop
