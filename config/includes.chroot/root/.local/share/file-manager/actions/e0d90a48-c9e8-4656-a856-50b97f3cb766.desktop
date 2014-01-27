@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Action
+TargetToolbar=true
+TargetLocation=true
+Icon[C]=xfce-terminal
+ToolbarLabel[C]=Open in Terminator
+Name[C]=Open in Terminator
+Profiles=profile-zero;
+
+[X-Action-Profile profile-zero]
+Exec=/usr/bin/terminator --working-directory=%d/%b
+Name[C]=Default profile
