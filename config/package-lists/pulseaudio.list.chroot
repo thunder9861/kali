@@ -1,3 +1,7 @@
-pulseaudio-utils
 alsa-utils
+paman
+pavucontrol
+pulseaudio
+pulseaudio-module-x11
+pulseaudio-utils
 
