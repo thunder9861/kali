@@ -16,7 +16,8 @@ MIRROR_OPTIONS=\
 # Set variables
 KALI_VERSION="${VERSION:-daily}"
 TARGET_DIR=$(dirname $0)/images/kali-$KALI_VERSION
-KALI_ARCH="i386"
+# KALI_ARCH="i386"
+KALI_ARCH="amd64"
 IMAGE_NAME="binary.hybrid.iso"
 KALI_CONFIG_OPTS="-- --proposed-updates"
 
