@@ -1,0 +1,8 @@
+nvidia-alternative
+nvidia-detect
+nvidia-driver
+nvidia-glx 
+nvidia-kernel-amd64
+nvidia-kernel-dkms 
+nvidia-xconfig
+

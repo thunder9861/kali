@@ -2,4 +2,8 @@
 #redshift
 geoclue
 geoclue-hostip
+libgeoclue-dev 
+libx11-dev 
+libxcb-randr0-dev
+libxcb1-dev
 
