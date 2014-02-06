@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Custom less
+# $1 = string filename
+
+less -XFNRme $1
+

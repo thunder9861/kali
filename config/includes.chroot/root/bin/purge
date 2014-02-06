@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Purges packages
-# $1 = string package
+# $@ = string packages:
 
-dpkg --get-selections | grep deinstall | awk '{print $1}' | xargs aptitude -y purge $1
+dpkg --get-selections | grep deinstall | awk '{print $1}' | xargs aptitude -y purge $@
 

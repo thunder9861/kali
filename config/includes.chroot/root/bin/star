@@ -29,14 +29,11 @@ mksquashfs $directory $sfs -noappend -b 1048576
 sfssize=`stat --printf="%s" $sfs`
 starsize=`expr $sfssize + 262144`
 
-# Get the password hash
-hash=`echo -n $password | sha512sum | cut -c1-12`
-
 # Make a truecrypt volume
-truecrypt -t --non-interactive -c $star --size=$starsize --filesystem=none --encryption=AES --hash=SHA-512 --password=$hash
+truecrypt -t --non-interactive -c $star --size=$starsize --filesystem=none --encryption=AES --hash=SHA-512 --password=$password
 
 # Mount the truecrypt volume
-truecrypt -t --non-interactive --filesystem=none --password=$hash $star
+truecrypt -t --non-interactive --filesystem=none --password=$password $star
 
 # Get the truecrypt device name
 starloc=`readlink -f $star`

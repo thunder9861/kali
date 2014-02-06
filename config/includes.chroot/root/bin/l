@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Custom ls
+# $1 = string directory
 
 ls -BFXoh --group-directories-first --color=auto $1
 

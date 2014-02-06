@@ -2,6 +2,7 @@
 
 # Starts an ssh session with screen
 # $1 = string user@host
+# $2 = int port
 
-ssh $1 -t -X "screen -dRR -t $1"
+ssh $1 -p $2 -t -X "screen -dRR -t $1"
 
