@@ -1,6 +1,9 @@
-# linux-headers-686-pae
+#if ARCHITECTURES i386
+linux-headers-686-pae
+linux-image-686-pae
+#endif
+
 linux-headers-amd64
-# linux-image-686-pae
 linux-image-amd64
 linux-source
 

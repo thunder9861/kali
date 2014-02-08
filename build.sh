@@ -19,6 +19,7 @@ TARGET_DIR=$(dirname $0)/images/kali-$KALI_VERSION
 # KALI_ARCH="i386"
 KALI_ARCH="amd64"
 IMAGE_NAME="binary.hybrid.iso"
+CONFIG_OPTS="--apt aptitude --apt-recommends false"
 KALI_CONFIG_OPTS="-- --proposed-updates"
 
 # Set sane PATH (cron seems to lack /sbin/ dirs)
@@ -36,7 +37,7 @@ mkdir -p $TARGET_DIR
 
 # Build
 lb clean > prepare.log 2>&1
-lb config $MIRROR_OPTIONS -a $KALI_ARCH $KALI_CONFIG_OPTS >> prepare.log 2>&1
+lb config $MIRROR_OPTIONS $CONFIG_OPTS -a $KALI_ARCH $KALI_CONFIG_OPTS >> prepare.log 2>&1
 lb build
 
 if [ $? -ne 0 ] || [ ! -e $IMAGE_NAME ]; then

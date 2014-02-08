@@ -1,7 +1,4 @@
 #!/bin/bash
 
-# Install packages
-dpkg -i /root/deb/*.deb
-
 # Hold packages
 echo "redshift hold" | dpkg --set-selections

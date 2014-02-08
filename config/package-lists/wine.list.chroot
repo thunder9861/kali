@@ -1,4 +1,11 @@
-playonlinux
+#if ARCHITECTURES i386
 wine
+#endif
+
+#if ARCHITECTURES amd64
+wine-bin:i386
+#endif
+
+playonlinux
 winetricks
 

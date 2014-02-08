@@ -1,4 +1,8 @@
 cdebootstrap
 debootstrap
 live-build
+live-boot
+live-build
+live-config
+user-setup
 

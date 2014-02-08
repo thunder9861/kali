@@ -1,3 +1,7 @@
+#if ARCHITECTURES amd64
+ia32-libs
+#endif
+
 aufs-tools
 console-common
 console-data
